@@ -1,0 +1,1 @@
+{"version":3,"sources":["lsx-search.scss"],"names":[],"mappings":"AAAA,6CAIG","file":"../lsx-search.css","sourcesContent":["/**\n * LSX Search styles.\n *\n * @package lsx-search\n */\n\n@import 'include-media';\n"]}
