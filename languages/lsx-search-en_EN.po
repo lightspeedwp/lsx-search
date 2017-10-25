@@ -15,3 +15,182 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: classes/class-lsx-search-admin.php:81
+msgid "Search Form"
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:159, classes/class-lsx-search-admin.php:160
+msgid "Theme Options"
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:164
+msgid "Save Changes"
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:186
+msgid "General"
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:198
+msgid "Display"
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:210
+msgid "API"
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:240
+msgid "Post types"
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:272
+msgid "Enable Search"
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:276
+msgid "This adds the facet shortcodes to the search results template."
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:281
+msgid "Enable Post Type Label"
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:285
+msgid "This enables the post type label from entries on search results page."
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:290, classes/class-lsx-search-admin.php:408
+msgid "Columns Layout"
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:294, classes/class-lsx-search-admin.php:412
+msgid "Follow the theme layout"
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:295, classes/class-lsx-search-admin.php:413
+msgid "1 column"
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:296, classes/class-lsx-search-admin.php:414
+msgid "2 columns / Content on right"
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:297, classes/class-lsx-search-admin.php:415
+msgid "2 columns / Content on left"
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:303, classes/class-lsx-search-admin.php:421
+msgid "Per Page"
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:306, classes/class-lsx-search-admin.php:424
+msgid "Disable Per Page"
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:311, classes/class-lsx-search-admin.php:429
+msgid "Sorting"
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:315, classes/class-lsx-search-admin.php:433
+msgid "Disable Sorting"
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:316, classes/class-lsx-search-admin.php:434
+msgid "Disable Title (A-Z)"
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:317, classes/class-lsx-search-admin.php:435
+msgid "Disable Date"
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:323, classes/class-lsx-search-admin.php:441
+msgid "Display Result Count"
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:331, classes/class-lsx-search-admin.php:449
+msgid "Alphabetical Facet"
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:339, classes/class-lsx-search-admin.php:457
+msgid "None"
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:349, classes/class-lsx-search-admin.php:377, classes/class-lsx-search-admin.php:467, classes/class-lsx-search-admin.php:495
+msgid "You have no Facets setup."
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:356, classes/class-lsx-search-admin.php:474
+msgid "Facets"
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:395
+msgid "Search Settings"
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:399
+msgid "Enable Filtering"
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:403
+msgid "This adds the facet shortcodes to the post type archive and taxonomy templates."
+msgstr ""
+
+#: includes/settings/api.php:3
+msgid "Settings"
+msgstr ""
+
+#: includes/settings/api.php:4
+msgid "License Keys"
+msgstr ""
+
+#: includes/settings/api.php:25
+msgid "Enter the license keys for your add-ons in the boxes below."
+msgstr ""
+
+#: includes/settings/api.php:30
+msgid "You have not installed any add-ons yet. View our list of add-ons"
+msgstr ""
+
+#: includes/settings/api.php:30
+msgid "here"
+msgstr ""
+
+#: includes/settings/display.php:4
+msgid "Placeholders"
+msgstr ""
+
+#: includes/settings/display.php:9, includes/settings/general.php:4
+msgid "Currencies"
+msgstr ""
+
+#: includes/settings/display.php:14
+msgid "Team"
+msgstr ""
+
+#: includes/settings/display.php:19
+msgid "Testimonials"
+msgstr ""
+
+#: includes/settings/display.php:24
+msgid "Projects"
+msgstr ""
+
+#: includes/settings/display.php:29
+msgid "Services"
+msgstr ""
+
+#: includes/settings/display.php:34
+msgid "Blog Customizer (posts widget)"
+msgstr ""
+
+#: includes/settings/display.php:39
+msgid "Sharing"
+msgstr ""
+
+#: includes/settings/display.php:44
+msgid "Videos"
+msgstr ""
+
+#: includes/settings/display.php:49, includes/settings/general.php:9
+msgid "Search"
+msgstr ""

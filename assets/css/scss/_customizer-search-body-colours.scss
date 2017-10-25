@@ -1,0 +1,34 @@
+@mixin customizer-search-body-colours($bg: #F6F6F6, $breaker: #DADDDF, $color: #4A4A4A, $link: #418AD0, $hover: #F7AE00, $small: #919191) {
+	.facetwp-filters-wrap {
+		@media (max-width: 767px) {
+			background-color: $bg;
+		}
+	}
+
+	.archive {
+		.facetwp-sidebar.widget-area {
+			.facetwp-type-slider {
+				.noUi-connect { background: $link; }
+			}
+		}
+	}
+
+	.facetwp-type-alpha {
+		.facetwp-alpha {
+			color: $breaker;
+
+			&.available {
+				color: $link;
+
+				&:hover { color: $hover; }
+			}
+		}
+	}
+
+	.facetwp-sort-select,
+	.facetwp-per-page-select {
+		background-image: url("data:image/svg+xml;utf8,<svg fill='#{$small}' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+		border-color: $breaker;
+		color: $small;
+	}
+}

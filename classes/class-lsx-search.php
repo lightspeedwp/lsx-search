@@ -6,6 +6,8 @@
  */
 class LSX_Search {
 
+	public $options = false;
+
 	public function __construct() {
 
 	}
