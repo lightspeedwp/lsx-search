@@ -187,7 +187,11 @@
 }
 
 .facetwp-template {
-	.lsx-archive-header { margin-top: 4.25rem; }
+	> .post-wrapper {
+		margin-top: 0 !important;
+
+		.lsx-slot { margin-top: 4rem !important; }
+	}
 }
 
 .facetwp-filters-wrap {

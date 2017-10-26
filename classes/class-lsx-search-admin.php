@@ -324,7 +324,7 @@ class LSX_Search_Admin {
 					<label><?php esc_html_e( 'Display Result Count', 'lsx-search' ); ?></label>
 				</th>
 				<td>
-					<input type="checkbox" {{#if search_display_result_count}} checked="checked" {{/if}} name="display_result_count" />
+					<input type="checkbox" {{#if search_display_result_count}} checked="checked" {{/if}} name="search_display_result_count" />
 				</td>
 			</tr>
 			<tr class="form-field-wrap">

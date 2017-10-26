@@ -81,7 +81,9 @@
 
 .facetwp-sort-select, .facetwp-per-page-select { -webkit-appearance: none; -moz-appearance: none; appearance: none; background: transparent; background-repeat: no-repeat; background-position-x: 0%; background-position-y: 50%; border-style: solid; border-width: 2px; box-shadow: none; display: inline-block; font-size: 14px; line-height: 1.25; min-width: 120px; padding: 10px 12px 10px 36px; transition: all 150ms ease; width: auto; }
 
-.facetwp-template .lsx-archive-header { margin-top: 4.25rem; }
+.facetwp-template > .post-wrapper { margin-top: 0 !important; }
+
+.facetwp-template > .post-wrapper .lsx-slot { margin-top: 4rem !important; }
 
 @media (max-width: 767px) { .facetwp-filters-wrap { height: 100%; right: 0; margin: 0 !important; padding: 15px; position: fixed !important; overflow-x: visible; overflow-y: auto; top: 0; -webkit-transform: translate(100%, 0); transform: translate(100%, 0); z-index: 7; } }
 
