@@ -30,8 +30,8 @@ class LSX_Search_Admin {
 			}
 		}
 
-		add_action( 'wp', array( $this, 'set_vars' ) );
-		add_action( 'wp', array( $this, 'set_facetwp_vars' ) );
+		add_action( 'init', array( $this, 'set_vars' ) );
+		add_action( 'init', array( $this, 'set_facetwp_vars' ) );
 
 		add_filter( 'lsx_search_post_types_plural', array( $this, 'register_post_type_tabs' ) );
 
