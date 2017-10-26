@@ -64,7 +64,16 @@ class LSX_Search_Frontend {
 			$this->search_prefix = 'search';
 		} elseif ( is_post_type_archive( $this->post_types ) || is_tax( $this->taxonomies ) ) {
 			$this->search_core_suffix = 'search';
-			$this->search_prefix = $this->tabs[ get_query_var( 'post_type' ) ] . '_archive';
+
+			if ( is_tax( $this->taxonomies ) ) {
+				$tax = get_query_var( 'taxonomy' );
+				$tax = get_taxonomy( $tax );
+				$post_type = $tax->object_type[0];
+			} else {
+				$post_type = get_query_var( 'post_type' );
+			}
+
+			$this->search_prefix = $this->tabs[ $post_type ] . '_archive';
 		}
 
 		if ( ! empty( $this->options ) && ! empty( $this->options['display'][ $this->search_prefix . '_enable_' . $this->search_core_suffix ] ) ) {

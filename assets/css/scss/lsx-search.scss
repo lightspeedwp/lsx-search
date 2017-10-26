@@ -192,6 +192,12 @@
 
 		.lsx-slot { margin-top: 4rem !important; }
 	}
+
+	> .no-results {
+		margin-top: 4rem;
+
+		.search-form { display: none; }
+	}
 }
 
 .facetwp-filters-wrap {
