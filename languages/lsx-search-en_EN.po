@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: classes/class-lsx-search-admin.php:82, classes/class-lsx-search-frontend.php:87
+#: classes/class-lsx-search-admin.php:82, classes/class-lsx-search-frontend.php:96
 msgid "Search Form"
 msgstr ""
 
@@ -127,27 +127,27 @@ msgstr ""
 msgid "This adds the facet shortcodes to the post type archive and taxonomy templates."
 msgstr ""
 
-#: classes/class-lsx-search-frontend.php:311
+#: classes/class-lsx-search-frontend.php:320
 msgid "Results"
 msgstr ""
 
-#: classes/class-lsx-search-frontend.php:312
+#: classes/class-lsx-search-frontend.php:321
 msgid "Clear"
 msgstr ""
 
-#: classes/class-lsx-search-frontend.php:320
+#: classes/class-lsx-search-frontend.php:329
 msgid "Filters"
 msgstr ""
 
-#: classes/class-lsx-search-frontend.php:328
+#: classes/class-lsx-search-frontend.php:337
 msgid "Close Filters"
 msgstr ""
 
-#: classes/class-lsx-search-frontend.php:363
+#: classes/class-lsx-search-frontend.php:372
 msgid "Apply Filters"
 msgstr ""
 
-#: classes/class-lsx-search-frontend.php:382, classes/class-lsx-search-frontend.php:386, includes/settings/display.php:49, includes/settings/general.php:9
+#: classes/class-lsx-search-frontend.php:391, classes/class-lsx-search-frontend.php:395, includes/settings/display.php:49, includes/settings/general.php:9
 msgid "Search"
 msgstr ""
 
