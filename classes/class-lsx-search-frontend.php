@@ -40,6 +40,8 @@ class LSX_Search_Frontend {
 		add_action( 'wp', array( $this, 'set_facetwp_vars' ), 12 );
 		add_action( 'wp', array( $this, 'core' ), 13 );
 
+		add_action( 'pre_get_posts',  array( $this, 'filter_post_types' ) );
+
 		add_filter( 'lsx_search_post_types', array( $this, 'register_post_types' ) );
 		add_filter( 'lsx_search_taxonomies', array( $this, 'register_taxonomies' ) );
 		add_filter( 'lsx_search_post_types_plural', array( $this, 'register_post_type_tabs' ) );
@@ -128,6 +130,20 @@ class LSX_Search_Frontend {
 			}
 
 			add_action( 'lsx_content_wrap_before', array( $this, 'search_sidebar' ), 150 );
+		}
+	}
+
+	/**
+	 * Filter the post types.
+	 */
+	public function filter_post_types( $query ) {
+		if ( ! is_admin() && $query->is_main_query() && $query->is_search() ) {
+			if ( ! empty( $this->options ) && ! empty( $this->options['display']['search_enable_core'] ) ) {
+				if ( ! empty( $this->options['general']['search_post_types'] ) && is_array( $this->options['general']['search_post_types'] ) ) {
+					$post_types = array_keys( $this->options['general']['search_post_types'] );
+					$query->set( 'post_type', $post_types );
+				}
+			}
 		}
 	}
 
