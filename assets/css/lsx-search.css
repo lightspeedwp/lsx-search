@@ -109,18 +109,6 @@
 
 .facetwp-checkbox.checked:before { content: '\f14a'; }
 
-.facetwp-checkbox.country { display: none; }
-
-.continent-visible .facetwp-checkbox.country { margin-left: 20px; }
-
-.facetwp-checkbox.country.continent-checked { display: block; }
-
-.facetwp-checkbox.region { margin-left: 20px; display: none; }
-
-.continent-visible .facetwp-checkbox.region { margin-left: 40px; }
-
-.facetwp-checkbox.region.country-checked { display: block; }
-
 .facetwp-overflow { margin-top: 5px; }
 
 .facetwp-loading { display: block; }

@@ -15,124 +15,148 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: classes/class-lsx-search-admin.php:81
+#: classes/class-lsx-search-admin.php:82, classes/class-lsx-search-frontend.php:87
 msgid "Search Form"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:159, classes/class-lsx-search-admin.php:160
+#: classes/class-lsx-search-admin.php:160, classes/class-lsx-search-admin.php:161
 msgid "Theme Options"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:164
+#: classes/class-lsx-search-admin.php:165
 msgid "Save Changes"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:186
+#: classes/class-lsx-search-admin.php:187
 msgid "General"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:198
+#: classes/class-lsx-search-admin.php:199
 msgid "Display"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:210
+#: classes/class-lsx-search-admin.php:211
 msgid "API"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:240
+#: classes/class-lsx-search-admin.php:241
 msgid "Post types"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:272
+#: classes/class-lsx-search-admin.php:273
 msgid "Enable Search"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:276
+#: classes/class-lsx-search-admin.php:277
 msgid "This adds the facet shortcodes to the search results template."
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:281
+#: classes/class-lsx-search-admin.php:282
 msgid "Enable Post Type Label"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:285
+#: classes/class-lsx-search-admin.php:286
 msgid "This enables the post type label from entries on search results page."
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:290, classes/class-lsx-search-admin.php:408
+#: classes/class-lsx-search-admin.php:291, classes/class-lsx-search-admin.php:409
 msgid "Columns Layout"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:294, classes/class-lsx-search-admin.php:412
+#: classes/class-lsx-search-admin.php:295, classes/class-lsx-search-admin.php:413
 msgid "Follow the theme layout"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:295, classes/class-lsx-search-admin.php:413
+#: classes/class-lsx-search-admin.php:296, classes/class-lsx-search-admin.php:414
 msgid "1 column"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:296, classes/class-lsx-search-admin.php:414
+#: classes/class-lsx-search-admin.php:297, classes/class-lsx-search-admin.php:415
 msgid "2 columns / Content on right"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:297, classes/class-lsx-search-admin.php:415
+#: classes/class-lsx-search-admin.php:298, classes/class-lsx-search-admin.php:416
 msgid "2 columns / Content on left"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:303, classes/class-lsx-search-admin.php:421
+#: classes/class-lsx-search-admin.php:304, classes/class-lsx-search-admin.php:422
 msgid "Per Page"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:306, classes/class-lsx-search-admin.php:424
+#: classes/class-lsx-search-admin.php:307, classes/class-lsx-search-admin.php:425
 msgid "Disable Per Page"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:311, classes/class-lsx-search-admin.php:429
+#: classes/class-lsx-search-admin.php:312, classes/class-lsx-search-admin.php:430
 msgid "Sorting"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:315, classes/class-lsx-search-admin.php:433
+#: classes/class-lsx-search-admin.php:316, classes/class-lsx-search-admin.php:434
 msgid "Disable Sorting"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:316, classes/class-lsx-search-admin.php:434
+#: classes/class-lsx-search-admin.php:317, classes/class-lsx-search-admin.php:435
 msgid "Disable Title (A-Z)"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:317, classes/class-lsx-search-admin.php:435
+#: classes/class-lsx-search-admin.php:318, classes/class-lsx-search-admin.php:436
 msgid "Disable Date"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:323, classes/class-lsx-search-admin.php:441
+#: classes/class-lsx-search-admin.php:324, classes/class-lsx-search-admin.php:442
 msgid "Display Result Count"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:331, classes/class-lsx-search-admin.php:449
+#: classes/class-lsx-search-admin.php:332, classes/class-lsx-search-admin.php:450
 msgid "Alphabetical Facet"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:339, classes/class-lsx-search-admin.php:457
+#: classes/class-lsx-search-admin.php:340, classes/class-lsx-search-admin.php:458
 msgid "None"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:349, classes/class-lsx-search-admin.php:377, classes/class-lsx-search-admin.php:467, classes/class-lsx-search-admin.php:495
+#: classes/class-lsx-search-admin.php:350, classes/class-lsx-search-admin.php:378, classes/class-lsx-search-admin.php:468, classes/class-lsx-search-admin.php:496
 msgid "You have no Facets setup."
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:356, classes/class-lsx-search-admin.php:474
+#: classes/class-lsx-search-admin.php:357, classes/class-lsx-search-admin.php:475
 msgid "Facets"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:395
+#: classes/class-lsx-search-admin.php:396
 msgid "Search Settings"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:399
+#: classes/class-lsx-search-admin.php:400
 msgid "Enable Filtering"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:403
+#: classes/class-lsx-search-admin.php:404
 msgid "This adds the facet shortcodes to the post type archive and taxonomy templates."
+msgstr ""
+
+#: classes/class-lsx-search-frontend.php:311
+msgid "Results"
+msgstr ""
+
+#: classes/class-lsx-search-frontend.php:312
+msgid "Clear"
+msgstr ""
+
+#: classes/class-lsx-search-frontend.php:320
+msgid "Filters"
+msgstr ""
+
+#: classes/class-lsx-search-frontend.php:328
+msgid "Close Filters"
+msgstr ""
+
+#: classes/class-lsx-search-frontend.php:363
+msgid "Apply Filters"
+msgstr ""
+
+#: classes/class-lsx-search-frontend.php:382, classes/class-lsx-search-frontend.php:386, includes/settings/display.php:49, includes/settings/general.php:9
+msgid "Search"
 msgstr ""
 
 #: includes/settings/api.php:3
@@ -189,8 +213,4 @@ msgstr ""
 
 #: includes/settings/display.php:44
 msgid "Videos"
-msgstr ""
-
-#: includes/settings/display.php:49, includes/settings/general.php:9
-msgid "Search"
 msgstr ""
