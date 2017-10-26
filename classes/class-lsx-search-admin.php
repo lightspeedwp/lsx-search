@@ -277,15 +277,6 @@ class LSX_Search_Admin {
 					<small><?php esc_html_e( 'This adds the facet shortcodes to the search results template.', 'lsx-search' ); ?></small>
 				</td>
 			</tr>
-			<tr class="form-field">
-				<th scope="row">
-					<label><?php esc_html_e( 'Enable Post Type Label', 'lsx-search' ); ?></label>
-				</th>
-				<td>
-					<input type="checkbox" {{#if search_enable_pt_label}} checked="checked" {{/if}} name="search_enable_pt_label" />
-					<small><?php esc_html_e( 'This enables the post type label from entries on search results page.', 'lsx-search' ); ?></small>
-				</td>
-			</tr>
 			<tr class="form-field-wrap">
 				<th scope="row">
 					<label><?php esc_html_e( 'Columns Layout', 'lsx-search' ); ?></label>

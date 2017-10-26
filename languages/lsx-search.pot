@@ -51,87 +51,79 @@ msgstr ""
 msgid "This adds the facet shortcodes to the search results template."
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:282
-msgid "Enable Post Type Label"
-msgstr ""
-
-#: classes/class-lsx-search-admin.php:286
-msgid "This enables the post type label from entries on search results page."
-msgstr ""
-
-#: classes/class-lsx-search-admin.php:291, classes/class-lsx-search-admin.php:409
+#: classes/class-lsx-search-admin.php:282, classes/class-lsx-search-admin.php:400
 msgid "Columns Layout"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:295, classes/class-lsx-search-admin.php:413
+#: classes/class-lsx-search-admin.php:286, classes/class-lsx-search-admin.php:404
 msgid "Follow the theme layout"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:296, classes/class-lsx-search-admin.php:414
+#: classes/class-lsx-search-admin.php:287, classes/class-lsx-search-admin.php:405
 msgid "1 column"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:297, classes/class-lsx-search-admin.php:415
+#: classes/class-lsx-search-admin.php:288, classes/class-lsx-search-admin.php:406
 msgid "2 columns / Content on right"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:298, classes/class-lsx-search-admin.php:416
+#: classes/class-lsx-search-admin.php:289, classes/class-lsx-search-admin.php:407
 msgid "2 columns / Content on left"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:304, classes/class-lsx-search-admin.php:422
+#: classes/class-lsx-search-admin.php:295, classes/class-lsx-search-admin.php:413
 msgid "Per Page"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:307, classes/class-lsx-search-admin.php:425
+#: classes/class-lsx-search-admin.php:298, classes/class-lsx-search-admin.php:416
 msgid "Disable Per Page"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:312, classes/class-lsx-search-admin.php:430
+#: classes/class-lsx-search-admin.php:303, classes/class-lsx-search-admin.php:421
 msgid "Sorting"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:316, classes/class-lsx-search-admin.php:434
+#: classes/class-lsx-search-admin.php:307, classes/class-lsx-search-admin.php:425
 msgid "Disable Sorting"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:317, classes/class-lsx-search-admin.php:435
+#: classes/class-lsx-search-admin.php:308, classes/class-lsx-search-admin.php:426
 msgid "Disable Title (A-Z)"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:318, classes/class-lsx-search-admin.php:436
+#: classes/class-lsx-search-admin.php:309, classes/class-lsx-search-admin.php:427
 msgid "Disable Date"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:324, classes/class-lsx-search-admin.php:442
+#: classes/class-lsx-search-admin.php:315, classes/class-lsx-search-admin.php:433
 msgid "Display Result Count"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:332, classes/class-lsx-search-admin.php:450
+#: classes/class-lsx-search-admin.php:323, classes/class-lsx-search-admin.php:441
 msgid "Alphabetical Facet"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:340, classes/class-lsx-search-admin.php:458
+#: classes/class-lsx-search-admin.php:331, classes/class-lsx-search-admin.php:449
 msgid "None"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:350, classes/class-lsx-search-admin.php:378, classes/class-lsx-search-admin.php:468, classes/class-lsx-search-admin.php:496
+#: classes/class-lsx-search-admin.php:341, classes/class-lsx-search-admin.php:369, classes/class-lsx-search-admin.php:459, classes/class-lsx-search-admin.php:487
 msgid "You have no Facets setup."
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:357, classes/class-lsx-search-admin.php:475
+#: classes/class-lsx-search-admin.php:348, classes/class-lsx-search-admin.php:466
 msgid "Facets"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:396
+#: classes/class-lsx-search-admin.php:387
 msgid "Search Settings"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:400
+#: classes/class-lsx-search-admin.php:391
 msgid "Enable Filtering"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:404
+#: classes/class-lsx-search-admin.php:395
 msgid "This adds the facet shortcodes to the post type archive and taxonomy templates."
 msgstr ""
 
