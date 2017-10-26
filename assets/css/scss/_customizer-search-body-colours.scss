@@ -31,4 +31,13 @@
 		border-color: $breaker;
 		color: $small;
 	}
+
+	.facetwp-template {
+		article.lsx-slot {
+			.lsx-label-post-type {
+				background-color: $color;
+				color: #FFF;
+			}
+		}
+	}
 }

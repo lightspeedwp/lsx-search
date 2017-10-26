@@ -115,6 +115,7 @@ class LSX_Search_Frontend {
 			add_filter( 'lsx_layout', array( $this, 'lsx_layout' ), 20, 1 );
 			add_filter( 'lsx_layout_selector', array( $this, 'lsx_layout_selector' ), 10, 4 );
 			add_filter( 'lsx_slot_class', array( $this, 'change_slot_column_class' ) );
+			add_action( 'lsx_entry_top', array( $this, 'add_label_to_title' ) );
 
 			if ( class_exists( 'LSX_Videos' ) ) {
 				global $lsx_videos_frontend;
@@ -437,6 +438,17 @@ class LSX_Search_Frontend {
 		}
 
 		return $column_class;
+	}
+
+	/**
+	 * Add post type label to the title.
+	 */
+	public function add_label_to_title() {
+		if ( is_search() ) {
+			if ( ! empty( $this->options['display']['search_enable_pt_label'] ) ) {
+				echo wp_kses_post( ' <span class="label label-default lsx-label-post-type">' . ucwords( get_post_type() ) . '</span>' );
+			}
+		}
 	}
 
 	/**

@@ -198,6 +198,18 @@
 
 		.search-form { display: none; }
 	}
+
+	article.lsx-slot {
+		position: relative;
+
+		.lsx-label-post-type {
+			padding: 4px 1rem;
+			position: absolute;
+			right: 25px;
+			top: 10px;
+			z-index: 1;
+		}
+	}
 }
 
 .facetwp-filters-wrap {

@@ -89,6 +89,10 @@
 
 .facetwp-template > .no-results .search-form { display: none; }
 
+.facetwp-template article.lsx-slot { position: relative; }
+
+.facetwp-template article.lsx-slot .lsx-label-post-type { padding: 4px 1rem; position: absolute; left: 25px; top: 10px; z-index: 1; }
+
 @media (max-width: 767px) { .facetwp-filters-wrap { height: 100%; right: 0; margin: 0 !important; padding: 15px; position: fixed !important; overflow-x: visible; overflow-y: auto; top: 0; -webkit-transform: translate(100%, 0); transform: translate(100%, 0); z-index: 7; } }
 
 .ssm-overlay { background-color: rgba(0, 0, 0, 0.2); bottom: 0; display: none; right: 0; position: fixed; left: 0; top: 0; z-index: 5; }
@@ -136,3 +140,5 @@
 .facetwp-type-alpha .facetwp-alpha.available:hover { color: #F7AE00; }
 
 .facetwp-sort-select, .facetwp-per-page-select { background-image: url("data:image/svg+xml;utf8,<svg fill='#919191' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>"); border-color: #DADDDF; color: #919191; }
+
+.facetwp-template article.lsx-slot .lsx-label-post-type { background-color: #4A4A4A; color: #FFF; }
