@@ -131,6 +131,34 @@ class LSX_Search_Frontend {
 			}
 
 			add_action( 'lsx_content_wrap_before', array( $this, 'search_sidebar' ), 150 );
+
+			if ( class_exists( 'WooCommerce' ) && ( is_shop() || is_product_category() || is_product_tag() ) ) {
+				remove_action( 'woocommerce_archive_description', 'woocommerce_taxonomy_archive_description' );
+				remove_action( 'woocommerce_archive_description', 'woocommerce_product_archive_description' );
+				add_filter( 'woocommerce_show_page_title', '__return_false' );
+
+				add_filter( 'loop_shop_columns', function() {
+					return 3;
+				} );
+
+				// Actions added by LSX theme
+				remove_action( 'lsx_content_wrap_before', 'lsx_global_header' );
+				add_action( 'lsx_content_wrap_before', array( $this, 'wc_archive_header' ), 140 );
+
+				// Actions added be LSX theme / woocommerce.php file
+				remove_action( 'woocommerce_after_shop_loop', 'lsx_wc_sorting_wrapper', 9 );
+				remove_action( 'woocommerce_after_shop_loop', 'woocommerce_catalog_ordering', 10 );
+				remove_action( 'woocommerce_after_shop_loop', 'woocommerce_result_count', 20 );
+				remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination', 30 );
+				remove_action( 'woocommerce_after_shop_loop', 'lsx_wc_sorting_wrapper_close', 31 );
+
+				// Actions added be LSX theme / woocommerce.php file
+				remove_action( 'woocommerce_before_shop_loop', 'lsx_wc_sorting_wrapper', 9 );
+				remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 );
+				remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+				remove_action( 'woocommerce_before_shop_loop', 'lsx_wc_woocommerce_pagination', 30 );
+				remove_action( 'woocommerce_before_shop_loop', 'lsx_wc_sorting_wrapper_close', 31 );
+			}
 		}
 	}
 
@@ -152,7 +180,7 @@ class LSX_Search_Frontend {
 	 * Sets post types with active search options.
 	 */
 	public function register_post_types( $post_types ) {
-		$post_types = array( 'project', 'service', 'team', 'testimonial', 'video' );
+		$post_types = array( 'project', 'service', 'team', 'testimonial', 'video', 'product' );
 		return $post_types;
 	}
 
@@ -160,7 +188,7 @@ class LSX_Search_Frontend {
 	 * Sets taxonomies with active search options.
 	 */
 	public function register_taxonomies( $taxonomies ) {
-		$taxonomies = array( 'project-group', 'service-group', 'team_role', 'video-category' );
+		$taxonomies = array( 'project-group', 'service-group', 'team_role', 'video-category', 'product_cat', 'product_tag' );
 		return $taxonomies;
 	}
 
@@ -174,6 +202,7 @@ class LSX_Search_Frontend {
 			'team' => 'team',
 			'testimonial' => 'testimonials',
 			'video' => 'videos',
+			'product' => 'products', // WooCommerce
 		);
 
 		return $post_types_plural;
@@ -392,6 +421,23 @@ class LSX_Search_Frontend {
 						</div>
 					</div>
 				<?php } ?>
+			</div>
+		<?php
+	}
+
+	/**
+	 * Display WooCommerce archive title.
+	 */
+	public function wc_archive_header() {
+		$default_size   = 'sm';
+		$size           = apply_filters( 'lsx_bootstrap_column_size', $default_size );
+		?>
+			<div class="archive-header-wrapper col-<?php echo esc_attr( $size ); ?>-12">
+				<header class="archive-header">
+					<h1 class="archive-title"><?php woocommerce_page_title(); ?></h1>
+				</header>
+
+				<?php lsx_global_header_inner_bottom(); ?>
 			</div>
 		<?php
 	}

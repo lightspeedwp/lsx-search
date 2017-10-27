@@ -55,6 +55,7 @@ class LSX_Search_Admin {
 			'team' => 'team',
 			'testimonial' => 'testimonials',
 			'video' => 'videos',
+			'product' => 'products', // WooCommerce
 		);
 
 		return $post_types_plural;
@@ -172,49 +173,47 @@ class LSX_Search_Admin {
 	 * Register tabs.
 	 */
 	public function register_tabs( $tabs ) {
-		if ( class_exists( 'FacetWP' ) ) {
-			$default = true;
+		$default = true;
 
-			if ( false !== $tabs && is_array( $tabs ) && count( $tabs ) > 0 ) {
+		if ( false !== $tabs && is_array( $tabs ) && count( $tabs ) > 0 ) {
+			$default = false;
+		}
+
+		if ( ! function_exists( 'tour_operator' ) ) {
+			if ( ! array_key_exists( 'general', $tabs ) ) {
+				$tabs['general'] = array(
+					'page_title'        => '',
+					'page_description'  => '',
+					'menu_title'        => esc_html__( 'General', 'lsx-search' ),
+					'template'          => LSX_SEARCH_PATH . 'includes/settings/general.php',
+					'default'           => $default,
+				);
+
 				$default = false;
 			}
 
-			if ( ! function_exists( 'tour_operator' ) ) {
-				if ( ! array_key_exists( 'general', $tabs ) ) {
-					$tabs['general'] = array(
-						'page_title'        => '',
-						'page_description'  => '',
-						'menu_title'        => esc_html__( 'General', 'lsx-search' ),
-						'template'          => LSX_SEARCH_PATH . 'includes/settings/general.php',
-						'default'           => $default,
-					);
+			if ( ! array_key_exists( 'display', $tabs ) ) {
+				$tabs['display'] = array(
+					'page_title'        => '',
+					'page_description'  => '',
+					'menu_title'        => esc_html__( 'Display', 'lsx-search' ),
+					'template'          => LSX_SEARCH_PATH . 'includes/settings/display.php',
+					'default'           => $default,
+				);
 
-					$default = false;
-				}
+				$default = false;
+			}
 
-				if ( ! array_key_exists( 'display', $tabs ) ) {
-					$tabs['display'] = array(
-						'page_title'        => '',
-						'page_description'  => '',
-						'menu_title'        => esc_html__( 'Display', 'lsx-search' ),
-						'template'          => LSX_SEARCH_PATH . 'includes/settings/display.php',
-						'default'           => $default,
-					);
+			if ( ! array_key_exists( 'api', $tabs ) ) {
+				$tabs['api'] = array(
+					'page_title'        => '',
+					'page_description'  => '',
+					'menu_title'        => esc_html__( 'API', 'lsx-search' ),
+					'template'          => LSX_SEARCH_PATH . 'includes/settings/api.php',
+					'default'           => $default,
+				);
 
-					$default = false;
-				}
-
-				if ( ! array_key_exists( 'api', $tabs ) ) {
-					$tabs['api'] = array(
-						'page_title'        => '',
-						'page_description'  => '',
-						'menu_title'        => esc_html__( 'API', 'lsx-search' ),
-						'template'          => LSX_SEARCH_PATH . 'includes/settings/api.php',
-						'default'           => $default,
-					);
-
-					$default = false;
-				}
+				$default = false;
 			}
 		}
 
@@ -383,6 +382,9 @@ class LSX_Search_Admin {
 				</td>
 			</tr>
 			<?php
+			if ( class_exists( 'WooCommerce' ) ) {
+				$this->archive_settings( 'products' );
+			}
 		endif;
 	}
 
@@ -393,7 +395,13 @@ class LSX_Search_Admin {
 		if ( in_array( $tab, array_values( $this->tabs ) ) ) :
 			?>
 			<tr class="form-field">
-				<th scope="row" colspan="2"><label><h3><?php esc_html_e( 'Search Settings', 'lsx-search' ); ?></h3></label></th>
+				<th scope="row" colspan="2"><label><h3><?php
+					if ( 'products' === $tab ) {
+						esc_html_e( 'WooCommerce Settings', 'lsx-search' );
+					} else {
+						esc_html_e( 'Search Settings', 'lsx-search' );
+					}
+				?></h3></label></th>
 			</tr>
 			<tr class="form-field">
 				<th scope="row">
