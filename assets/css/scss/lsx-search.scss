@@ -238,7 +238,11 @@
 	z-index: 5;
 }
 
-.ssm-nav-is-open { overflow: hidden; }
+.ssm-nav-is-open {
+	overflow: hidden;
+
+	#secondary { z-index: 9999; }
+}
 
 .ssm-row-margin-bottom { margin-bottom: 4.25rem; }
 
