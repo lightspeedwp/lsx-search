@@ -103,23 +103,23 @@ msgstr ""
 msgid "Disable Date"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:323, classes/class-lsx-search-admin.php:450
+#: classes/class-lsx-search-admin.php:323, classes/class-lsx-search-admin.php:453
 msgid "Display Result Count"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:331, classes/class-lsx-search-admin.php:458
+#: classes/class-lsx-search-admin.php:331, classes/class-lsx-search-admin.php:461
 msgid "Alphabetical Facet"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:339, classes/class-lsx-search-admin.php:466
+#: classes/class-lsx-search-admin.php:339, classes/class-lsx-search-admin.php:469
 msgid "None"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:349, classes/class-lsx-search-admin.php:377, classes/class-lsx-search-admin.php:476, classes/class-lsx-search-admin.php:504
+#: classes/class-lsx-search-admin.php:349, classes/class-lsx-search-admin.php:377, classes/class-lsx-search-admin.php:479, classes/class-lsx-search-admin.php:507
 msgid "You have no Facets setup."
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:356, classes/class-lsx-search-admin.php:483
+#: classes/class-lsx-search-admin.php:356, classes/class-lsx-search-admin.php:486
 msgid "Facets"
 msgstr ""
 
@@ -137,6 +137,10 @@ msgstr ""
 
 #: classes/class-lsx-search-admin.php:412
 msgid "This adds the facet shortcodes to the post type archive and taxonomy templates."
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:446
+msgid "Disable Price"
 msgstr ""
 
 #: classes/class-lsx-search-frontend.php:366

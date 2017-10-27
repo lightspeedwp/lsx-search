@@ -442,6 +442,9 @@ class LSX_Search_Admin {
 						<li><input type="checkbox" {{#if <?php echo esc_attr( $tab ); ?>_archive_disable_all_sorting}} checked="checked" {{/if}} name="<?php echo esc_attr( $tab ); ?>_archive_disable_all_sorting" /> <label><?php esc_html_e( 'Disable Sorting', 'lsx-search' ); ?></label></li>
 						<li><input type="checkbox" {{#if <?php echo esc_attr( $tab ); ?>_archive_disable_az_sorting}} checked="checked" {{/if}} name="<?php echo esc_attr( $tab ); ?>_archive_disable_az_sorting" /> <label><?php esc_html_e( 'Disable Title (A-Z)', 'lsx-search' ); ?></label></li>
 						<li><input type="checkbox" {{#if <?php echo esc_attr( $tab ); ?>_archive_disable_date_sorting}} checked="checked" {{/if}} name="<?php echo esc_attr( $tab ); ?>_archive_disable_date_sorting" /> <label><?php esc_html_e( 'Disable Date', 'lsx-search' ); ?></label></li>
+						<?php if ( 'products' === $tab ) { ?>
+							<li><input type="checkbox" {{#if <?php echo esc_attr( $tab ); ?>_archive_disable_price_sorting}} checked="checked" {{/if}} name="<?php echo esc_attr( $tab ); ?>_archive_disable_price_sorting" /> <label><?php esc_html_e( 'Disable Price', 'lsx-search' ); ?></label></li>
+						<?php } ?>
 					</ul>
 				</td>
 			</tr>

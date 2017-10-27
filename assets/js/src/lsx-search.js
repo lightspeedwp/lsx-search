@@ -40,6 +40,13 @@ var lsx_search = Object.create( null );
 				$( '.facetwp-results-clear-btn' ).removeClass( 'hidden' );
 			}
 
+			$.each( FWP.settings, function( key, val ) {
+				if ( 'product_price' === key ) {
+					var $parent = $( '.facetwp-facet-' + key ).closest( '.facetwp-item' );
+					( val.range.min === val.range.max ) ? $parent.addClass( 'hidden' ) : $parent.removeClass( 'hidden' );
+				}
+			});
+
 			$.each( FWP.settings.num_choices, function( key, val ) {
 				var $parent = $( '.facetwp-facet-' + key ).closest( '.facetwp-item' );
 				( 0 === val ) ? $parent.addClass( 'hidden' ) : $parent.removeClass( 'hidden' );
