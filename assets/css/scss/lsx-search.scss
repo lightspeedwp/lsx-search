@@ -217,7 +217,9 @@
 		ul.products {
 			margin-top: 2.992em; // Same margin-bottom from li.product
 
-			li.product { width: 30.75%; }
+			li.product {
+				@include media('>=phone') { width: 30.75%; }
+			}
 		}
 	}
 }

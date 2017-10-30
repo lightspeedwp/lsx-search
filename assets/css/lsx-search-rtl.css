@@ -95,7 +95,7 @@
 
 .woocommerce .facetwp-template ul.products, .woocommerce-page .facetwp-template ul.products { margin-top: 2.992em; }
 
-.woocommerce .facetwp-template ul.products li.product, .woocommerce-page .facetwp-template ul.products li.product { width: 30.75%; }
+@media (min-width: 768px) { .woocommerce .facetwp-template ul.products li.product, .woocommerce-page .facetwp-template ul.products li.product { width: 30.75%; } }
 
 @media (max-width: 767px) { .facetwp-filters-wrap { height: 100%; right: 0; margin: 0 !important; padding: 15px; position: fixed !important; overflow-x: visible; overflow-y: auto; top: 0; -webkit-transform: translate(100%, 0); transform: translate(100%, 0); z-index: 7; } }
 
