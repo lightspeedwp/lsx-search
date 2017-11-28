@@ -59,87 +59,87 @@ msgstr ""
 msgid "This enables the post type label from entries on search results page."
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:290, classes/class-lsx-search-admin.php:417
+#: classes/class-lsx-search-admin.php:290, classes/class-lsx-search-admin.php:449
 msgid "Columns Layout"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:294, classes/class-lsx-search-admin.php:421
+#: classes/class-lsx-search-admin.php:294, classes/class-lsx-search-admin.php:453
 msgid "Follow the theme layout"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:295, classes/class-lsx-search-admin.php:422
+#: classes/class-lsx-search-admin.php:295, classes/class-lsx-search-admin.php:454
 msgid "1 column"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:296, classes/class-lsx-search-admin.php:423
+#: classes/class-lsx-search-admin.php:296, classes/class-lsx-search-admin.php:455
 msgid "2 columns / Content on right"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:297, classes/class-lsx-search-admin.php:424
+#: classes/class-lsx-search-admin.php:297, classes/class-lsx-search-admin.php:456
 msgid "2 columns / Content on left"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:303, classes/class-lsx-search-admin.php:430
+#: classes/class-lsx-search-admin.php:303, classes/class-lsx-search-admin.php:469
 msgid "Per Page"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:306, classes/class-lsx-search-admin.php:433
+#: classes/class-lsx-search-admin.php:306, classes/class-lsx-search-admin.php:472
 msgid "Disable Per Page"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:311, classes/class-lsx-search-admin.php:438
+#: classes/class-lsx-search-admin.php:311, classes/class-lsx-search-admin.php:484
 msgid "Sorting"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:315, classes/class-lsx-search-admin.php:442
+#: classes/class-lsx-search-admin.php:315, classes/class-lsx-search-admin.php:488
 msgid "Disable Sorting"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:316, classes/class-lsx-search-admin.php:443
+#: classes/class-lsx-search-admin.php:316, classes/class-lsx-search-admin.php:489
 msgid "Disable Title (A-Z)"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:317, classes/class-lsx-search-admin.php:444
+#: classes/class-lsx-search-admin.php:317, classes/class-lsx-search-admin.php:490
 msgid "Disable Date"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:323, classes/class-lsx-search-admin.php:453
+#: classes/class-lsx-search-admin.php:323, classes/class-lsx-search-admin.php:506
 msgid "Display Result Count"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:331, classes/class-lsx-search-admin.php:461
+#: classes/class-lsx-search-admin.php:331, classes/class-lsx-search-admin.php:521
 msgid "Alphabetical Facet"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:339, classes/class-lsx-search-admin.php:469
+#: classes/class-lsx-search-admin.php:339, classes/class-lsx-search-admin.php:529
 msgid "None"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:349, classes/class-lsx-search-admin.php:377, classes/class-lsx-search-admin.php:479, classes/class-lsx-search-admin.php:507
+#: classes/class-lsx-search-admin.php:349, classes/class-lsx-search-admin.php:377, classes/class-lsx-search-admin.php:539, classes/class-lsx-search-admin.php:574
 msgid "You have no Facets setup."
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:356, classes/class-lsx-search-admin.php:486
+#: classes/class-lsx-search-admin.php:356, classes/class-lsx-search-admin.php:553
 msgid "Facets"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:400
+#: classes/class-lsx-search-admin.php:417
 msgid "WooCommerce Settings"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:402
+#: classes/class-lsx-search-admin.php:419
 msgid "Search Settings"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:408
+#: classes/class-lsx-search-admin.php:433
 msgid "Enable Filtering"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:412
+#: classes/class-lsx-search-admin.php:437
 msgid "This adds the facet shortcodes to the post type archive and taxonomy templates."
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:446
+#: classes/class-lsx-search-admin.php:492
 msgid "Disable Price"
 msgstr ""
 
