@@ -339,7 +339,7 @@ class LSX_Search_Admin {
 								<option <?php if ( empty( $active_facet ) ) { echo 'selected="selected"'; } ?> value=""><?php esc_html_e( 'None', 'lsx-search' ); ?></option>
 
 								<?php foreach ( $this->facet_data as $facet ) {
-									if ( 'alpha' === $facet['type'] ) { ?>
+									if ( isset( $facet['type'] ) && 'alpha' === $facet['type'] ) { ?>
 										<option <?php if ( $active_facet === $facet['name'] ) { echo 'selected="selected"'; } ?> value="<?php echo esc_attr( $facet['name'] ); ?>"><?php echo esc_html( $facet['label'] ) . ' (' . esc_html( $facet['name'] ) . ')'; ?></option>
 									<?php }
 								} ?>
@@ -366,7 +366,7 @@ class LSX_Search_Admin {
 								}
 
 								foreach ( $this->facet_data as $facet ) {
-									if ( 'alpha' !== $facet['type'] ) { ?>
+									if ( isset( $facet['type'] ) && 'alpha' !== $facet['type'] ) { ?>
 										<li>
 											<input type="checkbox" <?php if ( array_key_exists( $facet['name'], $active_facets ) ) { echo 'checked="checked"'; } ?> name="search_facets[<?php echo esc_attr( $facet['name'] ); ?>]" /> <label><?php echo esc_html( $facet['label'] ) . ' (' . esc_html( $facet['name'] ) . ')'; ?></label>
 										</li>
@@ -393,128 +393,192 @@ class LSX_Search_Admin {
 	 */
 	public function archive_settings( $tab = 'display' ) {
 		if ( in_array( $tab, array_values( $this->tabs ) ) ) :
+			$this->archive_header( $tab );
+			$this->archive_enable_filtering( $tab );
+			$this->archive_layout( $tab );
+			$this->archive_per_page( $tab );
+			$this->archive_sorting( $tab );
+			$this->archive_display_count( $tab );
+			$this->archive_alphabetical_facet( $tab );
+			$this->archive_facets( $tab );
 			?>
-			<tr class="form-field">
-				<th scope="row" colspan="2"><label><h3><?php
-					if ( 'products' === $tab ) {
-						esc_html_e( 'WooCommerce Settings', 'lsx-search' );
-					} else {
-						esc_html_e( 'Search Settings', 'lsx-search' );
-					}
-				?></h3></label></th>
-			</tr>
-			<tr class="form-field">
-				<th scope="row">
-					<label><?php esc_html_e( 'Enable Filtering', 'lsx-search' ); ?></label>
-				</th>
-				<td>
-					<input type="checkbox" {{#if <?php echo esc_attr( $tab ); ?>_archive_enable_search}} checked="checked" {{/if}} name="<?php echo esc_attr( $tab ); ?>_archive_enable_search" />
-					<small><?php esc_html_e( 'This adds the facet shortcodes to the post type archive and taxonomy templates.', 'lsx-search' ); ?></small>
-				</td>
-			</tr>
-			<tr class="form-field-wrap">
-				<th scope="row">
-					<label><?php esc_html_e( 'Columns Layout', 'lsx-search' ); ?></label>
-				</th>
-				<td>
-					<select name="<?php echo esc_attr( $tab ); ?>_archive_layout">
-						<option value="" {{#is <?php echo esc_attr( $tab ); ?>_archive_layout value=""}}selected="selected"{{/is}}><?php esc_html_e( 'Follow the theme layout', 'lsx-search' ); ?></option>
-						<option value="1c" {{#is <?php echo esc_attr( $tab ); ?>_archive_layout value="1c"}} selected="selected"{{/is}}><?php esc_html_e( '1 column', 'lsx-search' ); ?></option>
-						<option value="2cr" {{#is <?php echo esc_attr( $tab ); ?>_archive_layout value="2cr"}} selected="selected"{{/is}}><?php esc_html_e( '2 columns / Content on right', 'lsx-search' ); ?></option>
-						<option value="2cl" {{#is <?php echo esc_attr( $tab ); ?>_archive_layout value="2cl"}} selected="selected"{{/is}}><?php esc_html_e( '2 columns / Content on left', 'lsx-search' ); ?></option>
-					</select>
-				</td>
-			</tr>
-			<tr class="form-field-wrap">
-				<th scope="row">
-					<label><?php esc_html_e( 'Per Page', 'lsx-search' ); ?></label>
-				</th>
-				<td>
-					<input type="checkbox" {{#if <?php echo esc_attr( $tab ); ?>_archive_disable_per_page}} checked="checked" {{/if}} name="<?php echo esc_attr( $tab ); ?>_archive_disable_per_page" /> <label><?php esc_html_e( 'Disable Per Page', 'lsx-search' ); ?></label>
-				</td>
-			</tr>
-			<tr class="form-field-wrap">
-				<th scope="row">
-					<label><?php esc_html_e( 'Sorting', 'lsx-search' ); ?></label>
-				</th>
-				<td>
-					<ul>
-						<li><input type="checkbox" {{#if <?php echo esc_attr( $tab ); ?>_archive_disable_all_sorting}} checked="checked" {{/if}} name="<?php echo esc_attr( $tab ); ?>_archive_disable_all_sorting" /> <label><?php esc_html_e( 'Disable Sorting', 'lsx-search' ); ?></label></li>
-						<li><input type="checkbox" {{#if <?php echo esc_attr( $tab ); ?>_archive_disable_az_sorting}} checked="checked" {{/if}} name="<?php echo esc_attr( $tab ); ?>_archive_disable_az_sorting" /> <label><?php esc_html_e( 'Disable Title (A-Z)', 'lsx-search' ); ?></label></li>
-						<li><input type="checkbox" {{#if <?php echo esc_attr( $tab ); ?>_archive_disable_date_sorting}} checked="checked" {{/if}} name="<?php echo esc_attr( $tab ); ?>_archive_disable_date_sorting" /> <label><?php esc_html_e( 'Disable Date', 'lsx-search' ); ?></label></li>
-						<?php if ( 'products' === $tab ) { ?>
-							<li><input type="checkbox" {{#if <?php echo esc_attr( $tab ); ?>_archive_disable_price_sorting}} checked="checked" {{/if}} name="<?php echo esc_attr( $tab ); ?>_archive_disable_price_sorting" /> <label><?php esc_html_e( 'Disable Price', 'lsx-search' ); ?></label></li>
-						<?php } ?>
-					</ul>
-				</td>
-			</tr>
-			<tr class="form-field">
-				<th scope="row">
-					<label><?php esc_html_e( 'Display Result Count', 'lsx-search' ); ?></label>
-				</th>
-				<td>
-					<input type="checkbox" {{#if <?php echo esc_attr( $tab ); ?>_archive_display_result_count}} checked="checked" {{/if}} name="<?php echo esc_attr( $tab ); ?>_archive_display_result_count" />
-				</td>
-			</tr>
-			<tr class="form-field-wrap">
-				<th scope="row">
-					<label><?php esc_html_e( 'Alphabetical Facet', 'lsx-search' ); ?></label>
-				</th>
-				<td>
-					<?php
-						if ( is_array( $this->facet_data ) && ! empty( $this->facet_data ) ) {
-							$active_facet = $this->options['display'][ $tab . '_archive_az_pagination' ];
-							?>
-							<select name="<?php echo esc_attr( $tab ); ?>_archive_az_pagination">
-								<option <?php if ( empty( $active_facet ) ) { echo 'selected="selected"'; } ?> value=""><?php esc_html_e( 'None', 'lsx-search' ); ?></option>
-
-								<?php foreach ( $this->facet_data as $facet ) {
-									if ( 'alpha' === $facet['type'] ) { ?>
-										<option <?php if ( $active_facet === $facet['name'] ) { echo 'selected="selected"'; } ?> value="<?php echo esc_attr( $facet['name'] ); ?>"><?php echo esc_html( $facet['label'] ) . ' (' . esc_html( $facet['name'] ) . ')'; ?></option>
-									<?php }
-								} ?>
-							</select>
-							<?php
-						} else {
-							esc_html_e( 'You have no Facets setup.', 'lsx-search' );
-						}
-					?>
-				</td>
-			</tr>
-			<tr class="form-field-wrap">
-				<th scope="row">
-					<label><?php esc_html_e( 'Facets', 'lsx-search' ); ?></label>
-				</th>
-				<td>
-					<ul>
-						<?php
-							if ( is_array( $this->facet_data ) && ! empty( $this->facet_data ) ) {
-								$active_facets = array();
-
-								if ( isset( $this->options['display'][ $tab . '_archive_facets' ] ) && is_array( $this->options['display'][ $tab . '_archive_facets' ] ) ) {
-									$active_facets = $this->options['display'][ $tab . '_archive_facets' ];
-								}
-
-								foreach ( $this->facet_data as $facet ) {
-									if ( 'alpha' !== $facet['type'] ) { ?>
-										<li>
-											<input type="checkbox" <?php if ( array_key_exists( $facet['name'], $active_facets ) ) { echo 'checked="checked"'; } ?> name="<?php echo esc_attr( $tab ); ?>_archive_facets[<?php echo esc_attr( $facet['name'] ); ?>]" /> <label><?php echo esc_html( $facet['label'] ) . ' (' . esc_html( $facet['name'] ) . ')'; ?></label>
-										</li>
-									<?php }
-								}
-							} else {
-								?>
-									<li><?php esc_html_e( 'You have no Facets setup.', 'lsx-search' ); ?></li>
-								<?php
-							}
-						?>
-					</ul>
-				</td>
-			</tr>
 			<?php
 		endif;
 	}
 
+	/**
+	 * Archive Search Header
+	 * @param string $tab
+	 */
+	public function archive_header( $tab = '' ) { ?>
+		<tr class="form-field">
+			<th scope="row" colspan="2"><label><h3><?php
+				if ( 'products' === $tab ) {
+					esc_html_e( 'WooCommerce Settings', 'lsx-search' );
+				} else {
+					esc_html_e( 'Search Settings', 'lsx-search' );
+				}
+				?></h3></label>
+			</th>
+		</tr>
+	<?php }
+
+	/**
+	 * Search filter enable checkbox
+	 * @param string $tab
+	 */
+	public function archive_enable_filtering( $tab = '' ) { ?>
+		<tr class="form-field">
+			<th scope="row">
+				<label><?php esc_html_e( 'Enable Filtering', 'lsx-search' ); ?></label>
+			</th>
+			<td>
+				<input type="checkbox" {{#if <?php echo esc_attr( $tab ); ?>_archive_enable_search}} checked="checked" {{/if}} name="<?php echo esc_attr( $tab ); ?>_archive_enable_search" />
+				<small><?php esc_html_e( 'This adds the facet shortcodes to the post type archive and taxonomy templates.', 'lsx-search' ); ?></small>
+			</td>
+		</tr>
+	<?php }
+
+	/**
+	 * Archive Search Layout
+	 * @param string $tab
+	 */
+	public function archive_layout( $tab = '' ) { ?>
+		<tr class="form-field-wrap">
+			<th scope="row">
+				<label><?php esc_html_e( 'Columns Layout', 'lsx-search' ); ?></label>
+			</th>
+			<td>
+				<select name="<?php echo esc_attr( $tab ); ?>_archive_layout">
+					<option value="" {{#is <?php echo esc_attr( $tab ); ?>_archive_layout value=""}}selected="selected"{{/is}}><?php esc_html_e( 'Follow the theme layout', 'lsx-search' ); ?></option>
+					<option value="1c" {{#is <?php echo esc_attr( $tab ); ?>_archive_layout value="1c"}} selected="selected"{{/is}}><?php esc_html_e( '1 column', 'lsx-search' ); ?></option>
+					<option value="2cr" {{#is <?php echo esc_attr( $tab ); ?>_archive_layout value="2cr"}} selected="selected"{{/is}}><?php esc_html_e( '2 columns / Content on right', 'lsx-search' ); ?></option>
+					<option value="2cl" {{#is <?php echo esc_attr( $tab ); ?>_archive_layout value="2cl"}} selected="selected"{{/is}}><?php esc_html_e( '2 columns / Content on left', 'lsx-search' ); ?></option>
+				</select>
+			</td>
+		</tr>
+	<?php }
+
+	/**
+	 * Archive Search Per Page Field
+	 * @param string $tab
+	 */
+	public function archive_per_page( $tab = '' ) { ?>
+		<tr class="form-field-wrap">
+			<th scope="row">
+				<label><?php esc_html_e( 'Per Page', 'lsx-search' ); ?></label>
+			</th>
+			<td>
+				<input type="checkbox" {{#if <?php echo esc_attr( $tab ); ?>_archive_disable_per_page}} checked="checked" {{/if}} name="<?php echo esc_attr( $tab ); ?>_archive_disable_per_page" /> <label><?php esc_html_e( 'Disable Per Page', 'lsx-search' ); ?></label>
+			</td>
+		</tr>
+	<?php }
+
+	/**
+	 * Archive Search Sorting
+	 * @param string $tab
+	 */
+	public function archive_sorting( $tab = '' ) { ?>
+		<tr class="form-field-wrap">
+			<th scope="row">
+				<label><?php esc_html_e( 'Sorting', 'lsx-search' ); ?></label>
+			</th>
+			<td>
+				<ul>
+					<li><input type="checkbox" {{#if <?php echo esc_attr( $tab ); ?>_archive_disable_all_sorting}} checked="checked" {{/if}} name="<?php echo esc_attr( $tab ); ?>_archive_disable_all_sorting" /> <label><?php esc_html_e( 'Disable Sorting', 'lsx-search' ); ?></label></li>
+					<li><input type="checkbox" {{#if <?php echo esc_attr( $tab ); ?>_archive_disable_az_sorting}} checked="checked" {{/if}} name="<?php echo esc_attr( $tab ); ?>_archive_disable_az_sorting" /> <label><?php esc_html_e( 'Disable Title (A-Z)', 'lsx-search' ); ?></label></li>
+					<li><input type="checkbox" {{#if <?php echo esc_attr( $tab ); ?>_archive_disable_date_sorting}} checked="checked" {{/if}} name="<?php echo esc_attr( $tab ); ?>_archive_disable_date_sorting" /> <label><?php esc_html_e( 'Disable Date', 'lsx-search' ); ?></label></li>
+					<?php if ( 'products' === $tab ) { ?>
+						<li><input type="checkbox" {{#if <?php echo esc_attr( $tab ); ?>_archive_disable_price_sorting}} checked="checked" {{/if}} name="<?php echo esc_attr( $tab ); ?>_archive_disable_price_sorting" /> <label><?php esc_html_e( 'Disable Price', 'lsx-search' ); ?></label></li>
+					<?php } ?>
+				</ul>
+			</td>
+		</tr>
+	<?php }
+
+	/**
+	 * Archive Search Display Count
+	 * @param string $tab
+	 */
+	public function archive_display_count( $tab = '' ) { ?>
+		<tr class="form-field">
+			<th scope="row">
+				<label><?php esc_html_e( 'Display Result Count', 'lsx-search' ); ?></label>
+			</th>
+			<td>
+				<input type="checkbox" {{#if <?php echo esc_attr( $tab ); ?>_archive_display_result_count}} checked="checked" {{/if}} name="<?php echo esc_attr( $tab ); ?>_archive_display_result_count" />
+			</td>
+		</tr>
+	<?php }
+
+	/**
+	 * Archive Search Alphabet
+	 * @param string $tab
+	 */
+	public function archive_alphabetical_facet( $tab = '' ) { ?>
+		<tr class="form-field-wrap">
+			<th scope="row">
+				<label><?php esc_html_e( 'Alphabetical Facet', 'lsx-search' ); ?></label>
+			</th>
+			<td>
+				<?php
+				if ( is_array( $this->facet_data ) && ! empty( $this->facet_data ) ) {
+					$active_facet = $this->options['display'][ $tab . '_archive_az_pagination' ];
+					?>
+					<select name="<?php echo esc_attr( $tab ); ?>_archive_az_pagination">
+						<option <?php if ( empty( $active_facet ) ) { echo 'selected="selected"'; } ?> value=""><?php esc_html_e( 'None', 'lsx-search' ); ?></option>
+
+						<?php foreach ( $this->facet_data as $facet ) {
+							if ( isset( $facet['type'] ) && 'alpha' === $facet['type'] ) { ?>
+								<option <?php if ( $active_facet === $facet['name'] ) { echo 'selected="selected"'; } ?> value="<?php echo esc_attr( $facet['name'] ); ?>"><?php echo esc_html( $facet['label'] ) . ' (' . esc_html( $facet['name'] ) . ')'; ?></option>
+							<?php }
+						} ?>
+					</select>
+					<?php
+				} else {
+					esc_html_e( 'You have no Facets setup.', 'lsx-search' );
+				}
+				?>
+			</td>
+		</tr>
+	<?php }
+
+	/**
+	 * Archive Facets
+	 * @param string $tab
+	 */
+	public function archive_facets( $tab = '' ) { ?>
+		<tr class="form-field-wrap">
+			<th scope="row">
+				<label><?php esc_html_e( 'Facets', 'lsx-search' ); ?></label>
+			</th>
+			<td>
+				<ul>
+					<?php
+					if ( is_array( $this->facet_data ) && ! empty( $this->facet_data ) ) {
+						$active_facets = array();
+
+						if ( isset( $this->options['display'][ $tab . '_archive_facets' ] ) && is_array( $this->options['display'][ $tab . '_archive_facets' ] ) ) {
+							$active_facets = $this->options['display'][ $tab . '_archive_facets' ];
+						}
+
+						foreach ( $this->facet_data as $facet ) {
+							if ( isset( $facet['type'] ) && 'alpha' !== $facet['type'] ) { ?>
+								<li>
+									<input type="checkbox" <?php if ( array_key_exists( $facet['name'], $active_facets ) ) { echo 'checked="checked"'; } ?> name="<?php echo esc_attr( $tab ); ?>_archive_facets[<?php echo esc_attr( $facet['name'] ); ?>]" /> <label><?php echo esc_html( $facet['label'] ) . ' (' . esc_html( $facet['name'] ) . ')'; ?></label>
+								</li>
+							<?php }
+						}
+					} else {
+						?>
+						<li><?php esc_html_e( 'You have no Facets setup.', 'lsx-search' ); ?></li>
+						<?php
+					}
+					?>
+				</ul>
+			</td>
+		</tr>
+	<?php }
 }
 
 global $lsx_search_admin;
