@@ -104,6 +104,18 @@ var lsx_search = Object.create( null );
 	};
 
 	/**
+	 *
+	 *
+	 * @package    lsx-search
+	 * @subpackage scripts
+	 */
+	lsx_search.input_search = function() {
+		lsx_search.document.on( 'click', '.search-submit-facetwp', function() {
+			FWP.refresh();
+		} );
+	};
+
+	/**
 	 * On document ready.
 	 *
 	 * @package    lsx-search
@@ -111,6 +123,7 @@ var lsx_search = Object.create( null );
 	 */
 	lsx_search.document.ready( function() {
 		lsx_search.on_facet_wp_load();
+		lsx_search.input_search();
 
 		if ( lsx_search.window_width < 768 ) {
 			lsx_search.mobile_filters();

@@ -391,13 +391,17 @@ class LSX_Search_Frontend {
 										if ( 'search_form' === $facet ) {
 											$this->display_facet_search();
 										}
+
+										if ( 'search' === $facet ) {
+											$this->display_facet_default( $facet );
+										}
 									}
 								?>
 
 								<?php
 									// Slider
 									foreach ( $this->options['display'][ $this->search_prefix . '_facets' ] as $facet => $facet_useless ) {
-										if ( isset( $this->facet_data[ $facet ] ) && 'search_form' !== $facet && 'slider' === $this->facet_data[ $facet ]['type'] ) {
+										if ( isset( $this->facet_data[ $facet ] ) && 'search_form' !== $facet && 'search' !== $facet && 'slider' === $this->facet_data[ $facet ]['type'] ) {
 											$this->display_facet_default( $facet );
 										}
 									}
@@ -406,7 +410,7 @@ class LSX_Search_Frontend {
 								<?php
 									// Others
 									foreach ( $this->options['display'][ $this->search_prefix . '_facets' ] as $facet => $facet_useless ) {
-										if ( isset( $this->facet_data[ $facet ] ) && 'search_form' !== $facet && ! in_array( $this->facet_data[ $facet ]['type'], array( 'alpha', 'slider' ) ) ) {
+										if ( isset( $this->facet_data[ $facet ] ) && 'search_form' !== $facet && 'search' !== $facet && ! in_array( $this->facet_data[ $facet ]['type'], array( 'alpha', 'slider' ) ) ) {
 											$this->display_facet_default( $facet );
 										}
 									}
@@ -467,10 +471,29 @@ class LSX_Search_Frontend {
 	 * Display facet default.
 	 */
 	public function display_facet_default( $facet ) {
+		$col_class = '';
+
+		if ( 'search' === $facet ) {
+			$col_class = 'facetwp-form';
+		}
 		?>
-		<div class="col-xs-12 facetwp-item">
-			<h3 class="lsx-search-title"><?php echo wp_kses_post( $this->facet_data[ $facet ]['label'] ); ?></h3>
-			<?php echo do_shortcode( '[facetwp facet="' . $facet . '"]' ); ?>
+		<div class="col-xs-12 facetwp-item <?php echo esc_attr( $col_class ); ?>">
+			<?php if ( 'search' === $facet ) : ?>
+				<div class="search-form lsx-search-form">
+					<div class="input-group">
+						<div class="field">
+							<?php echo do_shortcode( '[facetwp facet="' . $facet . '"]' ); ?>
+						</div>
+
+						<div class="field submit-button">
+							<button class="search-submit search-submit-facetwp btn" type="button"><?php esc_html_e( 'Search', 'lsx-search' ); ?></button>
+						</div>
+					</div>
+				</div>
+			<?php else : ?>
+				<h3 class="lsx-search-title"><?php echo wp_kses_post( $this->facet_data[ $facet ]['label'] ); ?></h3>
+				<?php echo do_shortcode( '[facetwp facet="' . $facet . '"]' ); ?>
+			<?php endif; ?>
 		</div>
 		<?php
 	}

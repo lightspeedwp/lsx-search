@@ -159,11 +159,11 @@ msgstr ""
 msgid "Close Filters"
 msgstr ""
 
-#: classes/class-lsx-search-frontend.php:418
+#: classes/class-lsx-search-frontend.php:422
 msgid "Apply Filters"
 msgstr ""
 
-#: classes/class-lsx-search-frontend.php:454, classes/class-lsx-search-frontend.php:458, includes/settings/display.php:49, includes/settings/general.php:9
+#: classes/class-lsx-search-frontend.php:458, classes/class-lsx-search-frontend.php:462, classes/class-lsx-search-frontend.php:489, includes/settings/display.php:49, includes/settings/general.php:9
 msgid "Search"
 msgstr ""
 

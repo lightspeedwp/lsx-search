@@ -40,26 +40,23 @@
 
 .facetwp-type-search {
 	.facetwp-search-wrap {
-		display: inline-block;
-		float: left;
-		margin-left: 0;
-		margin-top: 10px;
-
-		@include media('>=phone') {
-			margin-left: 0;
-			margin-top: 0;
-		}
-
 		.facetwp-search {
 			@extend %bootstrap-form-control;
 
 			border-radius: 2px 0 0 2px;
 			float: none;
 			padding: 8px 14px 10px;
-			// width: 230px;
-			// @include media('>=phone') { width: 400px; }
+			width: 190px;
+
+			@include media('>=phone') { width: 120px; }
+
+			@include media('>=desktop') { width: 170px; }
 		}
 	}
+}
+
+.search-submit-facetwp {
+	body.facetwp-loading-body & { display: none; }
 }
 
 .lsx-search-form {
@@ -68,6 +65,11 @@
 		float: left;
 		margin-left: 0;
 		margin-top: 10px;
+
+		&:not(.submit-button) {
+			position: relative;
+			z-index: 2;
+		}
 
 		@include media('>=phone') {
 			margin-left: 10px;
