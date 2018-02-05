@@ -45,9 +45,7 @@ class LSX_Search_Frontend {
 		add_filter( 'lsx_search_post_types', array( $this, 'register_post_types' ) );
 		add_filter( 'lsx_search_taxonomies', array( $this, 'register_taxonomies' ) );
 		add_filter( 'lsx_search_post_types_plural', array( $this, 'register_post_type_tabs' ) );
-
 		add_filter( 'facetwp_sort_options', array( $this, 'facetwp_sort_options' ), 10, 2 );
-
 
 	}
 

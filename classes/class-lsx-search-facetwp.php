@@ -114,7 +114,7 @@ class LSX_Search_FacetWP {
 			$product = wc_get_product( $params['post_id'] );
 
 			// Price
-			if ( in_array( $params['facet_source'], array( 'woo/price', 'woo/sale_price', 'woo/regular_price') ) ) {
+			if ( in_array( $params['facet_source'], array( 'woo/price', 'woo/sale_price', 'woo/regular_price' ) ) ) {
 				$price = $params['facet_value'];
 				if ( $product->is_taxable() ) {
 					$price = wc_get_price_including_tax( $product );
