@@ -50,7 +50,10 @@ class LSX_Search_Frontend {
 		add_filter( 'facetwp_load_css', array( $this, 'facetwp_load_css' ), 10, 1 );
 		add_filter( 'facetwp_pager_html', array( $this, 'facetwp_pager_html' ), 10, 2 );
 		add_filter( 'facetwp_result_count', array( $this, 'facetwp_result_count' ), 10, 2 );
+
 		add_filter( 'facetwp_facet_html', array( $this, 'facetwp_slide_html' ), 10, 2 );
+		add_filter( 'facetwp_shortcode_html', array( $this, 'facetwp_counts_html' ), 10, 2 );
+
 	}
 
 	/**
@@ -363,12 +366,7 @@ class LSX_Search_Frontend {
 				<?php if ( ! empty( $this->options['display'][ $this->search_prefix . '_display_result_count' ] ) ) { ?>
 					<div class="row hidden-xs">
 						<div class="col-xs-12 facetwp-item facetwp-results">
-							<h3 class="lsx-search-title lsx-search-title-results"><?php esc_html_e( 'Results', 'lsx-search' ); ?> (<?php echo do_shortcode( '[facetwp counts="true"]' ); ?>)
-
-							<?php if ( false !== $this->options && isset( $this->options['display'] ) && ( 'on' ===  $this->options['display']['search_display_clear_button'] || 'on' ===  $this->options['display']['products_search_display_clear_button'] ) && ! empty( FWP()->facet->facets ) && '' !== FWP()->facet->facets ) { ?>
-								 - <a title="<?php esc_html_e( 'Clear the current search filters.', 'lsx-search' ); ?>" class="facetwp-results-clear" type="button" onclick="FWP.reset()"><?php esc_html_e( 'Clear', 'lsx-search' ); ?></a>
-							<?php } ?>
-							</h3>
+							<h3 class="lsx-search-title lsx-search-title-results"><?php esc_html_e( 'Results', 'lsx-search' ); ?> (<?php echo do_shortcode( '[facetwp counts="true"]' ); ?>)</h3>
 						</div>
 					</div>
 				<?php } ?>
@@ -624,21 +622,17 @@ class LSX_Search_Frontend {
 	}
 
 	/**
-	 * Check to see if there are facets loaded.
+	 * Change FaceWP slider HTML.
 	 */
-	public function facets_are_selected () {
-		$return = false;
-		if ( function_exists( 'FWP' ) ) {
+	public function facetwp_counts_html( $html, $args ) {
 
-			if ( isset( FWP()->facet ) ) {
-
-			}
-
+		if ( isset( $args['counts'] ) && true === $args['counts'] && false !== $this->options && isset( $this->options['display'] ) && ( 'on' ===  $this->options['display']['search_display_clear_button'] || 'on' ===  $this->options['display']['products_search_display_clear_button'] ) && ! empty( FWP()->facet->facets ) && '' !== FWP()->facet->facets ) {
+			$html .= '<span class="clear-facets">- <a title="' . esc_html__( 'Clear the current search filters.', 'lsx-search' ) . '" class="facetwp-results-clear" type="button" onclick="FWP.reset()">' . esc_html__( 'Clear', 'lsx-search' ) . '</a></span>';
 		}
 
-
-		return $return;
+		return $html;
 	}
+
 }
 
 global $lsx_search_frontend;
