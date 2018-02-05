@@ -326,6 +326,15 @@ class LSX_Search_Admin {
 					<input type="checkbox" {{#if search_display_result_count}} checked="checked" {{/if}} name="search_display_result_count" />
 				</td>
 			</tr>
+			<tr class="form-field">
+				<th scope="row">
+					<label><?php esc_html_e( 'Display Clear Button', 'lsx-search' ); ?></label>
+				</th>
+				<td>
+					<input type="checkbox" {{#if search_display_clear_button}} checked="checked" {{/if}} name="search_display_clear_button" />
+					<small><?php esc_html_e( 'This will display a clear button next to the "result" count', 'lsx-search' ); ?></small>
+				</td>
+			</tr>
 			<tr class="form-field-wrap">
 				<th scope="row">
 					<label><?php esc_html_e( 'Alphabetical Facet', 'lsx-search' ); ?></label>
@@ -509,6 +518,17 @@ class LSX_Search_Admin {
 				<input type="checkbox" {{#if <?php echo esc_attr( $tab ); ?>_archive_display_result_count}} checked="checked" {{/if}} name="<?php echo esc_attr( $tab ); ?>_archive_display_result_count" />
 			</td>
 		</tr>
+		<?php if ( 'products' === $tab ) { ?>
+			<tr class="form-field">
+				<th scope="row">
+					<label><?php esc_html_e( 'Display Clear Button', 'lsx-search' ); ?></label>
+				</th>
+				<td>
+					<input type="checkbox" {{#if products_search_display_clear_button}} checked="checked" {{/if}} name="products_search_display_clear_button" />
+					<small><?php esc_html_e( 'This will display a clear button next to the "result" count', 'lsx-search' ); ?></small>
+				</td>
+			</tr>
+		<?php } ?>
 	<?php }
 
 	/**

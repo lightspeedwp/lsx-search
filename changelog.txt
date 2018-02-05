@@ -1,4 +1,7 @@
 ## Change log
 
+### 1.0.1
+* Dev - Added in a clear link which displays next to the result count if enabled.
+
 ### 1.0.0
 * First Version
