@@ -364,7 +364,8 @@ class LSX_Search_Frontend {
 					<div class="row hidden-xs">
 						<div class="col-xs-12 facetwp-item facetwp-results">
 							<h3 class="lsx-search-title lsx-search-title-results"><?php esc_html_e( 'Results', 'lsx-search' ); ?> (<?php echo do_shortcode( '[facetwp counts="true"]' ); ?>)
-							<?php if ( false !== $this->options && isset( $this->options['display'] ) && ( 'on' ===  $this->options['display']['search_display_clear_button'] || 'on' ===  $this->options['display']['products_search_display_clear_button'] ) && ! empty( $_GET ) ) { ?>
+
+							<?php if ( false !== $this->options && isset( $this->options['display'] ) && ( 'on' ===  $this->options['display']['search_display_clear_button'] || 'on' ===  $this->options['display']['products_search_display_clear_button'] ) && ! empty( FWP()->facet->facets ) && '' !== FWP()->facet->facets ) { ?>
 								 - <a title="<?php esc_html_e( 'Clear the current search filters.', 'lsx-search' ); ?>" class="facetwp-results-clear" type="button" onclick="FWP.reset()"><?php esc_html_e( 'Clear', 'lsx-search' ); ?></a>
 							<?php } ?>
 							</h3>
@@ -620,6 +621,23 @@ class LSX_Search_Frontend {
 		}
 
 		return $html;
+	}
+
+	/**
+	 * Check to see if there are facets loaded.
+	 */
+	public function facets_are_selected () {
+		$return = false;
+		if ( function_exists( 'FWP' ) ) {
+
+			if ( isset( FWP()->facet ) ) {
+
+			}
+
+		}
+
+
+		return $return;
 	}
 }
 
