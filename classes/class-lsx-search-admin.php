@@ -99,7 +99,7 @@ class LSX_Search_Admin {
 		wp_enqueue_script( 'thickbox' );
 		wp_enqueue_style( 'thickbox' );
 
-		wp_enqueue_script( 'lsx-search-admin', LSX_SEARCH_URL . 'assets/js/lsx-search-admin.min.js', array( 'jquery' ), LSX_SEARCH_VER, true );
+		wp_enqueue_script( 'lsx-search-admin', LSX_SEARCH_URL . 'assets/js/src/lsx-search-admin.js', array( 'jquery' ), LSX_SEARCH_VER, true );
 		wp_enqueue_style( 'lsx-search-admin', LSX_SEARCH_URL . 'assets/css/lsx-search-admin.css', array(), LSX_SEARCH_VER );
 	}
 

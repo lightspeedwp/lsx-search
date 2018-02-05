@@ -35,9 +35,9 @@ var lsx_search = Object.create( null );
 			} );
 
 			if ( '' == FWP.build_query_string() ) {
-				$( '.facetwp-results-clear-btn' ).addClass( 'hidden' );
+				$( '.lsx-search-title-results .clear-facets' ).addClass( 'hidden' );
 			} else {
-				$( '.facetwp-results-clear-btn' ).removeClass( 'hidden' );
+				$( '.lsx-search-title-results .clear-facets' ).removeClass( 'hidden' );
 			}
 
 			$.each( FWP.settings, function( key, val ) {
@@ -45,11 +45,6 @@ var lsx_search = Object.create( null );
 					var $parent = $( '.facetwp-facet-' + key ).closest( '.facetwp-item' );
 					( val.range.min === val.range.max ) ? $parent.addClass( 'hidden' ) : $parent.removeClass( 'hidden' );
 				}
-			});
-
-			$.each( FWP.settings.num_choices, function( key, val ) {
-				var $parent = $( '.facetwp-facet-' + key ).closest( '.facetwp-item' );
-				( 0 === val ) ? $parent.addClass( 'hidden' ) : $parent.removeClass( 'hidden' );
 			});
 
 			if ( false === lsx_search.facet_wp_load_first_time ) {
