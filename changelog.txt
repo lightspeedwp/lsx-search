@@ -2,6 +2,10 @@
 
 ### 1.0.1
 * Dev - Added in a clear link which displays next to the result count if enabled.
+* Dev - Split up the Frontend class into a Frontend and FacetWP class.
+* Dev - Changed the way the classes are initiated.
+* Dev - Added in a filter to call the price including tax if it qualifies.
+* Dev - Removed the API License Class
 
 ### 1.0.0
 * First Version

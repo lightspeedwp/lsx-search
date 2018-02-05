@@ -419,7 +419,8 @@ class LSX_Search_Admin {
 	 * Archive Search Header
 	 * @param string $tab
 	 */
-	public function archive_header( $tab = '' ) { ?>
+	public function archive_header( $tab = '' ) {
+		?>
 		<tr class="form-field">
 			<th scope="row" colspan="2"><label><h3><?php
 				if ( 'products' === $tab ) {
@@ -436,7 +437,8 @@ class LSX_Search_Admin {
 	 * Search filter enable checkbox
 	 * @param string $tab
 	 */
-	public function archive_enable_filtering( $tab = '' ) { ?>
+	public function archive_enable_filtering( $tab = '' ) {
+		?>
 		<tr class="form-field">
 			<th scope="row">
 				<label><?php esc_html_e( 'Enable Filtering', 'lsx-search' ); ?></label>
@@ -452,7 +454,8 @@ class LSX_Search_Admin {
 	 * Archive Search Layout
 	 * @param string $tab
 	 */
-	public function archive_layout( $tab = '' ) { ?>
+	public function archive_layout( $tab = '' ) {
+		?>
 		<tr class="form-field-wrap">
 			<th scope="row">
 				<label><?php esc_html_e( 'Columns Layout', 'lsx-search' ); ?></label>
@@ -472,7 +475,8 @@ class LSX_Search_Admin {
 	 * Archive Search Per Page Field
 	 * @param string $tab
 	 */
-	public function archive_per_page( $tab = '' ) { ?>
+	public function archive_per_page( $tab = '' ) {
+		?>
 		<tr class="form-field-wrap">
 			<th scope="row">
 				<label><?php esc_html_e( 'Per Page', 'lsx-search' ); ?></label>
@@ -487,7 +491,8 @@ class LSX_Search_Admin {
 	 * Archive Search Sorting
 	 * @param string $tab
 	 */
-	public function archive_sorting( $tab = '' ) { ?>
+	public function archive_sorting( $tab = '' ) {
+		?>
 		<tr class="form-field-wrap">
 			<th scope="row">
 				<label><?php esc_html_e( 'Sorting', 'lsx-search' ); ?></label>
@@ -509,7 +514,8 @@ class LSX_Search_Admin {
 	 * Archive Search Display Count
 	 * @param string $tab
 	 */
-	public function archive_display_count( $tab = '' ) { ?>
+	public function archive_display_count( $tab = '' ) {
+		?>
 		<tr class="form-field">
 			<th scope="row">
 				<label><?php esc_html_e( 'Display Result Count', 'lsx-search' ); ?></label>
@@ -535,7 +541,8 @@ class LSX_Search_Admin {
 	 * Archive Search Alphabet
 	 * @param string $tab
 	 */
-	public function archive_alphabetical_facet( $tab = '' ) { ?>
+	public function archive_alphabetical_facet( $tab = '' ) {
+		?>
 		<tr class="form-field-wrap">
 			<th scope="row">
 				<label><?php esc_html_e( 'Alphabetical Facet', 'lsx-search' ); ?></label>
@@ -567,7 +574,8 @@ class LSX_Search_Admin {
 	 * Archive Facets
 	 * @param string $tab
 	 */
-	public function archive_facets( $tab = '' ) { ?>
+	public function archive_facets( $tab = '' ) {
+		?>
 		<tr class="form-field-wrap">
 			<th scope="row">
 				<label><?php esc_html_e( 'Facets', 'lsx-search' ); ?></label>
@@ -600,6 +608,3 @@ class LSX_Search_Admin {
 		</tr>
 	<?php }
 }
-
-global $lsx_search_admin;
-$lsx_search_admin = new LSX_Search_Admin();

@@ -47,10 +47,8 @@ class LSX_Search_Frontend {
 		add_filter( 'lsx_search_post_types_plural', array( $this, 'register_post_type_tabs' ) );
 
 		add_filter( 'facetwp_sort_options', array( $this, 'facetwp_sort_options' ), 10, 2 );
-		add_filter( 'facetwp_load_css', array( $this, 'facetwp_load_css' ), 10, 1 );
-		add_filter( 'facetwp_pager_html', array( $this, 'facetwp_pager_html' ), 10, 2 );
-		add_filter( 'facetwp_result_count', array( $this, 'facetwp_result_count' ), 10, 2 );
-		add_filter( 'facetwp_facet_html', array( $this, 'facetwp_slide_html' ), 10, 2 );
+
+
 	}
 
 	/**
@@ -365,7 +363,7 @@ class LSX_Search_Frontend {
 						<div class="col-xs-12 facetwp-item facetwp-results">
 							<h3 class="lsx-search-title lsx-search-title-results"><?php esc_html_e( 'Results', 'lsx-search' ); ?> (<?php echo do_shortcode( '[facetwp counts="true"]' ); ?>)
 
-							<?php if ( false !== $this->options && isset( $this->options['display'] ) && ( 'on' ===  $this->options['display']['search_display_clear_button'] || 'on' ===  $this->options['display']['products_search_display_clear_button'] ) ) { ?>
+							<?php if ( false !== $this->options && isset( $this->options['display'] ) && ( 'on' === $this->options['display']['search_display_clear_button'] || 'on' === $this->options['display']['products_search_display_clear_button'] ) ) { ?>
 								<span class="clear-facets hidden">- <a title="<?php esc_html_e( 'Clear the current search filters.', 'lsx-search' ); ?>" class="facetwp-results-clear" type="button" onclick="FWP.reset()"><?php esc_html_e( 'Clear', 'lsx-search' ); ?></a></span>
 							<?php } ?>
 							</h3>
@@ -549,92 +547,4 @@ class LSX_Search_Frontend {
 		return $options;
 	}
 
-	/**
-	 * Disable FacetWP styles.
-	 */
-	public function facetwp_load_css( $boolean ) {
-		$boolean = false;
-		return $boolean;
-	}
-
-	/**
-	 * Change FaceWP pagination HTML to be equal LSX pagination.
-	 */
-	public function facetwp_pager_html( $output, $params ) {
-		$output = '';
-		$page = (int) $params['page'];
-		$per_page = (int) $params['per_page'];
-		$total_pages = (int) $params['total_pages'];
-
-		if ( 1 < $total_pages ) {
-			$output .= '<div class="lsx-pagination-wrapper facetwp-custom">';
-			$output .= '<div class="lsx-pagination">';
-			// $output .= '<span class="pages">Page '. $page .' of '. $total_pages .'</span>';
-
-			if ( 1 < $page ) {
-				$output .= '<a class="prev page-numbers facetwp-page" rel="prev" data-page="' . ( $page - 1 ) . '">«</a>';
-			}
-
-			$temp = false;
-
-			for ( $i = 1; $i <= $total_pages; $i++ ) {
-				if ( $i == $page ) {
-					$output .= '<span class="page-numbers current">' . $i . '</span>';
-				} elseif ( ( $page - 2 ) < $i && ( $page + 2 ) > $i ) {
-					$output .= '<a class="page-numbers facetwp-page" data-page="' . $i . '">' . $i . '</a>';
-				} elseif ( ( $page - 2 ) >= $i && $page > 2 ) {
-					if ( ! $temp ) {
-						$output .= '<span class="page-numbers dots">...</span>';
-						$temp = true;
-					}
-				} elseif ( ( $page + 2 ) <= $i && ( $page + 2 ) <= $total_pages ) {
-					$output .= '<span class="page-numbers dots">...</span>';
-					break;
-				}
-			}
-
-			if ( $page < $total_pages ) {
-				$output .= '<a class="next page-numbers facetwp-page" rel="next" data-page="' . ( $page + 1 ) . '">»</a>';
-			}
-
-			$output .= '</div>';
-			$output .= '</div>';
-		}
-
-		return $output;
-	}
-
-	/**
-	 * Change FaceWP result count HTML.
-	 */
-	public function facetwp_result_count( $output, $params ) {
-		$output = $params['total'];
-		return $output;
-	}
-
-	/**
-	 * Change FaceWP slider HTML.
-	 */
-	public function facetwp_slide_html( $html, $args ) {
-		if ( 'slider' === $args['facet']['type'] ) {
-			$html = str_replace( 'class="facetwp-slider-reset"', 'class="btn btn-md facetwp-slider-reset"', $html );
-		}
-
-		return $html;
-	}
-
-	/**
-	 * Change FaceWP slider HTML.
-	 */
-	public function facetwp_counts_html( $html, $args ) {
-		if ( 'slider' === $args['facet']['type'] ) {
-			$html = str_replace( 'class="facetwp-slider-reset"', 'class="btn btn-md facetwp-slider-reset"', $html );
-		}
-
-		return $html;
-	}
-
 }
-
-global $lsx_search_frontend;
-$lsx_search_frontend = new LSX_Search_Frontend();
