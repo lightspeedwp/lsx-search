@@ -14,6 +14,10 @@ The is a FacetWP templating plugin that provides deep integration with the LSX T
 
 The is a FacetWP templating plugin that provides deep integration with the LSX Theme
 
+== Dependancies ==
+
+LSX Search enchanges the search functionality for the LSX Theme and requires FacetWP to be installed to function properly.
+
 = Works with the LSX Theme =
 Our theme [theme](https://www.lsdev.biz/product/lsx-wordpress-theme/) works perfectly with the LSX Search, improving search capabilties.
 
