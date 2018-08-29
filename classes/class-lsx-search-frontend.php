@@ -77,6 +77,10 @@ class LSX_Search_Frontend {
 		if ( ! empty( $this->options ) && ! empty( $this->options['display'][ $this->search_prefix . '_enable_' . $this->search_core_suffix ] ) ) {
 			$this->search_enabled = true;
 		}
+
+		if ( is_home() || is_front_page() ) {
+			$this->search_enabled = true;
+		}
 	}
 
 	/**
@@ -105,7 +109,9 @@ class LSX_Search_Frontend {
 	 * Check all settings.
 	 */
 	public function core() {
+
 		if ( true === $this->search_enabled ) {
+
 			add_action( 'wp_enqueue_scripts', array( $this, 'assets' ), 999 );
 
 			add_filter( 'lsx_layout', array( $this, 'lsx_layout' ), 20, 1 );
@@ -210,7 +216,7 @@ class LSX_Search_Frontend {
 	public function assets() {
 		wp_enqueue_script( 'touchSwipe', LSX_SEARCH_URL . 'assets/js/vendor/jquery.touchSwipe.min.js', array( 'jquery' ), LSX_SEARCH_VER, true );
 		wp_enqueue_script( 'slideandswipe', LSX_SEARCH_URL . 'assets/js/vendor/jquery.slideandswipe.min.js', array( 'jquery', 'touchSwipe' ), LSX_SEARCH_VER, true );
-		wp_enqueue_script( 'lsx-search', LSX_SEARCH_URL . 'assets/js/lsx-search.min.js', array( 'jquery', 'touchSwipe', 'slideandswipe' ), LSX_SEARCH_VER, true );
+		wp_enqueue_script( 'lsx-search', LSX_SEARCH_URL . 'assets/js/src/lsx-search.js', array( 'jquery', 'touchSwipe', 'slideandswipe' ), LSX_SEARCH_VER, true );
 
 		$params = apply_filters( 'lsx_search_js_params', array(
 			'ajax_url' => admin_url( 'admin-ajax.php' ),

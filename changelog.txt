@@ -1,5 +1,9 @@
 ## Change log
 
+### 1.1.0
+* Dev - Added in the LSX Search Shortcode
+* Updated the search dropdowns with the Bootstrap 4 classes.
+
 ### 1.0.1
 * Dev - Added in a clear link which displays next to the result count if enabled.
 * Dev - Split up the Frontend class into a Frontend and FacetWP class.
