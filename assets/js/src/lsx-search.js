@@ -32,6 +32,10 @@ var lsx_search = Object.create( null );
             if (undefined != lsx_search.currentForm.find('.btn-dropdown')) {
                 lsx_search.watchDropdown();
             }
+
+            if (undefined != lsx_search.currentForm.find('.datepicker')) {
+                lsx_search.watchDatePickerButton();
+            }
         }
     };
 
@@ -197,6 +201,16 @@ var lsx_search = Object.create( null );
             }
         });
     };
+
+    lsx_search.watchDatePickerButton = function() {
+        jQuery(lsx_search.currentForm).find('.datepicker .datepicker-value').each(function(event) {
+            jQuery( this ).datepicker({
+                dateFormat: "yy-mm-dd"
+			});
+
+        });
+    };
+
 
     lsx_search.switchDropDown = function(dropdown) {
         var id = dropdown.find('button').attr('data-selection');

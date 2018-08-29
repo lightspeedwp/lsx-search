@@ -377,3 +377,7 @@
 .facetwp-slider-reset { margin-top: 10px; }
 
 @include customizer-search-body-colours(#F6F6F6, #DADDDF, #4A4A4A, #418AD0, #F7AE00, #919191);
+
+#ui-datepicker-div {
+	z-index: 99 !important;
+}

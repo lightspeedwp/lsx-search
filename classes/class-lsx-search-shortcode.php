@@ -148,7 +148,8 @@ class LSX_Search_Shortcode {
 								<?php
 								$facet = FWP()->helper->get_facet_by_name( $facet );
 								$values = $this->get_form_facet( $facet['source'] );
-								$this->display_form_field( 'select',$facet,$values,$combo_box );
+								$facet_display_type = apply_filters( 'lsx_search_form_field_type', 'select', $facet );
+								$this->display_form_field( $facet_display_type,$facet,$values,$combo_box );
 								?>
 							</div>
 							<?php
@@ -248,7 +249,7 @@ class LSX_Search_Shortcode {
 
 		switch ( $type ) {
 
-			case 'select':?>
+			case 'select': ?>
 				<div class="dropdown nav-item <?php if ( true === $combo ) { echo 'combination-dropdown'; } ?>">
 					<button data-selection="0" class="btn border-btn btn-dropdown dropdown-toggle" type="button" id="<?php echo wp_kses_post( $source ); ?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 						<?php esc_attr_e( 'Select', 'to-search' ); ?> <?php echo wp_kses_post( $facet['label'] ); ?>
@@ -268,6 +269,13 @@ class LSX_Search_Shortcode {
 					</ul>
 				</div>
 				<?php
+				break;
+
+			case 'datepicker': ?>
+				<div class="datepicker nav-item">
+					<input class="datepicker-value" placeholder="<?php esc_attr_e( 'Enter', 'to-search' ); ?> <?php echo wp_kses_post( $facet['label'] ); ?>" id="<?php echo wp_kses_post( $source ); ?>" type="text" value="" />
+				</div>
+			<?php
 				break;
 		}
 

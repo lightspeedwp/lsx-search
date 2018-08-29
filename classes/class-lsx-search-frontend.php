@@ -46,7 +46,7 @@ class LSX_Search_Frontend {
 		add_filter( 'lsx_search_taxonomies', array( $this, 'register_taxonomies' ) );
 		add_filter( 'lsx_search_post_types_plural', array( $this, 'register_post_type_tabs' ) );
 		add_filter( 'facetwp_sort_options', array( $this, 'facetwp_sort_options' ), 10, 2 );
-
+		add_filter( 'wp_kses_allowed_html', array( $this, 'kses_allowed_html' ), 20, 2 );
 	}
 
 	/**
@@ -216,7 +216,7 @@ class LSX_Search_Frontend {
 	public function assets() {
 		wp_enqueue_script( 'touchSwipe', LSX_SEARCH_URL . 'assets/js/vendor/jquery.touchSwipe.min.js', array( 'jquery' ), LSX_SEARCH_VER, true );
 		wp_enqueue_script( 'slideandswipe', LSX_SEARCH_URL . 'assets/js/vendor/jquery.slideandswipe.min.js', array( 'jquery', 'touchSwipe' ), LSX_SEARCH_VER, true );
-		wp_enqueue_script( 'lsx-search', LSX_SEARCH_URL . 'assets/js/src/lsx-search.js', array( 'jquery', 'touchSwipe', 'slideandswipe' ), LSX_SEARCH_VER, true );
+		wp_enqueue_script( 'lsx-search', LSX_SEARCH_URL . 'assets/js/src/lsx-search.js', array( 'jquery', 'touchSwipe', 'slideandswipe', 'jquery-ui-datepicker' ), LSX_SEARCH_VER, true );
 
 		$params = apply_filters( 'lsx_search_js_params', array(
 			'ajax_url' => admin_url( 'admin-ajax.php' ),
@@ -549,6 +549,19 @@ class LSX_Search_Frontend {
 		}
 
 		return $options;
+	}
+
+	/**
+	 * @param $allowedtags
+	 * @param $context
+	 *
+	 * @return mixed
+	 */
+	public function kses_allowed_html( $allowedtags, $context ) {
+		$allowedtags['a']['data-value'] = true;
+		$allowedtags['a']['data-selection']  = true;
+		$allowedtags['button']['data-toggle'] = true;
+		return $allowedtags;
 	}
 
 }

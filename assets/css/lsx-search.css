@@ -163,4 +163,6 @@ body.facetwp-loading-body .search-submit-facetwp { display: none; }
 
 .facetwp-template article.lsx-slot .lsx-label-post-type { background-color: #4A4A4A; color: #FFF; }
 
+#ui-datepicker-div { z-index: 99 !important; }
+
 /*# sourceMappingURL=maps/lsx-search.css.map */
