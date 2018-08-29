@@ -211,7 +211,6 @@ var lsx_search = Object.create( null );
         });
     };
 
-
     lsx_search.switchDropDown = function(dropdown) {
         var id = dropdown.find('button').attr('data-selection');
 

@@ -273,7 +273,7 @@ class LSX_Search_Shortcode {
 
 			case 'datepicker': ?>
 				<div class="datepicker nav-item">
-					<input class="datepicker-value" placeholder="<?php esc_attr_e( 'Enter', 'to-search' ); ?> <?php echo wp_kses_post( $facet['label'] ); ?>" id="<?php echo wp_kses_post( $source ); ?>" type="text" value="" />
+					<input class="datepicker-value" placeholder="<?php esc_attr_e( 'Enter', 'to-search' ); ?> <?php echo wp_kses_post( $facet['label'] ); ?>" name="<?php echo wp_kses_post( $source ); ?>"  id="<?php echo wp_kses_post( $source ); ?>" type="text" value="" />
 				</div>
 			<?php
 				break;
