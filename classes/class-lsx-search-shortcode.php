@@ -23,7 +23,7 @@ class LSX_Search_Shortcode {
 			$classes .= $atts['class'];
 		}
 
-		$placeholder = __( 'Where do you want to go?', 'to-search' );
+		$placeholder = __( 'Where do you want to go?', 'lsx-search' );
 
 		if ( isset( $atts['placeholder'] ) ) {
 			$placeholder = $atts['placeholder'];
@@ -41,7 +41,7 @@ class LSX_Search_Shortcode {
 			$method = $atts['method'];
 		}
 
-		$button_label = __( 'Search', 'to-search' );
+		$button_label = __( 'Search', 'lsx-search' );
 
 		if ( isset( $atts['button_label'] ) ) {
 			$button_label = $atts['button_label'];
@@ -189,12 +189,12 @@ class LSX_Search_Shortcode {
 		<div class="field combination-dropdown">
 			<div class="dropdown">
 				<button data-selection="0" class="btn border-btn btn-dropdown dropdown-toggle btn-combination" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-					<?php esc_attr_e( 'Select', 'to-search' ); ?>
+					<?php esc_attr_e( 'Select', 'lsx-search' ); ?>
 					<span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
 
-					<li style="display: none;"><a class="default" data-value="0" href="#"><?php esc_attr_e( 'Select ', 'to-search' ); ?></a></li>
+					<li style="display: none;"><a class="default" data-value="0" href="#"><?php esc_attr_e( 'Select ', 'lsx-search' ); ?></a></li>
 
 					<?php foreach ( $facets as $facet ) {
 						$facet = FWP()->helper->get_facet_by_name( $facet );
@@ -252,19 +252,19 @@ class LSX_Search_Shortcode {
 			case 'select': ?>
 				<div class="dropdown nav-item <?php if ( true === $combo ) { echo 'combination-dropdown'; } ?>">
 					<button data-selection="0" class="btn border-btn btn-dropdown dropdown-toggle" type="button" id="<?php echo wp_kses_post( $source ); ?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-						<?php esc_attr_e( 'Select', 'to-search' ); ?> <?php echo wp_kses_post( $facet['label'] ); ?>
+						<?php esc_attr_e( 'Select', 'lsx-search' ); ?> <?php echo wp_kses_post( $facet['label'] ); ?>
 						<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu" aria-labelledby="<?php echo wp_kses_post( $source ); ?>">
 						<?php if ( ! empty( $values ) ) { ?>
 
-							<li style="display: none;"><a class="default" data-value="0" href="#"><?php esc_attr_e( 'Select ', 'to-search' ); ?> <?php echo wp_kses_post( $facet['label'] ); ?></a></li>
+							<li style="display: none;"><a class="default" data-value="0" href="#"><?php esc_attr_e( 'Select ', 'lsx-search' ); ?> <?php echo wp_kses_post( $facet['label'] ); ?></a></li>
 
 							<?php foreach ( $values as $key => $value ) { ?>
 								<li><a data-value="<?php echo wp_kses_post( $key ); ?>" href="#"><?php echo wp_kses_post( $value ); ?></a></li>
 							<?php } ?>
 						<?php } else { ?>
-							<li><a data-value="0" href="#"><?php esc_attr_e( 'Please re-index your facets.', 'to-search' ); ?></a></li>
+							<li><a data-value="0" href="#"><?php esc_attr_e( 'Please re-index your facets.', 'lsx-search' ); ?></a></li>
 						<?php } ?>
 					</ul>
 				</div>
@@ -273,7 +273,7 @@ class LSX_Search_Shortcode {
 
 			case 'datepicker': ?>
 				<div class="datepicker nav-item">
-					<input class="datepicker-value" placeholder="<?php esc_attr_e( 'Enter', 'to-search' ); ?> <?php echo wp_kses_post( $facet['label'] ); ?>" name="<?php echo wp_kses_post( $source ); ?>"  id="<?php echo wp_kses_post( $source ); ?>" type="text" value="" />
+					<input class="datepicker-value" placeholder="<?php esc_attr_e( 'Enter', 'lsx-search' ); ?> <?php echo wp_kses_post( $facet['label'] ); ?>" name="<?php echo wp_kses_post( $source ); ?>"  id="<?php echo wp_kses_post( $source ); ?>" type="text" value="" />
 				</div>
 			<?php
 				break;
