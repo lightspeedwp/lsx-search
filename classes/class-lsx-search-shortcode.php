@@ -234,7 +234,7 @@ class LSX_Search_Shortcode {
 					$current_lang = pll_current_language();
 					$display_value = pll_translate_string( $display_value, $current_lang );
 				}
-				$display_value = add_filter( 'lsx_search_facetwp_display_value', $display_value, $re->facet_value );
+				$display_value = apply_filters( 'lsx_search_facetwp_display_value', $display_value, $re->facet_value );
 				$values[ $re->facet_value ] = $display_value;
 			}
 		}
