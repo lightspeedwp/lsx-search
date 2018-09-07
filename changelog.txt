@@ -5,6 +5,7 @@
 * Updated the search dropdowns with the Bootstrap 4 classes.
 * Added in pll_translate_string to allow translating of the FacetWP Display Value.
 * Added in a filter to allow the filtering of the facet display value
+* Added in a filter to allow the overwritting of the facet label
 
 ### 1.0.1
 * Dev - Added in a clear link which displays next to the result count if enabled.

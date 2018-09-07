@@ -258,13 +258,21 @@ class LSX_Search_Shortcode {
 			case 'select': ?>
 				<div class="dropdown nav-item <?php if ( true === $combo ) { echo 'combination-dropdown'; } ?>">
 					<button data-selection="0" class="btn border-btn btn-dropdown dropdown-toggle" type="button" id="<?php echo wp_kses_post( $source ); ?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-						<?php esc_attr_e( 'Select', 'lsx-search' ); ?> <?php echo wp_kses_post( $facet['label'] ); ?>
+						<?php echo esc_attr( apply_filters( 'lsx_search_facet_label', __( 'Select', 'lsx-search' ). ' ' .wp_kses_post( $facet['label'] ) ) ); ?>
 						<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu" aria-labelledby="<?php echo wp_kses_post( $source ); ?>">
 						<?php if ( ! empty( $values ) ) { ?>
 
-							<li style="display: none;"><a class="default" data-value="0" href="#"><?php esc_attr_e( 'Select ', 'lsx-search' ); ?> <?php echo wp_kses_post( $facet['label'] ); ?></a></li>
+							<li style="display: none;">
+								<a class="default" data-value="0" href="#">
+									<?php
+										$facet_label = __( 'Select ', 'lsx-search' ) . ' ' . wp_kses_post( $facet['label'] );
+										$facet_label = apply_filters( 'lsx_search_facet_label', $facet_label );
+										echo esc_attr( $facet_label );
+									?>
+								</a>
+							</li>
 
 							<?php foreach ( $values as $key => $value ) { ?>
 								<li><a data-value="<?php echo wp_kses_post( $key ); ?>" href="#"><?php echo wp_kses_post( $value ); ?></a></li>
@@ -279,7 +287,7 @@ class LSX_Search_Shortcode {
 
 			case 'datepicker': ?>
 				<div class="datepicker nav-item">
-					<input class="datepicker-value" placeholder="<?php esc_attr_e( 'Enter', 'lsx-search' ); ?> <?php echo wp_kses_post( $facet['label'] ); ?>" name="<?php echo wp_kses_post( $source ); ?>"  id="<?php echo wp_kses_post( $source ); ?>" type="text" value="" />
+					<input class="datepicker-value" placeholder="<?php echo wp_kses_post( apply_filters( 'lsx_search_facet_label' , $facet['label'] ) ); ?>" name="<?php echo wp_kses_post( $source ); ?>"  id="<?php echo wp_kses_post( $source ); ?>" type="text" value="" />
 				</div>
 			<?php
 				break;
