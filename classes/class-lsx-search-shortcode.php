@@ -229,7 +229,13 @@ class LSX_Search_Shortcode {
 
 		if ( ! empty( $response ) ) {
 			foreach ( $response as $re ) {
-				$values[ $re->facet_value ] = $re->facet_display_value;
+				$display_value = $re->facet_display_value;
+				if ( function_exists( 'pll_translate_string' ) ) {
+					$current_lang = pll_current_language();
+					$display_value = pll_translate_string( $display_value, $current_lang );
+				}
+				$display_value = add_filter( 'lsx_search_facetwp_display_value', $display_value, $re->facet_value );
+				$values[ $re->facet_value ] = $display_value;
 			}
 		}
 
