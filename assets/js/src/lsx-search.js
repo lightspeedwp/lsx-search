@@ -186,11 +186,23 @@ var lsx_search = Object.create( null );
                 });
             }
 
+            //Make sure all empty imput do not send a name in the url if they are empty
+
+
             //Check if there is a keyword.
+            jQuery(this).find('input[type="text"]').each(function() {
+                console.log(jQuery( this ));
+
+            	if ( 's' != jQuery( this ).attr('name') && '' == jQuery( this ).val() ) {
+                    jQuery( this ).attr('name','');
+
+				}
+			});
             /*if (false == has_facets && undefined != jQuery(this).find('.search-field') && '' == jQuery(this).find('.search-field').val()) {
                 jQuery(this).find('.search-field').addClass('error');
                 event.preventDefault();
             }*/
+            //return false;
         });
     };
 
