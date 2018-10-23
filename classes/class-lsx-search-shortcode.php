@@ -287,7 +287,7 @@ class LSX_Search_Shortcode {
 
 			case 'datepicker': ?>
 				<div class="datepicker nav-item">
-					<input class="datepicker-value" placeholder="<?php echo wp_kses_post( apply_filters( 'lsx_search_facet_label' , $facet['label'] ) ); ?>" name="<?php echo wp_kses_post( $source ); ?>"  id="<?php echo wp_kses_post( $source ); ?>" type="text" value="" />
+					<input autocomplete="off" class="datepicker-value" placeholder="<?php echo wp_kses_post( apply_filters( 'lsx_search_facet_label' , $facet['label'] ) ); ?>" name="<?php echo wp_kses_post( $source ); ?>"  id="<?php echo wp_kses_post( $source ); ?>" type="text" value="" />
 				</div>
 			<?php
 				break;
