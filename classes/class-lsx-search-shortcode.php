@@ -147,7 +147,11 @@ class LSX_Search_Shortcode {
 							<div class="<?php echo wp_kses_post( $field_class ); ?>">
 								<?php
 								$facet = FWP()->helper->get_facet_by_name( $facet );
-								$values = $this->get_form_facet( $facet['source'] );
+								if ( isset( $facet['source'] )  ) {
+									$values = $this->get_form_facet( $facet['source'] );
+								} else {
+									$values = array();
+								}
 								$facet_display_type = apply_filters( 'lsx_search_form_field_type', 'select', $facet );
 								$this->display_form_field( $facet_display_type,$facet,$values,$combo_box );
 								?>

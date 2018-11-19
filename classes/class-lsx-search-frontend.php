@@ -274,7 +274,12 @@ class LSX_Search_Frontend {
 		$pagination_visible  = false;
 		$show_per_page_combo = empty( $this->options['display'][ $this->search_prefix . '_disable_per_page' ] );
 		$show_sort_combo     = empty( $this->options['display'][ $this->search_prefix . '_disable_all_sorting' ] );
-		$az_pagination       = $this->options['display'][ $this->search_prefix . '_az_pagination' ];
+		if ( isset( $this->options['display'][ $this->search_prefix . '_az_pagination' ] ) ) {
+			$az_pagination       = $this->options['display'][ $this->search_prefix . '_az_pagination' ];
+		} else {
+			$az_pagination = false;
+		}
+
 		?>
 		<div id="facetwp-top">
 			<?php if ( $show_sort_combo || ( $show_pagination && $show_per_page_combo ) ) { ?>
@@ -327,7 +332,11 @@ class LSX_Search_Frontend {
 		</div>
 		<?php
 		$show_pagination = true;
-		$az_pagination   = $this->options['display'][ $this->search_prefix . '_az_pagination' ];
+		if ( isset( $this->options['display'][ $this->search_prefix . '_az_pagination' ] ) ) {
+			$az_pagination       = $this->options['display'][ $this->search_prefix . '_az_pagination' ];
+		} else {
+			$az_pagination = false;
+		}
 
 		if ( $show_pagination || ! empty( $az_pagination ) ) { ?>
 			<div id="facetwp-bottom">
