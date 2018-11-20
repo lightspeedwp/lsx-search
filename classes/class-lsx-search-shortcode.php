@@ -147,7 +147,7 @@ class LSX_Search_Shortcode {
 							<div class="<?php echo wp_kses_post( $field_class ); ?>">
 								<?php
 								$facet = FWP()->helper->get_facet_by_name( $facet );
-								if ( isset( $facet['source'] )  ) {
+								if ( isset( $facet['source'] ) ) {
 									$values = $this->get_form_facet( $facet['source'] );
 								} else {
 									$values = array();
@@ -218,7 +218,7 @@ class LSX_Search_Shortcode {
 		global $wpdb;
 
 		$values = array();
-		$select = "f.facet_value, f.facet_display_value";
+		$select = 'f.facet_value, f.facet_display_value';
 		$from = "{$wpdb->prefix}facetwp_index f";
 		$where = "f.facet_source = '{$facet_source}'";
 
@@ -262,7 +262,7 @@ class LSX_Search_Shortcode {
 			case 'select': ?>
 				<div class="dropdown nav-item <?php if ( true === $combo ) { echo 'combination-dropdown'; } ?>">
 					<button data-selection="0" class="btn border-btn btn-dropdown dropdown-toggle" type="button" id="<?php echo wp_kses_post( $source ); ?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-						<?php echo esc_attr( apply_filters( 'lsx_search_facet_label', __( 'Select', 'lsx-search' ). ' ' .wp_kses_post( $facet['label'] ) ) ); ?>
+						<?php echo esc_attr( apply_filters( 'lsx_search_facet_label', __( 'Select', 'lsx-search' ) . ' ' .wp_kses_post( $facet['label'] ) ) ); ?>
 						<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu" aria-labelledby="<?php echo wp_kses_post( $source ); ?>">
