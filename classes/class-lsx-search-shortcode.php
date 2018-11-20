@@ -229,7 +229,7 @@ class LSX_Search_Shortcode {
 
 		}
 
-		$response = $wpdb->prepare( "SELECT {$select} FROM {$from} WHERE {$where}" );
+		$response = $wpdb->get_results( "SELECT {$select} FROM {$from} WHERE {$where}" );
 
 		if ( ! empty( $response ) ) {
 			foreach ( $response as $re ) {
@@ -262,7 +262,7 @@ class LSX_Search_Shortcode {
 			case 'select': ?>
 				<div class="dropdown nav-item <?php if ( true === $combo ) { echo 'combination-dropdown'; } ?>">
 					<button data-selection="0" class="btn border-btn btn-dropdown dropdown-toggle" type="button" id="<?php echo wp_kses_post( $source ); ?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-						<?php echo esc_attr( apply_filters( 'lsx_search_facet_label', __( 'Select', 'lsx-search' ) . ' ' .wp_kses_post( $facet['label'] ) ) ); ?>
+						<?php echo esc_attr( apply_filters( 'lsx_search_facet_label', __( 'Select', 'lsx-search' ) . ' ' . wp_kses_post( $facet['label'] ) ) ); ?>
 						<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu" aria-labelledby="<?php echo wp_kses_post( $source ); ?>">
