@@ -229,7 +229,7 @@ class LSX_Search_Shortcode {
 
 		}
 
-		$response = $wpdb->get_results( "SELECT {$select} FROM {$from} WHERE {$where}" );
+		$response = $wpdb->prepare( "SELECT f.facet_value, f.facet_display_value FROM facetwp_index f WHERE f.facet_source = '{$facet_source}'" );
 
 		if ( ! empty( $response ) ) {
 			foreach ( $response as $re ) {
