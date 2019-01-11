@@ -84,6 +84,16 @@ class LSX_Search_Frontend {
 		if ( is_home() || is_front_page() ) {
 			$this->search_enabled = true;
 		}
+
+		$this->search_enabled = apply_filters( 'lsx_search_enabled', $this->search_enabled, $this );
+
+		if ( is_page( 'city-area' ) ) {
+			$this->search_prefix = 'page_archive';
+			$this->search_core_suffix = 'search';
+			$this->post_types[] = 'page';
+			$this->search_enabled = true;
+			$enabled = true;
+		}
 	}
 
 	/**
