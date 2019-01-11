@@ -53,9 +53,12 @@ class LSX_Search_Frontend {
 	 * Check all settings.
 	 */
 	public function set_vars() {
+		$post_type = '';
+
 		$this->post_types = apply_filters( 'lsx_search_post_types', array() );
 		$this->taxonomies = apply_filters( 'lsx_search_taxonomies', array() );
 		$this->tabs = apply_filters( 'lsx_search_post_types_plural', array() );
+		$this->options = apply_filters( 'lsx_search_options', $this->options );
 
 		if ( is_search() ) {
 			$this->search_core_suffix = 'core';
