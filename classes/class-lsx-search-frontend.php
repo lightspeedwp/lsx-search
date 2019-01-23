@@ -383,7 +383,12 @@ class LSX_Search_Frontend {
 	 */
 	public function search_sidebar() {
 		?>
+			<?php do_action( 'lsx_search_sidebar_before' ); ?>
+
 			<div id="secondary" class="facetwp-sidebar widget-area <?php echo esc_attr( lsx_sidebar_class() ); ?>" role="complementary">
+
+				<?php do_action( 'lsx_search_sidebar_top' ); ?>
+
 				<?php if ( ! empty( $this->options['display'][ $this->search_prefix . '_display_result_count' ] ) ) { ?>
 					<div class="row hidden-xs">
 						<div class="col-xs-12 facetwp-item facetwp-results">
@@ -453,7 +458,11 @@ class LSX_Search_Frontend {
 						</div>
 					</div>
 				<?php } ?>
+
+				<?php do_action( 'lsx_search_sidebar_bottom' ); ?>
 			</div>
+
+			<?php do_action( 'lsx_search_sidebar_after' ); ?>
 		<?php
 	}
 

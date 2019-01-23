@@ -1,5 +1,8 @@
 ## Change log
 
+###
+* Dev - Added in 4 filters for the sidebar ( lsx_search_sidebar_before, lsx_search_sidebar_top, lsx_search_sidebar_bottom, lsx_search_sidebar_after ).
+
 ### 1.0.9 - 10 Jan 2019
 * Added in a filter to allow changes to the options
 
