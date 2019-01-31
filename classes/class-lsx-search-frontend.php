@@ -81,15 +81,7 @@ class LSX_Search_Frontend {
 			$this->search_enabled = true;
 		}
 
-		if ( is_home() || is_front_page() ) {
-			$this->search_enabled = true;
-		}
-
 		$this->search_enabled = apply_filters( 'lsx_search_enabled', $this->search_enabled, $this );
-
-		/*print_r('<pre>');
-		print_r($this->options);
-		print_r('</pre>');*/
 	}
 
 	/**
