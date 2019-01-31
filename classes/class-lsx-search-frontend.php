@@ -86,6 +86,10 @@ class LSX_Search_Frontend {
 		}
 
 		$this->search_enabled = apply_filters( 'lsx_search_enabled', $this->search_enabled, $this );
+
+		/*print_r('<pre>');
+		print_r($this->options);
+		print_r('</pre>');*/
 	}
 
 	/**
