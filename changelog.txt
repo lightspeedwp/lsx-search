@@ -4,6 +4,7 @@
 * Dev - Added in 4 filters for the sidebar ( lsx_search_sidebar_before, lsx_search_sidebar_top, lsx_search_sidebar_bottom, lsx_search_sidebar_after ).
 * Fix - Updated the uix-core.js to remove the Cyclic error when saving the theme options
 * Dev - Removed the conditional statement adding the facets to the blog and homepage automatically. (this can be done via the filter)
+* Fix - Adding in the missing Clear Button option for the search facets.
 
 ### 1.0.9 - 10 Jan 2019
 * Added in a filter to allow changes to the options
