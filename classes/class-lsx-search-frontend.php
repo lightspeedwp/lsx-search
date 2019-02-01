@@ -82,6 +82,7 @@ class LSX_Search_Frontend {
 		}
 
 		$this->search_enabled = apply_filters( 'lsx_search_enabled', $this->search_enabled, $this );
+		$this->search_prefix = apply_filters( 'lsx_search_prefix', $this->search_prefix, $this );
 	}
 
 	/**

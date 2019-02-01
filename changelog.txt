@@ -5,6 +5,7 @@
 * Fix - Updated the uix-core.js to remove the Cyclic error when saving the theme options
 * Dev - Removed the conditional statement adding the facets to the blog and homepage automatically. (this can be done via the filter)
 * Fix - Adding in the missing Clear Button option for the search facets.
+* Dev - Adding in a filter to allowing overwriting the search prefix lsx_search_prefix
 
 ### 1.0.9 - 10 Jan 2019
 * Added in a filter to allow changes to the options
