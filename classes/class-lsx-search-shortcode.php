@@ -229,7 +229,7 @@ class LSX_Search_Shortcode {
 
 		}
 
-		$response = $wpdb->get_results( "SELECT {$select} FROM {$from} WHERE {$where}" );
+		$response = $wpdb->prepare( "SELECT {$select} FROM {$from} WHERE {$where}" );
 
 		if ( ! empty( $response ) ) {
 			foreach ( $response as $re ) {

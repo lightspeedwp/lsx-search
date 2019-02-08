@@ -53,9 +53,12 @@ class LSX_Search_Frontend {
 	 * Check all settings.
 	 */
 	public function set_vars() {
+		$post_type = '';
+
 		$this->post_types = apply_filters( 'lsx_search_post_types', array() );
 		$this->taxonomies = apply_filters( 'lsx_search_taxonomies', array() );
 		$this->tabs = apply_filters( 'lsx_search_post_types_plural', array() );
+		$this->options = apply_filters( 'lsx_search_options', $this->options );
 
 		if ( is_search() ) {
 			$this->search_core_suffix = 'core';
@@ -78,9 +81,8 @@ class LSX_Search_Frontend {
 			$this->search_enabled = true;
 		}
 
-		if ( is_home() || is_front_page() ) {
-			$this->search_enabled = true;
-		}
+		$this->search_enabled = apply_filters( 'lsx_search_enabled', $this->search_enabled, $this );
+		$this->search_prefix = apply_filters( 'lsx_search_prefix', $this->search_prefix, $this );
 	}
 
 	/**
@@ -370,13 +372,18 @@ class LSX_Search_Frontend {
 	 */
 	public function search_sidebar() {
 		?>
+			<?php do_action( 'lsx_search_sidebar_before' ); ?>
+
 			<div id="secondary" class="facetwp-sidebar widget-area <?php echo esc_attr( lsx_sidebar_class() ); ?>" role="complementary">
+
+				<?php do_action( 'lsx_search_sidebar_top' ); ?>
+
 				<?php if ( ! empty( $this->options['display'][ $this->search_prefix . '_display_result_count' ] ) ) { ?>
 					<div class="row hidden-xs">
 						<div class="col-xs-12 facetwp-item facetwp-results">
 							<h3 class="lsx-search-title lsx-search-title-results"><?php esc_html_e( 'Results', 'lsx-search' ); ?> (<?php echo do_shortcode( '[facetwp counts="true"]' ); ?>)
 
-							<?php if ( false !== $this->options && isset( $this->options['display'] ) && ( 'on' === $this->options['display']['search_display_clear_button'] || 'on' === $this->options['display']['products_search_display_clear_button'] ) ) { ?>
+							<?php if ( false !== $this->options && isset( $this->options['display'] ) && ( 'on' === $this->options['display'][ $this->search_prefix . '_display_clear_button'] || 'on' === $this->options['display']['products_search_display_clear_button'] ) ) { ?>
 								<span class="clear-facets hidden">- <a title="<?php esc_html_e( 'Clear the current search filters.', 'lsx-search' ); ?>" class="facetwp-results-clear" type="button" onclick="FWP.reset()"><?php esc_html_e( 'Clear', 'lsx-search' ); ?></a></span>
 							<?php } ?>
 							</h3>
@@ -440,7 +447,11 @@ class LSX_Search_Frontend {
 						</div>
 					</div>
 				<?php } ?>
+
+				<?php do_action( 'lsx_search_sidebar_bottom' ); ?>
 			</div>
+
+			<?php do_action( 'lsx_search_sidebar_after' ); ?>
 		<?php
 	}
 

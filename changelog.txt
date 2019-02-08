@@ -4,11 +4,26 @@
 * Fix - Fixed the undefined error in the mobile JS
 
 ### 1.1.0
+* Dev - Added in 4 filters for the sidebar ( lsx_search_sidebar_before, lsx_search_sidebar_top, lsx_search_sidebar_bottom, lsx_search_sidebar_after ).
+* Fix - Updated the uix-core.js to remove the Cyclic error when saving the theme options
+* Dev - Removed the conditional statement adding the facets to the blog and homepage automatically. (this can be done via the filter)
+* Fix - Adding in the missing Clear Button option for the search facets.
+* Dev - Adding in a filter to allowing overwriting the search prefix lsx_search_prefix
+
+### 1.0.9 - 10 Jan 2019
+* Added in a filter to allow changes to the options
+
+### 1.0.8 - 26 Apr 2018
 * Dev - Added in the LSX Search Shortcode
 * Updated the search dropdowns with the Bootstrap 4 classes.
 * Added in pll_translate_string to allow translating of the FacetWP Display Value.
 * Added in a filter to allow the filtering of the facet display value
-* Added in a filter to allow the overwritting of the facet label
+* Added in a filter to allow the overwriting of the facet label
+
+### 1.0.2 -> 1.0.7
+* Travis Fixes
+* Security Updates
+* WordPress Coding Standards
 
 ### 1.0.1
 * Dev - Added in a clear link which displays next to the result count if enabled.
