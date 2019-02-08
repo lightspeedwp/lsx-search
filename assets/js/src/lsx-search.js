@@ -99,7 +99,9 @@ var lsx_search = Object.create( null );
 		if ( $( '.facetwp-template' ).length > 0 ) {
 			$( '.facetwp-filters-wrap' ).slideAndSwipe();
 
-			FWP.auto_refresh = false;
+			if ( undefined !== FWP ) {
+                FWP.auto_refresh = false;
+			}
 
 			$( '.ssm-close-btn' ).on( 'click', function() {
 				FWP.is_refresh = true;

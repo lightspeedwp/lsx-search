@@ -39,7 +39,6 @@ class LSX_Search {
 		$this->facetwp = new LSX_Search_FacetWP();
 		$this->shortcode = new LSX_Search_Shortcode();
 	}
-
 }
 
 global $lsx_search;
