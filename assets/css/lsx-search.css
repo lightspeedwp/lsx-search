@@ -139,6 +139,10 @@ body.facetwp-loading-body .search-submit-facetwp { display: none; }
 
 .facetwp-checkbox.checked:before { content: '\f14a'; }
 
+.facetwp-checkbox.depth-1 { margin-left:25px; }
+
+.facetwp-checkbox.depth-2 { margin-left:50px; }
+
 .facetwp-overflow { margin-top: 5px; }
 
 .facetwp-loading { display: block; }

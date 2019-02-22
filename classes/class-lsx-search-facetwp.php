@@ -6,15 +6,21 @@
  */
 class LSX_Search_FacetWP {
 
+	/**
+	 * @var LSX_Search_FacetWP_Hierarchy()
+	 */
+	public $hierarchy;
+
 	public function __construct() {
+
+		require_once( LSX_SEARCH_PATH . '/classes/class-lsx-search-facetwp-hierarchy.php' );
+		$this->hierarchy = new LSX_Search_FacetWP_Hierarchy();
 
 		add_filter( 'facetwp_pager_html', array( $this, 'facetwp_pager_html' ), 10, 2 );
 		add_filter( 'facetwp_result_count', array( $this, 'facetwp_result_count' ), 10, 2 );
 		add_filter( 'facetwp_facet_html', array( $this, 'facetwp_slide_html' ), 10, 2 );
 		add_filter( 'facetwp_load_css', array( $this, 'facetwp_load_css' ), 10, 1 );
-
 		add_filter( 'facetwp_index_row', array( $this, 'index_row' ), 10, 2 );
-
 	}
 
 	/**

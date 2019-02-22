@@ -2,6 +2,7 @@
 
 ### 1.1.1
 * Fix - Fixed the undefined error in the mobile JS
+* Dev - Added oin a filter for the FacetWP Checkbox, to customize the hierarchy layout.
 
 ### 1.1.0
 * Dev - Added in 4 filters for the sidebar ( lsx_search_sidebar_before, lsx_search_sidebar_top, lsx_search_sidebar_bottom, lsx_search_sidebar_after ).

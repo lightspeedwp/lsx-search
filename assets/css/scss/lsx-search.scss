@@ -351,6 +351,13 @@
 	&.checked {
 		&:before { content: '\f14a'; }
 	}
+
+	&.depth-1 {
+		margin-left:25px;
+	}
+	&.depth-2 {
+		margin-left:50px;
+	}
 }
 
 .facetwp-overflow { margin-top: 5px; }
