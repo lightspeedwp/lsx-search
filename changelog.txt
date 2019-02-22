@@ -2,7 +2,8 @@
 
 ### 1.1.1
 * Fix - Fixed the undefined error in the mobile JS
-* Dev - Added oin a filter for the FacetWP Checkbox, to customize the hierarchy layout.
+* Dev - Added in a filter for the FacetWP Checkbox, to customize the hierarchy layout.
+* Dev - Included a do_action( 'lsx_framework_display_tab_headings_bottom', 'display' ) for the Theme Options display tab
 
 ### 1.1.0
 * Dev - Added in 4 filters for the sidebar ( lsx_search_sidebar_before, lsx_search_sidebar_top, lsx_search_sidebar_bottom, lsx_search_sidebar_after ).
