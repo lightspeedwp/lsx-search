@@ -56,8 +56,10 @@ Yes you can! Join in on our [GitHub repository](https://github.com/lightspeeddev
 == Screenshots ==
 
 
-== Changelog ==
+== LSX Theme Resources ==
 
+Enable LSX Search for your custom taxonomy
+https://gist.github.com/krugazul/fe06b489741aeff32516efb92bf9ec7f
 
 == Upgrade Notice ==
 
