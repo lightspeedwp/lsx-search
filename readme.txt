@@ -1,11 +1,11 @@
 === LSX Search ===
 Contributors: feedmymedia
-Donate link: https://www.lsdev.biz/
+Donate link: https://donate.lsdev.biz/
 Tags: lsx theme, search, facetwp, Gutenberg, category
 Requires at least: 4.3
 Tested up to: 5.1.1
 Requires PHP: 7.0
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 License: GPLv3
 
 The [LSX Search Extension](https://lsx.lsdev.biz/extensions/lsx-search/) is a FacetWP templating plugin that provides deep integration with the LSX Theme
