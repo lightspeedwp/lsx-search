@@ -36,11 +36,11 @@ We offer premium support for this plugin. Premium support that can be purchased 
 == Installation ==
 To download and install the LSX Banners Extension, follow the steps below:
 
-1. Login to the backend of your website
-2. Navigate to the “Plugins” dashboard item
-3. Select “Add New” when on the plugins page
-4. Search for “LSX Banners”
-5. Download and activate the plugin
+1. Login to the backend of your website.
+2. Navigate to the “Plugins” dashboard item.
+3. Select “Add New” when on the plugins page.
+4. Search for “LSX Search” in the plugin searchbar.
+5. Download and activate the plugin.
 
 == Frequently Asked Questions ==
 = Where can I find LSX Search plugin documentation and user guides? =
