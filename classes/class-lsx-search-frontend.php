@@ -371,6 +371,8 @@ class LSX_Search_Frontend {
 	 * Outputs custom sidebar.
 	 */
 	public function search_sidebar() {
+
+		$this->options = apply_filters( 'lsx_search_sidebar_options', $this->options );
 		?>
 			<?php do_action( 'lsx_search_sidebar_before' ); ?>
 
