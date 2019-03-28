@@ -282,11 +282,20 @@ class LSX_Search_Frontend {
 			$az_pagination = false;
 		}
 
+		$show_pagination     = apply_filters( 'lsx_search_top_show_pagination', $show_pagination );
+		$pagination_visible  = apply_filters( 'lsx_search_top_pagination_visible', $pagination_visible );
+		$show_per_page_combo = apply_filters( 'lsx_search_top_show_per_page_combo', $show_per_page_combo );
+		$show_sort_combo     = apply_filters( 'lsx_search_top_show_sort_combo', $show_sort_combo );
+		$az_pagination       = apply_filters( 'lsx_search_top_az_pagination', $az_pagination );
+
 		?>
 		<div id="facetwp-top">
 			<?php if ( $show_sort_combo || ( $show_pagination && $show_per_page_combo ) ) { ?>
 				<div class="row facetwp-top-row-1 hidden-xs">
 					<div class="col-xs-12">
+
+						<?php do_action( 'lsx_search_facetwp_top_row' ); ?>
+
 						<?php if ( $show_sort_combo ) { ?>
 							<?php echo do_shortcode( '[facetwp sort="true"]' ); ?>
 						<?php } ?>
