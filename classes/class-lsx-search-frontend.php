@@ -300,7 +300,7 @@ class LSX_Search_Frontend {
 							<?php echo do_shortcode( '[facetwp sort="true"]' ); ?>
 						<?php } ?>
 
-						<?php if ( $show_pagination && $show_per_page_combo ) { ?>
+						<?php if ( ( $show_pagination && $show_per_page_combo ) || $show_per_page_combo ) { ?>
 							<?php echo do_shortcode( '[facetwp per_page="true"]' ); ?>
 						<?php } ?>
 
