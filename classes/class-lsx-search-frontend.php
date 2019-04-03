@@ -355,6 +355,7 @@ class LSX_Search_Frontend {
 			<div id="facetwp-bottom">
 				<div class="row facetwp-bottom-row-1">
 					<div class="col-xs-12 col-lg-8 hidden-xs">
+						<?php do_action( 'lsx_search_facetwp_bottom_row' ); ?>
 						<?php if ( ! empty( $az_pagination ) ) {
 							echo do_shortcode( '[facetwp facet="' . $az_pagination . '"]' );
 						} ?>
