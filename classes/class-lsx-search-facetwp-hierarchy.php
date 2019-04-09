@@ -52,7 +52,7 @@ class LSX_Search_FacetWP_Hierarchy {
 			$is_child = ( 0 == $result['parent_id'] && '0' == $result['parent_id'] ) ? ' is-child' : '';
 			$depth_css = ' depth-' . $result['depth'];
 
-			$output .= '<div class="facetwp-checkbox' . $selected . $is_child . $depth_css .'" data-parent-id="' . esc_attr( $result['parent_id'] ) . '" data-value="' . esc_attr( $result['facet_value'] ) . '">';
+			$output .= '<div class="facetwp-checkbox' . $selected . $is_child . $depth_css . '" data-parent-id="' . esc_attr( $result['parent_id'] ) . '" data-value="' . esc_attr( $result['facet_value'] ) . '">';
 			$output .= esc_html( $result['facet_display_value'] ) . ' <span class="facetwp-counter">(' . $result['counter'] . ')</span>';
 			$output .= '</div>';
 

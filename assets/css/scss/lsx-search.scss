@@ -428,6 +428,10 @@ body:not(.search-no-results) {
 	}
 	#facetwp-top, #facetwp-bottom>.row {
 		padding: 5px;
+		@media (max-width: 767px) {
+			margin-left: 0;
+			margin-right: 0;
+		}
 	}
 	#facetwp-bottom {
 		.col-xs-12 {
@@ -449,6 +453,12 @@ body:not(.search-no-results) {
 }
 
 @media (max-width: 767px) {
+	#facetwp-top {
+		display: none;
+	}
+	.lsx-pagination-wrapper.facetwp-custom {
+		margin-top: 0;
+	}
 	.logged-in {
 		.facetwp-item.facetwp-filters-wrap {
 			padding-top: 10rem;
