@@ -69,7 +69,7 @@ gulp.task('styles-rtl', function () {
 		.pipe(gulp.dest('assets/css'))
 });
 
-gulp.task('compile-css', ['styles', 'styles-rtl']);
+gulp.task('compile-css', ['styles', 'styles-rtl'] );
 
 gulp.task('js', function() {
 	return gulp.src('assets/js/src/**/*.js')

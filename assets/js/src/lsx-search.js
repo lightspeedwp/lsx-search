@@ -251,6 +251,11 @@ var lsx_search = Object.create( null );
         dropdown.parents('form').attr('engine');
     };
 
+    lsx_search.clearFacets = function( element ) {
+    	console.log('clearing the facets');
+        FWP.reset();
+    };
+
 	/**
 	 * On document ready.
 	 *
