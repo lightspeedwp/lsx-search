@@ -7,6 +7,8 @@
 * Dev - Added in 5 filters for the Top of the Search Page (lsx_search_top_show_pagination, lsx_search_top_pagination_visible, lsx_search_top_show_per_page_combo, lsx_search_top_show_sort_combo, lsx_search_top_az_pagination )
 * Dev - Added in a do action to the FacetWP Top bar above the search results (lsx_search_facetwp_top_row)
 * Dev - Added in a filter to allow you to add additional classes to the top FacetWP row.
+* Dev - Changed the onclick function for the FacetWP Clear Button.
+* Dev - Added in a filter to allow you to change the clear button function that runs. "lsx_search_clear_function"
 
 ### 1.1.0
 * Dev - Added in 4 filters for the sidebar ( lsx_search_sidebar_before, lsx_search_sidebar_top, lsx_search_sidebar_bottom, lsx_search_sidebar_after ).
