@@ -252,7 +252,6 @@ var lsx_search = Object.create( null );
     };
 
     lsx_search.clearFacets = function( element ) {
-    	console.log('clearing the facets');
         FWP.reset();
     };
 
