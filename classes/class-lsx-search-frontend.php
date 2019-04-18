@@ -60,16 +60,20 @@ class LSX_Search_Frontend {
 		$this->tabs = apply_filters( 'lsx_search_post_types_plural', array() );
 		$this->options = apply_filters( 'lsx_search_options', $this->options );
 
+		$page_for_posts = get_option( 'page_for_posts' );
+
 		if ( is_search() ) {
 			$this->search_core_suffix = 'core';
 			$this->search_prefix = 'search';
-		} elseif ( is_post_type_archive( $this->post_types ) || is_tax( $this->taxonomies ) ) {
+		} elseif ( is_post_type_archive( $this->post_types ) || is_tax( $this->taxonomies ) || is_page( $page_for_posts ) ) {
 			$this->search_core_suffix = 'search';
 
 			if ( is_tax( $this->taxonomies ) ) {
 				$tax = get_query_var( 'taxonomy' );
 				$tax = get_taxonomy( $tax );
 				$post_type = $tax->object_type[0];
+			} else if ( is_page( $page_for_posts ) ) {
+				$post_type = 'post';
 			} else {
 				$post_type = get_query_var( 'post_type' );
 			}
@@ -184,7 +188,7 @@ class LSX_Search_Frontend {
 	 * Sets post types with active search options.
 	 */
 	public function register_post_types( $post_types ) {
-		$post_types = array( 'project', 'service', 'team', 'testimonial', 'video', 'product' );
+		$post_types = array( 'post', 'project', 'service', 'team', 'testimonial', 'video', 'product' );
 		return $post_types;
 	}
 
@@ -192,7 +196,7 @@ class LSX_Search_Frontend {
 	 * Sets taxonomies with active search options.
 	 */
 	public function register_taxonomies( $taxonomies ) {
-		$taxonomies = array( 'project-group', 'service-group', 'team_role', 'video-category', 'product_cat', 'product_tag' );
+		$taxonomies = array( 'category', 'post_tag', 'project-group', 'service-group', 'team_role', 'video-category', 'product_cat', 'product_tag' );
 		return $taxonomies;
 	}
 
@@ -201,6 +205,7 @@ class LSX_Search_Frontend {
 	 */
 	public function register_post_type_tabs( $post_types_plural ) {
 		$post_types_plural = array(
+			'post' => 'posts',
 			'project' => 'projects',
 			'service' => 'services',
 			'team' => 'team',

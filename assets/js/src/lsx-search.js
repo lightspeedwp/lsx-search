@@ -251,7 +251,7 @@ var lsx_search = Object.create( null );
         dropdown.parents('form').attr('engine');
     };
 
-    lsx_search.clearFacets = function( element ) {
+    lsx_search.clearFacets = function( ) {
         FWP.reset();
     };
 

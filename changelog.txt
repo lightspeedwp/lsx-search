@@ -9,6 +9,7 @@
 * Dev - Added in a filter to allow you to add additional classes to the top FacetWP row.
 * Dev - Changed the onclick function for the FacetWP Clear Button.
 * Dev - Added in a filter to allow you to change the clear button function that runs. "lsx_search_clear_function"
+* Dev - Adding in a settings tab for posts settings.
 
 ### 1.1.0
 * Dev - Added in 4 filters for the sidebar ( lsx_search_sidebar_before, lsx_search_sidebar_top, lsx_search_sidebar_bottom, lsx_search_sidebar_after ).
