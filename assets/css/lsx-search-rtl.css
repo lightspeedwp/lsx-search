@@ -184,7 +184,7 @@ body.facetwp-loading-body .search-submit-facetwp { display: none; }
 /* New style */
 body:not(.search-no-results) #facetwp-top, body:not(.search-no-results) .facetwp-sidebar, body:not(.search-no-results) #facetwp-bottom > .row { background-color: #ffffff; border: 1px solid #E4E4E4; }
 
-body:not(.search-no-results) #facetwp-top, body:not(.search-no-results) #facetwp-bottom > .row { padding: 5px; }
+body:not(.search-no-results) #facetwp-top, body:not(.search-no-results) #facetwp-bottom > .row { padding: 5px; margin-right: 0; margin-left: 0; }
 
 @media (max-width: 767px) { body:not(.search-no-results) #facetwp-top, body:not(.search-no-results) #facetwp-bottom > .row { margin-right: 0; margin-left: 0; } }
 

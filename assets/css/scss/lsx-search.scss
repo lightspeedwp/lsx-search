@@ -428,6 +428,8 @@ body:not(.search-no-results) {
 	}
 	#facetwp-top, #facetwp-bottom>.row {
 		padding: 5px;
+		margin-left: 0;
+		margin-right: 0;
 		@media (max-width: 767px) {
 			margin-left: 0;
 			margin-right: 0;
