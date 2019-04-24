@@ -34,6 +34,8 @@ class LSX_Search {
 		require_once( LSX_SEARCH_PATH . '/classes/class-lsx-search-frontend.php' );
 		require_once( LSX_SEARCH_PATH . '/classes/class-lsx-search-facetwp.php' );
 		require_once( LSX_SEARCH_PATH . '/classes/class-lsx-search-shortcode.php' );
+		add_action( 'lsx_search_sidebar_top', array( $this, 'search_sidebar_top' ) );
+		add_filter( 'facetwp_facet_html', array( $this, 'search_facet_html' ), 10, 2 );
 		$this->admin = new LSX_Search_Admin();
 		$this->frontend = new LSX_Search_Frontend();
 		$this->facetwp = new LSX_Search_FacetWP();
