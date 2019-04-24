@@ -482,11 +482,10 @@ class LSX_Search_Frontend {
 		$size           = apply_filters( 'lsx_bootstrap_column_size', $default_size );
 		?>
 			<div class="archive-header-wrapper col-<?php echo esc_attr( $size ); ?>-12">
+				<?php lsx_global_header_inner_bottom(); ?>
 				<header class="archive-header">
 					<h1 class="archive-title"><?php woocommerce_page_title(); ?></h1>
 				</header>
-
-				<?php lsx_global_header_inner_bottom(); ?>
 			</div>
 		<?php
 	}
