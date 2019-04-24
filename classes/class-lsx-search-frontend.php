@@ -47,6 +47,8 @@ class LSX_Search_Frontend {
 		add_filter( 'lsx_search_post_types_plural', array( $this, 'register_post_type_tabs' ) );
 		add_filter( 'facetwp_sort_options', array( $this, 'facetwp_sort_options' ), 10, 2 );
 		add_filter( 'wp_kses_allowed_html', array( $this, 'kses_allowed_html' ), 20, 2 );
+		add_action( 'lsx_search_sidebar_top', array( $this, 'search_sidebar_top' ) );
+		add_filter( 'facetwp_facet_html', array( $this, 'search_facet_html' ), 10, 2 );
 	}
 
 	/**
@@ -245,10 +247,18 @@ class LSX_Search_Frontend {
 	 * Outputs the Search Title Facet
 	 */
 	public function search_sidebar_top() {
-		global $lsx_search;
-		echo wp_kses_post( '<div class="row">' );
-			$lsx_search->frontend->display_facet_search();
-		echo wp_kses_post( '</div>' );
+		if ( ! empty( $this->options['display'][ $this->search_prefix . '_facets' ] ) && is_array( $this->options['display'][ $this->search_prefix . '_facets' ] ) ) {
+
+			foreach ( $this->options['display'][ $this->search_prefix . '_facets' ] as $facet => $facet_useless ) {
+
+				if ( isset( $this->facet_data[ $facet ] ) && 'search' === $this->facet_data[ $facet ]['type'] ) {
+					echo wp_kses_post( '<div class="row">' );
+					$this->display_facet_default( $facet );
+					echo wp_kses_post( '</div>' );
+					unset( $this->options['display'][ $this->search_prefix . '_facets' ][ $facet ] );
+				}
+			}
+		}
 	}
 
 	/**
@@ -468,22 +478,9 @@ class LSX_Search_Frontend {
 
 							<div class="row">
 								<?php
-									// Search
-									foreach ( $this->options['display'][ $this->search_prefix . '_facets' ] as $facet => $facet_useless ) {
-										if ( 'search_form' === $facet ) {
-											$this->display_facet_search();
-										}
-
-										if ( 'search' === $facet ) {
-											$this->display_facet_default( $facet );
-										}
-									}
-								?>
-
-								<?php
 									// Slider
 									foreach ( $this->options['display'][ $this->search_prefix . '_facets' ] as $facet => $facet_useless ) {
-										if ( isset( $this->facet_data[ $facet ] ) && 'search_form' !== $facet && 'search' !== $facet && 'slider' === $this->facet_data[ $facet ]['type'] ) {
+										if ( isset( $this->facet_data[ $facet ] ) && 'slider' === $this->facet_data[ $facet ]['type'] ) {
 											$this->display_facet_default( $facet );
 										}
 									}
@@ -492,7 +489,7 @@ class LSX_Search_Frontend {
 								<?php
 									// Others
 									foreach ( $this->options['display'][ $this->search_prefix . '_facets' ] as $facet => $facet_useless ) {
-										if ( isset( $this->facet_data[ $facet ] ) && 'search_form' !== $facet && 'search' !== $facet && ! in_array( $this->facet_data[ $facet ]['type'], array( 'alpha', 'slider' ) ) ) {
+										if ( isset( $this->facet_data[ $facet ] ) && ! in_array( $this->facet_data[ $facet ]['type'], array( 'alpha', 'slider' ) ) ) {
 											$this->display_facet_default( $facet );
 										}
 									}
