@@ -12,15 +12,37 @@ class LSX_Search_Frontend {
 
 	public $facet_data = false;
 
+	/**
+	 * Determine weather or not search is enabled for this page.
+	 *
+	 * @var boolean
+	 */
 	public $search_enabled = false;
 
 	public $search_core_suffix = false;
 
 	public $search_prefix = false;
 
-	public $post_types = false;
+	/**
+	 * Holds the post types enabled
+	 *
+	 * @var array
+	 */
+	public $post_types = array();
 
-	public $taxonomies = false;
+	/**
+	 * Holds the taxonomies enabled for search
+	 *
+	 * @var array
+	 */
+	public $taxonomies = array();
+
+	/**
+	 * If the current search page has posts or not
+	 *
+	 * @var boolean
+	 */
+	public $has_posts = false;
 
 	/**
 	 * Construct method.
@@ -39,6 +61,7 @@ class LSX_Search_Frontend {
 		add_action( 'wp', array( $this, 'set_vars' ), 11 );
 		add_action( 'wp', array( $this, 'set_facetwp_vars' ), 12 );
 		add_action( 'wp', array( $this, 'core' ), 13 );
+		add_action( 'lsx_body_top', array( $this, 'check_for_results' ) );
 
 		add_action( 'pre_get_posts',  array( $this, 'filter_post_types' ) );
 
@@ -118,8 +141,7 @@ class LSX_Search_Frontend {
 	 */
 	public function core() {
 
-		if ( true === $this->search_enabled ) {
-
+		if ( true === $this->search_enabled ) {			
 			add_action( 'wp_enqueue_scripts', array( $this, 'assets' ), 999 );
 
 			add_filter( 'lsx_layout', array( $this, 'lsx_layout' ), 20, 1 );
@@ -133,8 +155,10 @@ class LSX_Search_Frontend {
 			}
 
 			add_filter( 'lsx_paging_nav_disable', '__return_true' );
-			add_action( 'lsx_content_top', array( $this, 'lsx_content_top' ) );
-			add_action( 'lsx_content_bottom', array( $this, 'lsx_content_bottom' ) );
+			add_action( 'lsx_content_top', array( $this, 'facet_top_bar' ) );
+			add_action( 'lsx_content_top', array( $this, 'facetwp_tempate_open' ) );
+			add_action( 'lsx_content_bottom', array( $this, 'facetwp_tempate_close' ) );
+			add_action( 'lsx_content_bottom', array( $this, 'facet_bottom_bar' ) );
 
 			if ( ! empty( $this->options['display'][ $this->search_prefix . '_layout' ] ) && '1c' !== $this->options['display'][ $this->search_prefix . '_layout' ] ) {
 				add_filter( 'lsx_sidebar_enable', array( $this, 'lsx_sidebar_enable' ), 10, 1 );
@@ -168,6 +192,24 @@ class LSX_Search_Frontend {
 				remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 				remove_action( 'woocommerce_before_shop_loop', 'lsx_wc_woocommerce_pagination', 30 );
 				remove_action( 'woocommerce_before_shop_loop', 'lsx_wc_sorting_wrapper_close', 31 );
+			}
+		}
+	}
+
+	/**
+	 * Check the $wp_query global to see if there are posts in the current query.
+	 *
+	 * @return void
+	 */
+	public function check_for_results() {
+		if ( true === $this->search_enabled ) {
+			global $wp_query;
+			if ( empty( $wp_query->posts ) ) {
+				$this->has_posts = false;
+				remove_action( 'lsx_content_top', array( $this, 'facet_top_bar' ) );
+				remove_action( 'lsx_content_bottom', array( $this, 'facet_bottom_bar' ) );				
+			} else {
+				$this->has_posts = true;
 			}
 		}
 	}
@@ -242,9 +284,12 @@ class LSX_Search_Frontend {
 	 */
 	public function lsx_layout( $layout ) {
 		if ( ! empty( $this->options['display'][ $this->search_prefix . '_layout' ] ) ) {
-			$layout = $this->options['display'][ $this->search_prefix . '_layout' ];
+			if ( false === $this->has_posts ) {
+				$layout = '1c';
+			} else {
+				$layout = $this->options['display'][ $this->search_prefix . '_layout' ];
+			}
 		}
-
 		return $layout;
 	}
 
@@ -313,6 +358,7 @@ class LSX_Search_Frontend {
 	 */
 	public function lsx_layout_selector( $return_class, $class, $layout, $size ) {
 		if ( ! empty( $this->options['display'][ $this->search_prefix . '_layout' ] ) ) {
+
 			if ( '2cl' === $layout || '2cr' === $layout ) {
 				$main_class    = 'col-sm-8 col-md-9';
 				$sidebar_class = 'col-sm-4 col-md-3';
@@ -338,7 +384,7 @@ class LSX_Search_Frontend {
 	/**
 	 * Outputs top.
 	 */
-	public function lsx_content_top() {
+	public function facet_top_bar() {
 		$show_pagination     = true;
 		$pagination_visible  = false;
 		$show_per_page_combo = empty( $this->options['display'][ $this->search_prefix . '_disable_per_page' ] );
@@ -399,17 +445,14 @@ class LSX_Search_Frontend {
 				</div>
 			<?php } ?>
 		</div>
-
-		<div class="facetwp-template">
 		<?php
 	}
 
 	/**
 	 * Outputs bottom.
 	 */
-	public function lsx_content_bottom() {
+	public function facet_bottom_bar() {
 		?>
-		</div>
 		<?php
 		$show_pagination = true;
 		if ( isset( $this->options['display'][ $this->search_prefix . '_az_pagination' ] ) ) {
@@ -447,6 +490,28 @@ class LSX_Search_Frontend {
 				</div>
 			</div>
 		<?php }
+	}
+
+	/**
+	 * Adds in the closing facetwp div
+	 *
+	 * @return void
+	 */
+	public function facetwp_tempate_open() {
+		?>
+		<div class="facetwp-template">
+		<?php
+	}	
+
+	/**
+	 * Adds in the closing facetwp div
+	 *
+	 * @return void
+	 */
+	public function facetwp_tempate_close() {
+		?>
+		</div>
+		<?php
 	}
 
 	/**
@@ -645,5 +710,4 @@ class LSX_Search_Frontend {
 		$allowedtags['button']['data-toggle'] = true;
 		return $allowedtags;
 	}
-
 }
