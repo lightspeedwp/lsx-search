@@ -254,14 +254,20 @@ class LSX_Search_Frontend {
 	public function search_sidebar_top() {
 		if ( ! empty( $this->options['display'][ $this->search_prefix . '_facets' ] ) && is_array( $this->options['display'][ $this->search_prefix . '_facets' ] ) ) {
 
-			foreach ( $this->options['display'][ $this->search_prefix . '_facets' ] as $facet => $facet_useless ) {
+			if ( ! is_search() ) {
+				foreach ( $this->options['display'][ $this->search_prefix . '_facets' ] as $facet => $facet_useless ) {
 
-				if ( isset( $this->facet_data[ $facet ] ) && 'search' === $this->facet_data[ $facet ]['type'] ) {
-					echo wp_kses_post( '<div class="row">' );
-					$this->display_facet_default( $facet );
-					echo wp_kses_post( '</div>' );
-					unset( $this->options['display'][ $this->search_prefix . '_facets' ][ $facet ] );
-				}
+					if ( isset( $this->facet_data[ $facet ] ) && 'search' === $this->facet_data[ $facet ]['type'] ) {
+						echo wp_kses_post( '<div class="row">' );
+							$this->display_facet_default( $facet );
+						echo wp_kses_post( '</div>' );
+						unset( $this->options['display'][ $this->search_prefix . '_facets' ][ $facet ] );
+					}
+				}				
+			} else {
+				echo wp_kses_post( '<div class="row">' );
+					$this->display_facet_search();
+				echo wp_kses_post( '</div>' );				
 			}
 		}
 	}
@@ -553,7 +559,7 @@ class LSX_Search_Frontend {
 			<form class="search-form lsx-search-form" action="/" method="get">
 				<div class="input-group">
 					<div class="field">
-						<input class="search-field form-control" name="s" type="search" placeholder="<?php esc_html_e( 'Search', 'lsx-search' ); ?>..." autocomplete="off" value="<?php echo get_search_query() ?>">
+						<input class="facetwp-search search-field form-control" name="s" type="search" placeholder="<?php esc_html_e( 'Search', 'lsx-search' ); ?>..." autocomplete="off" value="<?php echo get_search_query() ?>">
 					</div>
 
 					<div class="field submit-button">
