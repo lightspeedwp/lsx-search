@@ -207,7 +207,8 @@ class LSX_Search_Frontend {
 			if ( empty( $wp_query->posts ) ) {
 				$this->has_posts = false;
 				remove_action( 'lsx_content_top', array( $this, 'facet_top_bar' ) );
-				remove_action( 'lsx_content_bottom', array( $this, 'facet_bottom_bar' ) );				
+				remove_action( 'lsx_content_bottom', array( $this, 'facet_bottom_bar' ) );	
+				remove_action( 'lsx_content_wrap_before', array( $this, 'search_sidebar' ), 150 );			
 			} else {
 				$this->has_posts = true;
 			}
