@@ -129,8 +129,6 @@ body.facetwp-loading-body .search-submit-facetwp { display: none; }
 
 .facetwp-template > .no-results { margin-top: 4rem; }
 
-.facetwp-template > .no-results .search-form { display: none; }
-
 .facetwp-template article.lsx-slot { position: relative; }
 
 .facetwp-template article.lsx-slot .lsx-label-post-type { padding: 4px 1rem; position: absolute; left: 25px; top: 10px; z-index: 1; }
