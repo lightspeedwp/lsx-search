@@ -3,6 +3,14 @@
 
 .facetwp-type-search .facetwp-search-wrap .facetwp-search:focus { border-color: #418AD0; }
 
+#secondary.facetwp-sidebar { padding: 0px 15px 15px 15px; }
+
+#secondary.facetwp-sidebar .facetwp-item.facetwp-form { padding: 0px; }
+
+#secondary.facetwp-sidebar .facetwp-item.facetwp-form .search-form .input-group .field:first-child { width: 80%; }
+
+#secondary.facetwp-sidebar .facetwp-item.facetwp-form .search-form .input-group .field:nth-child(2) { width: 20%; }
+
 .facetwp-type-search .facetwp-search-wrap .facetwp-search { border-radius: 2px 0 0 2px; float: none; padding: 8px 14px 10px; width: 190px; }
 
 @media (min-width: 768px) { .facetwp-type-search .facetwp-search-wrap .facetwp-search { width: 120px; } }

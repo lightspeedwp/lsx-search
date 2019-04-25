@@ -286,7 +286,7 @@ class LSX_Search_Frontend {
 						</div>
 
 						<div class="field submit-button">
-							<button class="search-submit btn facetwp-btn" type="submit"><?php esc_html_e( 'Search', 'lsx-search' ); ?></button>
+							<button class="search-submit btn facetwp-btn" type="submit"><?php esc_html_e( 'Search2', 'lsx-search' ); ?></button>
 						</div>
 					</div>
 				</div>
@@ -555,30 +555,14 @@ class LSX_Search_Frontend {
 	 */
 	public function display_facet_default( $facet ) {
 		$col_class = '';
-
-		if ( 'search' === $facet ) {
-			$col_class = 'facetwp-form';
-		}
-		?>
-		<div class="col-xs-12 facetwp-item <?php echo esc_attr( $col_class ); ?>">
-			<?php if ( 'search' === $facet ) : ?>
-				<div class="search-form lsx-search-form">
-					<div class="input-group">
-						<div class="field">
-							<?php echo do_shortcode( '[facetwp facet="' . $facet . '"]' ); ?>
-						</div>
-
-						<div class="field submit-button">
-							<button class="search-submit search-submit-facetwp btn" type="button"><?php esc_html_e( 'Search', 'lsx-search' ); ?></button>
-						</div>
-					</div>
-				</div>
-			<?php else : ?>
+		if ( 'search' === $facet ) : ?>
+			<?php echo do_shortcode( '[facetwp facet="' . $facet . '"]' ); ?>
+		<?php else : ?>
+			<div class="col-xs-12 facetwp-item <?php echo esc_attr( $col_class ); ?>">
 				<h3 class="lsx-search-title"><?php echo wp_kses_post( $this->facet_data[ $facet ]['label'] ); ?></h3>
 				<?php echo do_shortcode( '[facetwp facet="' . $facet . '"]' ); ?>
-			<?php endif; ?>
-		</div>
-		<?php
+			</div>
+		<?php endif;
 	}
 
 	/**
