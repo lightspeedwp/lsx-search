@@ -204,7 +204,7 @@ body:not(.search-no-results) .facetwp-sidebar { background-color: transparent; b
 
 body:not(.search-no-results) #facetwp-top { margin-bottom: 25px; }
 
-body:not(.search-no-results) #facetwp-top, body:not(.search-no-results) #facetwp-bottom > .row { padding: 5px; }
+body:not(.search-no-results) #facetwp-top, body:not(.search-no-results) #facetwp-bottom > .row { padding: 5px; margin-left: 0; margin-right: 0; }
 
 @media (max-width: 767px) { body:not(.search-no-results) #facetwp-top, body:not(.search-no-results) #facetwp-bottom > .row { margin-left: 0; margin-right: 0; } }
 

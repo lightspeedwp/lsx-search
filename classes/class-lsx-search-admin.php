@@ -43,6 +43,8 @@ class LSX_Search_Admin {
 
 		add_action( 'init', array( $this, 'create_settings_page' ), 100 );
 		add_filter( 'lsx_framework_settings_tabs', array( $this, 'register_tabs' ), 100, 1 );
+		add_action( 'lsx_framework_display_tab_headings_bottom', array( $this, 'display_tab_headings' ), 10, 1 );
+		add_action( 'lsx_framework_display_tab_bottom', array( $this, 'display_tab_body' ), 10, 1 );
 	}
 
 	/**
@@ -617,4 +619,22 @@ class LSX_Search_Admin {
 			</td>
 		</tr>
 	<?php }
+
+	public function display_tab_headings( $tab = '' ) {
+		if ( 'display' === $tab ) { ?>
+			<li><a href="#ui-post" class=""><?php esc_html_e( 'Posts', 'lsx-search' ); ?></a></li>
+		<?php }
+	}
+
+	public function display_tab_body( $tab = '' ) {
+		if ( 'display' === $tab ) { ?>
+			<div id="ui-post" class="ui-tab">
+				<table class="form-table">
+					<tbody>
+					<?php do_action( 'lsx_framework_display_tab_content', 'post' ); ?>
+					</tbody>
+				</table>
+			</div>
+		<?php }
+	}
 }
