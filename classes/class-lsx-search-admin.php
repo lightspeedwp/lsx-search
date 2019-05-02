@@ -58,6 +58,7 @@ class LSX_Search_Admin {
 			'testimonial' => 'testimonials',
 			'video' => 'videos',
 			'product' => 'products', // WooCommerce
+			'post' => 'posts',
 		);
 
 		return $post_types_plural;
@@ -622,16 +623,16 @@ class LSX_Search_Admin {
 
 	public function display_tab_headings( $tab = '' ) {
 		if ( 'display' === $tab ) { ?>
-			<li><a href="#ui-post" class=""><?php esc_html_e( 'Posts', 'lsx-search' ); ?></a></li>
+			<li><a href="#ui-posts" class=""><?php esc_html_e( 'Posts', 'lsx-search' ); ?></a></li>
 		<?php }
 	}
 
 	public function display_tab_body( $tab = '' ) {
 		if ( 'display' === $tab ) { ?>
-			<div id="ui-post" class="ui-tab">
+			<div id="ui-posts" class="ui-tab">
 				<table class="form-table">
 					<tbody>
-					<?php do_action( 'lsx_framework_display_tab_content', 'post' ); ?>
+					<?php do_action( 'lsx_framework_display_tab_content', 'posts' ); ?>
 					</tbody>
 				</table>
 			</div>
