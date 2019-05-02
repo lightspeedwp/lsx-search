@@ -90,14 +90,14 @@ class LSX_Search_Frontend {
 		if ( is_search() ) {
 			$this->search_core_suffix = 'core';
 			$this->search_prefix = 'search';
-		} elseif ( is_post_type_archive( $this->post_types ) || is_tax( $this->taxonomies ) || is_page( $page_for_posts ) || is_category() || is_tag() ) {
+		} elseif ( is_post_type_archive( $this->post_types ) || is_tax( $this->taxonomies ) || is_page( $page_for_posts ) || is_home() || is_category() || is_tag() ) {
 			$this->search_core_suffix = 'search';
 
 			if ( is_tax( $this->taxonomies ) ) {
 				$tax = get_query_var( 'taxonomy' );
 				$tax = get_taxonomy( $tax );
 				$post_type = $tax->object_type[0];
-			} else if ( is_page( $page_for_posts ) || is_category() || is_tag() ) {
+			} else if ( is_page( $page_for_posts ) || is_category() || is_tag() || is_home() ) {
 				$post_type = 'post';
 			} else {
 				$post_type = get_query_var( 'post_type' );
@@ -148,6 +148,7 @@ class LSX_Search_Frontend {
 			add_filter( 'lsx_layout_selector', array( $this, 'lsx_layout_selector' ), 10, 4 );
 			add_filter( 'lsx_slot_class', array( $this, 'change_slot_column_class' ) );
 			add_action( 'lsx_entry_top', array( $this, 'add_label_to_title' ) );
+			add_filter( 'body_class',         array( $this, 'body_class' ), 10 );
 
 			if ( class_exists( 'LSX_Videos' ) ) {
 				global $lsx_videos_frontend;
@@ -195,6 +196,18 @@ class LSX_Search_Frontend {
 			}
 		}
 	}
+
+	/**
+	 * Adds a search class to the body to allow the styling of the sidebars etc.
+	 *
+	 * @param  array $classes The classes.
+	 * @return array $classes The classes.
+	 * @since 1.0.0
+	 */
+	public function body_class( $classes ) {
+		$classes[] = 'lsx-search-enabled';
+		return $classes;
+	}	
 
 	/**
 	 * Check the $wp_query global to see if there are posts in the current query.
