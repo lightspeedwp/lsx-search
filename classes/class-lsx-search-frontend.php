@@ -106,7 +106,7 @@ class LSX_Search_Frontend {
 			$this->search_prefix = $this->tabs[ $post_type ] . '_archive';
 		}
 
-		if ( ! empty( $this->options ) && ! empty( $this->options['display'][ $this->search_prefix . '_enable_' . $this->search_core_suffix ] ) ) {
+		if ( ! empty( $this->options ) && 'on' == $this->options['display'][ $this->search_prefix . '_enable_' . $this->search_core_suffix ] ) {
 			$this->search_enabled = true;
 		}
 
