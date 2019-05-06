@@ -320,7 +320,7 @@
 	> .post-wrapper {
 		margin-top: 0 !important;
 		.lsx-slot {
-			&:first-child {
+			&:first-child, &:nth-child(2), &:nth-child(3) {
 				margin-top: 0 !important;
 			}
 		}
