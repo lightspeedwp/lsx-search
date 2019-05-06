@@ -5,7 +5,7 @@
 
 #secondary.facetwp-sidebar { padding: 0px 15px 15px 15px; }
 
-#secondary.facetwp-sidebar > .row:nth-child(2), #secondary.facetwp-sidebar > .row:nth-child(3) { background: #FFFFFF; border-radius: 3px 3px 3px 3px; border-right: 1px solid #EDEBEB; border-left: 1px solid #EDEBEB; }
+@media (min-width: 768px) { #secondary.facetwp-sidebar > .row:nth-child(2), #secondary.facetwp-sidebar > .row:nth-child(3) { background: #FFFFFF; border-radius: 3px 3px 3px 3px; border-right: 1px solid #EDEBEB; border-left: 1px solid #EDEBEB; } }
 
 #secondary.facetwp-sidebar > .row:nth-child(2) { margin-top: 25px; border-top: 1px solid #EDEBEB; }
 
@@ -123,7 +123,7 @@ body.facetwp-loading-body .search-submit-facetwp { display: none; }
 
 .facetwp-template > .post-wrapper { margin-top: 0 !important; }
 
-.facetwp-template > .post-wrapper .lsx-slot { margin-top: 0 !important; }
+.facetwp-template > .post-wrapper .lsx-slot:first-child { margin-top: 0 !important; }
 
 .facetwp-template > .no-results { margin-top: 4rem; }
 
@@ -212,8 +212,13 @@ body:not(.search-no-results) #facetwp-top .row > .col-xs-12 .facetwp-pager, body
 
 body:not(.search-no-results) #facetwp-bottom .col-xs-12 { padding: 0; }
 
+.search-no-results #facetwp-top, .search-no-results .facetwp-sidebar { background-color: transparent; border: none; }
+
+.search-no-results #facetwp-top, .search-no-results #facetwp-bottom { display: none; }
+
 .search-no-results .facetwp-template { margin-top: 1em; background-color: #ffffff; border: 1px solid #E4E4E4; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; min-height: 300px; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
 
-@media (max-width: 767px) { #facetwp-top { display: none; }
+@media (max-width: 767px) { #facetwp-top, .search-form { display: none; }
   .lsx-pagination-wrapper.facetwp-custom { margin-top: 0; }
-  .logged-in .facetwp-item.facetwp-filters-wrap { padding-top: 10rem; } }
+  .logged-in .facetwp-item.facetwp-filters-wrap { padding-top: 10rem; }
+  .facetwp-sort-select, .facetwp-per-page-select { width: 96%; margin-bottom: 1em; } }
