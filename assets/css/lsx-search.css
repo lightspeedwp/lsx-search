@@ -61,8 +61,6 @@ body.facetwp-loading-body .search-submit-facetwp { display: none; }
 
 @media (max-width: 767px) { .lsx-search-form .field.submit-button:not(:nth-child(2)) .btn { min-width: 228px; } }
 
-.blog .facetwp-sidebar.widget-area .facetwp-item, .archive .facetwp-sidebar.widget-area .facetwp-item, .search-results .facetwp-sidebar.widget-area .facetwp-item, .search-no-results .facetwp-sidebar.widget-area .facetwp-item { margin-top: 4.25rem; }
-
 .blog .facetwp-sidebar.widget-area .facetwp-item:first-child, .archive .facetwp-sidebar.widget-area .facetwp-item:first-child, .search-results .facetwp-sidebar.widget-area .facetwp-item:first-child, .search-no-results .facetwp-sidebar.widget-area .facetwp-item:first-child { margin-top: 0; }
 
 .blog .facetwp-sidebar.widget-area .facetwp-facet, .archive .facetwp-sidebar.widget-area .facetwp-facet, .search-results .facetwp-sidebar.widget-area .facetwp-facet, .search-no-results .facetwp-sidebar.widget-area .facetwp-facet { margin-bottom: 0; }
@@ -73,7 +71,7 @@ body.facetwp-loading-body .search-submit-facetwp { display: none; }
 
 .blog .facetwp-sidebar.widget-area .lsx-search-title .facetwp-counts, .archive .facetwp-sidebar.widget-area .lsx-search-title .facetwp-counts, .search-results .facetwp-sidebar.widget-area .lsx-search-title .facetwp-counts, .search-no-results .facetwp-sidebar.widget-area .lsx-search-title .facetwp-counts { display: inline-block; }
 
-.blog .facetwp-sidebar.widget-area .facetwp-results, .archive .facetwp-sidebar.widget-area .facetwp-results, .search-results .facetwp-sidebar.widget-area .facetwp-results, .search-no-results .facetwp-sidebar.widget-area .facetwp-results { margin-top: 20px !important; border-bottom: 1px solid #edebeb; padding-bottom: 20px; }
+.blog .facetwp-sidebar.widget-area .facetwp-results, .archive .facetwp-sidebar.widget-area .facetwp-results, .search-results .facetwp-sidebar.widget-area .facetwp-results, .search-no-results .facetwp-sidebar.widget-area .facetwp-results { margin-top: 20px !important; padding-bottom: 20px; }
 
 .blog .facetwp-sidebar.widget-area .facetwp-results .lsx-search-title, .archive .facetwp-sidebar.widget-area .facetwp-results .lsx-search-title, .search-results .facetwp-sidebar.widget-area .facetwp-results .lsx-search-title, .search-no-results .facetwp-sidebar.widget-area .facetwp-results .lsx-search-title { margin-bottom: 0; }
 
@@ -83,13 +81,13 @@ body.facetwp-loading-body .search-submit-facetwp { display: none; }
 
 .blog .facetwp-sidebar.widget-area .facetwp-type-slider .noUi-target, .archive .facetwp-sidebar.widget-area .facetwp-type-slider .noUi-target, .search-results .facetwp-sidebar.widget-area .facetwp-type-slider .noUi-target, .search-no-results .facetwp-sidebar.widget-area .facetwp-type-slider .noUi-target { background-color: #FFF; border-radius: 2px; box-shadow: none; padding: 0 15px; }
 
-.blog .facetwp-sidebar.widget-area .facetwp-form .search-field, .archive .facetwp-sidebar.widget-area .facetwp-form .search-field, .search-results .facetwp-sidebar.widget-area .facetwp-form .search-field, .search-no-results .facetwp-sidebar.widget-area .facetwp-form .search-field { width: 190px; }
+.blog .facetwp-sidebar.widget-area .facetwp-form .search-field, .archive .facetwp-sidebar.widget-area .facetwp-form .search-field, .search-results .facetwp-sidebar.widget-area .facetwp-form .search-field, .search-no-results .facetwp-sidebar.widget-area .facetwp-form .search-field { width: 190px; height: 60px; }
 
 @media (min-width: 768px) { .blog .facetwp-sidebar.widget-area .facetwp-form .search-field, .archive .facetwp-sidebar.widget-area .facetwp-form .search-field, .search-results .facetwp-sidebar.widget-area .facetwp-form .search-field, .search-no-results .facetwp-sidebar.widget-area .facetwp-form .search-field { width: 120px; } }
 
 @media (min-width: 1200px) { .blog .facetwp-sidebar.widget-area .facetwp-form .search-field, .archive .facetwp-sidebar.widget-area .facetwp-form .search-field, .search-results .facetwp-sidebar.widget-area .facetwp-form .search-field, .search-no-results .facetwp-sidebar.widget-area .facetwp-form .search-field { width: 170px; } }
 
-.blog .facetwp-sidebar.widget-area .facetwp-form .btn.search-submit, .archive .facetwp-sidebar.widget-area .facetwp-form .btn.search-submit, .search-results .facetwp-sidebar.widget-area .facetwp-form .btn.search-submit, .search-no-results .facetwp-sidebar.widget-area .facetwp-form .btn.search-submit { padding-left: 20px; padding-right: 17px; font-size: 0; }
+.blog .facetwp-sidebar.widget-area .facetwp-form .btn.search-submit, .archive .facetwp-sidebar.widget-area .facetwp-form .btn.search-submit, .search-results .facetwp-sidebar.widget-area .facetwp-form .btn.search-submit, .search-no-results .facetwp-sidebar.widget-area .facetwp-form .btn.search-submit { padding-left: 20px; padding-right: 17px; font-size: 0; height: 58px; }
 
 .blog .facetwp-sidebar.widget-area .facetwp-form .btn.search-submit:before, .archive .facetwp-sidebar.widget-area .facetwp-form .btn.search-submit:before, .search-results .facetwp-sidebar.widget-area .facetwp-form .btn.search-submit:before, .search-no-results .facetwp-sidebar.widget-area .facetwp-form .btn.search-submit:before { content: "\f002"; font-family: FontAwesome; font-size: 14px; text-align: center; }
 
@@ -119,13 +117,13 @@ body.facetwp-loading-body .search-submit-facetwp { display: none; }
 
 .facetwp-sort + .facetwp-per-page { margin-left: 10px; }
 
-.facetwp-sort-select, .facetwp-per-page-select { -webkit-appearance: none; -moz-appearance: none; appearance: none; background: transparent; background-repeat: no-repeat; background-position-x: 100%; background-position-y: 50%; border-style: solid; border-width: 2px; box-shadow: none; display: inline-block; font-size: 14px; line-height: 1.25; min-width: 120px; padding: 10px 36px 10px 12px; transition: all 150ms ease; width: auto; }
+.facetwp-sort-select, .facetwp-per-page-select { -webkit-appearance: none; -moz-appearance: none; appearance: none; background: transparent; background-repeat: no-repeat; background-position-x: 100%; background-position-y: 50%; border-style: solid; border-width: 1px; box-shadow: none; display: inline-block; font-size: 14px; line-height: 1.25; min-width: 120px; height: 37px; padding: 0 10px; transition: all 150ms ease; width: auto; }
 
 .facetwp-per-page:after, .facetwp-sort:after { content: '\f0d7'; color: #919191; position: relative; right: 20px; font-family: FontAwesome; font-size: 20px; top: 3px; }
 
 .facetwp-template > .post-wrapper { margin-top: 0 !important; }
 
-.facetwp-template > .post-wrapper .lsx-slot { margin-top: 4rem !important; }
+.facetwp-template > .post-wrapper .lsx-slot { margin-top: 0 !important; }
 
 .facetwp-template > .no-results { margin-top: 4rem; }
 
@@ -198,13 +196,19 @@ body.facetwp-loading-body .search-submit-facetwp { display: none; }
 /* New style */
 body:not(.search-no-results) #facetwp-top, body:not(.search-no-results) #facetwp-bottom > .row { background-color: #ffffff; border: 1px solid #E4E4E4; }
 
+body:not(.search-no-results) .lsx-search-title.lsx-search-title-results { border-bottom: 1px solid #dddddd; padding-bottom: 15px; }
+
 body:not(.search-no-results) .facetwp-sidebar { background-color: transparent; border: none; }
 
 body:not(.search-no-results) #facetwp-top { margin-bottom: 25px; }
 
-body:not(.search-no-results) #facetwp-top, body:not(.search-no-results) #facetwp-bottom > .row { padding: 5px; margin-left: 0; margin-right: 0; }
+body:not(.search-no-results) #facetwp-top, body:not(.search-no-results) #facetwp-bottom > .row { padding: 9px; margin-left: 0; margin-right: 0; }
 
 @media (max-width: 767px) { body:not(.search-no-results) #facetwp-top, body:not(.search-no-results) #facetwp-bottom > .row { margin-left: 0; margin-right: 0; } }
+
+body:not(.search-no-results) #facetwp-top .row > .col-xs-12, body:not(.search-no-results) #facetwp-bottom > .row .row > .col-xs-12 { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+body:not(.search-no-results) #facetwp-top .row > .col-xs-12 .facetwp-pager, body:not(.search-no-results) #facetwp-bottom > .row .row > .col-xs-12 .facetwp-pager { -webkit-box-flex: 2; -ms-flex-positive: 2; flex-grow: 2; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; }
 
 body:not(.search-no-results) #facetwp-bottom .col-xs-12 { padding: 0; }
 
