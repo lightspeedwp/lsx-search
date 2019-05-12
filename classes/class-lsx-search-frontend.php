@@ -141,7 +141,7 @@ class LSX_Search_Frontend {
 	 */
 	public function core() {
 
-		if ( true === $this->search_enabled ) {			
+		if ( true === $this->search_enabled ) {	
 			add_action( 'wp_enqueue_scripts', array( $this, 'assets' ), 999 );
 
 			add_filter( 'lsx_layout', array( $this, 'lsx_layout' ), 20, 1 );
@@ -207,7 +207,7 @@ class LSX_Search_Frontend {
 	public function body_class( $classes ) {
 		$classes[] = 'lsx-search-enabled';
 		return $classes;
-	}	
+	}
 
 	/**
 	 * Check the $wp_query global to see if there are posts in the current query.
@@ -220,8 +220,8 @@ class LSX_Search_Frontend {
 			if ( empty( $wp_query->posts ) ) {
 				$this->has_posts = false;
 				remove_action( 'lsx_content_top', array( $this, 'facet_top_bar' ) );
-				remove_action( 'lsx_content_bottom', array( $this, 'facet_bottom_bar' ) );	
-				remove_action( 'lsx_content_wrap_before', array( $this, 'search_sidebar' ), 150 );			
+				remove_action( 'lsx_content_bottom', array( $this, 'facet_bottom_bar' ) );
+				remove_action( 'lsx_content_wrap_before', array( $this, 'search_sidebar' ), 150 );
 			} else {
 				$this->has_posts = true;
 			}
@@ -322,11 +322,11 @@ class LSX_Search_Frontend {
 						echo wp_kses_post( '</div>' );
 						unset( $this->options['display'][ $this->search_prefix . '_facets' ][ $facet ] );
 					}
-				}				
+				}
 			} else {
 				echo wp_kses_post( '<div class="row">' );
 					$this->display_facet_search();
-				echo wp_kses_post( '</div>' );				
+				echo wp_kses_post( '</div>' );
 			}
 		}
 	}
@@ -352,7 +352,7 @@ class LSX_Search_Frontend {
 				<div class="search-form lsx-search-form">
 					<div class="input-group facetwp-search-wrap">
 						<div class="field">
-							<input class="facetwp-search search-field form-control" type="text" placeholder="<?php echo $placeholder; ?>" autocomplete="off" value="<?php echo $value; ?>">
+							<input class="facetwp-search search-field form-control" type="text" placeholder="<?php echo esc_attr( $placeholder ); ?>" autocomplete="off" value="<?php echo esc_attr( $value ); ?>">
 						</div>
 
 						<div class="field submit-button">
@@ -481,7 +481,7 @@ class LSX_Search_Frontend {
 		$show_pagination     = apply_filters( 'lsx_search_bottom_show_pagination', $show_pagination );
 		$pagination_visible  = apply_filters( 'lsx_search_bottom_pagination_visible', $pagination_visible );
 		$show_per_page_combo = apply_filters( 'lsx_search_bottom_show_per_page_combo', $show_per_page_combo );
-		$show_sort_combo     = apply_filters( 'lsx_search_bottom_show_sort_combo', $show_sort_combo );		
+		$show_sort_combo     = apply_filters( 'lsx_search_bottom_show_sort_combo', $show_sort_combo );
 
 		if ( $show_pagination || ! empty( $az_pagination ) ) { ?>
 			<div id="facetwp-bottom">
@@ -515,7 +515,7 @@ class LSX_Search_Frontend {
 		?>
 		<div class="facetwp-template">
 		<?php
-	}	
+	}
 
 	/**
 	 * Adds in the closing facetwp div
