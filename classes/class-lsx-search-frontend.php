@@ -141,7 +141,7 @@ class LSX_Search_Frontend {
 	 */
 	public function core() {
 
-		if ( true === $this->search_enabled ) {	
+		if ( true === $this->search_enabled ) {
 			add_action( 'wp_enqueue_scripts', array( $this, 'assets' ), 999 );
 
 			add_filter( 'lsx_layout', array( $this, 'lsx_layout' ), 20, 1 );
