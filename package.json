@@ -38,13 +38,13 @@
     "jshint": "^2.9.6"
   },
   "dependencies": {
-    "extend": ">=3.0.2",
-    "fstream": ">=1.0.12",
+    "extend": "^3.0.2",
+    "fstream": "^1.0.12",
     "hoek": "^4.2.1",
     "latest": "^0.2.0",
     "lodash": "^4.17.11",
     "minimatch": "^3.0.4",
     "sshpk": "^1.14.2",
-    "tar": ">=2.2.2"
+    "tar": "^2.2.2"
   }
 }
