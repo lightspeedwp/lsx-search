@@ -4,7 +4,7 @@
  * Plugin URI:	https://github.com/lightspeeddevelopment/lsx-search
  * Description:	LSX Search for LSX Theme.
  * Author:		LightSpeed
- * Version: 	1.0.9
+ * Version: 	1.1.1
  * Author URI: 	https://www.lsdev.biz/
  * License: 	GPL3
  * Text Domain: lsx-search

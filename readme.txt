@@ -1,72 +1,42 @@
 === LSX Search ===
 Contributors: feedmymedia
 Donate link: https://donate.lsdev.biz/
-Tags: lsx theme, search, facetwp, Gutenberg, category
+Tags: LSX theme, search, facetwp, Gutenberg, category
 Requires at least: 4.3
-Tested up to: 5.1.1
+Tested up to: 5.2.1
 Requires PHP: 7.0
-Stable tag: 1.0.9
+Stable tag: 1.1.1
 License: GPLv3
+License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
-The [LSX Search Extension](https://lsx.lsdev.biz/extensions/lsx-search/) is a FacetWP templating plugin that provides deep integration with the LSX Theme
+The [LSX Search Extension](https://lsx.lsdev.biz/extensions/lsx-search/) intergrates with the FacetWP plugin to allow for superbly filtered search results for your users. 
 
-== Description ==
+Allow your users to break down their search results using available filters (a.k.a "Facets"). These are created by the FacetWP plugin, and with the power of LSX Search - we bring these filters to the search results. 
 
-The is a FacetWP templating plugin that provides deep integration with the LSX Theme
+The [LSX Search Extension](https://lsx.lsdev.biz/extensions/lsx-search/) allows you to choose which type of content will be filtered in your global search results, and choose the display of the results. 
 
-== Dependancies ==
+== Works with the LSX Theme ==
+Our modern and lightweight [theme](https://lsx.lsdev.biz/) works perfectly with the Search Extension, improving internal linking, website SEO and user experience! 
 
-The LSX Search plugin enhances the search functionality for the LSX Theme and requires FacetWP to be installed to function properly.
+== Gutenberg Compatible Plugin ==
+Have you updated to the new WordPress Gutenberg editor? We've got you covered! The LSX Search Plugin has been optimised for the Gutenberg update. Check out our [release post](https://lsx.lsdev.biz/lsx-blocks-available-on-wordpress-org/) on the update for more information.
 
-1. Requires the [LSX Theme](https://lsx.lsdev.biz/) to be installed and active on the website.
-2. Requires [FacetWP](https://facetwp.com/) to be installed and active on the website.
+== It's free, and always will be. ==
+We’re firm believers in open source - that’s why the [LSX Search Extension](https://lsx.lsdev.biz/extensions/lsx-search/) is free, and that won't change. We are constantly maintaining and updating our extension so you have the latest and greatest abilities on your LSX Theme powered site. 
 
-= Works with the LSX Theme =
-Our theme [theme](https://lsx.lsdev.biz/) works perfectly with the LSX Search, improving search capabilties.
+== LSX Search Documentation ==
 
-= Gutenberg Compatible =
-Have you updated to the new WordPress Gutenberg editor? We've got you covered! [The LSX Theme](https://lsx.lsdev.biz/) and all of its extensions have been optimised to work perfectly with the new Gutenberg update. 
+We have created extensive documentation on all of the LSX Search Plugin functionality. This means a hassle free installation and setup with no code requirements. Go to the [LSX Search Documentation](https://lsx.lsdev.biz/documentation/lsx-search/).
 
-= It's free, and always will be. =
-We’re firm believers in open source - that’s why we’re releasing the LSX Search plugin for free, forever.
+== LSX Search Help & Support ==
 
-= Support =
-We offer premium support for this plugin. Premium support that can be purchased via [our website.](https://www.lsdev.biz/services/support/).
+We offer premium support for this plugin. Premium support that can be purchased [via our website](https://www.lsdev.biz/services/support/).
 
-== Installation ==
-To download and install the LSX Banners Extension, follow the steps below:
+If you are experiencing issues with the LSX Search Plugin & have experience with Github, please log any bug issues you are having on the [LSX Search Github Issues](https://github.com/lightspeeddevelopment/lsx-search/issues/) page.
 
-1. Login to the backend of your website.
-2. Navigate to the “Plugins” dashboard item.
-3. Select “Add New” when on the plugins page.
-4. Search for “LSX Search” in the plugin searchbar.
-5. Download and activate the plugin.
+== Contributing to the LSX Search Plugin ==
 
-== Frequently Asked Questions ==
-= Where can I find LSX Search plugin documentation and user guides? =
-For help setting up and configuring the Search plugin please refer to our [user guide](https://www.lsdev.biz/documentation/lsx/search-extension/)
-
-= Where can I get support or talk to other users =
-For add-on support from LightSpeed, [get a quote](https://www.lsdev.biz/contact-us/) from us!
-
-= Will the LSX Search plugin work with my theme?
-Not unless you are making use of the [The LSX theme!](https://lsx.lsdev.biz/) 
-
-All of the LSX Extensions were built for the LSX theme. Be sure to have it installed and activated for this extension to function. 
-
-= Where can I report bugs or contribute to the project? =
-If you are encountering a bug issue with the LSX theme or one of the LSX extensions, report the issue by getting in touch! If the bug is a problem within the core of the plugin, we will resolve the issue as soon as possible. 
-
-= The LSX Search plugin is awesome! Can I contribute? =
-Yes you can! Join in on our [GitHub repository](https://github.com/lightspeeddevelopment/lsx-search) :)
+If you're a developer who's spotted a bug issue and have a fix, or simply have functionality you think would extend our core theme, we are always happy to accept your contribution! Visit the [LSX Search Plugin on Github](https://github.com/lightspeeddevelopment/lsx-search/) and submit a Pull Request with your updates.
 
 == Screenshots ==
-
-
-== LSX Theme Resources ==
-
-Enable LSX Search for your custom taxonomy
-https://gist.github.com/krugazul/fe06b489741aeff32516efb92bf9ec7f
-
-== Upgrade Notice ==
-
+1. Search Results with Facet

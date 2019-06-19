@@ -1,66 +1,38 @@
-# LSX Search
-Contributors: feedmymedia
-Donate link: https://donate.lsdev.biz/
-Tags: lsx theme, search, facetwp, Gutenberg, category
-Requires at least: 4.3
-Tested up to: 5.1.1
-Requires PHP: 7.0
-Stable tag: 1.0.9
-License: GPLv3
+<p align="center"><a target="_blank" href="https://lsx.lsdev.biz/"><img width="100px;" src="https://lsx.lsdev.biz/wp-content/uploads/2019/03/Search.svg" alt="LSX Search Extension"></a>
+</p>
+<h1 align="center">LSX Search</h1>
 
-The [LSX Search Extension](https://lsx.lsdev.biz/extensions/lsx-search/) is a FacetWP templating plugin that provides deep integration with the LSX Theme
+<p align="center">
+    <a href="http://gulpjs.com/"><img src="https://img.shields.io/badge/built%20with-gulp.js-green.svg" alt="Built with gulp.js"></a> 
+    <a href="https://travis-ci.org/lightspeeddevelopment/lsx-search"><img src="https://travis-ci.org/lightspeeddevelopment/lsx-search.svg?branch=master" alt="Build Status"></a>
+    <a href="https://lsx.lsdev.biz/"><img src="https://lsx.lsdev.biz/wp-content/uploads/2019/06/Designed-for-LSX-Theme-blue.png" alt="Made for LSX"></a>
+</p>
 
-## Description
+The [LSX Search Extension](https://lsx.lsdev.biz/extensions/lsx-search/) intergrates with the FacetWP plugin to allow for superbly filtered search results for your users. 
 
-The is a FacetWP templating plugin that provides deep integration with the LSX Theme
+Allow your users to break down their search results using available filters (a.k.a "Facets"). These are created by the FacetWP plugin, and with the power of LSX Search - we bring these filters to the search results. 
 
-## Dependancies
-
-The LSX Search plugin enhances the search functionality for the LSX Theme and requires FacetWP to be installed to function properly.
-
-1. Requires the [LSX Theme](https://lsx.lsdev.biz/) to be installed and active on the website.
-2. Requires [FacetWP](https://facetwp.com/) to be installed and active on the website.
+The [LSX Search Extension](https://lsx.lsdev.biz/extensions/lsx-search/) allows you to choose which type of content will be filtered in your global search results, and choose the display of the results. 
 
 ## Works with the LSX Theme
-Our theme [theme](https://lsx.lsdev.biz/) works perfectly with the LSX Search, improving search capabilties.
+Our  [theme](https://lsx.lsdev.biz/) works perfectly with the Team Extension, improving internal linking, website SEO and user experience! 
 
-## Gutenberg Compatible
-Have you updated to the new WordPress Gutenberg editor? We've got you covered! [The LSX Theme](https://lsx.lsdev.biz/) and all of its extensions have been optimised to work perfectly with the new Gutenberg update. 
+## Gutenberg Compatible Plugin
+Have you updated to the new WordPress Gutenberg editor? We've got you covered! The LSX Search Plugin has been optimised for the Gutenberg update. Check out our [release post](https://lsx.lsdev.biz/lsx-blocks-available-on-wordpress-org/) on the update for more information.
 
 ## It's free, and always will be.
-We’re firm believers in open source - that’s why we’re releasing the LSX Search plugin for free, forever.
+We’re firm believers in open source - that’s why the [LSX Search Extension](https://lsx.lsdev.biz/extensions/lsx-search/) is free, and that won't change. We are constantly maintaining and updating our extension so you have the latest and greatest abilities on your LSX Theme powered site. 
 
-## Support
-We offer premium support for this plugin. Premium support that can be purchased via [our website.](https://www.lsdev.biz/services/support/).
+## LSX Search Documentation
 
-## Installation
-To download and install the LSX Banners Extension, follow the steps below:
+We have created extensive documentation on all of the LSX Search Plugin functionality. This means a hassle free installation and setup with no code requirements. Go to the [LSX Search Documentation](https://lsx.lsdev.biz/documentation/lsx-search/).
 
-1. Login to the backend of your website.
-2. Navigate to the “Plugins” dashboard item.
-3. Select “Add New” when on the plugins page.
-4. Search for “LSX Search” in the plugin searchbar.
-5. Download and activate the plugin.
+## LSX Search Help & Support
 
-## Frequently Asked Questions
-### Where can I find LSX Search plugin documentation and user guides?
-For help setting up and configuring the Search plugin please refer to our [user guide](https://www.lsdev.biz/documentation/lsx/search-extension/)
+We offer premium support for this plugin. Premium support that can be purchased [via our website](https://www.lsdev.biz/services/support/).
 
-### Where can I get support or talk to other users
-For add-on support from LightSpeed, [get a quote](https://www.lsdev.biz/contact-us/) from us!
+If you are experiencing issues with the LSX Search Plugin & have experience with Github, please log any bug issues you are having on the [LSX Search Github Issues](https://github.com/lightspeeddevelopment/lsx-search/issues/) page.
 
-### Will the LSX Search plugin work with my theme?
-Not unless you are making use of the [The LSX theme!](https://lsx.lsdev.biz/) 
+## Contributing to the LSX Search Plugin
 
-All of the LSX Extensions were built for the LSX theme. Be sure to have it installed and activated for this extension to function. 
-
-### Where can I report bugs or contribute to the project?
-If you are encountering a bug issue with the LSX theme or one of the LSX extensions, report the issue by getting in touch! If the bug is a problem within the core of the plugin, we will resolve the issue as soon as possible. 
-
-### The LSX Search plugin is awesome! Can I contribute?
-Yes you can! Join in on our [GitHub repository](https://github.com/lightspeeddevelopment/lsx-search) :)
-
-## LSX Theme Resources
-
-Enable LSX Search for your custom taxonomy
-https://gist.github.com/krugazul/fe06b489741aeff32516efb92bf9ec7f
+If you're a developer who's spotted a bug issue and have a fix, or simply have functionality you think would extend our core theme, we are always happy to accept your contribution! Visit the [LSX Search Plugin on Github](https://github.com/lightspeeddevelopment/lsx-search/) and submit a Pull Request with your updates.
