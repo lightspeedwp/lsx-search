@@ -1,6 +1,6 @@
 ## Change log
 
-### 1.1.1
+### 1.2.0 - 19th June 2019
 * Fix - Fixed the undefined error in the mobile JS
 * Dev - Added in a filter for the FacetWP Checkbox, to customize the hierarchy layout.
 * Dev - Included a do_action( 'lsx_framework_display_tab_headings_bottom', 'display' ) for the Theme Options display tab

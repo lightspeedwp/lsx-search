@@ -5,7 +5,7 @@ Tags: LSX theme, search, facetwp, Gutenberg, category
 Requires at least: 4.3
 Tested up to: 5.2.1
 Requires PHP: 7.0
-Stable tag: 1.1.1
+Stable tag: 1.2.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
