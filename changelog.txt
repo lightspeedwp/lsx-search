@@ -1,5 +1,8 @@
 ## Change log
 
+### 1.2.1 - 25 June 2019
+* Fix - Fixed the pretty search permalinks.
+
 ### 1.2.0 - 19th June 2019
 * Fix - Fixed the undefined error in the mobile JS
 * Dev - Added in a filter for the FacetWP Checkbox, to customize the hierarchy layout.
