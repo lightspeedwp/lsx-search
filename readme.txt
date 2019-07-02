@@ -1,7 +1,7 @@
 === LSX Search ===
 Contributors: feedmymedia
 Donate link: https://donate.lsdev.biz/
-Tags: LSX theme, search, facetwp, Gutenberg, category
+Tags: lsx, search, facetwp, Gutenberg, category
 Requires at least: 4.3
 Tested up to: 5.2.1
 Requires PHP: 7.0
