@@ -1,4 +1,4 @@
-# Copyright (C) 2017 lsx-search
+# Copyright (C) 2019 lsx-search
 # This file is distributed under the same license as the lsx-search package.
 msgid ""
 msgstr ""
@@ -15,156 +15,196 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: classes/class-lsx-search-admin.php:83, classes/class-lsx-search-frontend.php:98
+#: classes/class-lsx-search-admin.php:86, classes/class-lsx-search-frontend.php:129
 msgid "Search Form"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:161, classes/class-lsx-search-admin.php:162
+#: classes/class-lsx-search-admin.php:164, classes/class-lsx-search-admin.php:165
 msgid "Theme Options"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:166
+#: classes/class-lsx-search-admin.php:169
 msgid "Save Changes"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:187
+#: classes/class-lsx-search-admin.php:190
 msgid "General"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:199
+#: classes/class-lsx-search-admin.php:202
 msgid "Display"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:211
+#: classes/class-lsx-search-admin.php:214
 msgid "API"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:240
+#: classes/class-lsx-search-admin.php:243
 msgid "Post types"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:272
+#: classes/class-lsx-search-admin.php:275
 msgid "Enable Search"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:276
+#: classes/class-lsx-search-admin.php:279
 msgid "This adds the facet shortcodes to the search results template."
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:281
+#: classes/class-lsx-search-admin.php:284
 msgid "Enable Post Type Label"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:285
+#: classes/class-lsx-search-admin.php:288
 msgid "This enables the post type label from entries on search results page."
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:290, classes/class-lsx-search-admin.php:449
+#: classes/class-lsx-search-admin.php:293, classes/class-lsx-search-admin.php:464
 msgid "Columns Layout"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:294, classes/class-lsx-search-admin.php:453
+#: classes/class-lsx-search-admin.php:297, classes/class-lsx-search-admin.php:468
 msgid "Follow the theme layout"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:295, classes/class-lsx-search-admin.php:454
+#: classes/class-lsx-search-admin.php:298, classes/class-lsx-search-admin.php:469
 msgid "1 column"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:296, classes/class-lsx-search-admin.php:455
+#: classes/class-lsx-search-admin.php:299, classes/class-lsx-search-admin.php:470
 msgid "2 columns / Content on right"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:297, classes/class-lsx-search-admin.php:456
+#: classes/class-lsx-search-admin.php:300, classes/class-lsx-search-admin.php:471
 msgid "2 columns / Content on left"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:303, classes/class-lsx-search-admin.php:469
+#: classes/class-lsx-search-admin.php:306, classes/class-lsx-search-admin.php:485
 msgid "Per Page"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:306, classes/class-lsx-search-admin.php:472
+#: classes/class-lsx-search-admin.php:309, classes/class-lsx-search-admin.php:488
 msgid "Disable Per Page"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:311, classes/class-lsx-search-admin.php:484
+#: classes/class-lsx-search-admin.php:314, classes/class-lsx-search-admin.php:501
 msgid "Sorting"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:315, classes/class-lsx-search-admin.php:488
+#: classes/class-lsx-search-admin.php:318, classes/class-lsx-search-admin.php:505
 msgid "Disable Sorting"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:316, classes/class-lsx-search-admin.php:489
+#: classes/class-lsx-search-admin.php:319, classes/class-lsx-search-admin.php:506
 msgid "Disable Title (A-Z)"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:317, classes/class-lsx-search-admin.php:490
+#: classes/class-lsx-search-admin.php:320, classes/class-lsx-search-admin.php:507
 msgid "Disable Date"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:323, classes/class-lsx-search-admin.php:506
+#: classes/class-lsx-search-admin.php:326, classes/class-lsx-search-admin.php:524
 msgid "Display Result Count"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:331, classes/class-lsx-search-admin.php:521
+#: classes/class-lsx-search-admin.php:334, classes/class-lsx-search-admin.php:533, classes/class-lsx-search-admin.php:543
+msgid "Display Clear Button"
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:338, classes/class-lsx-search-admin.php:537, classes/class-lsx-search-admin.php:547
+msgid "This will display a clear button next to the \"result\" count"
+msgstr ""
+
+#: classes/class-lsx-search-admin.php:343, classes/class-lsx-search-admin.php:561
 msgid "Alphabetical Facet"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:339, classes/class-lsx-search-admin.php:529
+#: classes/class-lsx-search-admin.php:351, classes/class-lsx-search-admin.php:569
 msgid "None"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:349, classes/class-lsx-search-admin.php:377, classes/class-lsx-search-admin.php:539, classes/class-lsx-search-admin.php:574
+#: classes/class-lsx-search-admin.php:361, classes/class-lsx-search-admin.php:389, classes/class-lsx-search-admin.php:579, classes/class-lsx-search-admin.php:615
 msgid "You have no Facets setup."
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:356, classes/class-lsx-search-admin.php:553
+#: classes/class-lsx-search-admin.php:368, classes/class-lsx-search-admin.php:594
 msgid "Facets"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:417
+#: classes/class-lsx-search-admin.php:430
 msgid "WooCommerce Settings"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:419
+#: classes/class-lsx-search-admin.php:432
 msgid "Search Settings"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:433
+#: classes/class-lsx-search-admin.php:447
 msgid "Enable Filtering"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:437
+#: classes/class-lsx-search-admin.php:451
 msgid "This adds the facet shortcodes to the post type archive and taxonomy templates."
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:492
+#: classes/class-lsx-search-admin.php:509
 msgid "Disable Price"
 msgstr ""
 
-#: classes/class-lsx-search-frontend.php:366
+#: classes/class-lsx-search-admin.php:626
+msgid "Posts"
+msgstr ""
+
+#: classes/class-lsx-search-frontend.php:346
+msgid "Search..."
+msgstr ""
+
+#: classes/class-lsx-search-frontend.php:359
+msgid "Search2"
+msgstr ""
+
+#: classes/class-lsx-search-frontend.php:555
 msgid "Results"
 msgstr ""
 
-#: classes/class-lsx-search-frontend.php:367
+#: classes/class-lsx-search-frontend.php:558
+msgid "Clear the current search filters."
+msgstr ""
+
+#: classes/class-lsx-search-frontend.php:558
 msgid "Clear"
 msgstr ""
 
-#: classes/class-lsx-search-frontend.php:375
+#: classes/class-lsx-search-frontend.php:568
 msgid "Filters"
 msgstr ""
 
-#: classes/class-lsx-search-frontend.php:383
+#: classes/class-lsx-search-frontend.php:576
 msgid "Close Filters"
 msgstr ""
 
-#: classes/class-lsx-search-frontend.php:422
+#: classes/class-lsx-search-frontend.php:602
 msgid "Apply Filters"
 msgstr ""
 
-#: classes/class-lsx-search-frontend.php:458, classes/class-lsx-search-frontend.php:462, classes/class-lsx-search-frontend.php:489, includes/settings/display.php:49, includes/settings/general.php:9
+#: classes/class-lsx-search-frontend.php:641, classes/class-lsx-search-frontend.php:645, classes/class-lsx-search-shortcode.php:44, includes/settings/display.php:49, includes/settings/general.php:9
 msgid "Search"
+msgstr ""
+
+#: classes/class-lsx-search-shortcode.php:26
+msgid "Where do you want to go?"
+msgstr ""
+
+#: classes/class-lsx-search-shortcode.php:196, classes/class-lsx-search-shortcode.php:265
+msgid "Select"
+msgstr ""
+
+#: classes/class-lsx-search-shortcode.php:201, classes/class-lsx-search-shortcode.php:274
+msgid "Select "
+msgstr ""
+
+#: classes/class-lsx-search-shortcode.php:285
+msgid "Please re-index your facets."
 msgstr ""
 
 #: includes/settings/api.php:3
