@@ -70,6 +70,11 @@ class LSX_Search_Frontend {
 		add_filter( 'lsx_search_post_types_plural', array( $this, 'register_post_type_tabs' ) );
 		add_filter( 'facetwp_sort_options', array( $this, 'facetwp_sort_options' ), 10, 2 );
 		add_filter( 'wp_kses_allowed_html', array( $this, 'kses_allowed_html' ), 20, 2 );
+
+		// Redirects.
+		add_action( 'template_redirect', array( $this, 'pretty_search_redirect' ) );
+		add_filter( 'pre_get_posts', array( $this, 'pretty_search_parse_query' ) );
+
 		add_action( 'lsx_search_sidebar_top', array( $this, 'search_sidebar_top' ) );
 		add_filter( 'facetwp_facet_html', array( $this, 'search_facet_html' ), 10, 2 );
 	}
@@ -294,6 +299,98 @@ class LSX_Search_Frontend {
 	}
 
 	/**
+	 * Redirect wordpress to the search template located in the plugin
+	 *
+	 * @param	$template
+	 * @return	$template
+	 */
+	public function search_template_include( $template ) {
+		if ( is_main_query() && is_search() ) {
+			if ( file_exists( LSX_SEARCH_PATH . 'templates/search.php' ) ) {
+				$template = LSX_SEARCH_PATH . 'templates/search.php';
+			}
+		}
+
+		return $template;
+	}
+
+	/**
+	 * Rewrite the search URL
+	 */
+	public function pretty_search_redirect() {
+		global $wp_rewrite,$wp_query;
+
+		if ( ! isset( $wp_rewrite ) || ! is_object( $wp_rewrite ) || ! $wp_rewrite->using_permalinks() ) {
+			return;
+		}
+
+		$search_base = $wp_rewrite->search_base;
+
+		if ( is_search() && ! is_admin() && strpos( $_SERVER['REQUEST_URI'], "/{$search_base}/" ) === false ) {
+			$search_query = get_query_var( 's' );
+			$engine = '';
+
+			// If the search was triggered by a supplemental engine.
+			if ( isset( $_GET['engine'] ) && 'default' !== $_GET['engine'] ) {
+				$engine = $_GET['engine'];
+				set_query_var( 'engine', $engine );
+				$engine = array_search( $engine,$this->post_type_slugs ) . '/';
+			}
+
+			$get_array = $_GET;
+
+			if ( is_array( $get_array ) && ! empty( $get_array ) ) {
+				$vars_to_maintain = array();
+
+				foreach ( $get_array as $ga_key => $ga_value ) {
+					if ( false !== strpos( $ga_key, 'fwp_' ) ) {
+						$vars_to_maintain[] = $ga_key . '=' . $ga_value;
+					}
+				}
+			}
+
+			$redirect_url = home_url( "/{$search_base}/" . $engine . urlencode( $search_query ) );
+
+			if ( ! empty( $vars_to_maintain ) ) {
+				$redirect_url .= '?' . implode( '&', $vars_to_maintain );
+			}
+
+			wp_redirect( $redirect_url );
+			exit();
+		}
+	}
+
+	/**
+	 * Parse the Query and trigger a search
+	 */
+	public function pretty_search_parse_query( $query ) {
+		if ( is_search() && ! is_admin() && $query->is_main_query() ) {
+			$search_query = $query->get( 's' );
+			$keyword_test = explode( '/', $search_query );
+
+			if ( isset( $this->post_type_slugs[ $keyword_test[0] ] ) ) {
+				$engine = $this->post_type_slugs[ $keyword_test[0] ];
+
+				$query->set( 'post_type', $engine );
+				$query->set( 'engine', $engine );
+
+				if ( count( $keyword_test ) > 1 ) {
+					$query->set( 's', $keyword_test[1] );
+				} elseif ( post_type_exists( $engine ) ) {
+					$query->set( 's', '' );
+				}
+			} else {
+				if ( isset( $this->options['general']['search_post_types'] ) && is_array( $this->options['general']['search_post_types'] ) ) {
+					$post_types = array_keys( $this->options['general']['search_post_types'] );
+					$query->set( 'post_type', $post_types );
+				}
+			}
+		}
+
+		return $query;
+	}
+
+	/**
 	 * A filter to set the layout to 2 column.
 	 */
 	public function lsx_layout( $layout ) {
@@ -495,11 +592,11 @@ class LSX_Search_Frontend {
 
 						<?php if ( ( $show_pagination && $show_per_page_combo ) || $show_per_page_combo ) { ?>
 							<?php echo do_shortcode( '[facetwp per_page="true"]' ); ?>
-						<?php } ?>						
+						<?php } ?>
 
 						<?php if ( $show_pagination ) { ?>
 							<?php echo do_shortcode( '[facetwp pager="true"]' ); ?>
-						<?php } ?>						
+						<?php } ?>
 					</div>
 				</div>
 			</div>

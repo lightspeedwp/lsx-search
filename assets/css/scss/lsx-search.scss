@@ -7,6 +7,47 @@
 @import 'include-media';
 @import 'customizer-search-body-colours';
 
+// Spacing
+@include media('>=phone') {
+	.search, .archive {
+		.facetwp-sidebar.widget-area {
+			+ .content-area {
+				width: 66.66667%;
+			}
+		}
+	}
+}
+@include media('>=tablet') {
+	.search, .archive {
+		.content.role.row {
+			margin-right: auto;
+			margin-left: auto;
+		}
+		.facetwp-sidebar.widget-area {
+			padding: 0px 20px 20px 20px;
+			margin-top: 4.25rem;
+			max-width: 271px;
+			margin-left: 5px;
+			margin-right: 5px;
+			+ .content-area {
+				margin-top: 4.25rem;
+				width: 75%;
+				max-width: 860px;
+				padding-left: 20px;
+				padding-right: 0;
+				.facetwp-template {
+					.lsx-to-archive-item {
+						margin-top: 2.4rem;
+					}
+				}
+				.facetwp-bottom-row-1 {
+					margin-top: 2.4rem;
+				}
+			}
+		}
+	}
+}
+
 %bootstrap-form-control {
 	display: block;
 	width: 100%;
@@ -188,6 +229,15 @@
 
 		.lsx-search-title {
 			text-align: left;
+
+			@include media('>=phone') {
+				margin-top: 2rem;
+				margin-bottom: 2rem;
+				&.lsx-to-search-title-results {
+					padding-bottom: 2rem;
+				}
+
+			}
 
 			@include media('>=phone') { margin-top: 1.3rem; }
 
