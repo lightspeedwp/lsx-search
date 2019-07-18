@@ -365,16 +365,19 @@
     top: 3px;
 }
 
-
-.facetwp-template {
-	> .post-wrapper {
-		margin-top: 0 !important;
-		.lsx-slot {
-			&:first-child, &:nth-child(2), &:nth-child(3) {
-				margin-top: 0 !important;
+.lsx-body-grid-layout {
+	.facetwp-template {
+		> .post-wrapper {
+			margin-top: 0 !important;
+			.lsx-slot {
+				&:first-child, &:nth-child(2), &:nth-child(3) {
+					margin-top: 0 !important;
+				}
 			}
 		}
 	}
+}
+.facetwp-template {
 
 	> .no-results {
 		margin-top: 4rem;

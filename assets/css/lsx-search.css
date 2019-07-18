@@ -132,9 +132,9 @@ body.facetwp-loading-body .search-submit-facetwp { display: none; }
 
 .facetwp-per-page:after, .facetwp-sort:after { content: '\f0d7'; color: #919191; position: relative; right: 20px; font-family: FontAwesome; font-size: 20px; top: 3px; }
 
-.facetwp-template > .post-wrapper { margin-top: 0 !important; }
+.lsx-body-grid-layout .facetwp-template > .post-wrapper { margin-top: 0 !important; }
 
-.facetwp-template > .post-wrapper .lsx-slot:first-child, .facetwp-template > .post-wrapper .lsx-slot:nth-child(2), .facetwp-template > .post-wrapper .lsx-slot:nth-child(3) { margin-top: 0 !important; }
+.lsx-body-grid-layout .facetwp-template > .post-wrapper .lsx-slot:first-child, .lsx-body-grid-layout .facetwp-template > .post-wrapper .lsx-slot:nth-child(2), .lsx-body-grid-layout .facetwp-template > .post-wrapper .lsx-slot:nth-child(3) { margin-top: 0 !important; }
 
 .facetwp-template > .no-results { margin-top: 4rem; }
 
