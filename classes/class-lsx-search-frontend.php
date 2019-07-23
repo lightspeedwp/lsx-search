@@ -779,7 +779,10 @@ class LSX_Search_Frontend {
 	public function add_label_to_title() {
 		if ( is_search() ) {
 			if ( ! empty( $this->options['display']['search_enable_pt_label'] ) ) {
-				echo wp_kses_post( ' <span class="label label-default lsx-label-post-type">' . ucwords( get_post_type() ) . '</span>' );
+				$post_type = get_post_type();
+				$post_type = str_replace( '_', ' ', $post_type );
+				$post_type = str_replace( '-', ' ', $post_type );
+				echo wp_kses_post( ' <span class="label label-default lsx-label-post-type">' . $post_type . '</span>' );
 			}
 		}
 	}
