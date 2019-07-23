@@ -582,7 +582,7 @@ body:not(.search-no-results) {
 }
 
 @media (max-width: 767px) {
-	#facetwp-top, .search-form {
+	#facetwp-top, .search-form:not(.form-inline) {
 		display: none;
 	}
 	.lsx-pagination-wrapper.facetwp-custom {

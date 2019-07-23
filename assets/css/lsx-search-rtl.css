@@ -229,7 +229,7 @@ body:not(.search-no-results) #facetwp-bottom .col-xs-12 { padding: 0; }
 
 .search-no-results .facetwp-template { margin-top: 1em; background-color: #ffffff; border: 1px solid #E4E4E4; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; min-height: 300px; -ms-flex-pack: center; justify-content: center; }
 
-@media (max-width: 767px) { #facetwp-top, .search-form { display: none; }
+@media (max-width: 767px) { #facetwp-top, .search-form:not(.form-inline) { display: none; }
   .lsx-pagination-wrapper.facetwp-custom { margin-top: 0; }
   .logged-in .facetwp-item.facetwp-filters-wrap { padding-top: 10rem; }
   .facetwp-sort-select, .facetwp-per-page-select { width: 96%; margin-bottom: 1em; } }
