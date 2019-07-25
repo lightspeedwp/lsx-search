@@ -213,7 +213,7 @@ body:not(.search-no-results) .facetwp-sidebar { background-color: transparent; b
 
 body:not(.search-no-results) #facetwp-top { margin-bottom: 25px; }
 
-body:not(.search-no-results) #facetwp-top, body:not(.search-no-results) #facetwp-bottom > .row { padding: 9px; margin-left: 0; margin-right: 0; }
+body:not(.search-no-results) #facetwp-top, body:not(.search-no-results) #facetwp-bottom > .row { padding: 9px; margin-left: 0; margin-right: 0; min-height: 60px; }
 
 @media (max-width: 767px) { body:not(.search-no-results) #facetwp-top, body:not(.search-no-results) #facetwp-bottom > .row { margin-left: 0; margin-right: 0; } }
 
