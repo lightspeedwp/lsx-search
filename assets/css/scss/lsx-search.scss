@@ -395,6 +395,16 @@
 		}
 	}
 }
+.lsx-body-list-layout {
+	.facetwp-template {
+		article.lsx-slot {
+			.lsx-label-post-type {
+				left: 10px;
+    			right: initial;
+			}
+		}
+	}
+}
 
 .woocommerce, .woocommerce-page {
 	.facetwp-template {
