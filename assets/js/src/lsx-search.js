@@ -69,6 +69,11 @@ var lsx_search = Object.create( null );
 				}
 			});
 
+			$.each( FWP.settings.num_choices, function( key, val ) {
+				var $parent = $('.parent-facetwp-facet-' + key).closest('.facetwp-item');
+				(0 === val) ? $parent.hide() : $parent.show();
+			});
+
 			if ( false === lsx_search.facet_wp_load_first_time ) {
 				lsx_search.facet_wp_load_first_time = true;
 				return;
