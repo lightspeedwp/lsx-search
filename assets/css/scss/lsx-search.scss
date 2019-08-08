@@ -408,7 +408,9 @@
 				.entry-layout {
 					padding-bottom: 0;
 				}
-				.post-tags-wrapper {
+				.post-tags-wrapper,
+				.entry-meta,
+				.post-meta-categories {
 					display: none;
 				}
 			}
@@ -430,6 +432,14 @@
 			right: 25px;
 			top: 10px;
 			z-index: 1;
+		}
+		.entry-layout {
+			padding-bottom: 0;
+		}
+		.post-tags-wrapper,
+		.entry-meta,
+		.post-meta-categories {
+			display: none;
 		}
 	}
 }
