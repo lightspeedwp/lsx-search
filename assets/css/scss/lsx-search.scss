@@ -397,10 +397,11 @@
 				.moretag {
 					display: block;
 					margin: 0px -15px -15px;
-					padding: 1rem 0;
+					padding: 1.3rem 0;
 					text-align: center;
 					transition: background 300ms ease;
 					color: #fff;
+					text-transform: initial;
 					@include media('<=phone') {
 						margin: 0px -10px -15px;
 					}
@@ -412,6 +413,9 @@
 				.entry-meta,
 				.post-meta-categories {
 					display: none;
+				}
+				.entry-title {
+					text-align: center;
 				}
 			}
 		}
@@ -440,6 +444,9 @@
 		.entry-meta,
 		.post-meta-categories {
 			display: none;
+		}
+		.moretag {
+			text-transform: initial;
 		}
 	}
 }
