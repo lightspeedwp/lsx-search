@@ -85,10 +85,20 @@ class LSX_Search_Frontend {
 	public function set_vars() {
 		$post_type = '';
 
-		$this->post_types = apply_filters( 'lsx_search_post_types', array() );
-		$this->taxonomies = apply_filters( 'lsx_search_taxonomies', array() );
-		$this->tabs = apply_filters( 'lsx_search_post_types_plural', array() );
-		$this->options = apply_filters( 'lsx_search_options', $this->options );
+		$this->post_types      = apply_filters( 'lsx_search_post_types', array() );
+		$this->taxonomies      = apply_filters( 'lsx_search_taxonomies', array() );
+		$this->tabs            = apply_filters( 'lsx_search_post_types_plural', array() );
+		$this->options         = apply_filters( 'lsx_search_options', $this->options );
+		$this->post_types      = get_post_types();
+		$this->post_type_slugs = array(
+			'post' => 'posts',
+			'project' => 'projects',
+			'service' => 'services',
+			'team' => 'team',
+			'testimonial' => 'testimonials',
+			'video' => 'videos',
+			'product' => 'products', // WooCommerce
+		);
 
 		$page_for_posts = get_option( 'page_for_posts' );
 
@@ -276,7 +286,6 @@ class LSX_Search_Frontend {
 			'video' => 'videos',
 			'product' => 'products', // WooCommerce
 		);
-
 		return $post_types_plural;
 	}
 
@@ -334,7 +343,7 @@ class LSX_Search_Frontend {
 			if ( isset( $_GET['engine'] ) && 'default' !== $_GET['engine'] ) {
 				$engine = $_GET['engine'];
 				set_query_var( 'engine', $engine );
-				$engine = array_search( $engine,$this->post_type_slugs ) . '/';
+				$engine = array_search( $engine , $this->post_type_slugs ) . '/';
 			}
 
 			$get_array = $_GET;
@@ -368,8 +377,9 @@ class LSX_Search_Frontend {
 			$search_query = $query->get( 's' );
 			$keyword_test = explode( '/', $search_query );
 
-			if ( isset( $this->post_type_slugs[ $keyword_test[0] ] ) ) {
-				$engine = $this->post_type_slugs[ $keyword_test[0] ];
+			$index = array_search( $keyword_test[0], $this->post_type_slugs );
+			if ( false !== $index ) {
+				$engine = $this->post_type_slugs[ $index ];
 
 				$query->set( 'post_type', $engine );
 				$query->set( 'engine', $engine );
