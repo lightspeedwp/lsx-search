@@ -142,6 +142,8 @@ body.facetwp-loading-body .search-submit-facetwp { display: none; }
 
 .facetwp-template article.lsx-slot .lsx-label-post-type { padding: 4px 1rem; position: absolute; right: 25px; top: 10px; z-index: 1; }
 
+.lsx-body-list-layout .facetwp-template article.lsx-slot .lsx-label-post-type { left: 10px; right: initial; }
+
 .woocommerce .facetwp-template ul.products, .woocommerce-page .facetwp-template ul.products { margin-top: 0; }
 
 @media (min-width: 768px) { .woocommerce .facetwp-template ul.products li.product, .woocommerce-page .facetwp-template ul.products li.product { width: 30.75%; } }
@@ -213,7 +215,7 @@ body:not(.search-no-results) .facetwp-sidebar { background-color: transparent; b
 
 body:not(.search-no-results) #facetwp-top { margin-bottom: 25px; }
 
-body:not(.search-no-results) #facetwp-top, body:not(.search-no-results) #facetwp-bottom > .row { padding: 9px; margin-left: 0; margin-right: 0; }
+body:not(.search-no-results) #facetwp-top, body:not(.search-no-results) #facetwp-bottom > .row { padding: 9px; margin-left: 0; margin-right: 0; min-height: 60px; }
 
 @media (max-width: 767px) { body:not(.search-no-results) #facetwp-top, body:not(.search-no-results) #facetwp-bottom > .row { margin-left: 0; margin-right: 0; } }
 

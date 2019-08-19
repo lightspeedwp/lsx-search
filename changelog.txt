@@ -1,7 +1,12 @@
 ## Change log
 
-### 1.2.1 - 25 June 2019
+### 1.2.1 - 06 August 2019
 * Fix - Fixed the pretty search permalinks.
+* Dev - Updating templates with prettier links
+* Fix - Spacing styles fixes.
+* Fix - Removing dashes from post type label
+* Dev - Grid layout improvements to match the LSX Blog Customizer new design.
+
 
 ### 1.2.0 - 19th June 2019
 * Fix - Fixed the undefined error in the mobile JS
