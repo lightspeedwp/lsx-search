@@ -95,7 +95,10 @@
 	padding: 0px 15px 15px 15px;
 	@include media('<phone') {
 		margin-top: 4.25rem;
-		margin-bottom: 4.25rem;
+		margin-bottom: 2.4rem;
+		.row:not(.facetwp-row) {
+			display: none;
+		}
 	}
 	@media (min-width: 768px) {
 		.facetwp-row {
@@ -658,6 +661,9 @@ body:not(.search-no-results) {
 	.logged-in {
 		.facetwp-item.facetwp-filters-wrap {
 			padding-top: 10rem;
+		}
+		.facetwp-item-wrap>.ssm-row-margin-bottom:first-child {
+			margin-top: 12.4rem;
 		}
 		.ssm-row-margin-bottom {
 			margin-top: 8.4rem;
