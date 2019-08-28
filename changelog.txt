@@ -1,5 +1,8 @@
 ## Change log
 
+### 1.2.2
+* Dev - Cosmetic improvements to Search
+
 ### 1.2.1 - 06 August 2019
 * Fix - Fixed the pretty search permalinks.
 * Dev - Updating templates with prettier links
