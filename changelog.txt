@@ -2,6 +2,7 @@
 
 ### 1.2.2
 * Dev - Cosmetic improvements to Search
+# Dev - Adding the .gitattributes file to remove unnecessary files from the WordPress version.
 
 ### 1.2.1 - 06 August 2019
 * Fix - Fixed the pretty search permalinks.
