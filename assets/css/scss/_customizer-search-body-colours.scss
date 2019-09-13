@@ -10,17 +10,18 @@
 			.facetwp-type-slider {
 				.noUi-connect { background: $link; }
 			}
-			.facetwp-item {
-				.facetwp-collapsed {
-					button.facetwp-collapse {
-						&:before {
-							color: $link;
-						}
-						&:hover {
-							&:before {
-								color: $hover;
-							}
-						}
+		}
+	}
+
+	.facetwp-item {
+		.facetwp-collapsed {
+			button.facetwp-collapse {
+				&:before {
+					color: $link;
+				}
+				&:hover {
+					&:before {
+						color: $hover;
 					}
 				}
 			}

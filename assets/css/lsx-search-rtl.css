@@ -230,9 +230,9 @@ body.facetwp-loading-body .search-submit-facetwp { display: none; }
 
 .archive .facetwp-sidebar.widget-area .facetwp-type-slider .noUi-connect { background: #418AD0; }
 
-.archive .facetwp-sidebar.widget-area .facetwp-item .facetwp-collapsed button.facetwp-collapse:before { color: #418AD0; }
+.facetwp-item .facetwp-collapsed button.facetwp-collapse:before { color: #418AD0; }
 
-.archive .facetwp-sidebar.widget-area .facetwp-item .facetwp-collapsed button.facetwp-collapse:hover:before { color: #F7AE00; }
+.facetwp-item .facetwp-collapsed button.facetwp-collapse:hover:before { color: #F7AE00; }
 
 .facetwp-type-alpha .facetwp-alpha { color: #DADDDF; }
 
