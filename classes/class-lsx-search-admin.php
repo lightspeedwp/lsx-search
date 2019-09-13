@@ -311,6 +311,14 @@ class LSX_Search_Admin {
 			</tr>
 			<tr class="form-field-wrap">
 				<th scope="row">
+					<label for="enable_collapse"><?php esc_html_e( 'Collapse', 'lsx-search' ); ?></label>
+				</th>
+				<td>
+					<input type="checkbox" {{#if enable_collapse}} checked="checked" {{/if}} name="enable_collapse" /> <label for="facets"><?php esc_html_e( 'Enable collapsible Facet Results', 'lsx-search' ); ?></label>
+				</td>
+			</tr>
+			<tr class="form-field-wrap">
+				<th scope="row">
 					<label><?php esc_html_e( 'Sorting', 'lsx-search' ); ?></label>
 				</th>
 				<td>

@@ -17,8 +17,7 @@
 
 #secondary.facetwp-sidebar { padding: 0px 15px 15px 15px; }
 
-@media (max-width: 767px) { #secondary.facetwp-sidebar { margin-top: 4.25rem; margin-bottom: 2.4rem; }
-  #secondary.facetwp-sidebar .row:not(.facetwp-row) { display: none; } }
+@media (max-width: 767px) { #secondary.facetwp-sidebar { margin-top: 4.25rem; margin-bottom: 2.4rem; } }
 
 @media (min-width: 768px) { #secondary.facetwp-sidebar .facetwp-row { border-radius: 3px 3px 3px 3px; } }
 
@@ -82,14 +81,24 @@ body.facetwp-loading-body .search-submit-facetwp { display: none; }
 
 .blog .facetwp-sidebar.widget-area .facetwp-item:first-child, .archive .facetwp-sidebar.widget-area .facetwp-item:first-child, .search-results .facetwp-sidebar.widget-area .facetwp-item:first-child, .search-no-results .facetwp-sidebar.widget-area .facetwp-item:first-child { margin-top: 0; }
 
-.blog .facetwp-sidebar.widget-area .facetwp-facet, .archive .facetwp-sidebar.widget-area .facetwp-facet, .search-results .facetwp-sidebar.widget-area .facetwp-facet, .search-no-results .facetwp-sidebar.widget-area .facetwp-facet { margin-bottom: 0; }
+.blog .facetwp-sidebar.widget-area .facetwp-item .facetwp-collapsed, .archive .facetwp-sidebar.widget-area .facetwp-item .facetwp-collapsed, .search-results .facetwp-sidebar.widget-area .facetwp-item .facetwp-collapsed, .search-no-results .facetwp-sidebar.widget-area .facetwp-item .facetwp-collapsed { display: -ms-flexbox; display: flex; -ms-flex-pack: justify; justify-content: space-between; }
+
+.blog .facetwp-sidebar.widget-area .facetwp-item .facetwp-collapsed button.facetwp-collapse, .archive .facetwp-sidebar.widget-area .facetwp-item .facetwp-collapsed button.facetwp-collapse, .search-results .facetwp-sidebar.widget-area .facetwp-item .facetwp-collapsed button.facetwp-collapse, .search-no-results .facetwp-sidebar.widget-area .facetwp-item .facetwp-collapsed button.facetwp-collapse { border: none; background: none; height: 100%; }
+
+.blog .facetwp-sidebar.widget-area .facetwp-item .facetwp-collapsed button.facetwp-collapse:before, .archive .facetwp-sidebar.widget-area .facetwp-item .facetwp-collapsed button.facetwp-collapse:before, .search-results .facetwp-sidebar.widget-area .facetwp-item .facetwp-collapsed button.facetwp-collapse:before, .search-no-results .facetwp-sidebar.widget-area .facetwp-item .facetwp-collapsed button.facetwp-collapse:before { content: ' '; font-family: FontAwesome; font-size: 15px; }
+
+.blog .facetwp-sidebar.widget-area .facetwp-item .facetwp-collapsed button.facetwp-collapse[aria-expanded="false"]:before, .archive .facetwp-sidebar.widget-area .facetwp-item .facetwp-collapsed button.facetwp-collapse[aria-expanded="false"]:before, .search-results .facetwp-sidebar.widget-area .facetwp-item .facetwp-collapsed button.facetwp-collapse[aria-expanded="false"]:before, .search-no-results .facetwp-sidebar.widget-area .facetwp-item .facetwp-collapsed button.facetwp-collapse[aria-expanded="false"]:before { content: '\f067'; }
+
+.blog .facetwp-sidebar.widget-area .facetwp-item .facetwp-collapsed button.facetwp-collapse[aria-expanded="true"]:before, .archive .facetwp-sidebar.widget-area .facetwp-item .facetwp-collapsed button.facetwp-collapse[aria-expanded="true"]:before, .search-results .facetwp-sidebar.widget-area .facetwp-item .facetwp-collapsed button.facetwp-collapse[aria-expanded="true"]:before, .search-no-results .facetwp-sidebar.widget-area .facetwp-item .facetwp-collapsed button.facetwp-collapse[aria-expanded="true"]:before { content: '\f068'; }
+
+.blog .facetwp-sidebar.widget-area .facetwp-facet, .archive .facetwp-sidebar.widget-area .facetwp-facet, .search-results .facetwp-sidebar.widget-area .facetwp-facet, .search-no-results .facetwp-sidebar.widget-area .facetwp-facet { margin-bottom: 0; margin-top: 2rem; }
 
 .blog .facetwp-sidebar.widget-area .lsx-search-title, .archive .facetwp-sidebar.widget-area .lsx-search-title, .search-results .facetwp-sidebar.widget-area .lsx-search-title, .search-no-results .facetwp-sidebar.widget-area .lsx-search-title { text-align: right; }
 
 @media (min-width: 768px) { .blog .facetwp-sidebar.widget-area .lsx-search-title, .archive .facetwp-sidebar.widget-area .lsx-search-title, .search-results .facetwp-sidebar.widget-area .lsx-search-title, .search-no-results .facetwp-sidebar.widget-area .lsx-search-title { margin-top: 2rem; margin-bottom: 2rem; }
   .blog .facetwp-sidebar.widget-area .lsx-search-title.lsx-to-search-title-results, .archive .facetwp-sidebar.widget-area .lsx-search-title.lsx-to-search-title-results, .search-results .facetwp-sidebar.widget-area .lsx-search-title.lsx-to-search-title-results, .search-no-results .facetwp-sidebar.widget-area .lsx-search-title.lsx-to-search-title-results { padding-bottom: 2rem; } }
 
-@media (min-width: 768px) { .blog .facetwp-sidebar.widget-area .lsx-search-title, .archive .facetwp-sidebar.widget-area .lsx-search-title, .search-results .facetwp-sidebar.widget-area .lsx-search-title, .search-no-results .facetwp-sidebar.widget-area .lsx-search-title { margin-top: 0; } }
+@media (min-width: 768px) { .blog .facetwp-sidebar.widget-area .lsx-search-title, .archive .facetwp-sidebar.widget-area .lsx-search-title, .search-results .facetwp-sidebar.widget-area .lsx-search-title, .search-no-results .facetwp-sidebar.widget-area .lsx-search-title { margin-top: 0; margin-bottom: 0; } }
 
 .blog .facetwp-sidebar.widget-area .lsx-search-title .facetwp-counts, .archive .facetwp-sidebar.widget-area .lsx-search-title .facetwp-counts, .search-results .facetwp-sidebar.widget-area .lsx-search-title .facetwp-counts, .search-no-results .facetwp-sidebar.widget-area .lsx-search-title .facetwp-counts { display: inline-block; }
 
@@ -220,6 +229,10 @@ body.facetwp-loading-body .search-submit-facetwp { display: none; }
 @media (max-width: 767px) { .facetwp-filters-wrap { background-color: #F6F6F6; } }
 
 .archive .facetwp-sidebar.widget-area .facetwp-type-slider .noUi-connect { background: #418AD0; }
+
+.archive .facetwp-sidebar.widget-area .facetwp-item .facetwp-collapsed button.facetwp-collapse:before { color: #418AD0; }
+
+.archive .facetwp-sidebar.widget-area .facetwp-item .facetwp-collapsed button.facetwp-collapse:hover:before { color: #F7AE00; }
 
 .facetwp-type-alpha .facetwp-alpha { color: #DADDDF; }
 

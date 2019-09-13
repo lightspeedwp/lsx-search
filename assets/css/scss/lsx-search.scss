@@ -96,9 +96,9 @@
 	@include media('<phone') {
 		margin-top: 4.25rem;
 		margin-bottom: 2.4rem;
-		.row:not(.facetwp-row) {
-			display: none;
-		}
+		// .row:not(.facetwp-row) {
+		// 	display: none;
+		// }
 	}
 	@media (min-width: 768px) {
 		.facetwp-row {
@@ -246,9 +246,33 @@
 			//margin-top: 4.25rem;
 
 			&:first-child { margin-top: 0; }
+			.facetwp-collapsed {
+				display: flex;
+				justify-content: space-between;
+				button.facetwp-collapse {
+					border: none;
+					background: none;
+					height: 100%;
+					&:before {
+						content: ' ';
+						font-family: FontAwesome;
+						font-size: 15px;
+					}
+					&[aria-expanded="false"] {
+						&:before {
+							content: '\f067';
+						}
+					}
+					&[aria-expanded="true"] {
+						&:before {
+							content: '\f068';
+						}
+					}
+				}
+			}
 		}
 
-		.facetwp-facet { margin-bottom: 0; }
+		.facetwp-facet { margin-bottom: 0; margin-top: 2rem; }
 
 		.lsx-search-title {
 			text-align: left;
@@ -262,7 +286,7 @@
 
 			}
 
-			@include media('>=phone') { margin-top: 0; }
+			@include media('>=phone') { margin-top: 0; margin-bottom: 0; }
 
 			.facetwp-counts { display: inline-block; }
 		}

@@ -737,13 +737,26 @@ class LSX_Search_Frontend {
 	 * Display facet default.
 	 */
 	public function display_facet_default( $facet ) {
+
+		$show_collapse = ! isset( $this->options['display']['enable_collapse'] ) || 'on' !== $this->options['display']['enable_collapse'];
 		$col_class = '';
+
 		if ( 'search' === $facet ) : ?>
 			<?php echo do_shortcode( '[facetwp facet="' . $facet . '"]' ); ?>
 		<?php else : ?>
 			<div class="col-xs-12 facetwp-item parent-facetwp-facet-<?php echo esc_html( $facet ); ?> <?php echo esc_attr( $col_class ); ?>">
-				<h3 class="lsx-search-title"><?php echo wp_kses_post( $this->facet_data[ $facet ]['label'] ); ?></h3>
-				<?php echo do_shortcode( '[facetwp facet="' . $facet . '"]' ); ?>
+				<?php if ( ! $show_collapse ) { ?>
+					<div class="facetwp-collapsed">
+						<h3 class="lsx-search-title"><?php echo wp_kses_post( $this->facet_data[ $facet ]['label'] ); ?></h3>
+						<button title="<?php echo esc_html_e( 'Click to Expand', 'lsx-search' ); ?>" class="facetwp-collapse" type="button" data-toggle="collapse" data-target="#collapse-<?php echo esc_html( $facet ); ?>" aria-expanded="false" aria-controls="collapse-<?php echo esc_html( $facet ); ?>"></button>
+					</div>
+					<div id="collapse-<?php echo esc_html( $facet ); ?>" class="collapse">
+						<?php echo do_shortcode( '[facetwp facet="' . $facet . '"]' ); ?>
+					</div>
+				<?php } else { ?>
+					<h3 class="lsx-search-title"><?php echo wp_kses_post( $this->facet_data[ $facet ]['label'] ); ?></h3>
+					<?php echo do_shortcode( '[facetwp facet="' . $facet . '"]' ); ?>
+				<?php } ?>
 			</div>
 		<?php
 		endif;
