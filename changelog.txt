@@ -1,6 +1,6 @@
 ## Change log
 
-### 1.2.2
+### 1.2.2 - 13 September 2019
 * Dev - Cosmetic improvements to Search
 * Dev - Adding collapsible facets option.
 * Dev - Adding the .gitattributes file to remove unnecessary files from the WordPress version.
