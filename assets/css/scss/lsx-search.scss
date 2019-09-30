@@ -118,6 +118,12 @@
 		margin-bottom: 3px;
 	}
 
+	.facetwp-facet-search.facetwp-type-search {
+		background: transparent;
+		padding:0px;
+		margin-top: 0;
+	}
+
 	.facetwp-item.facetwp-form {
 		background: transparent;
 		padding:0px;
@@ -381,7 +387,8 @@
 }
 
 .facetwp-sort-select,
-.facetwp-per-page-select {
+.facetwp-per-page-select,
+.woocommerce select.facetwp-sort-select {
 	appearance: none;
 	background: transparent;
   	background-repeat: no-repeat;

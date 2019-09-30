@@ -584,13 +584,13 @@ class LSX_Search_Frontend {
 					<div class="col-xs-12">
 						<?php do_action( 'lsx_search_facetwp_bottom_row' ); ?>
 
-						<?php if ( $show_sort_combo ) { ?>
-							<?php echo do_shortcode( '[facetwp sort="true"]' ); ?>
-						<?php } ?>
+						<?php //if ( $show_sort_combo ) { ?>
+							<?php //echo do_shortcode( '[facetwp sort="true"]' ); ?>
+						<?php //} ?>
 
-						<?php if ( ( $show_pagination && $show_per_page_combo ) || $show_per_page_combo ) { ?>
-							<?php echo do_shortcode( '[facetwp per_page="true"]' ); ?>
-						<?php } ?>
+						<?php //if ( ( $show_pagination && $show_per_page_combo ) || $show_per_page_combo ) { ?>
+							<?php //echo do_shortcode( '[facetwp per_page="true"]' ); ?>
+						<?php //} ?>
 
 						<?php if ( $show_pagination ) { ?>
 							<?php echo do_shortcode( '[facetwp pager="true"]' ); ?>
