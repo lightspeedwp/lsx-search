@@ -128,7 +128,7 @@ body.facetwp-loading-body .search-submit-facetwp { display: none; }
 
 @media (min-width: 768px) { .lsx-pagination-wrapper.facetwp-custom { margin-top: 0; } }
 
-.lsx-pagination-wrapper.facetwp-custom .facetwp-page { margin: 0; padding: 0; }
+.lsx-pagination-wrapper.facetwp-custom .facetwp-page { margin: 0; padding: 0; cursor: pointer; }
 
 .facetwp-type-alpha.facetwp-type-alpha { margin-bottom: 0; }
 
