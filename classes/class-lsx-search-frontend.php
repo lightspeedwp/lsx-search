@@ -343,7 +343,7 @@ class LSX_Search_Frontend {
 			if ( isset( $_GET['engine'] ) && 'default' !== $_GET['engine'] ) {
 				$engine = $_GET['engine'];
 				set_query_var( 'engine', $engine );
-				$engine = array_search( $engine , $this->post_type_slugs ) . '/';
+				$engine = array_search( $engine, $this->post_type_slugs, true ) . '/';
 			}
 
 			$get_array = $_GET;
@@ -373,11 +373,20 @@ class LSX_Search_Frontend {
 	 * Parse the Query and trigger a search
 	 */
 	public function pretty_search_parse_query( $query ) {
+		$this->post_type_slugs = array(
+			'post' => 'posts',
+			'project' => 'projects',
+			'service' => 'services',
+			'team' => 'team',
+			'testimonial' => 'testimonials',
+			'video' => 'videos',
+			'product' => 'products', // WooCommerce
+		);
 		if ( is_search() && ! is_admin() && $query->is_main_query() ) {
 			$search_query = $query->get( 's' );
 			$keyword_test = explode( '/', $search_query );
 
-			$index = array_search( $keyword_test[0], $this->post_type_slugs );
+			$index = array_search( $keyword_test[0], $this->post_type_slugs, true );
 			if ( false !== $index ) {
 				$engine = $this->post_type_slugs[ $index ];
 

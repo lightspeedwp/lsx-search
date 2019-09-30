@@ -20,7 +20,7 @@ var lsx_search = Object.create( null );
 
     lsx_search.init = function() {
         lsx_search.currentForm = jQuery('.lsx-search-form');
-        console.log( lsx_search.currentForm );
+        //console.log( lsx_search.currentForm );
 
         if (undefined != lsx_search.currentForm) {
             lsx_search.watchSubmit();
@@ -143,7 +143,7 @@ var lsx_search = Object.create( null );
     lsx_search.watchDropdown = function() {
         var $this = this;
 
-        console.log('dropdown fix');
+        //console.log('dropdown fix');
         jQuery(lsx_search.currentForm).find('.dropdown-toggle').each( function() {
         	jQuery(this).attr('data-toggle','dropdown');
 		});
@@ -198,7 +198,7 @@ var lsx_search = Object.create( null );
 
             //Check if there is a keyword.
             jQuery(this).find('input[type="text"]').each(function() {
-                console.log(jQuery( this ));
+                //console.log(jQuery( this ));
 
             	if ( 's' != jQuery( this ).attr('name') && '' == jQuery( this ).val() ) {
                     jQuery( this ).attr('name','');
