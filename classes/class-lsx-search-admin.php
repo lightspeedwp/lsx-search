@@ -314,7 +314,7 @@ class LSX_Search_Admin {
 					<label for="enable_collapse"><?php esc_html_e( 'Collapse', 'lsx-search' ); ?></label>
 				</th>
 				<td>
-					<input type="checkbox" {{#if enable_collapse}} checked="checked" {{/if}} name="enable_collapse" /> <label for="facets"><?php esc_html_e( 'Enable collapsible Facet Results', 'lsx-search' ); ?></label>
+					<input type="checkbox" {{#if enable_collapse}} checked="checked" {{/if}} name="enable_collapse" /> <label for="facets"><?php esc_html_e( 'Enable collapsible filters on search results', 'lsx-search' ); ?></label>
 				</td>
 			</tr>
 			<tr class="form-field-wrap">
