@@ -293,6 +293,7 @@ class LSX_Search_Frontend {
 	 * Enqueue styles and scripts.
 	 */
 	public function assets() {
+		add_filter( 'lsx_defer_parsing_of_js', array( $this, 'skip_js_defer' ), 10, 4 );
 		wp_enqueue_script( 'touchSwipe', LSX_SEARCH_URL . 'assets/js/vendor/jquery.touchSwipe.min.js', array( 'jquery' ), LSX_SEARCH_VER, true );
 		wp_enqueue_script( 'slideandswipe', LSX_SEARCH_URL . 'assets/js/vendor/jquery.slideandswipe.min.js', array( 'jquery', 'touchSwipe' ), LSX_SEARCH_VER, true );
 		wp_enqueue_script( 'lsx-search', LSX_SEARCH_URL . 'assets/js/src/lsx-search.js', array( 'jquery', 'touchSwipe', 'slideandswipe', 'jquery-ui-datepicker' ), LSX_SEARCH_VER, true );
@@ -305,6 +306,22 @@ class LSX_Search_Frontend {
 
 		wp_enqueue_style( 'lsx-search', LSX_SEARCH_URL . 'assets/css/lsx-search.css', array(), LSX_SEARCH_VER );
 		wp_style_add_data( 'lsx-search', 'rtl', 'replace' );
+	}
+
+	/**
+	 * Adds the to-search.min.js and the to-search.js
+	 *
+	 * @param boolean $should_skip
+	 * @param string  $tag
+	 * @param string  $handle
+	 * @param string  $href
+	 * @return boolean
+	 */
+	public function skip_js_defer( $should_skip, $tag, $handle, $href ) {
+		if ( ! is_admin() && ( false !== stripos( $href, 'lsx-search.min.js' ) || false !== stripos( $href, 'lsx-search.js' ) ) ) {
+			$should_skip = true;
+		}
+		return $should_skip;
 	}
 
 	/**
