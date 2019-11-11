@@ -1,7 +1,8 @@
 ## Change log
 
 ### 1.3.2 (in development)
-* Fix - Added in a filter to skip the lsx-search.js and lsx-search.min.js files from being deferred
+* Fix - Added in a filter to skip the lsx-search.js and lsx-search.min.js files from being deferred.
+* Fix - Fixed the 'Undefined index: _enable_' error.
 
 ### 1.3.1 30 September 2019 
 * Fix - Fix styling for woocommerce search filters.
