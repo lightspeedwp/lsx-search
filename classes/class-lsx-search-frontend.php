@@ -118,7 +118,9 @@ class LSX_Search_Frontend {
 				$post_type = get_query_var( 'post_type' );
 			}
 
-			$this->search_prefix = $this->tabs[ $post_type ] . '_archive';
+			if ( isset( $this->tabs[ $post_type ] ) ) {
+				$this->search_prefix = $this->tabs[ $post_type ] . '_archive';
+			}
 		}
 
 		if ( isset( $this->options['display'][ $this->search_prefix . '_enable_' . $this->search_core_suffix ] ) && ( ! empty( $this->options ) ) && 'on' == $this->options['display'][ $this->search_prefix . '_enable_' . $this->search_core_suffix ] ) {
