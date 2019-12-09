@@ -5,11 +5,11 @@ Tags: lsx, search, facetwp, Gutenberg, category
 Requires at least: 4.9
 Tested up to: 5.3
 Requires PHP: 7.0
-Stable tag: 1.3.2
+Stable tag: 1.3.3
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
-The [LSX Search Extension](https://lsx.lsdev.biz/extensions/lsx-search/) intergrates with the FacetWP plugin to allow for superbly filtered search results for your users. 
+The [LSX Search Extension](https://lsx.lsdev.biz/extensions/lsx-search/) integrates with the FacetWP plugin to allow for superbly filtered search results for your users. 
 
 Allow your users to break down their search results using available filters (a.k.a "Facets"). These are created by the FacetWP plugin, and with the power of LSX Search - we bring these filters to the search results. 
 
@@ -19,7 +19,7 @@ The [LSX Search Extension](https://lsx.lsdev.biz/extensions/lsx-search/) allows 
 Our modern and lightweight [theme](https://lsx.lsdev.biz/) works perfectly with the Search Extension, improving internal linking, website SEO and user experience! 
 
 == Gutenberg Compatible Plugin ==
-Have you updated to the new WordPress Gutenberg editor? We've got you covered! The LSX Search Plugin has been optimised for the Gutenberg update. Check out our [release post](https://lsx.lsdev.biz/lsx-blocks-available-on-wordpress-org/) on the update for more information.
+Have you updated to the new WordPress Gutenberg editor? We've got you covered! The LSX Search Plugin has been optimized for the Gutenberg update. Check out our [release post](https://lsx.lsdev.biz/lsx-blocks-available-on-wordpress-org/) on the update for more information.
 
 == It's free, and always will be. ==
 We’re firm believers in open source - that’s why the [LSX Search Extension](https://lsx.lsdev.biz/extensions/lsx-search/) is free, and that won't change. We are constantly maintaining and updating our extension so you have the latest and greatest abilities on your LSX Theme powered site. 

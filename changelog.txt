@@ -1,5 +1,9 @@
 ## Change log
 
+### 1.3.3
+* Dev - Adding additional classname to archive header for better compatibility with LSX.
+* Dev - General testing to ensure compatibility with latest WordPress version (5.3).
+
 ### 1.3.2 November 13 2019
 * Fix - Added in a filter to skip the lsx-search.js and lsx-search.min.js files from being deferred.
 * Fix - Fixed the `Undefined index: _enable_` error.
