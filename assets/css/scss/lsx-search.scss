@@ -474,6 +474,9 @@
 		}
 		.entry-layout {
 			padding-bottom: 0;
+			.entry-summary {
+				padding-bottom: 15px;
+			}
 		}
 		.post-tags-wrapper,
 		.entry-meta,

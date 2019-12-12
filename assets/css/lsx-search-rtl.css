@@ -176,6 +176,8 @@ body.facetwp-loading-body .search-submit-facetwp { display: none; }
 
 .facetwp-template article.lsx-slot .entry-layout { padding-bottom: 0; }
 
+.facetwp-template article.lsx-slot .entry-layout .entry-summary { padding-bottom: 15px; }
+
 .facetwp-template article.lsx-slot .post-tags-wrapper, .facetwp-template article.lsx-slot .entry-meta, .facetwp-template article.lsx-slot .post-meta-categories { display: none; }
 
 .facetwp-template article.lsx-slot .moretag { text-transform: initial; }
