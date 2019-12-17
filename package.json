@@ -33,16 +33,17 @@
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
     "gulp-wp-pot": "^2.0.4",
-    "jshint": "^2.9.6"
+    "jshint": "^2.10.3"
   },
   "dependencies": {
     "extend": "^3.0.2",
     "fstream": "^1.0.12",
     "hoek": "^4.2.1",
     "latest": "^0.2.0",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.15",
     "minimatch": "^3.0.4",
+    "npm": "^6.13.4",
     "sshpk": "^1.14.2",
-    "tar": "^4.4.2"
+    "tar": "^4.4.13"
   }
 }
