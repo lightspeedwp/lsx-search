@@ -695,12 +695,6 @@ class LSX_Search_Frontend {
 										if ( isset( $this->facet_data[ $facet ] ) && 'slider' === $this->facet_data[ $facet ]['type'] ) {
 											$this->display_facet_default( $facet );
 										}
-									}
-								?>
-
-								<?php
-									// Others
-									foreach ( $this->options['display'][ $this->search_prefix . '_facets' ] as $facet => $facet_useless ) {
 										if ( isset( $this->facet_data[ $facet ] ) && ! in_array( $this->facet_data[ $facet ]['type'], array( 'alpha', 'slider' ) ) ) {
 											$this->display_facet_default( $facet );
 										}
