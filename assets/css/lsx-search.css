@@ -182,7 +182,7 @@ body.facetwp-loading-body .search-submit-facetwp { display: none; }
 
 .facetwp-template article.lsx-slot .moretag { text-transform: initial; }
 
-.lsx-body-list-layout .facetwp-template article.lsx-slot .lsx-label-post-type { left: 10px; right: initial; }
+.lsx-body-list-layout .facetwp-template article.lsx-slot .lsx-label-post-type { left: 10px; right: initial; text-transform: capitalize; }
 
 .woocommerce .facetwp-template ul.products, .woocommerce-page .facetwp-template ul.products { margin-top: 0; }
 

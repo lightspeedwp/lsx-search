@@ -493,7 +493,8 @@
 		article.lsx-slot {
 			.lsx-label-post-type {
 				left: 10px;
-    			right: initial;
+				right: initial;
+				text-transform: capitalize;
 			}
 		}
 	}

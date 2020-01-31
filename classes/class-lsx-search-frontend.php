@@ -804,6 +804,9 @@ class LSX_Search_Frontend {
 				$post_type = get_post_type();
 				$post_type = str_replace( '_', ' ', $post_type );
 				$post_type = str_replace( '-', ' ', $post_type );
+				if ( $post_type === 'tribe events' ) {
+					$post_type = 'Events';
+				}
 				echo wp_kses_post( ' <span class="label label-default lsx-label-post-type">' . $post_type . '</span>' );
 			}
 		}
