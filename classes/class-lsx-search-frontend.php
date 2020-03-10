@@ -57,13 +57,13 @@ class LSX_Search_Frontend {
 				$this->options = get_option( '_lsx_lsx-settings', false );
 			}
 		}
-
+		add_filter( 'wpseo_json_ld_search_url', array( $this, 'change_json_ld_search_url' ), 10, 1 );
 		add_action( 'wp', array( $this, 'set_vars' ), 11 );
 		add_action( 'wp', array( $this, 'set_facetwp_vars' ), 12 );
 		add_action( 'wp', array( $this, 'core' ), 13 );
 		add_action( 'lsx_body_top', array( $this, 'check_for_results' ) );
 
-		add_action( 'pre_get_posts',  array( $this, 'filter_post_types' ) );
+		add_action( 'pre_get_posts', array( $this, 'filter_post_types' ) );
 
 		add_filter( 'lsx_search_post_types', array( $this, 'register_post_types' ) );
 		add_filter( 'lsx_search_taxonomies', array( $this, 'register_taxonomies' ) );
@@ -91,20 +91,20 @@ class LSX_Search_Frontend {
 		$this->options         = apply_filters( 'lsx_search_options', $this->options );
 		$this->post_types      = get_post_types();
 		$this->post_type_slugs = array(
-			'post' => 'posts',
-			'project' => 'projects',
-			'service' => 'services',
-			'team' => 'team',
+			'post'        => 'posts',
+			'project'     => 'projects',
+			'service'     => 'services',
+			'team'        => 'team',
 			'testimonial' => 'testimonials',
-			'video' => 'videos',
-			'product' => 'products', // WooCommerce
+			'video'       => 'videos',
+			'product'     => 'products',
 		);
 
 		$page_for_posts = get_option( 'page_for_posts' );
 
 		if ( is_search() ) {
 			$this->search_core_suffix = 'core';
-			$this->search_prefix = 'search';
+			$this->search_prefix      = 'search';
 		} elseif ( is_post_type_archive( $this->post_types ) || is_tax( $this->taxonomies ) || is_page( $page_for_posts ) || is_home() || is_category() || is_tag() ) {
 			$this->search_core_suffix = 'search';
 
@@ -426,6 +426,15 @@ class LSX_Search_Frontend {
 		}
 
 		return $query;
+	}
+
+	/**
+	 * Change the search slug to /search/ for the JSON+LD output in Yoast SEO
+	 *
+	 * @return url
+	 */
+	public function change_json_ld_search_url() {
+		return trailingslashit( home_url() ) . 'search/{search_term_string}';
 	}
 
 	/**
