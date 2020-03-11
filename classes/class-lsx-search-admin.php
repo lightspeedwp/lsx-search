@@ -541,7 +541,7 @@ class LSX_Search_Admin {
 					<label><?php esc_html_e( 'Display Clear Button', 'lsx-search' ); ?></label>
 				</th>
 				<td>
-					<input type="checkbox" {{#if <?php echo esc_attr( $tab ); ?>_archive_display_clear_button}} checked="checked" {{/if}} name="products_search_display_clear_button" />
+					<input type="checkbox" {{#if <?php echo esc_attr( $tab ); ?>_archive_display_clear_button}} checked="checked" {{/if}} name="products_archive_display_clear_button" />
 					<small><?php esc_html_e( 'This will display a clear button next to the "result" count', 'lsx-search' ); ?></small>
 				</td>
 			</tr>
