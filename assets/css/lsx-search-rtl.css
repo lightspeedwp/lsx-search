@@ -3,7 +3,7 @@
 
 @media (min-width: 992px) { .search .content.role.row, .archive .content.role.row { margin-left: auto; margin-right: auto; }
   .search .facetwp-sidebar.widget-area, .archive .facetwp-sidebar.widget-area { padding: 0px 20px 20px 20px; margin-top: 4.25rem; max-width: 271px; margin-right: 5px; margin-left: 5px; }
-  .search .facetwp-sidebar.widget-area + .content-area, .archive .facetwp-sidebar.widget-area + .content-area { margin-top: 4.25rem; width: 75%; max-width: 860px; padding-right: 20px; padding-left: 0; }
+  .search .facetwp-sidebar.widget-area + .content-area, .archive .facetwp-sidebar.widget-area + .content-area { margin-top: 4.25rem; max-width: 860px; padding-right: 20px; padding-left: 0; }
   .search .facetwp-sidebar.widget-area + .content-area .facetwp-template .lsx-to-archive-item, .archive .facetwp-sidebar.widget-area + .content-area .facetwp-template .lsx-to-archive-item { margin-top: 2.4rem; }
   .search .facetwp-sidebar.widget-area + .content-area .facetwp-bottom-row-1, .archive .facetwp-sidebar.widget-area + .content-area .facetwp-bottom-row-1 { margin-top: 2.4rem; } }
 
