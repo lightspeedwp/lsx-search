@@ -458,6 +458,7 @@ class LSX_Search_Frontend {
 		if ( ! empty( $this->options['display'][ $this->search_prefix . '_facets' ] ) && is_array( $this->options['display'][ $this->search_prefix . '_facets' ] ) ) {
 
 			if ( ! is_search() ) {
+
 				foreach ( $this->options['display'][ $this->search_prefix . '_facets' ] as $facet => $facet_useless ) {
 
 					if ( isset( $this->facet_data[ $facet ] ) && 'search' === $this->facet_data[ $facet ]['type'] ) {
@@ -493,14 +494,14 @@ class LSX_Search_Frontend {
 			ob_start();
 			?>
 			<div class="col-xs-12 facetwp-item facetwp-form">
-				<div class="search-form lsx-search-form">
+				<div class="search-form lsx-search-form 2">
 					<div class="input-group facetwp-search-wrap">
 						<div class="field">
 							<input class="facetwp-search search-field form-control" type="text" placeholder="<?php echo esc_attr( $placeholder ); ?>" autocomplete="off" value="<?php echo esc_attr( $value ); ?>">
 						</div>
 
 						<div class="field submit-button">
-							<button class="search-submit btn facetwp-btn" type="submit"><?php esc_html_e( 'Search2', 'lsx-search' ); ?></button>
+							<button class="search-submit btn facetwp-btn" type="submit"><?php esc_html_e( 'Search', 'lsx-search' ); ?></button>
 						</div>
 					</div>
 				</div>
@@ -771,7 +772,7 @@ class LSX_Search_Frontend {
 		$show_collapse = ! isset( $this->options['display']['enable_collapse'] ) || 'on' !== $this->options['display']['enable_collapse'];
 		$col_class = '';
 
-		if ( 'search' === $facet ) : ?>
+		if ( 'search' === $this->facet_data[ $facet ]['type'] ) : ?>
 			<?php echo do_shortcode( '[facetwp facet="' . $facet . '"]' ); ?>
 		<?php else : ?>
 			<div class="col-xs-12 facetwp-item parent-facetwp-facet-<?php echo esc_html( $facet ); ?> <?php echo esc_attr( $col_class ); ?>">
