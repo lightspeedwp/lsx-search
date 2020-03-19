@@ -8,7 +8,7 @@
 @import 'customizer-search-body-colours';
 
 // Spacing
-@include media('>=phone') {
+/*@include media('phone') {
 	.search, .archive {
 		.facetwp-sidebar.widget-area {
 			+ .content-area {
@@ -16,7 +16,8 @@
 			}
 		}
 	}
-}
+}*/
+
 @include media('>=tablet') {
 	.search, .archive {
 		.content.role.row {

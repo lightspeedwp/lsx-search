@@ -1,6 +1,5 @@
 /** LSX Search styles. @package lsx-search */
-@media (min-width: 768px) { .search .facetwp-sidebar.widget-area + .content-area, .archive .facetwp-sidebar.widget-area + .content-area { width: 66.66667%; } }
-
+/*@include media('phone') { .search, .archive { .facetwp-sidebar.widget-area { + .content-area { width: 66.66667%; } } } }*/
 @media (min-width: 992px) { .search .content.role.row, .archive .content.role.row { margin-right: auto; margin-left: auto; }
   .search .facetwp-sidebar.widget-area, .archive .facetwp-sidebar.widget-area { padding: 0px 20px 20px 20px; margin-top: 4.25rem; max-width: 271px; margin-left: 5px; margin-right: 5px; }
   .search .facetwp-sidebar.widget-area + .content-area, .archive .facetwp-sidebar.widget-area + .content-area { margin-top: 4.25rem; max-width: 860px; padding-left: 20px; padding-right: 0; }
