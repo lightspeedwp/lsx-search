@@ -6,6 +6,7 @@
 * Fix - Fixed PHP error `is_search was called incorrectly`.
 * Fix - Fixed PHP error `Undefined index: products_search_display_clear_button`.
 * Fixed - Updated the search facet output to check for the type and not the name.
+* Fixed - Removed the 66% width restriction on the `<div id="primary">`
 
 ### 1.3.3 19 December 2019
 * Dev - Adding additional classname to archive header for better compatibility with LSX.
