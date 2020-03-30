@@ -1,82 +1,138 @@
-## Change log
+# Change log
 
-### 1.3.4 (development)
-* Dev - Merged the 2 loops outputting the facets, to allow the order from the settings to be maintained.
-* Fixed - Changed the search slug to /search/ for the JSON+LD output in Yoast SEO.
-* Fix - Fixed PHP error `is_search was called incorrectly`.
-* Fix - Fixed PHP error `Undefined index: products_search_display_clear_button`.
-* Fixed - Updated the search facet output to check for the type and not the name.
-* Fixed - Removed the 66% width restriction on the `<div id="primary">`
-* Fixed - The button colours not changing with the lsx customizer plugin.
+## [Unreleased] - Major version 1.4
 
-### 1.3.3 19 December 2019
-* Dev - Adding additional classname to archive header for better compatibility with LSX.
-* Dev - General testing to ensure compatibility with latest WordPress version (5.3).
+### Added
+- Post tag format improved.
+- Merged the 2 loops outputting the facets, to allow the order from the settings to be maintained.
 
-### 1.3.2 November 13 2019
-* Fix - Added in a filter to skip the lsx-search.js and lsx-search.min.js files from being deferred.
-* Fix - Fixed the `Undefined index: _enable_` error.
-* Fix - Fixed `Undefined index: tribe_events` error.
+### Changed
+- Changed the search slug to /search/ for the JSON+LD output in Yoast SEO.
 
-### 1.3.1 30 September 2019 
-* Fix - Fix styling for woocommerce search filters.
-* Dev - Removing sorting from the bottom page.
-* Fix - Removing php errors and console logs.
+### Fixed
+- Fixed PHP error `is_search was called incorrectly`.
+- Fixed PHP error `Undefined index: products_search_display_clear_button`.
+- Updated the search facet output to check for the type and not the name.
+- Fixing the Yoda Conditions.
+- Fixed the button colours not changing with the lsx customizer plugin.
 
-### 1.3 - 13 September 2019
-* Dev - Cosmetic improvements to Search
-* Dev - Adding collapsible facets option.
-* Dev - Adding the .gitattributes file to remove unnecessary files from the WordPress version.
+### Deprecated
+- Removed the 66% width restriction on the `<div id="primary">`.
 
-### 1.2.1 - 06 August 2019
-* Fix - Fixed the pretty search permalinks.
-* Dev - Updating templates with prettier links
-* Fix - Spacing styles fixes.
-* Fix - Removing dashes from post type label
-* Dev - Grid layout improvements to match the LSX Blog Customizer new design.
+### Security
+- Updating dependencies to prevent vulnerabilities.
+- General testing to ensure compatibility with latest WordPress version (5.4).
+- General testing to ensure compatibility with latest LSX Theme version (2.7).
 
 
-### 1.2.0 - 19th June 2019
-* Fix - Fixed the undefined error in the mobile JS
-* Dev - Added in a filter for the FacetWP Checkbox, to customize the hierarchy layout.
-* Dev - Included a do_action( 'lsx_framework_display_tab_headings_bottom', 'display' ) for the Theme Options display tab
-* Dev - Added in 5 filters for the Top of the Search Page (lsx_search_top_show_pagination, lsx_search_top_pagination_visible, lsx_search_top_show_per_page_combo, lsx_search_top_show_sort_combo, lsx_search_top_az_pagination )
-* Dev - Added in a do action to the FacetWP Top bar above the search results (lsx_search_facetwp_top_row)
-* Dev - Added in a filter to allow you to add additional classes to the top FacetWP row.
-* Dev - Changed the onclick function for the FacetWP Clear Button.
-* Dev - Added in a filter to allow you to change the clear button function that runs. "lsx_search_clear_function"
-* Dev - Adding in a settings tab for posts settings.
-* Dev - Changed the sidebar layout and added in the Sort By and Page By facet options to the bottom bar.
-* Dev - Added in a `lsx-search-enabled` body class which shows when a page has facets.
+## [[1.3.3]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.3.3) - 2019-12-19
 
-### 1.1.0
-* Dev - Added in 4 filters for the sidebar ( lsx_search_sidebar_before, lsx_search_sidebar_top, lsx_search_sidebar_bottom, lsx_search_sidebar_after ).
-* Fix - Updated the uix-core.js to remove the Cyclic error when saving the theme options
-* Dev - Removed the conditional statement adding the facets to the blog and homepage automatically. (this can be done via the filter)
-* Fix - Adding in the missing Clear Button option for the search facets.
-* Dev - Adding in a filter to allowing overwriting the search prefix lsx_search_prefix
+### Added
+- Adding additional classname to archive header for better compatibility with LSX.
+- General testing to ensure compatibility with latest WordPress version (5.3).
 
-### 1.0.9 - 10 Jan 2019
-* Added in a filter to allow changes to the options
 
-### 1.0.8 - 26 Apr 2018
-* Dev - Added in the LSX Search Shortcode
-* Updated the search dropdowns with the Bootstrap 4 classes.
-* Added in pll_translate_string to allow translating of the FacetWP Display Value.
-* Added in a filter to allow the filtering of the facet display value
-* Added in a filter to allow the overwriting of the facet label
+## [[1.3.2]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.3.2) - 2019-11-13
 
-### 1.0.2 -> 1.0.7
-* Travis Fixes
-* Security Updates
-* WordPress Coding Standards
+### Fixed
+- Added in a filter to skip the lsx-search.js and lsx-search.min.js files from being deferred.
+- Fixed the `Undefined index: _enable_` error.
+- Fixed `Undefined index: tribe_events` error.
 
-### 1.0.1
-* Dev - Added in a clear link which displays next to the result count if enabled.
-* Dev - Split up the Frontend class into a Frontend and FacetWP class.
-* Dev - Changed the way the classes are initiated.
-* Dev - Added in a filter to call the price including tax if it qualifies.
-* Dev - Removed the API License Class
 
-### 1.0.0
-* First Version
+## [[1.3.1]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.3.1) - 2019-09-30
+
+### Added
+- Removing sorting from the bottom page.
+
+### Fixed 
+- Fix styling for woocommerce search filters.
+- Removing PHP errors and console logs.
+
+
+## [[1.3.0]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.3) - 2019-09-13
+
+### Added
+- Cosmetic improvements to Search.
+- Adding collapsible facets option.
+- Adding the .gitattributes file to remove unnecessary files from the WordPress version.
+
+
+## [[1.2.1]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.2.1) - 2019-08-06
+
+### Added
+- Updating templates with prettier links.
+- Grid layout improvements to match the LSX Blog Customizer new design.
+
+### Fixed
+- Fixed the pretty search permalinks.
+- Spacing styles fixes.
+- Removing dashes from post type label.
+
+
+## [[1.2.0]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.2.0) - 2019-06-19
+
+### Added
+
+- Added in a filter for the FacetWP Checkbox, to customize the hierarchy layout.
+- Included a do_action( 'lsx_framework_display_tab_headings_bottom', 'display' ) for the Theme Options display tab.
+- Added in 5 filters for the Top of the Search Page (lsx_search_top_show_pagination, lsx_search_top_pagination_visible, lsx_search_top_show_per_page_combo, lsx_search_top_show_sort_combo, lsx_search_top_az_pagination ).
+- Added in a do action to the FacetWP Top bar above the search results (lsx_search_facetwp_top_row).
+- Added in a filter to allow you to add additional classes to the top FacetWP row.
+- Changed the onclick function for the FacetWP Clear Button.
+- Added in a filter to allow you to change the clear button function that runs. "lsx_search_clear_function"
+- Adding in a settings tab for posts settings.
+- Changed the sidebar layout and added in the Sort By and Page By facet options to the bottom bar.
+- Added in a `lsx-search-enabled` body class which shows when a page has facets.
+
+### Fixed
+- Fixed the undefined error in the mobile JS.
+
+
+## [[1.0.9]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.2.0) - 2019-01-10
+
+### Added
+- Added in 4 filters for the sidebar ( lsx_search_sidebar_before, lsx_search_sidebar_top, lsx_search_sidebar_bottom, lsx_search_sidebar_after ).
+- Adding in a filter to allowing overwriting the search prefix lsx_search_prefix.
+- Adding in the missing Clear Button option for the search facets.
+- Added in a filter to allow changes to the options.
+
+### Fixed
+- Updated the uix-core.js to remove the Cyclic error when saving the theme options
+- Removed the conditional statement adding the facets to the blog and homepage automatically. (this can be done via the filter).
+
+
+## [[1.0.8]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.0.8) - 2018-04-26
+
+### Added
+- Added in the LSX Search Shortcode.
+- Updated the search dropdowns with the Bootstrap 4 classes.
+- Added in pll_translate_string to allow translating of the FacetWP Display Value.
+- Added in a filter to allow the filtering of the facet display value.
+- Added in a filter to allow the overwriting of the facet label.
+
+
+## [[1.0.7]]()
+
+### Fixed
+- Travis Fixes.
+
+### Security
+- Security Updates.
+- WordPress Coding Standards.
+
+
+## [[1.0.1]]()
+
+### Added
+- Added in a clear link which displays next to the result count if enabled.
+- Split up the Frontend class into a Frontend and FacetWP class.
+- Changed the way the classes are initiated.
+- Added in a filter to call the price including tax if it qualifies.
+- Removed the API License Class
+
+
+## [[1.0.0]]()
+
+### Added
+- First Version
