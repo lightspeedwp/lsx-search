@@ -45,6 +45,8 @@ class LSX_Search_Admin {
 		add_filter( 'lsx_framework_settings_tabs', array( $this, 'register_tabs' ), 100, 1 );
 		add_action( 'lsx_framework_display_tab_headings_bottom', array( $this, 'display_tab_headings' ), 10, 1 );
 		add_action( 'lsx_framework_display_tab_bottom', array( $this, 'display_tab_body' ), 10, 1 );
+
+		add_filter( 'lsx_customizer_colour_selectors_button', array( $this, 'customizer_button_colours' ), 10, 2 );
 	}
 
 	/**
@@ -645,5 +647,29 @@ class LSX_Search_Admin {
 				</table>
 			</div>
 		<?php }
+	}
+
+	/**
+	 * Adds the lsx search buttons to the customizer plugin.
+	 *
+	 * @param string $css
+	 * @param array $colours
+	 * @return string
+	 */
+	public function customizer_button_colours( $css, $colours ) {
+		$css .= '
+			#secondary.facetwp-sidebar {
+				.facetwp-item.facetwp-form {
+					.search-form {
+						.btn {
+							&.search-submit {
+								@include lsx-button-colour(' . $colours['button_text_color'] . ', ' . $colours['button_text_color_hover'] . ', ' . $colours['button_background_color'] . ', ' . $colours['button_background_hover_color'] . ', ' . $colours['button_shadow'] . ');
+							}
+						}
+					}
+				}
+			}
+		';
+		return $css;
 	}
 }
