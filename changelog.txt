@@ -1,6 +1,5 @@
 # Change log
 
-
 ## [Unreleased] - Major version 1.4
 
 ### Added
@@ -15,6 +14,7 @@
 - Fixed PHP error `Undefined index: products_search_display_clear_button`.
 - Updated the search facet output to check for the type and not the name.
 - Fixing the Yoda Conditions.
+- Fixed the button colours not changing with the lsx customizer plugin.
 
 ### Deprecated
 - Removed the 66% width restriction on the `<div id="primary">`.
