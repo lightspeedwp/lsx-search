@@ -258,6 +258,10 @@ var lsx_search = Object.create( null );
 
     lsx_search.clearFacets = function( ) {
         FWP.reset();
+	};
+
+	lsx_search.first_facet_collaped = function( ) {
+        $("button.facetwp-collapse:first").trigger("click");
     };
 
 	/**
@@ -274,7 +278,10 @@ var lsx_search = Object.create( null );
 			lsx_search.mobile_filters();
 		}
 
-        lsx_search.init();
+		lsx_search.init();
+
+		lsx_search.first_facet_collaped();
+
 	} );
 
 } )( jQuery, window, document );
