@@ -261,7 +261,7 @@ var lsx_search = Object.create( null );
 	};
 
 	lsx_search.first_facet_collaped = function( ) {
-        $("button.facetwp-collapse:first").trigger("click");
+        $('.lsx-search-filer-area .facetwp-item:first-of-type button.facetwp-collapse').trigger("click");
     };
 
 	/**
