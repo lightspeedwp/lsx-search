@@ -422,7 +422,9 @@
     right: 30px;
     font-family: FontAwesome;
     font-size: 10px;
-    top: 0px;
+	top: 0px;
+	cursor: pointer;
+	z-index: 0;
 }
 
 .lsx-body-grid-layout {

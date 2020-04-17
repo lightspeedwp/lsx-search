@@ -153,7 +153,7 @@ body.facetwp-loading-body .search-submit-facetwp { display: none; }
 
 .facetwp-sort-select:hover, .facetwp-per-page-select:hover, .woocommerce select.facetwp-sort-select:hover { cursor: pointer; box-shadow: -0.5px 0.5px 1px #ddd; z-index: 1; }
 
-.facetwp-per-page:after, .facetwp-sort:after { content: '\f078'; color: #999999; position: relative; left: 30px; font-family: FontAwesome; font-size: 10px; top: 0px; }
+.facetwp-per-page:after, .facetwp-sort:after { content: '\f078'; color: #999999; position: relative; left: 30px; font-family: FontAwesome; font-size: 10px; top: 0px; cursor: pointer; z-index: 0; }
 
 .lsx-body-grid-layout .facetwp-template > .post-wrapper { margin-top: 0 !important; }
 
