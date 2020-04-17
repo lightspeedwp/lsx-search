@@ -12,7 +12,7 @@
 
 @media (max-width: 767px) { #primary.content-area { margin-top: 4.25rem; } }
 
-#primary.content-area #facetwp-top .facetwp-sort-select { right: 10px; position: relative; }
+#primary.content-area #facetwp-top .facetwp-sort-select { position: relative; }
 
 #secondary.facetwp-sidebar { padding: 0px 15px 15px 15px; }
 
@@ -149,9 +149,11 @@ body.facetwp-loading-body .search-submit-facetwp { display: none; }
 
 @media (min-width: 768px) { .facetwp-pager { float: left; } }
 
-.facetwp-sort-select, .facetwp-per-page-select, .woocommerce select.facetwp-sort-select { -webkit-appearance: none; -moz-appearance: none; appearance: none; background: transparent; background-repeat: no-repeat; background-position-x: 0%; background-position-y: 50%; border-style: solid; border-width: 1px; box-shadow: none; display: inline-block; font-size: 14px; line-height: 1.25; min-width: 180px; height: 50px; padding: 0 15px; transition: all 150ms ease; width: auto; border-radius: 0; }
+.facetwp-sort, .facetwp-per-page { background-color: white; border: 1px solid #DADDDF; }
 
-.facetwp-sort-select:hover, .facetwp-per-page-select:hover, .woocommerce select.facetwp-sort-select:hover { cursor: pointer; box-shadow: -0.5px 0.5px 1px #ddd; z-index: 1; }
+.facetwp-sort:hover, .facetwp-per-page:hover { cursor: pointer; box-shadow: -0.5px 0.5px 1px #ddd; z-index: 1; }
+
+.facetwp-sort-select, .facetwp-per-page-select, .woocommerce select.facetwp-sort-select { cursor: pointer; -webkit-appearance: none; -moz-appearance: none; appearance: none; background: transparent; background-repeat: no-repeat; background-position-x: 0%; background-position-y: 50%; border-style: solid; border-width: 1px; box-shadow: none; display: inline-block; font-size: 14px; line-height: 1.25; min-width: 160px; height: 50px; padding: 0; transition: all 150ms ease; width: auto; border-radius: 0; background: none; border: none; z-index: 1; }
 
 .facetwp-per-page:after, .facetwp-sort:after { content: '\f078'; color: #999999; position: relative; left: 30px; font-family: FontAwesome; font-size: 10px; top: 0px; cursor: pointer; z-index: 0; }
 
