@@ -247,7 +247,7 @@ body.facetwp-loading-body .search-submit-facetwp { display: none; }
 
 .facetwp-type-alpha .facetwp-alpha.available:hover { color: #F7AE00; }
 
-.facetwp-sort-select, .facetwp-per-page-select { background-image: url("data:image/svg+xml;utf8,<svg fill='#919191' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>"); border-color: #DADDDF; color: #919191; background-color: white; text-align-last: center; }
+.facetwp-sort-select, .facetwp-per-page-select { background-image: url("data:image/svg+xml;utf8,<svg fill='#919191' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>"); border-color: #DADDDF; color: #919191; text-align-last: center; }
 
 .facetwp-template article.lsx-slot .lsx-label-post-type { background-color: #4A4A4A; color: #FFF; }
 
