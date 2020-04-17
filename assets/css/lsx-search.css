@@ -151,6 +151,8 @@ body.facetwp-loading-body .search-submit-facetwp { display: none; }
 
 .facetwp-sort-select, .facetwp-per-page-select, .woocommerce select.facetwp-sort-select { -webkit-appearance: none; -moz-appearance: none; appearance: none; background: transparent; background-repeat: no-repeat; background-position-x: 100%; background-position-y: 50%; border-style: solid; border-width: 1px; box-shadow: none; display: inline-block; font-size: 14px; line-height: 1.25; min-width: 180px; height: 50px; padding: 0 15px; transition: all 150ms ease; width: auto; border-radius: 0; }
 
+.facetwp-sort-select:hover, .facetwp-per-page-select:hover, .woocommerce select.facetwp-sort-select:hover { cursor: pointer; box-shadow: 0.5px 0.5px 1px #ddd; z-index: 1; }
+
 .facetwp-per-page:after, .facetwp-sort:after { content: '\f078'; color: #999999; position: relative; right: 30px; font-family: FontAwesome; font-size: 10px; top: 0px; }
 
 .lsx-body-grid-layout .facetwp-template > .post-wrapper { margin-top: 0 !important; }
