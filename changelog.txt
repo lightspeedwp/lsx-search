@@ -1,5 +1,12 @@
 # Change log
 
+## [[1.4.1]] - In Development
+
+### Added
+- If collapsible facets are on, the first facet will be open by default.
+- Added a hover state for the 'sort by' selects.
+
+
 ## [[1.4.0]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.4.0) - 2020-03-30
 
 ### Added

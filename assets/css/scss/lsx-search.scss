@@ -86,7 +86,7 @@
 	}
 	#facetwp-top {
 		.facetwp-sort-select {
-			left: 10px;
+			//left: 10px;
 			position: relative;
 		}
 	}
@@ -388,9 +388,20 @@
 	@include media('>=phone') { float: right; }
 }
 
+.facetwp-sort,
+.facetwp-per-page {
+	background-color: white;
+	border: 1px solid #DADDDF;
+	&:hover {
+		cursor: pointer;
+		box-shadow: 0.5px 0.5px 1px #ddd;
+		z-index: 1;
+	}
+}
 .facetwp-sort-select,
 .facetwp-per-page-select,
 .woocommerce select.facetwp-sort-select {
+	cursor: pointer;
 	appearance: none;
 	background: transparent;
   	background-repeat: no-repeat;
@@ -402,12 +413,15 @@
 	display: inline-block;
 	font-size: 14px;
 	line-height: 1.25;
-	min-width: 180px;
+	min-width: 160px;
     height: 50px;
-    padding: 0 15px;
+    padding: 0;
     transition: all 150ms ease;
 	width: auto;
 	border-radius: 0;
+	background: none;
+	border: none;
+	z-index: 1;
 }
 
 .facetwp-per-page:after, .facetwp-sort:after {
@@ -417,7 +431,9 @@
     right: 30px;
     font-family: FontAwesome;
     font-size: 10px;
-    top: 0px;
+	top: 0px;
+	cursor: pointer;
+	z-index: 0;
 }
 
 .lsx-body-grid-layout {
