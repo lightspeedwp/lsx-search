@@ -571,7 +571,7 @@ class LSX_Search_Frontend {
 						<?php if ( ! empty( $this->options['display'][ $this->search_prefix . '_display_result_count' ] ) ) { ?>
 							<div class="row">
 								<div class="col-md-12 facetwp-item facetwp-results">
-									<h3 class="lsx-search-title lsx-search-title-results"><?php esc_html_e( 'Results ', 'lsx-search' ); ?><?php echo '(' . do_shortcode( '[facetwp counts="true"]' ) . ')'; ?>
+									<h3 class="lsx-search-title lsx-search-title-results"><?php esc_html_e( 'Results', 'lsx-search' ); ?> <?php echo '(' . do_shortcode( '[facetwp counts="true"]' ) . ')'; ?>
 									<?php if ( false !== $this->options && isset( $this->options['display'] ) && ( ! empty( $this->options['display'][ $this->search_prefix . '_display_clear_button' ] ) ) && ( 'on' === $this->options['display'][ $this->search_prefix . '_display_clear_button' ] || 'on' === $this->options['display']['products_search_display_clear_button'] ) ) { ?>
 										<span class="clear-facets hidden">- <a title="<?php esc_html_e( 'Clear the current search filters.', 'lsx-search' ); ?>" class="facetwp-results-clear" type="button" onclick="<?php echo esc_attr( apply_filters( 'lsx_search_clear_function', 'lsx_search.clearFacets(this);' ) ); ?>"><?php esc_html_e( 'Clear', 'lsx-search' ); ?></a></span>
 									<?php } ?>
