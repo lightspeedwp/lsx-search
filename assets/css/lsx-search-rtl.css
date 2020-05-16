@@ -147,7 +147,23 @@ body.facetwp-loading-body .search-submit-facetwp { display: none; }
 
 @media (min-width: 768px) { .facetwp-sort, .facetwp-per-page { float: right; } }
 
+@media (min-width: 768px) { .facetwp-type-pager { float: left; } }
+
 @media (min-width: 768px) { .facetwp-pager { float: left; } }
+
+.facetwp-pager > .facetwp-page { border-radius: 3px; border-style: solid; border-width: 2px; display: inline-block; height: 40px; line-height: 36px; text-align: center; vertical-align: top; width: 40px; cursor: pointer; margin-left: 5px; }
+
+.facetwp-pager > .facetwp-page.active, .facetwp-pager > .facetwp-page:hover { color: #fff !important; }
+
+.facetwp-pager > .facetwp-page.dots { border: none; }
+
+.facetwp-pager > .facetwp-page.prev { font-size: 0; }
+
+.facetwp-pager > .facetwp-page.prev:before { font: normal normal normal 15px/1 FontAwesome; content: '\f100'; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; -ms-flex-pack: center; justify-content: center; height: 100%; }
+
+.facetwp-pager > .facetwp-page.next { font-size: 0; }
+
+.facetwp-pager > .facetwp-page.next:before { font: normal normal normal 15px/1 FontAwesome; content: '\f101'; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; -ms-flex-pack: center; justify-content: center; height: 100%; }
 
 .facetwp-sort, .facetwp-per-page { background-color: white; border: 1px solid #DADDDF; }
 
@@ -254,6 +270,16 @@ body.facetwp-loading-body .search-submit-facetwp { display: none; }
 .lsx-body-grid-layout .facetwp-template > .post-wrapper .lsx-slot .moretag { background: #418AD0; }
 
 .lsx-body-grid-layout .facetwp-template > .post-wrapper .lsx-slot .moretag:hover { background: #F7AE00; }
+
+.facetwp-pager > .facetwp-page { border-color: #418AD0; }
+
+.facetwp-pager > .facetwp-page.active, .facetwp-pager > .facetwp-page:hover { background-color: #418AD0; }
+
+.facetwp-type-pager button { border-radius: 3px; font-size: 15px; font-weight: 700; letter-spacing: 0.54px; line-height: 1.25; text-transform: uppercase; padding: 12px 40px; border: 2px solid #418AD0; background-color: transparent; color: #418AD0; }
+
+.facetwp-type-pager button:hover { background-color: #418AD0; color: white; }
+
+.facetwp-type-pager .facetwp-per-page-select { background-color: white; border: 1px solid #ddd; }
 
 #ui-datepicker-div { z-index: 99 !important; }
 

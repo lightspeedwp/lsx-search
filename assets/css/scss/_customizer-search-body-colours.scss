@@ -70,4 +70,36 @@
 			}
 		}
 	}
+
+	.facetwp-pager {
+		>.facetwp-page {
+			border-color: $link;
+			&.active,
+			&:hover {
+				background-color: $link;
+			}
+		}
+	}
+	.facetwp-type-pager {
+		button {
+			border-radius: 3px;
+			font-size: 15px;
+			font-weight: 700;
+			letter-spacing: 0.54px;
+			line-height: 1.25;
+			text-transform: uppercase;
+			padding: 12px 40px;
+			border: 2px solid $link;
+			background-color: transparent;
+			color: $link;
+			&:hover {
+				background-color: $link;
+				color: white;
+			}
+		}
+		.facetwp-per-page-select {
+			background-color: white;
+			border: 1px solid #ddd;
+		}
+	}
 }
