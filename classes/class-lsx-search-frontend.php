@@ -629,8 +629,18 @@ class LSX_Search_Frontend {
 							<?php //echo do_shortcode( '[facetwp per_page="true"]' ); ?>
 						<?php //} ?>
 
-						<?php if ( $show_pagination ) { ?>
-							<?php echo do_shortcode( '[facetwp pager="true"]' ); ?>
+						<?php
+						if ( $show_pagination ) {
+							$output_pagination = do_shortcode( '[facetwp pager="true"]' );
+							if ( ! empty( $this->options['display'][ $this->search_prefix . '_facets' ] ) && is_array( $this->options['display'][ $this->search_prefix . '_facets' ] ) ) {
+								foreach ( $this->options['display'][ $this->search_prefix . '_facets' ] as $facet => $facet_useless ) {
+									if ( isset( $this->facet_data[ $facet ] ) && in_array( $this->facet_data[ $facet ]['type'], array( 'pager' ) ) ) {
+										$output_pagination = do_shortcode( '[facetwp facet="pager_"]' );
+									}
+								}
+							}
+							echo wp_kses_post( $output_pagination );
+						?>
 						<?php } ?>
 					</div>
 				</div>
@@ -699,12 +709,12 @@ class LSX_Search_Frontend {
 
 							<div class="row">
 								<?php
-									// Slider
-									foreach ( $this->options['display'][ $this->search_prefix . '_facets' ] as $facet => $facet_useless ) {
-										if ( isset( $this->facet_data[ $facet ] ) && ! in_array( $this->facet_data[ $facet ]['type'], array( 'alpha', 'search' ) ) ) {
-											$this->display_facet_default( $facet );
-										}
+								// Slider.
+								foreach ( $this->options['display'][ $this->search_prefix . '_facets' ] as $facet => $facet_useless ) {
+									if ( isset( $this->facet_data[ $facet ] ) && ! in_array( $this->facet_data[ $facet ]['type'], array( 'alpha', 'search', 'pager' ) ) ) {
+										$this->display_facet_default( $facet );
 									}
+								}
 								?>
 							</div>
 
@@ -722,6 +732,26 @@ class LSX_Search_Frontend {
 
 			<?php do_action( 'lsx_search_sidebar_after' ); ?>
 		<?php
+	}
+
+	/**
+	 * Check if the pager facet is on
+	 *
+	 * @return void
+	 */
+	public function pager_facet_enabled() {
+
+		$pager_facet_off = false;
+
+		if ( ! empty( $this->options['display'][ $this->search_prefix . '_facets' ] ) && is_array( $this->options['display'][ $this->search_prefix . '_facets' ] ) ) {
+			foreach ( $this->options['display'][ $this->search_prefix . '_facets' ] as $facet => $facet_useless ) {
+				if ( isset( $this->facet_data[ $facet ] ) && ! in_array( $this->facet_data[ $facet ]['type'], array( 'pager' ) ) ) {
+					$pager_facet_off = true;
+				}
+			}
+		}
+
+		return $pager_facet_off;
 	}
 
 	/**
