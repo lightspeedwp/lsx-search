@@ -1,11 +1,16 @@
 # Change log
 
-## [[1.4.1]] - In Development
+## [[1.4.1]] - 2020-05-21
 
 ### Added
 - If collapsible facets are on, the first facet will be open by default.
 - Added a hover state for the 'sort by' selects.
 - Added compatibility for the [pager] facetwp.
+
+### Security
+- Updating dependencies to prevent vulnerabilities.
+- General testing to ensure compatibility with latest WordPress version (5.4.1).
+- General testing to ensure compatibility with latest LSX Theme version (2.8).
 
 
 ## [[1.4.0]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.4.0) - 2020-03-30
