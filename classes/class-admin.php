@@ -35,9 +35,17 @@ class Admin {
 	public $facet_data = false;
 
 	/**
+	 * Holds the settings page theme functions
+	 *
+	 * @var object \lsx\search\classes\admin\Settings_Theme();
+	 */
+	public $settings_theme;
+
+	/**
 	 * Construct method.
 	 */
 	public function __construct() {
+		$this->load_classes();
 		$this->options = \lsx\search\includes\get_options();
 		add_action( 'cmb2_admin_init', array( $this, 'register_settings_page' ) );
 		add_action( 'lsx_search_settings_page', array( $this, 'configure_settings_search_engine_fields' ), 15, 1 );
@@ -63,6 +71,14 @@ class Admin {
 			self::$instance = new self();
 		}
 		return self::$instance;
+	}
+
+	/**
+	 * Loads the variable classes and the static classes.
+	 */
+	private function load_classes() {
+		require_once LSX_SEARCH_PATH . 'classes/admin/class-settings-theme.php';
+		$this->settings_theme = admin\Settings_Theme::get_instance();
 	}
 
 	/**
@@ -158,31 +174,31 @@ class Admin {
 			array(
 				'id'          => 'settings_' . $section . '_search',
 				'type'        => 'title',
-				'name'        => esc_html__( 'Search', 'lsx-business-directory' ),
-				'default'     => esc_html__( 'Search', 'lsx-business-directory' ),
-				'description' => esc_html__( 'Control the filters which show on your WordPress search results page.', 'lsx-business-directory' ),
+				'name'        => esc_html__( 'Search', 'lsx-search' ),
+				'default'     => esc_html__( 'Search', 'lsx-search' ),
+				'description' => esc_html__( 'Control the filters which show on your WordPress search results page.', 'lsx-search' ),
 			)
 		);
 		do_action( 'lsx_search_settings_section', $cmb, 'top' );
 		$cmb->add_field(
 			array(
-				'name'        => esc_html__( 'Enable Search Filters', 'lsx-business-directory' ),
+				'name'        => esc_html__( 'Enable Search Filters', 'lsx-search' ),
 				'id'          => $section . '_search_enable',
-				'description' => esc_html__( 'Display FacetWP filters on your search results page.', 'lsx-business-directory' ),
+				'description' => esc_html__( 'Display FacetWP filters on your search results page.', 'lsx-search' ),
 				'type'        => 'checkbox',
 			)
 		);
 
 		$cmb->add_field(
 			array(
-				'name'    => esc_html__( 'Layout', 'lsx-business-directory' ),
+				'name'    => esc_html__( 'Layout', 'lsx-search' ),
 				'id'      => $section . '_search_layout',
 				'type'    => 'select',
 				'options' => array(
-					''    => esc_html__( 'Follow the theme layout', 'lsx-business-directory' ),
-					'1c'  => esc_html__( '1 column', 'lsx-business-directory' ),
-					'2cr' => esc_html__( '2 columns / Content on right', 'lsx-business-directory' ),
-					'2cl' => esc_html__( '2 columns / Content on left', 'lsx-business-directory' ),
+					''    => esc_html__( 'Follow the theme layout', 'lsx-search' ),
+					'1c'  => esc_html__( '1 column', 'lsx-search' ),
+					'2cr' => esc_html__( '2 columns / Content on right', 'lsx-search' ),
+					'2cl' => esc_html__( '2 columns / Content on left', 'lsx-search' ),
 				),
 				'default' => '',
 			)
@@ -191,30 +207,30 @@ class Admin {
 		if ( 'engine' === $section ) {
 			$cmb->add_field(
 				array(
-					'name'             => esc_html__( 'Grid vs List', 'lsx-business-directory' ),
+					'name'             => esc_html__( 'Grid vs List', 'lsx-search' ),
 					'id'               => $section . '_grid_list',
 					'type'             => 'radio',
 					'show_option_none' => false,
 					'options'          => array(
-						'grid' => esc_html__( 'Grid', 'lsx-business-directory' ),
-						'list' => esc_html__( 'List', 'lsx-business-directory' ),
+						'grid' => esc_html__( 'Grid', 'lsx-search' ),
+						'list' => esc_html__( 'List', 'lsx-search' ),
 					),
 					'default'          => 'list',
 				)
 			);
 			$cmb->add_field(
 				array(
-					'name'        => esc_html__( 'Display Excerpt', 'lsx-business-directory' ),
+					'name'        => esc_html__( 'Display Excerpt', 'lsx-search' ),
 					'id'          => $section . '_excerpt_enable',
 					'type'        => 'checkbox',
-					'description' => __( 'Display the excerpt of a listing.', 'lsx-business-directory' ),
+					'description' => __( 'Display the excerpt of a listing.', 'lsx-search' ),
 				)
 			);
 		}
 
 		$cmb->add_field(
 			array(
-				'name' => esc_html__( 'Collapse', 'lsx-business-directory' ),
+				'name' => esc_html__( 'Collapse', 'lsx-search' ),
 				'id'   => $section . '_search_collapse',
 				'type' => 'checkbox',
 			)
@@ -222,7 +238,7 @@ class Admin {
 
 		$cmb->add_field(
 			array(
-				'name' => esc_html__( 'Disable Sorting', 'lsx-business-directory' ),
+				'name' => esc_html__( 'Disable Sorting', 'lsx-search' ),
 				'id'   => $section . '_search_disable_sorting',
 				'type' => 'checkbox',
 			)
@@ -230,7 +246,7 @@ class Admin {
 
 		$cmb->add_field(
 			array(
-				'name' => esc_html__( 'Disable the Date Option', 'lsx-business-directory' ),
+				'name' => esc_html__( 'Disable the Date Option', 'lsx-search' ),
 				'id'   => $section . '_search_disable_date',
 				'type' => 'checkbox',
 			)
@@ -238,7 +254,7 @@ class Admin {
 
 		$cmb->add_field(
 			array(
-				'name' => esc_html__( 'Display Clear Button', 'lsx-business-directory' ),
+				'name' => esc_html__( 'Display Clear Button', 'lsx-search' ),
 				'id'   => $section . '_search_clear_button',
 				'type' => 'checkbox',
 			)
@@ -246,15 +262,15 @@ class Admin {
 
 		$cmb->add_field(
 			array(
-				'name' => esc_html__( 'Display Result Count', 'lsx-business-directory' ),
+				'name' => esc_html__( 'Display Result Count', 'lsx-search' ),
 				'id'   => $section . '_search_result_count',
 				'type' => 'checkbox',
 			)
 		);
 		$cmb->add_field(
 			array(
-				'name'        => esc_html__( 'Facets', 'lsx-business-directory' ),
-				'description' => esc_html__( 'Choose your filters above, these will display on the page. Edit your FacetWP Facets to change the display of each of them.', 'lsx-business-directory' ),
+				'name'        => esc_html__( 'Facets', 'lsx-search' ),
+				'description' => esc_html__( 'Choose your filters above, these will display on the page. Edit your FacetWP Facets to change the display of each of them.', 'lsx-search' ),
 				'id'          => $section . '_search_facets',
 				'type'        => 'multicheck',
 				'options'     => $this->facet_data,
