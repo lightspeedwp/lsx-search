@@ -16,19 +16,8 @@ class LSX_Search_Admin {
 	 * Construct method.
 	 */
 	public function __construct() {
-		if ( ! class_exists( 'CMB_Meta_Box' ) ) {
-			require_once( LSX_SEARCH_PATH . '/vendor/Custom-Meta-Boxes/custom-meta-boxes.php' );
-		}
 
-		if ( function_exists( 'tour_operator' ) ) {
-			$this->options = get_option( '_lsx-to_settings', false );
-		} else {
-			$this->options = get_option( '_lsx_settings', false );
-
-			if ( false === $this->options ) {
-				$this->options = get_option( '_lsx_lsx-settings', false );
-			}
-		}
+		$this->options = \lsx\search\includes\get_options();
 
 		add_action( 'init', array( $this, 'set_vars' ) );
 		add_action( 'init', array( $this, 'set_facetwp_vars' ) );

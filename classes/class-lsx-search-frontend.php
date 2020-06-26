@@ -48,15 +48,8 @@ class LSX_Search_Frontend {
 	 * Construct method.
 	 */
 	public function __construct() {
-		if ( function_exists( 'tour_operator' ) ) {
-			$this->options = get_option( '_lsx-to_settings', false );
-		} else {
-			$this->options = get_option( '_lsx_settings', false );
+		$this->options = \lsx\search\includes\get_options();
 
-			if ( false === $this->options ) {
-				$this->options = get_option( '_lsx_lsx-settings', false );
-			}
-		}
 		add_filter( 'wpseo_json_ld_search_url', array( $this, 'change_json_ld_search_url' ), 10, 1 );
 		add_action( 'wp', array( $this, 'set_vars' ), 11 );
 		add_action( 'wp', array( $this, 'set_facetwp_vars' ), 12 );
