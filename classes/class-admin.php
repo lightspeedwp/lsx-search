@@ -46,7 +46,6 @@ class Admin {
 	 */
 	public function __construct() {
 		$this->load_classes();
-		$this->options = \lsx\search\includes\get_options();
 		add_action( 'cmb2_admin_init', array( $this, 'register_settings_page' ) );
 		add_action( 'lsx_search_settings_page', array( $this, 'configure_settings_search_engine_fields' ), 15, 1 );
 		add_action( 'lsx_search_settings_page', array( $this, 'configure_settings_search_archive_fields' ), 15, 1 );
@@ -147,7 +146,11 @@ class Admin {
 	 * @return  void
 	 */
 	public function configure_settings_search_engine_fields( $cmb ) {
-		$this->search_fields( $cmb, 'engine' );
+		$global_args = array(
+			'title' => __( 'Global', 'lsx-search' ),
+			'desc'  => esc_html__( 'Control the filters which show on your WordPress search results page.', 'lsx-search' ),
+		);
+		$this->search_fields( $cmb, 'engine', $global_args );
 	}
 
 	/**
@@ -158,7 +161,71 @@ class Admin {
 	 * @return void
 	 */
 	public function configure_settings_search_archive_fields( $cmb ) {
-		$this->search_fields( $cmb, 'archive' );
+		$archives       = array();
+		$post_type_args = array(
+			'public' => true,
+		);
+		$post_types     = get_post_types( $post_type_args );
+		if ( ! empty( $post_types ) ) {
+			foreach ( $post_types as $post_type_key => $post_type_value ) {
+				switch ( $post_type_key ) {
+					case 'post':
+						$page_url      = home_url();
+						$page_title    = __( 'Home', 'lsx-search' );
+						$show_on_front = get_option( 'show_on_front' );
+						if ( 'page' === $show_on_front ) {
+							$page_for_posts = get_option( 'page_for_posts' );
+							if ( '' !== $page_for_posts ) {
+								$page_title   = get_the_title( $page_for_posts );
+								$page_url     = get_permalink( $page_for_posts );
+							}
+						}
+						$description = sprintf(
+							/* translators: %s: The subscription info */
+							__( 'Control the filters which show on your <a target="_blank" href="%1$s">%2$s</a> page.', 'lsx-search' ),
+							$page_url,
+							$page_title
+						);
+						$archives[ $post_type_key ] = array(
+							'title' => __( 'Blog', 'lsx-search' ),
+							'desc'  => $description,
+						);
+						break;
+
+					case 'product':
+						$archives[ $post_type_key ] = array(
+							'title' => __( 'Shop', 'lsx-search' ),
+							'desc'  => '',
+						);
+						break;
+
+					case 'product':
+						$archives[ $post_type_key ] = array(
+							'title' => __( 'Events', 'lsx-search' ),
+							'desc'  => '',
+						);
+						break;
+
+					case 'page':
+						break;
+
+					default:
+						$temp_post_type = get_post_type_object( $post_type_key );
+						if ( ! is_wp_error( $temp_post_type ) && isset( $temp_post_type->has_archive ) && false !== $temp_post_type->has_archive ) {
+							$archives[ $post_type_key ] = array(
+								'title' => $temp_post_type->label,
+								'desc'  => '',
+							);
+						}
+						break;
+				}
+			}
+		}
+		if ( ! empty( $archives ) ) {
+			foreach ( $archives as $archive_key => $archive_args ) {
+				$this->search_fields( $cmb, $archive_key, $archive_args );
+			}
+		}
 	}
 
 	/**
@@ -168,15 +235,15 @@ class Admin {
 	 * @param string $section either engine,archive or single.
 	 * @return void
 	 */
-	public function search_fields( $cmb, $section ) {
+	public function search_fields( $cmb, $section, $args ) {
 		$this->set_facetwp_vars();
 		$cmb->add_field(
 			array(
 				'id'          => 'settings_' . $section . '_search',
 				'type'        => 'title',
-				'name'        => esc_html__( 'Search', 'lsx-search' ),
-				'default'     => esc_html__( 'Search', 'lsx-search' ),
-				'description' => esc_html__( 'Control the filters which show on your WordPress search results page.', 'lsx-search' ),
+				'name'        => $args['title'],
+				'default'     => $args['title'],
+				'description' => $args['desc'],
 			)
 		);
 		do_action( 'lsx_search_settings_section', $cmb, 'top' );
@@ -279,7 +346,7 @@ class Admin {
 		do_action( 'lsx_search_settings_section', $cmb, 'bottom' );
 		$cmb->add_field(
 			array(
-				'id'   => 'settings_search_closing',
+				'id'   => 'settings_' . $section . '_search_closing',
 				'type' => 'tab_closing',
 			)
 		);
