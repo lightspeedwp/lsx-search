@@ -70,7 +70,7 @@ class Settings_Theme {
 	public function disable_cmb2_styles( $enabled ) {
 		if ( is_admin() ) {
 			$current_screen = get_current_screen();
-			if ( is_object( $current_screen ) && 'business-directory_page_lsx-business-directory-settings' === $current_screen->id ) {
+			if ( is_object( $current_screen ) && 'ppearance_page_lsx-search-settings' === $current_screen->id ) {
 				$enabled = false;
 			}
 		}
@@ -188,7 +188,7 @@ class Settings_Theme {
 	 * @return void
 	 */
 	public function navigation_js( $cmb_id, $object_id, $object_type, $cmb2_obj ) {
-		if ( 'lsx_search_settings' === $cmb_id && 'lsx-business-directory-settings' === $object_id && 'options-page' === $object_type ) {
+		if ( 'lsx_search_settings' === $cmb_id && 'lsx-search-settings' === $object_id && 'options-page' === $object_type ) {
 			?>
 			<script>
 				var LSX_SEARCH_CMB2 = Object.create( null );
