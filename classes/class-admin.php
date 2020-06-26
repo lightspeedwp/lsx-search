@@ -4,10 +4,34 @@
  *
  * @package lsx-search
  */
-class LSX_Search_Admin {
 
+namespace lsx\search\classes;
+
+/**
+ * The administration class.
+ */
+class Admin {
+
+	/**
+	 * Holds class instance
+	 *
+	 * @since 1.0.0
+	 *
+	 * @var      object \lsx\search\classes\Admin()
+	 */
+	protected static $instance = null;
+	/**
+	 * Holds the options for the search.
+	 *
+	 * @var array()
+	 */
 	public $options = false;
 
+	/**
+	 * Holds the facetwp data for use in the fields.
+	 *
+	 * @var array()
+	 */
 	public $facet_data = false;
 
 	/**
@@ -15,15 +39,50 @@ class LSX_Search_Admin {
 	 */
 	public function __construct() {
 		$this->options = \lsx\search\includes\get_options();
+
 		add_action( 'init', array( $this, 'set_vars' ) );
 		add_action( 'init', array( $this, 'set_facetwp_vars' ) );
-		add_filter( 'lsx_search_post_types_plural', array( $this, 'register_post_type_tabs' ) );
+		add_action( 'cmb2_admin_init', array( $this, 'register_settings_page' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'assets' ) );
 
 		if ( is_admin() ) {
 			add_filter( 'lsx_customizer_colour_selectors_body', array( $this, 'customizer_body_colours_handler' ), 15, 2 );
 			add_filter( 'lsx_customizer_colour_selectors_button', array( $this, 'customizer_button_colours' ), 10, 2 );
 		}
+	}
+
+	/**
+	 * Return an instance of this class.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return    object \lsx\member_directory\search\Admin()    A single instance of this class.
+	 */
+	public static function get_instance() {
+		// If the single instance hasn't been set, set it now.
+		if ( null === self::$instance ) {
+			self::$instance = new self();
+		}
+		return self::$instance;
+	}
+
+	/**
+	 * Configure Business Directory custom fields for the Settings page.
+	 *
+	 * @return void
+	 */
+	public function register_settings_page() {
+		$args = array(
+			'id'           => 'lsx_search_settings',
+			'title'        => '<h1>' . esc_html__( 'LSX Search Settings', 'lsx-search' ) . ' <span class="version">' . LSX_VERSION . '</span></h1>',
+			'menu_title'   => esc_html__( 'Settings', 'search' ), // Falls back to 'title' (above).
+			'object_types' => array( 'options-page' ),
+			'option_key'   => 'lsx-search-settings', // The option key and admin menu page slug.
+			'parent_slug'  => 'options-general.php',
+			'capability'   => 'manage_options', // Cap required to view options-page.
+		);
+		$cmb  = new_cmb2_box( $args );
+		do_action( 'lsx_search_settings_page', $cmb );
 	}
 
 	/**
@@ -39,15 +98,7 @@ class LSX_Search_Admin {
 			'product' => 'products', // WooCommerce
 			'post' => 'posts',
 		);
-
 		return $post_types_plural;
-	}
-
-	/**
-	 * Sets variables.
-	 */
-	public function set_vars() {
-		$this->tabs = apply_filters( 'lsx_search_post_types_plural', array() );
 	}
 
 	/**
