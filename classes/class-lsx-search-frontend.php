@@ -136,12 +136,7 @@ class LSX_Search_Frontend {
 				$search_enabled = true;
 			}
 		} else {
-			//var_dump( $this->search_prefix );
-			//var_dump( $this->options );
 			$enable_prefix = $this->search_prefix;
-			if ( 'engine' === $enable_prefix ) {
-				$enable_prefix .= '_search';
-			}
 			if ( ! empty( $this->options ) && isset( $this->options['display'] ) && isset( $this->options['display'][ $enable_prefix . '_enable' ] ) && 'on' === $this->options['display'][ $enable_prefix . '_enable' ] ) {
 				$search_enabled = true;
 			}
@@ -167,7 +162,7 @@ class LSX_Search_Frontend {
 				$this->search_prefix      = 'search';
 			} else {
 				$this->search_core_suffix = 'enable';
-				$this->search_prefix      = 'engine';
+				$this->search_prefix      = 'engine_search';
 			}
 		} elseif ( is_post_type_archive( $this->post_types ) || is_tax( $this->taxonomies ) || is_page( $page_for_posts ) || is_home() || is_category() || is_tag() ) {
 			if ( false === $new_prefixes ) {
