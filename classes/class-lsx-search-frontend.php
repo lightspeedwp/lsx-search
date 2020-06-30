@@ -110,7 +110,16 @@ class LSX_Search_Frontend {
 		if ( false !== $cmb2_options && ! empty( $cmb2_options ) ) {
 			$this->set_search_prefix( true );
 			$this->options['display'] = $cmb2_options;
-			$this->new_options        = true;
+			foreach ( $this->options['display'] as $option_key => $option_value ) {
+				if ( is_array( $option_value ) && ! empty( $option_value ) ) {
+					$new_values = array();
+					foreach ( $option_value as $empty_key => $key_value ) {
+						$new_values[ $key_value ] = 'on';
+					}
+					$this->options['display'][ $option_key ] = $new_values;
+				}
+			}
+			$this->new_options = true;
 		}
 	}
 
