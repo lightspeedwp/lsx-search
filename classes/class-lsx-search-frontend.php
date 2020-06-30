@@ -45,15 +45,22 @@ class LSX_Search_Frontend {
 	public $has_posts = false;
 
 	/**
+	 * If we are using the CMB2 options or not.
+	 *
+	 * @var boolean
+	 */
+	public $new_options = false;
+
+	/**
 	 * Construct method.
 	 */
 	public function __construct() {
 		$this->options = \lsx\search\includes\get_options();
 
 		add_filter( 'wpseo_json_ld_search_url', array( $this, 'change_json_ld_search_url' ), 10, 1 );
-		add_action( 'wp', array( $this, 'set_vars' ), 11 );
-		add_action( 'wp', array( $this, 'set_facetwp_vars' ), 12 );
-		add_action( 'wp', array( $this, 'core' ), 13 );
+		add_action( 'wp', array( $this, 'set_vars' ), 21 );
+		add_action( 'wp', array( $this, 'set_facetwp_vars' ), 22 );
+		add_action( 'wp', array( $this, 'core' ), 23 );
 		add_action( 'lsx_body_top', array( $this, 'check_for_results' ) );
 
 		add_action( 'pre_get_posts', array( $this, 'filter_post_types' ) );
@@ -93,8 +100,18 @@ class LSX_Search_Frontend {
 			'product'     => 'products',
 		);
 		$this->set_search_prefix();
+		$this->get_cmb2_options();
 		$this->search_enabled = apply_filters( 'lsx_search_enabled', $this->is_search_enabled(), $this );
 		$this->search_prefix  = apply_filters( 'lsx_search_prefix', $this->search_prefix, $this );
+	}
+
+	private function get_cmb2_options() {
+		$cmb2_options = get_option( 'lsx-search-settings' );
+		if ( false !== $cmb2_options && ! empty( $cmb2_options ) ) {
+			$this->set_search_prefix( true );
+			$this->options['display'] = $cmb2_options;
+			$this->new_options        = true;
+		}
 	}
 
 	/**
@@ -104,8 +121,21 @@ class LSX_Search_Frontend {
 	 */
 	private function is_search_enabled() {
 		$search_enabled = false;
-		if ( isset( $this->options['display'][ $this->search_prefix . '_enable_' . $this->search_core_suffix ] ) && ( ! empty( $this->options ) ) && 'on' == $this->options['display'][ $this->search_prefix . '_enable_' . $this->search_core_suffix ] ) {
-			$search_enabled = true;
+
+		if ( false === $this->new_options ) {
+			if ( isset( $this->options['display'][ $this->search_prefix . '_enable_' . $this->search_core_suffix ] ) && ( ! empty( $this->options ) ) && 'on' == $this->options['display'][ $this->search_prefix . '_enable_' . $this->search_core_suffix ] ) {
+				$search_enabled = true;
+			}
+		} else {
+			//var_dump( $this->search_prefix );
+			//var_dump( $this->options );
+			$enable_prefix = $this->search_prefix;
+			if ( 'engine' === $enable_prefix ) {
+				$enable_prefix .= '_search';
+			}
+			if ( ! empty( $this->options ) && isset( $this->options['display'] ) && isset( $this->options['display'][ $enable_prefix . '_enable' ] ) && 'on' === $this->options['display'][ $enable_prefix . '_enable' ] ) {
+				$search_enabled = true;
+			}
 		}
 		return $search_enabled;
 	}
@@ -115,14 +145,27 @@ class LSX_Search_Frontend {
 	 *
 	 * @return void
 	 */
-	private function set_search_prefix() {
+	private function set_search_prefix( $new_prefixes = false ) {
 		$page_for_posts = get_option( 'page_for_posts' );
+		if ( false !== $new_prefixes ) {
+			$this->taxonomies = array();
+			$this->post_types = array();
+		}
 
 		if ( is_search() ) {
-			$this->search_core_suffix = 'core';
-			$this->search_prefix      = 'search';
+			if ( false === $new_prefixes ) {
+				$this->search_core_suffix = 'core';
+				$this->search_prefix      = 'search';
+			} else {
+				$this->search_core_suffix = 'enable';
+				$this->search_prefix      = 'engine';
+			}
 		} elseif ( is_post_type_archive( $this->post_types ) || is_tax( $this->taxonomies ) || is_page( $page_for_posts ) || is_home() || is_category() || is_tag() ) {
-			$this->search_core_suffix = 'search';
+			if ( false === $new_prefixes ) {
+				$this->search_core_suffix = 'search';
+			} else {
+				$this->search_core_suffix = 'enable';
+			}
 
 			if ( is_tax( $this->taxonomies ) ) {
 				$tax = get_query_var( 'taxonomy' );
@@ -134,8 +177,12 @@ class LSX_Search_Frontend {
 				$post_type = get_query_var( 'post_type' );
 			}
 
-			if ( isset( $this->tabs[ $post_type ] ) ) {
-				$this->search_prefix = $this->tabs[ $post_type ] . '_archive';
+			if ( false === $new_prefixes ) {
+				if ( isset( $this->tabs[ $post_type ] ) ) {
+					$this->search_prefix = $this->tabs[ $post_type ] . '_archive';
+				}
+			} else {
+				$this->search_prefix = $post_type . '_search';
 			}
 		}
 	}
