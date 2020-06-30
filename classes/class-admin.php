@@ -193,16 +193,22 @@ class Admin {
 						break;
 
 					case 'product':
+						$page_url = home_url();
+						$page_title    = __( 'Shop', 'lsx-search' );
+						if ( function_exists( 'wc_get_page_id' ) ) {
+							$shop_page  = wc_get_page_id( 'shop' );
+							$page_url   = get_permalink( $shop_page );
+							$page_title = get_the_title( $shop_page );
+						}
+						$description = sprintf(
+							/* translators: %s: The subscription info */
+							__( 'Control the filters which show on your <a target="_blank" href="%1$s">%2$s</a> page.', 'lsx-search' ),
+							$page_url,
+							$page_title
+						);
 						$archives[ $post_type_key ] = array(
 							'title' => __( 'Shop', 'lsx-search' ),
-							'desc'  => '',
-						);
-						break;
-
-					case 'product':
-						$archives[ $post_type_key ] = array(
-							'title' => __( 'Events', 'lsx-search' ),
-							'desc'  => '',
+							'desc'  => $description,
 						);
 						break;
 
@@ -212,9 +218,17 @@ class Admin {
 					default:
 						$temp_post_type = get_post_type_object( $post_type_key );
 						if ( ! is_wp_error( $temp_post_type ) && isset( $temp_post_type->has_archive ) && false !== $temp_post_type->has_archive ) {
+							$page_url    = get_post_type_archive_link( $temp_post_type->name );
+							$description = sprintf(
+								/* translators: %s: The subscription info */
+								__( 'Control the filters which show on your <a target="_blank" href="%1$s">%2$s</a> archive.', 'lsx-search' ),
+								$page_url,
+								$temp_post_type->label
+							);
+
 							$archives[ $post_type_key ] = array(
 								'title' => $temp_post_type->label,
-								'desc'  => '',
+								'desc'  => $description,
 							);
 						}
 						break;
@@ -291,6 +305,14 @@ class Admin {
 					'id'          => $section . '_excerpt_enable',
 					'type'        => 'checkbox',
 					'description' => __( 'Display the excerpt of a listing.', 'lsx-search' ),
+				)
+			);
+			$cmb->add_field(
+				array(
+					'name'        => esc_html__( 'Enable Post Type Label', 'lsx-search' ),
+					'id'          => $section . '_search_enable_pt_label',
+					'type'        => 'checkbox',
+					'description' => '',
 				)
 			);
 		}
