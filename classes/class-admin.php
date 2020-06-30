@@ -92,7 +92,7 @@ class Admin {
 			'menu_title'   => esc_html__( 'LSX Search', 'search' ), // Falls back to 'title' (above).
 			'object_types' => array( 'options-page' ),
 			'option_key'   => 'lsx-search-settings', // The option key and admin menu page slug.
-			'parent_slug'  => 'themes.php',
+			'parent_slug'  => 'options-general.php',
 			'capability'   => 'manage_options', // Cap required to view options-page.
 		);
 		$cmb  = new_cmb2_box( $args );

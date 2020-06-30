@@ -116,18 +116,30 @@ class LSX_Search_Frontend {
 			}
 		}
 
-		if ( isset( $this->options['display'][ $this->search_prefix . '_enable_' . $this->search_core_suffix ] ) && ( ! empty( $this->options ) ) && 'on' == $this->options['display'][ $this->search_prefix . '_enable_' . $this->search_core_suffix ] ) {
-			$this->search_enabled = true;
-		}
 
-		$this->search_enabled = apply_filters( 'lsx_search_enabled', $this->search_enabled, $this );
+
+		$this->search_enabled = apply_filters( 'lsx_search_enabled', $this->is_search_enabled(), $this );
 		$this->search_prefix = apply_filters( 'lsx_search_prefix', $this->search_prefix, $this );
+	}
+
+	/**
+	 * Returns if the search is enabled.
+	 *
+	 * @return boolean
+	 */
+	private function is_search_enabled() {
+		$search_enabled = false;
+		if ( isset( $this->options['display'][ $this->search_prefix . '_enable_' . $this->search_core_suffix ] ) && ( ! empty( $this->options ) ) && 'on' == $this->options['display'][ $this->search_prefix . '_enable_' . $this->search_core_suffix ] ) {
+			$search_enabled = true;
+		}
+		return $search_enabled;
 	}
 
 	/**
 	 * Sets the FacetWP variables.
 	 */
 	public function set_facetwp_vars() {
+
 		if ( class_exists( 'FacetWP' ) ) {
 			$facet_data = FWP()->helper->get_facets();
 		}
