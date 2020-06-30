@@ -92,7 +92,30 @@ class LSX_Search_Frontend {
 			'video'       => 'videos',
 			'product'     => 'products',
 		);
+		$this->set_search_prefix();
+		$this->search_enabled = apply_filters( 'lsx_search_enabled', $this->is_search_enabled(), $this );
+		$this->search_prefix  = apply_filters( 'lsx_search_prefix', $this->search_prefix, $this );
+	}
 
+	/**
+	 * Returns if the search is enabled.
+	 *
+	 * @return boolean
+	 */
+	private function is_search_enabled() {
+		$search_enabled = false;
+		if ( isset( $this->options['display'][ $this->search_prefix . '_enable_' . $this->search_core_suffix ] ) && ( ! empty( $this->options ) ) && 'on' == $this->options['display'][ $this->search_prefix . '_enable_' . $this->search_core_suffix ] ) {
+			$search_enabled = true;
+		}
+		return $search_enabled;
+	}
+
+	/**
+	 * Sets the search prefix.
+	 *
+	 * @return void
+	 */
+	private function set_search_prefix() {
 		$page_for_posts = get_option( 'page_for_posts' );
 
 		if ( is_search() ) {
@@ -115,24 +138,6 @@ class LSX_Search_Frontend {
 				$this->search_prefix = $this->tabs[ $post_type ] . '_archive';
 			}
 		}
-
-
-
-		$this->search_enabled = apply_filters( 'lsx_search_enabled', $this->is_search_enabled(), $this );
-		$this->search_prefix = apply_filters( 'lsx_search_prefix', $this->search_prefix, $this );
-	}
-
-	/**
-	 * Returns if the search is enabled.
-	 *
-	 * @return boolean
-	 */
-	private function is_search_enabled() {
-		$search_enabled = false;
-		if ( isset( $this->options['display'][ $this->search_prefix . '_enable_' . $this->search_core_suffix ] ) && ( ! empty( $this->options ) ) && 'on' == $this->options['display'][ $this->search_prefix . '_enable_' . $this->search_core_suffix ] ) {
-			$search_enabled = true;
-		}
-		return $search_enabled;
 	}
 
 	/**
