@@ -116,6 +116,24 @@ class Admin {
 	}
 
 	/**
+	 * Gets the Tour Operator Post Types.
+	 *
+	 * @return array
+	 */	
+	public function get_to_post_types() {
+		$to_types = array(
+			'accommodation',
+			'tour',
+			'destination',
+			'review',
+			'activity',
+			'special',
+			'vehicle',
+		);
+		return $to_types;
+	}
+
+	/**
 	 * Sets the FacetWP variables.
 	 *
 	 * @return  void
@@ -290,7 +308,7 @@ class Admin {
 				array(
 					'name'             => esc_html__( 'Grid vs List', 'lsx-search' ),
 					'id'               => $section . '_grid_list',
-					'type'             => 'radio',
+					'type'             => 'select',
 					'show_option_none' => false,
 					'options'          => array(
 						'grid' => esc_html__( 'Grid', 'lsx-search' ),
@@ -316,12 +334,27 @@ class Admin {
 				)
 			);
 		}
+		if ( 'accommodation' === $section ) {
+			$cmb->add_field(
+				array(
+					'name'    => esc_html__( 'Results Layout - list vs map', 'lsx-search' ),
+					'id'      => $section . '_search_results_layout',
+					'type'    => 'select',
+					'options' => array(
+						'list_map'    => esc_html__( 'List and Map', 'lsx-search' ),
+						'list'        => esc_html__( 'List only', 'lsx-search' ),
+					),
+					'default' => '',
+				)
+			);
+		}
 
 		$cmb->add_field(
 			array(
-				'name' => esc_html__( 'Collapse', 'lsx-search' ),
-				'id'   => $section . '_search_collapse',
-				'type' => 'checkbox',
+				'name'        => esc_html__( 'Enable Collapse', 'lsx-search' ),
+				'id'          => $section . '_search_collapse',
+				'type'        => 'checkbox',
+				'description' => __( 'Enable collapsible filters on search results', 'lsx-search' ),
 			)
 		);
 
