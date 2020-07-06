@@ -127,7 +127,7 @@ class Admin {
 		$this->facet_data = array();
 		if ( ! empty( $facet_data ) && is_array( $facet_data ) ) {
 			foreach ( $facet_data as $facet ) {
-				$this->facet_data[ $facet['name'] ] = $facet['label'];
+				$this->facet_data[ $facet['name'] ] = $facet['label'] . '(' . $facet['name'] . ')';
 			}
 		}
 	}
