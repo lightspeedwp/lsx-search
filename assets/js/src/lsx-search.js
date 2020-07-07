@@ -104,7 +104,7 @@ var lsx_search = Object.create( null );
 	};
 
 	lsx_search.reloadMap = function() {
-		if (undefined !== LSX_TO_Maps) {
+		if (typeof LSX_TO_Maps !== 'undefined') {
 			LSX_TO_Maps.initThis();
 		}
 	};

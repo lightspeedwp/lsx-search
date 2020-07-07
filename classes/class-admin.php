@@ -426,7 +426,7 @@ class Admin {
 		$cmb->add_field(
 			array(
 				'name' => esc_html__( 'Display Clear Button', 'lsx-search' ),
-				'id'   => $section . '_search_clear_button',
+				'id'   => $section . '_search_display_clear_button',
 				'type' => 'checkbox',
 			)
 		);
@@ -434,7 +434,7 @@ class Admin {
 		$cmb->add_field(
 			array(
 				'name' => esc_html__( 'Display Result Count', 'lsx-search' ),
-				'id'   => $section . '_search_result_count',
+				'id'   => $section . '_search_display_result_count',
 				'type' => 'checkbox',
 			)
 		);
