@@ -75,9 +75,11 @@ var lsx_search = Object.create( null );
 			});
 
 			if ( false === lsx_search.facet_wp_load_first_time ) {
-
 				lsx_search.first_facet_collaped();
-
+				lsx_search.onChangeTab_Map();
+				if ('' === jQuery('.lsx-map-preview').html()) {
+					lsx_search.reloadMap();
+				}
 				lsx_search.facet_wp_load_first_time = true;
 				return;
 			}
@@ -95,6 +97,16 @@ var lsx_search = Object.create( null );
 				'pointer-events': 'none'
 			} );
 		} );
+	};
+
+	lsx_search.onChangeTab_Map = function() {
+		$('a[data-toggle="tab"][href="#to-search-map"]').on('shown.bs.tab', lsx_search.reloadMap() );
+	};
+
+	lsx_search.reloadMap = function() {
+		if (undefined !== LSX_TO_Maps) {
+			LSX_TO_Maps.initThis();
+		}
 	};
 
 	/**
