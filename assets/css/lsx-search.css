@@ -1,4 +1,6 @@
 /** LSX Search styles. @package lsx-search */
+.blog-description.search-description { margin-top: 4.25rem; }
+
 /*@include media('phone') { .search, .archive { .facetwp-sidebar.widget-area { + .content-area { width: 66.66667%; } } } }*/
 @media (min-width: 992px) { .search .content.role.row, .archive .content.role.row, .blog .content.role.row { margin-right: auto; margin-left: auto; }
   .search .facetwp-sidebar.widget-area, .archive .facetwp-sidebar.widget-area, .blog .facetwp-sidebar.widget-area { padding: 0px 20px 20px 20px; margin-top: 4.25rem; max-width: 271px; margin-left: 5px; margin-right: 5px; }

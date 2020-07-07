@@ -273,7 +273,10 @@ class LSX_Search_Frontend {
 			add_filter( 'lsx_layout_selector', array( $this, 'lsx_layout_selector' ), 10, 4 );
 			add_filter( 'lsx_slot_class', array( $this, 'change_slot_column_class' ) );
 			add_action( 'lsx_entry_top', array( $this, 'add_label_to_title' ) );
-			add_filter( 'body_class',         array( $this, 'body_class' ), 10 );
+			add_filter( 'body_class', array( $this, 'body_class' ), 10 );
+
+			add_filter( 'lsx_blog_customizer_top_of_blog_action', array( $this, 'top_of_blog_action' ), 10, 1 );
+			add_filter( 'lsx_blog_customizer_blog_description_class', array( $this, 'blog_description_class' ), 10, 1 );
 
 			if ( class_exists( 'LSX_Videos' ) ) {
 				global $lsx_videos_frontend;
@@ -327,11 +330,32 @@ class LSX_Search_Frontend {
 	 *
 	 * @param  array $classes The classes.
 	 * @return array $classes The classes.
-	 * @since 1.0.0
 	 */
 	public function body_class( $classes ) {
 		$classes[] = 'lsx-search-enabled';
 		return $classes;
+	}
+
+	/**
+	 * Moves the blog description to above the content columns.
+	 *
+	 * @param  string $action
+	 * @return string $action
+	 */
+	public function top_of_blog_action( $action = '' ) {
+		$action = 'lsx_content_wrap_before';
+		return $action;
+	}
+
+	/**
+	 * Adds a class to the blog description.
+	 *
+	 * @param  string $action
+	 * @return string $action
+	 */
+	public function blog_description_class( $class = '' ) {
+		$class .= ' col-md-12 search-description';
+		return $class;
 	}
 
 	/**
