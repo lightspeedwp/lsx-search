@@ -443,7 +443,7 @@ class Admin {
 				array(
 					'name'        => esc_html__( 'Alphabet Facet', 'lsx-search' ),
 					'description' => esc_html__( 'Select the alphabetical sorter facet.', 'lsx-search' ),
-					'id'          => $section . '_search_az_facet',
+					'id'          => $section . '_search_az_pagination',
 					'type'        => 'select',
 					'options'     => $this->az_facets,
 				)
