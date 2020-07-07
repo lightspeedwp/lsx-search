@@ -35,6 +35,13 @@ class Admin {
 	public $facet_data = false;
 
 	/**
+	 * Holds the Alpha betical facetwp data for use in the fields.
+	 *
+	 * @var array()
+	 */
+	public $az_facets = array();
+
+	/**
 	 * Holds the settings page theme functions
 	 *
 	 * @var object \lsx\search\classes\admin\Settings_Theme();
@@ -143,9 +150,16 @@ class Admin {
 			$facet_data = \FWP()->helper->get_facets();
 		}
 		$this->facet_data = array();
+		$this->az_facets  = array(
+			'' => __( 'Do not show', 'lsx-search' ),
+		);
 		if ( ! empty( $facet_data ) && is_array( $facet_data ) ) {
 			foreach ( $facet_data as $facet ) {
-				$this->facet_data[ $facet['name'] ] = $facet['label'] . '(' . $facet['name'] . ')';
+				if ( 'alpha' === $facet['type'] ) {
+					$this->az_facets[ $facet['name'] ] = $facet['label'] . '(' . $facet['name'] . ')';
+				} else {
+					$this->facet_data[ $facet['name'] ] = $facet['label'] . '(' . $facet['name'] . ')';
+				}
 			}
 		}
 	}
@@ -317,6 +331,22 @@ class Admin {
 					'default'          => 'list',
 				)
 			);
+		}
+		if ( 'engine' === $section && is_plugin_active( 'tour-operator/tour-operator.php' ) ) {
+			$cmb->add_field(
+				array(
+					'name'    => esc_html__( 'List layout images', 'lsx-search' ),
+					'id'      => $section . '_search_list_layout_image_style',
+					'type'    => 'select',
+					'options' => array(
+						''           => esc_html__( 'Full Height', 'lsx-search' ),
+						'max-height' => esc_html__( 'Max Height', 'lsx-search' ),
+					),
+					'default' => '',
+				)
+			);
+		}
+		if ( 'engine' === $section ) {
 			$cmb->add_field(
 				array(
 					'name'        => esc_html__( 'Display Excerpt', 'lsx-search' ),
@@ -330,11 +360,30 @@ class Admin {
 					'name'        => esc_html__( 'Enable Post Type Label', 'lsx-search' ),
 					'id'          => $section . '_search_enable_pt_label',
 					'type'        => 'checkbox',
-					'description' => '',
+					'description' => __( 'This enables the post type label from entries on search results page.', 'lsx-search' ),
 				)
 			);
+			if ( is_plugin_active( 'tour-operator/tour-operator.php' ) ) {
+				$cmb->add_field(
+					array(
+						'name'        => esc_html__( 'Enable Continent Filter', 'lsx-search' ),
+						'id'          => $section . '_search_enable_continent_filter',
+						'type'        => 'checkbox',
+						'description' => __( 'This enables the continent filter in FacetWP destinations filter.', 'lsx-search' ),
+					)
+				);
+				$cmb->add_field(
+					array(
+						'name'        => esc_html__( 'Enable Continental Regions', 'lsx-search' ),
+						'id'          => $section . '_search_enable_continental_regions',
+						'type'        => 'checkbox',
+						'description' => __( 'This disable continents and enabled the sub regions.', 'lsx-search' ),
+					)
+				);
+			}
 		}
-		if ( 'accommodation' === $section ) {
+
+		if ( is_plugin_active( 'tour-operator/tour-operator.php' ) && 'accommodation' === $section ) {
 			$cmb->add_field(
 				array(
 					'name'    => esc_html__( 'Results Layout - list vs map', 'lsx-search' ),
@@ -389,6 +438,17 @@ class Admin {
 				'type' => 'checkbox',
 			)
 		);
+		if ( is_plugin_active( 'facetwp-alpha/index.php' ) ) {
+			$cmb->add_field(
+				array(
+					'name'        => esc_html__( 'Alphabet Facet', 'lsx-search' ),
+					'description' => esc_html__( 'Select the alphabetical sorter facet.', 'lsx-search' ),
+					'id'          => $section . '_search_az_facet',
+					'type'        => 'select',
+					'options'     => $this->az_facets,
+				)
+			);
+		}
 		$cmb->add_field(
 			array(
 				'name'        => esc_html__( 'Facets', 'lsx-search' ),
