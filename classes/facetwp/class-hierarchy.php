@@ -3,12 +3,39 @@
  * LSX_Search_FacetWP_Hierarchy Frontend Main Class
  */
 
-class LSX_Search_FacetWP_Hierarchy {
+namespace lsx\search\classes\facetwp;
+
+class Hierarchy {
+
+	/**
+	 * Holds class instance
+	 *
+	 * @since 1.0.0
+	 *
+	 * @var      object \lsx\search\classes\facetwp\Hierarchy()
+	 */
+	protected static $instance = null;
+
 	/**
 	 * Constructor
 	 */
 	public function __construct() {
 		add_filter( 'facetwp_facet_html', array( $this, 'checkbox_facet_html' ), 100, 2 );
+	}
+
+	/**
+	 * Return an instance of this class.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return    object \lsx\search\classes\facetwp\Hierarchy()    A single instance of this class.
+	 */
+	public static function get_instance() {
+		// If the single instance hasn't been set, set it now.
+		if ( null === self::$instance ) {
+			self::$instance = new self();
+		}
+		return self::$instance;
 	}
 
 	public function checkbox_facet_html( $output, $params ) {
