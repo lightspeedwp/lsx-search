@@ -988,7 +988,7 @@ class LSX_Search_Frontend {
 	 */
 	public function add_label_to_title() {
 		if ( is_search() ) {
-			if ( ! empty( $this->options['display']['search_enable_pt_label'] ) ) {
+			if ( ! empty( $this->options['display']['engine_search_enable_pt_label'] ) ) {
 				$post_type = get_post_type();
 				$post_type = str_replace( '_', ' ', $post_type );
 				$post_type = str_replace( '-', ' ', $post_type );
