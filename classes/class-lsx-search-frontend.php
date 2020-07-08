@@ -690,11 +690,7 @@ class LSX_Search_Frontend {
 		}
 		$az_pagination = apply_filters( 'lsx_search_top_az_pagination', $az_pagination );
 		if ( false !== $az_pagination && '' !== $az_pagination ) {
-			?>
-				<div class="col-md-12">
-					<?php echo do_shortcode( '[facetwp facet="' . $az_pagination . '"]' ); ?>
-				</div>
-			<?php
+			echo do_shortcode( '[facetwp facet="' . $az_pagination . '"]' );
 		}
 	}
 
@@ -732,6 +728,8 @@ class LSX_Search_Frontend {
 
 						<?php do_action( 'lsx_search_facetwp_top_row' ); ?>
 
+						<?php $this->display_alphabet_facet(); ?>
+
 						<?php if ( $show_sort_combo ) { ?>
 							<?php echo do_shortcode( '[facetwp sort="true"]' ); ?>
 						<?php } ?>
@@ -739,8 +737,6 @@ class LSX_Search_Frontend {
 					</div>
 				</div>
 			<?php } ?>
-
-			<?php $this->display_alphabet_facet(); ?>
 		</div>
 		<?php
 	}
@@ -852,7 +848,7 @@ class LSX_Search_Frontend {
 
 						<div class="ssm-overlay ssm-toggle-nav" rel="lsx-search-filters"></div>
 
-						<div class="col-xs-12 facetwp-item-wrap facetwp-filters-wrap" rel="lsx-search-filters">
+						<div class="col-xs-12 facetwp-item-wrap facetwp-filters-wrap" id="lsx-search-filters">
 							<div class="row hidden-sm hidden-md hidden-lg ssm-row-margin-bottom">
 								<div class="col-xs-12 facetwp-item facetwp-filters-button">
 									<button class="ssm-close-btn ssm-toggle-nav btn btn-block" rel="lsx-search-filters"><?php esc_html_e( 'Close Filters', 'lsx-search' ); ?> <i class="fa fa-times" aria-hidden="true"></i></button>
