@@ -245,6 +245,7 @@ class Admin {
 						break;
 
 					case 'page':
+					case 'media':
 						break;
 
 					default:
