@@ -211,14 +211,14 @@ class LSX_Search_Frontend {
 				$this->search_core_suffix = 'enable';
 				$this->search_prefix      = 'engine_search';
 			}
-		} elseif ( is_post_type_archive( $this->post_types ) || is_tax( $this->taxonomies ) || is_page( $page_for_posts ) || is_home() || is_category() || is_tag() ) {
+		} elseif ( is_post_type_archive( $this->post_types ) || is_tax() || is_page( $page_for_posts ) || is_home() || is_category() || is_tag() ) {
 			if ( false === $new_prefixes ) {
 				$this->search_core_suffix = 'search';
 			} else {
 				$this->search_core_suffix = 'enable';
 			}
 
-			if ( is_tax( $this->taxonomies ) ) {
+			if ( is_tax() ) {
 				$tax = get_query_var( 'taxonomy' );
 				$tax = get_taxonomy( $tax );
 				$post_type = $tax->object_type[0];

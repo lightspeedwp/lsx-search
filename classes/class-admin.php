@@ -249,7 +249,7 @@ class Admin {
 
 					default:
 						$temp_post_type = get_post_type_object( $post_type_key );
-						if ( ! is_wp_error( $temp_post_type ) && isset( $temp_post_type->has_archive ) && false !== $temp_post_type->has_archive ) {
+						if ( ! is_wp_error( $temp_post_type ) ) {
 							$page_url    = get_post_type_archive_link( $temp_post_type->name );
 							$description = sprintf(
 								/* translators: %s: The subscription info */
