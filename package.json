@@ -1,6 +1,6 @@
 {
   "name": "lsx-search",
-  "version": "1.0.9",
+  "version": "1.5.0",
   "description": "LSX Search for LSX Theme.",
   "main": "gulpfile.js",
   "scripts": {
