@@ -70,7 +70,7 @@ class Settings_Theme {
 	public function disable_cmb2_styles( $enabled ) {
 		if ( is_admin() ) {
 			$current_screen = get_current_screen();
-			if ( is_object( $current_screen ) && 'ppearance_page_lsx-search-settings' === $current_screen->id ) {
+			if ( is_object( $current_screen ) && 'settings_page_lsx-search-settings' === $current_screen->id ) {
 				$enabled = false;
 			}
 		}
