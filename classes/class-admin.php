@@ -95,7 +95,7 @@ class Admin {
 	public function register_settings_page() {
 		$args = array(
 			'id'           => 'lsx_search_settings',
-			'title'        => '<h1>' . esc_html__( 'LSX Search Settings', 'lsx-search' ) . ' <span class="version">' . LSX_VERSION . '</span></h1>',
+			'title'        => '<h1>' . esc_html__( 'LSX Search Settings', 'lsx-search' ) . ' <span class="version">' . LSX_SEARCH_VER . '</span></h1>',
 			'menu_title'   => esc_html__( 'LSX Search', 'search' ), // Falls back to 'title' (above).
 			'object_types' => array( 'options-page' ),
 			'option_key'   => 'lsx-search-settings', // The option key and admin menu page slug.
