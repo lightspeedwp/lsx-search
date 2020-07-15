@@ -1,10 +1,19 @@
 # Change log
 
-## [[1.4.2]] - In development
+## [[1.5.0]]
+
+## Added
+
+- Updating the global search filters.
+- Updating search settings.
 
 ## Fixed
 
 - Fixed spacing for the archive layouts.
+
+## Deprecated
+
+- Removing the CMB and UIX library
 
 ## [[1.4.1]] - 2020-05-21
 
