@@ -245,7 +245,13 @@ class Admin {
 						break;
 
 					case 'page':
-					case 'media':
+					case 'attachment':
+					case 'lesson':
+					case 'certificate':
+					case 'envira':
+					case 'tribe_organizer':
+					case 'tribe_venue':
+					case 'envira':
 						break;
 
 					default:
