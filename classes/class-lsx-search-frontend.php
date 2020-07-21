@@ -592,7 +592,7 @@ class LSX_Search_Frontend {
 	 * Outputs the Search Title Facet
 	 */
 	public function search_sidebar_top() {
-		if ( ! empty( $this->options['display'][ $this->search_prefix . '_facets' ] ) && is_array( $this->options['display'][ $this->search_prefix . '_facets' ] ) ) {
+		if ( ! empty( $this->options['display'][ $this->search_prefix . '_facets' ] ) && is_array( $this->options['display'][ $this->search_prefix . '_facets' ] ) && true !== apply_filters( 'lsx_search_hide_search_box', false ) ) {
 
 			if ( ! is_search() ) {
 
