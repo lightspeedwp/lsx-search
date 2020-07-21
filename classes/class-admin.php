@@ -126,7 +126,7 @@ class Admin {
 	 * Gets the Tour Operator Post Types.
 	 *
 	 * @return array
-	 */	
+	 */
 	public function get_to_post_types() {
 		$to_types = array(
 			'accommodation',
