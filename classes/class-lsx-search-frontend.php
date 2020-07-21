@@ -717,7 +717,7 @@ class LSX_Search_Frontend {
 				<div class="row facetwp-top-row-1 hidden-xs <?php echo esc_attr( $facet_row_classes ); ?>">
 					<div class="col-xs-12">
 
-						<?php if ( ! empty( $this->options['display'][ $this->search_prefix . '_display_result_count' ] ) ) { ?>
+						<?php if ( ! empty( $this->options['display'][ $this->search_prefix . '_display_result_count' ] ) && false === apply_filters( 'lsx_search_hide_result_count', false ) ) { ?>
 							<div class="row">
 								<div class="col-md-12 facetwp-item facetwp-results">
 									<h3 class="lsx-search-title lsx-search-title-results"><?php esc_html_e( 'Results', 'lsx-search' ); ?> <?php echo '(' . do_shortcode( '[facetwp counts="true"]' ) . ')'; ?>
