@@ -698,6 +698,9 @@ class LSX_Search_Frontend {
 	 * Outputs top.
 	 */
 	public function facet_top_bar() {
+		if ( true === apply_filters( 'lsx_search_hide_top_bar', false ) ) {
+			return;
+		}
 		$show_pagination     = true;
 		$pagination_visible  = false;
 		$show_per_page_combo = empty( $this->options['display'][ $this->search_prefix . '_disable_per_page' ] );
@@ -745,8 +748,9 @@ class LSX_Search_Frontend {
 	 * Outputs bottom.
 	 */
 	public function facet_bottom_bar() {
-		?>
-		<?php
+		if ( true === apply_filters( 'lsx_search_hide_bottom_bar', false ) ) {
+			return;
+		}
 		$show_pagination    = true;
 		$pagination_visible = false;
 		if ( isset( $this->options['display'][ $this->search_prefix . '_az_pagination' ] ) ) {
