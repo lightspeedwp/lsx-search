@@ -23,5 +23,6 @@ define( 'LSX_SEARCH_VER', '1.5.0' );
 
 /* ======================= Below is the Plugin Class init ========================= */
 
-require_once LSX_SEARCH_PATH . '/classes/class-lsx-search.php';
+require_once LSX_SEARCH_PATH . '/includes/template-tags.php';
 require_once LSX_SEARCH_PATH . '/includes/functions.php';
+require_once LSX_SEARCH_PATH . '/classes/class-lsx-search.php';

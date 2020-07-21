@@ -1,31 +1,42 @@
 /** LSX Search styles (admin). @package lsx-search */
-#banners .CMB_Group_Field { display: block; }
+/** The CMB2 Settings Page Tabbed Theme. @package lsx-search */
+/* CMB2 Settings Styles */
+.wp-admin.settings_page_lsx-search-settings span.version { font-size: .4em; font-weight: 700; position: relative; top: -4px; right: 5px; padding: 2px 5px; border: 1px solid #ccc; background: #f5f5f5; border-radius: 10px; background-clip: padding-box; }
 
-.CMB_Group_Field.active { display: block; }
+.wp-admin.settings_page_lsx-search-settings .wp-filter { background: none; border: none; box-shadow: none; margin: 0; padding-right: 0; }
 
-.CMB_Color_Picker .field-item { float: none; }
+.wp-admin.settings_page_lsx-search-settings .wp-filter .filter-links .current { border-bottom: none; font-weight: 600; color: #23282d; }
 
-#lsx-tab-headings { display: block; float: right; width: 10%; }
+.wp-admin.settings_page_lsx-search-settings .wp-filter .filter-links .current:hover { color: #23282d; }
 
-#details .cmb_metabox { display: block; float: left; width: 85%; }
+.wp-admin.settings_page_lsx-search-settings .wp-filter .filter-links > li > a { color: #0073aa; border-bottom: none; margin: 2px; }
 
-#details .cmb_metabox .cmb_metabox { float: none; width: 98%; }
+.wp-admin.settings_page_lsx-search-settings .wp-filter .filter-links > li > a:hover { color: #00a0d2; }
 
-#lsx-tab-headings .tab-heading { display: block; text-transform: capitalize; padding: 10px 15px; width: 100%; }
+.wp-admin.settings_page_lsx-search-settings .wp-filter .filter-links > li:nth-of-type(1) > a { margin-right: 0; }
 
-/* The Tab Styling */
-body.appearance_page_lsx-settings .uix-field-wrapper .ui-tab-nav li { display: inline-block; }
+.wp-admin.settings_page_lsx-search-settings .cmb2-wrap.form-table { margin-top: 0; border: 1px solid transparent; }
 
-body.appearance_page_lsx-settings .uix-field-wrapper .ui-tab-nav li:after { content: "|"; display: inline-block; padding: 0 8px 0 3px; }
+.wp-admin.settings_page_lsx-search-settings .cmb2-wrap.form-table .tab.tab-nav .cmb-row { display: -ms-flexbox; display: flex; -ms-flex-direction: row; flex-direction: row; }
 
-body.appearance_page_lsx-settings .uix-field-wrapper .ui-tab-nav li:last-child:after { content: ""; padding-right: 0; }
+@media only screen and (min-width: 1000px) { .wp-admin.settings_page_lsx-search-settings .cmb2-wrap.form-table .tab.tab-nav .cmb-row.cmb-type-colorpicker .cmb-td { display: -ms-flexbox; display: flex; -ms-flex-direction: row; flex-direction: row; } }
 
-body.appearance_page_lsx-settings .uix-field-wrapper .ui-tab-nav li a { text-decoration: none; }
+.wp-admin.settings_page_lsx-search-settings .cmb2-wrap.form-table .tab.tab-nav .cmb-row h3.cmb2-metabox-title { color: #23282d; font-size: 17px; margin: 1em 0; font-weight: 600; -webkit-font-smoothing: subpixel-antialiased; line-height: 1.4em; margin-bottom: 0px; }
 
-body.appearance_page_lsx-settings .uix-field-wrapper .ui-tab-nav li a.active { color: black; font-weight: bold; }
+.wp-admin.settings_page_lsx-search-settings .cmb2-wrap.form-table .tab.tab-nav .cmb-row div.cmb-th { text-align: right; padding: 20px 0 20px 10px; width: 200px; font-size: 14px; line-height: 1.3; font-weight: 600; color: #23282d; text-shadow: none; vertical-align: baseline; min-width: 210px !important; }
 
-body.appearance_page_lsx-settings .uix-field-wrapper .ui-tab-nav li a:focus { box-shadow: none; }
+.wp-admin.settings_page_lsx-search-settings .cmb2-wrap.form-table .tab.tab-nav .cmb-row div.cmb-td { text-align: right !important; padding: 20px 0 20px 10px !important; margin-left: 15px; }
 
-body.appearance_page_lsx-settings .uix-field-wrapper .ui-tab { display: none; }
+.wp-admin.settings_page_lsx-search-settings .cmb2-wrap.form-table .tab.tab-nav .cmb-row div.cmb-td:nth-of-type(1) { padding-top: 0px !important; }
 
-body.appearance_page_lsx-settings .uix-field-wrapper .ui-tab.active { display: block; }
+.wp-admin.settings_page_lsx-search-settings .cmb2-wrap.form-table .tab.tab-nav .cmb-row div.cmb-td .cmb2-metabox-title { margin-top: 0px; }
+
+.wp-admin.settings_page_lsx-search-settings .cmb2-wrap.form-table .tab.tab-nav .cmb-row div.cmb-td select { font-size: 14px; line-height: 2; color: #32373c; border-color: #7e8993; box-shadow: none; border-radius: 3px; padding: 0 8px 0 24px; min-height: 30px; max-width: 25rem; -webkit-appearance: none; background-size: 16px 16px; cursor: pointer; vertical-align: middle; }
+
+.wp-admin.settings_page_lsx-search-settings .cmb2-wrap.form-table .tab.tab-nav .cmb-row div.cmb-td .cmb2-media-status { padding-top: 10px; }
+
+.wp-admin.settings_page_lsx-search-settings .cmb2-wrap.form-table .tab.tab-nav .cmb-row div.cmb-td input.cmb2-upload-file { margin-left: 15px; }
+
+.wp-admin.settings_page_lsx-search-settings .cmb2-wrap.form-table .tab.tab-nav .cmb-row p.cmb2-metabox-description { margin: 2px 0 5px; color: #666; font-style: italic; line-height: 1.5; margin-top: 4px; margin-bottom: 0; }
+
+.wp-admin.settings_page_lsx-search-settings .cmb2-wrap.form-table .tab.tab-nav .cmb-row input[type=radio] { margin-top: -4px; margin-left: 4px; float: none; }

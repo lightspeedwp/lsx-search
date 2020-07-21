@@ -7,14 +7,25 @@
 class LSX_Search_FacetWP {
 
 	/**
-	 * @var LSX_Search_FacetWP_Hierarchy()
+	 * @var object \lsx\search\classes\facetwp\Hierarchy()
 	 */
 	public $hierarchy;
 
+	/**
+	 * @var object \lsx\search\classes\facetwp\Post_Connections()
+	 */
+	public $post_connections;
+
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 
-		require_once( LSX_SEARCH_PATH . '/classes/class-lsx-search-facetwp-hierarchy.php' );
-		$this->hierarchy = new LSX_Search_FacetWP_Hierarchy();
+		require_once LSX_SEARCH_PATH . '/classes/facetwp/class-hierarchy.php';
+		$this->hierarchy = lsx\search\classes\facetwp\Hierarchy::get_instance();
+
+		require_once LSX_SEARCH_PATH . '/classes/facetwp/class-post-connections.php';
+		$this->post_connections = lsx\search\classes\facetwp\Post_Connections::get_instance();
 
 		add_filter( 'facetwp_pager_html', array( $this, 'facetwp_pager_html' ), 10, 2 );
 		add_filter( 'facetwp_result_count', array( $this, 'facetwp_result_count' ), 10, 2 );

@@ -1,4 +1,6 @@
 /** LSX Search styles. @package lsx-search */
+.blog-description.search-description { margin-top: 4.25rem; }
+
 /*@include media('phone') { .search, .archive { .facetwp-sidebar.widget-area { + .content-area { width: 66.66667%; } } } }*/
 @media (min-width: 992px) { .search .content.role.row, .archive .content.role.row, .blog .content.role.row { margin-left: auto; margin-right: auto; }
   .search .facetwp-sidebar.widget-area, .archive .facetwp-sidebar.widget-area, .blog .facetwp-sidebar.widget-area { padding: 0px 20px 20px 20px; margin-top: 4.25rem; max-width: 271px; margin-right: 5px; margin-left: 5px; }
@@ -252,6 +254,18 @@ body.blog:not(.lsx-hide-post-date) .facetwp-template article.lsx-slot .entry-met
 .facetwp-checkbox.depth-1 { margin-right: 25px; }
 
 .facetwp-checkbox.depth-2 { margin-right: 50px; }
+
+.facetwp-checkbox.country { display: none; }
+
+.continent-visible .facetwp-checkbox.country { margin-right: 20px; }
+
+.facetwp-checkbox.country.continent-checked { display: block; }
+
+.facetwp-checkbox.region { margin-right: 20px; display: none; }
+
+.continent-visible .facetwp-checkbox.region { margin-right: 40px; }
+
+.facetwp-checkbox.region.country-checked { display: block; }
 
 .facetwp-overflow { margin-top: 5px; }
 

@@ -5,10 +5,23 @@
  * @package lsx-search
  */
 
+namespace lsx\search\includes;
+
 /**
- * Adds text domain.
+ * Gets the lsx search options.
+ *
+ * @return array
  */
-function lsx_search_load_plugin_textdomain() {
-	load_plugin_textdomain( 'lsx-search', false, basename( LSX_SEARCH_PATH ) . '/languages' );
+function get_options() {
+	$options = array();
+	if ( function_exists( 'tour_operator' ) ) {
+		$options = get_option( '_lsx-to_settings', false );
+	} else {
+		$options = get_option( '_lsx_settings', false );
+
+		if ( false === $options ) {
+			$options = get_option( '_lsx_lsx-settings', false );
+		}
+	}
+	return $options;
 }
-add_action( 'init', 'lsx_search_load_plugin_textdomain' );

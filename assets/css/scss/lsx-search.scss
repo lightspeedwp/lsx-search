@@ -6,6 +6,7 @@
 
 @import "include-media";
 @import "customizer-search-body-colours";
+@import "lsx-blog-customizer";
 
 // Spacing
 /*@include media('phone') {
@@ -799,6 +800,19 @@ body.tag {
 	}
 	&.depth-2 {
 		margin-left: 50px;
+	}
+	&.country {
+		display:none;
+
+		.continent-visible & { margin-left: 20px; }
+		&.continent-checked { display: block; }
+	}
+	&.region {
+		margin-left: 20px;
+		display:none;
+
+		.continent-visible & { margin-left: 40px; }
+		&.country-checked { display: block; }
 	}
 }
 
