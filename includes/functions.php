@@ -25,3 +25,32 @@ function get_options() {
 	}
 	return $options;
 }
+
+/**
+ * Returns the Post types that are specifically not supported.
+ * 
+ * @return array
+ */
+function get_restricted_post_types() {
+	$post_types = array(
+		'page',
+		'attachment',
+		'lesson',
+		'certificate',
+		'envira',
+		'tribe_organizer',
+		'tribe_venue',
+		'envira',
+		'reply',
+		'topic',
+		'forum',
+		'popup',
+		'question',
+		'certificate_template',
+		'message',
+		'tribe_events',
+		'tip',
+	);
+	$post_types  = apply_filters( 'lsx_search_restricted_post_types', $post_types );
+	return $post_types;
+}

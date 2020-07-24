@@ -244,31 +244,23 @@ class Admin {
 						);
 						break;
 
-					case 'page':
-					case 'attachment':
-					case 'lesson':
-					case 'certificate':
-					case 'envira':
-					case 'tribe_organizer':
-					case 'tribe_venue':
-					case 'envira':
-						break;
-
 					default:
-						$temp_post_type = get_post_type_object( $post_type_key );
-						if ( ! is_wp_error( $temp_post_type ) ) {
-							$page_url    = get_post_type_archive_link( $temp_post_type->name );
-							$description = sprintf(
-								/* translators: %s: The subscription info */
-								__( 'Control the filters which show on your <a target="_blank" href="%1$s">%2$s</a> archive.', 'lsx-search' ),
-								$page_url,
-								$temp_post_type->label
-							);
+						if ( ! in_array( $post_type_key, \lsx\search\includes\get_restricted_post_types() ) ) {
+							$temp_post_type = get_post_type_object( $post_type_key );
+							if ( ! is_wp_error( $temp_post_type ) ) {
+								$page_url    = get_post_type_archive_link( $temp_post_type->name );
+								$description = sprintf(
+									/* translators: %s: The subscription info */
+									__( 'Control the filters which show on your <a target="_blank" href="%1$s">%2$s</a> archive.', 'lsx-search' ),
+									$page_url,
+									$temp_post_type->label
+								);
 
-							$archives[ $post_type_key ] = array(
-								'title' => $temp_post_type->label,
-								'desc'  => $description,
-							);
+								$archives[ $post_type_key ] = array(
+									'title' => $temp_post_type->label,
+									'desc'  => $description,
+								);
+							}
 						}
 						break;
 				}
