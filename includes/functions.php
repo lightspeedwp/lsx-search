@@ -43,13 +43,13 @@ function get_restricted_post_types() {
 		'envira',
 		'reply',
 		'topic',
-		'forum',
 		'popup',
 		'question',
 		'certificate_template',
-		'message',
+		'sensei_message',
 		'tribe_events',
 		'tip',
+		'quiz',
 	);
 	$post_types  = apply_filters( 'lsx_search_restricted_post_types', $post_types );
 	return $post_types;
