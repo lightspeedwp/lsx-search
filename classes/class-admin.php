@@ -316,7 +316,7 @@ class Admin {
 			)
 		);
 
-		if ( 'blog' !== $section ) {
+		if ( 'shop' === $section ) {
 			$cmb->add_field(
 				array(
 					'name'             => esc_html__( 'Results Layout', 'lsx-search' ),
