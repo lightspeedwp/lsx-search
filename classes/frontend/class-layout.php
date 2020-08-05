@@ -52,6 +52,9 @@ class Layout {
 				add_filter( 'lsx_layout_switcher_options', array( $this, 'lsx_layout_switcher_options' ), 10, 1 );
 				add_filter( 'lsx_layout_switcher_page_key', array( $this, 'lsx_layout_switcher_page_key' ), 10, 1 );
 				add_filter( 'lsx_layout_switcher_options_default', array( $this, 'lsx_layout_switcher_options_default' ), 10, 1 );
+
+				// Layout Classes
+				add_filter( 'woocommerce_product_loop_start', array( $this, 'woocommerce_layout_class' ), 10, 1 );
 			}
 		}
 	}
@@ -101,5 +104,55 @@ class Layout {
 			$default = $lsx_search->frontend->options['display'][ $lsx_search->frontend->search_prefix . '_grid_list' ];
 		}
 		return $default;
+	}
+
+	/**
+	 * Controls the layout for the woocommerce shop page.
+	 */
+	public function woocommerce_layout_class( $output = '' ) {
+		$default_class = $this->lsx_layout_switcher_options_default();
+		$selected      = $this->get_layout_value_from_cookie( 'product' );
+		if ( '' !== $selected ) {
+			$default_class = $selected;
+		}
+		$output = str_replace( 'products', 'products ' . $default_class, $output );
+		return $output;
+	}
+
+	/**
+	 * Get layout value from cookie
+	 *
+	 * @since 1.0.0
+	 */
+	public function get_layout_value_from_cookie( $page_key = 'blog' ) {
+		$archive_layout = 'grid';
+
+		if ( isset( $_COOKIE[ 'lsx-' . $page_key . '-layout' ] ) ) {
+			$archive_layout_from_cookie = sanitize_key( $_COOKIE[ 'lsx-' . $page_key . '-layout' ] );
+			$archive_layout_from_cookie = $this->sanitize_select_layout_switcher( $archive_layout_from_cookie );
+
+			if ( ! empty( $archive_layout_from_cookie ) ) {
+				$archive_layout = $archive_layout_from_cookie;
+			}
+		}
+		return $archive_layout;
+	}
+
+	/**
+	 * Sanitize select (layout switcher).
+	 *
+	 * @since 1.0.0
+	 */
+	public function sanitize_select_layout_switcher( $input ) {
+		$valid = array(
+			'list'      => esc_html__( 'List', 'lsx-search' ),
+			'grid'      => esc_html__( 'Grid', 'lsx-search' ),
+		);
+
+		if ( array_key_exists( $input, $valid ) ) {
+			return $input;
+		} else {
+			return '';
+		}
 	}
 }
