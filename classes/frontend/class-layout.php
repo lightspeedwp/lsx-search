@@ -49,6 +49,7 @@ class Layout {
 		if ( $lsx_search->frontend->search_enabled ) {
 			if ( isset( $lsx_search->frontend->options['display'][ $lsx_search->frontend->search_prefix . '_layout_switcher_enable' ] ) ) {
 				add_filter( 'lsx_blog_customizer_show_switcher', array( $this, 'show_layout_switcher' ), 10, 1 );
+				add_filter( 'lsx_layout_switcher_options', array( $this, 'lsx_layout_switcher_options' ), 10, 1 );
 			}
 		}
 	}
@@ -59,5 +60,17 @@ class Layout {
 	public function show_layout_switcher( $show = false ) {
 		$show = true;
 		return $show;
+	}
+
+	/**
+	 * Remove the default and half-grid options from the results layouts.
+	 *
+	 * @param  array $layout_options
+	 * @return array
+	 */
+	public function lsx_layout_switcher_options( $layout_options ) {
+		unset( $layout_options['default'] );
+		unset( $layout_options['half-grid'] );
+		return $layout_options;
 	}
 }
