@@ -4,7 +4,19 @@
  *
  * @package lsx-search
  */
-class LSX_Search_Frontend {
+
+namespace lsx\search\classes;
+
+class Frontend {
+
+	/**
+	 * Holds class instance
+	 *
+	 * @since 1.0.0
+	 *
+	 * @var      object \lsx\search\classes\Frontend()
+	 */
+	protected static $instance = null;
 
 	public $options = false;
 
@@ -56,6 +68,7 @@ class LSX_Search_Frontend {
 	 */
 	public function __construct() {
 		$this->options = \lsx\search\includes\get_options();
+		$this->load_classes();
 
 		add_filter( 'wpseo_json_ld_search_url', array( $this, 'change_json_ld_search_url' ), 10, 1 );
 		add_action( 'wp', array( $this, 'set_vars' ), 21 );
@@ -77,6 +90,29 @@ class LSX_Search_Frontend {
 
 		add_action( 'lsx_search_sidebar_top', array( $this, 'search_sidebar_top' ) );
 		add_filter( 'facetwp_facet_html', array( $this, 'search_facet_html' ), 10, 2 );
+	}
+
+	/**
+	 * Return an instance of this class.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return    object \lsx\member_directory\search\Frontend()    A single instance of this class.
+	 */
+	public static function get_instance() {
+		// If the single instance hasn't been set, set it now.
+		if ( null === self::$instance ) {
+			self::$instance = new self();
+		}
+		return self::$instance;
+	}
+
+	/**
+	 * Loads the variable classes and the static classes.
+	 */
+	private function load_classes() {
+		require_once LSX_SEARCH_PATH . 'classes/frontend/class-layout.php';
+		$this->layout = frontend\Layout::get_instance();
 	}
 
 	/**
@@ -175,7 +211,7 @@ class LSX_Search_Frontend {
 	 *
 	 * @return boolean
 	 */
-	private function is_search_enabled() {
+	public function is_search_enabled() {
 		$search_enabled = false;
 
 		if ( false === $this->new_options ) {

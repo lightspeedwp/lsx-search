@@ -320,7 +320,7 @@ class Admin {
 			$cmb->add_field(
 				array(
 					'name'             => esc_html__( 'Results Layout', 'lsx-search' ),
-					'id'               => $section . '_grid_list',
+					'id'               => $section . '_search_grid_list',
 					'type'             => 'select',
 					'show_option_none' => false,
 					'description'      => __( 'Set a default layout for the search results.', 'lsx-search' ),
@@ -334,7 +334,7 @@ class Admin {
 			$cmb->add_field(
 				array(
 					'name'        => esc_html__( 'Layout Switcher', 'lsx-search' ),
-					'id'          => $section . '_layout_switcher_enable',
+					'id'          => $section . '_search_layout_switcher_enable',
 					'type'        => 'checkbox',
 					'description' => __( 'Display the layout switcher to allow the user to toggle between the list and grid layouts.', 'lsx-search' ),
 				)
