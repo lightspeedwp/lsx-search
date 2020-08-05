@@ -303,7 +303,7 @@ class Admin {
 
 		$cmb->add_field(
 			array(
-				'name'    => esc_html__( 'Layout', 'lsx-search' ),
+				'name'    => esc_html__( 'Page Layout', 'lsx-search' ),
 				'id'      => $section . '_search_layout',
 				'type'    => 'select',
 				'options' => array(
@@ -316,18 +316,27 @@ class Admin {
 			)
 		);
 
-		if ( 'engine' === $section ) {
+		if ( 'blog' !== $section ) {
 			$cmb->add_field(
 				array(
-					'name'             => esc_html__( 'Grid vs List', 'lsx-search' ),
+					'name'             => esc_html__( 'Results Layout', 'lsx-search' ),
 					'id'               => $section . '_grid_list',
 					'type'             => 'select',
 					'show_option_none' => false,
+					'description'      => __( 'Set a default layout for the search results.', 'lsx-search' ),
 					'options'          => array(
 						'grid' => esc_html__( 'Grid', 'lsx-search' ),
 						'list' => esc_html__( 'List', 'lsx-search' ),
 					),
-					'default'          => 'list',
+					'default' => 'grid',
+				)
+			);
+			$cmb->add_field(
+				array(
+					'name'        => esc_html__( 'Layout Switcher', 'lsx-search' ),
+					'id'          => $section . '_layout_switcher_enable',
+					'type'        => 'checkbox',
+					'description' => __( 'Display the layout switcher to allow the user to toggle between the list and grid layouts.', 'lsx-search' ),
 				)
 			);
 		}
