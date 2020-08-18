@@ -50,7 +50,6 @@ function get_restricted_post_types() {
 		'tribe_events',
 		'tip',
 		'quiz',
-		'plan',
 		'forum',
 	);
 	$post_types = apply_filters( 'lsx_search_restricted_post_types', $post_types );
