@@ -86,5 +86,6 @@ class LSX_Search {
 function lsx_search() {
 	global $lsx_search;
 	$lsx_search = LSX_Search::get_instance();
+	return $lsx_search;
 }
 lsx_search();
