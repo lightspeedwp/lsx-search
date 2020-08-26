@@ -15,6 +15,13 @@
 
 - Removing the CMB and UIX library
 
+### Security
+
+- Updating dependencies to prevent vulnerabilities.
+- Updating PHPCS options for better code.
+- General testing to ensure compatibility with latest WordPress version (5.5).
+- General testing to ensure compatibility with latest LSX Theme version (2.9).
+
 ## [[1.4.1]] - 2020-05-21
 
 ### Added
