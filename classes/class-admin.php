@@ -436,6 +436,7 @@ class Admin {
 				'name' => esc_html__( 'Display Clear Button', 'lsx-search' ),
 				'id'   => $section . '_search_display_clear_button',
 				'type' => 'checkbox',
+				'description' => __( 'Toggle the clear results button.', 'lsx-search' ),
 			)
 		);
 
@@ -460,7 +461,7 @@ class Admin {
 		$cmb->add_field(
 			array(
 				'name'        => esc_html__( 'Facets', 'lsx-search' ),
-				'description' => esc_html__( 'Choose your filters above, these will display on the page. Edit your FacetWP Facets to change the display of each of them.', 'lsx-search' ),
+				'description' => esc_html__( 'Choose the filters to display in the sidebar. Edit FacetWP filters to change individual filters.', 'lsx-search' ),
 				'id'          => $section . '_search_facets',
 				'type'        => 'multicheck',
 				'options'     => $this->facet_data,
