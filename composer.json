@@ -1,6 +1,6 @@
 {
-    "name": "lightspeeddevelopment/to-search",
-    "description": "The Tour Operator Search extension adds robust search functionality to sites, allowing filterable search by post type, category and more.",
+    "name": "lightspeeddevelopment/lsx-search",
+    "description": "The LSX Search extension seamlessly integrates into the LSX Theme and Extensions.",
     "type": "wordpress-plugin",
     "require": {
         "php": ">=7.2",
