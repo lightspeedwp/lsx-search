@@ -15,191 +15,238 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: classes/class-lsx-search-admin.php:88, classes/class-lsx-search-frontend.php:146
-msgid "Search Form"
+#: classes/class-admin.php:98
+msgid "LSX Search Settings"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:166, classes/class-lsx-search-admin.php:167
-msgid "Theme Options"
+#: classes/class-admin.php:154
+msgid "Do not show"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:171
-msgid "Save Changes"
+#: classes/class-admin.php:182
+msgid "Global"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:192
-msgid "General"
+#: classes/class-admin.php:183
+msgid "Control the filters which show on your WordPress search results page."
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:204
-msgid "Display"
+#: classes/class-admin.php:206
+msgid "Home"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:216
-msgid "API"
+#. translators: %s: The subscription info
+#. translators: %s: The subscription info
+#: classes/class-admin.php:217, classes/class-admin.php:237
+msgid "Control the filters which show on your <a target=\"_blank\" href=\"%1$s\">%2$s</a> page."
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:245
-msgid "Post types"
+#: classes/class-admin.php:222
+msgid "Blog"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:277
-msgid "Enable Search"
+#: classes/class-admin.php:229, classes/class-admin.php:242
+msgid "Shop"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:281
-msgid "This adds the facet shortcodes to the search results template."
+#. translators: %s: The subscription info
+#: classes/class-admin.php:254
+msgid "Control the filters which show on your <a target=\"_blank\" href=\"%1$s\">%2$s</a> archive."
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:286
-msgid "Enable Post Type Label"
+#: classes/class-admin.php:297
+msgid "Enable Search Filters"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:290
-msgid "This enables the post type label from entries on search results page."
+#: classes/class-admin.php:299
+msgid "Display FacetWP filters on your search results page."
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:295, classes/class-lsx-search-admin.php:474
-msgid "Columns Layout"
+#: classes/class-admin.php:306
+msgid "Page Layout"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:299, classes/class-lsx-search-admin.php:478
+#: classes/class-admin.php:310
 msgid "Follow the theme layout"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:300, classes/class-lsx-search-admin.php:479
+#: classes/class-admin.php:311
 msgid "1 column"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:301, classes/class-lsx-search-admin.php:480
+#: classes/class-admin.php:312
 msgid "2 columns / Content on right"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:302, classes/class-lsx-search-admin.php:481
+#: classes/class-admin.php:313
 msgid "2 columns / Content on left"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:308, classes/class-lsx-search-admin.php:495
-msgid "Per Page"
+#: classes/class-admin.php:322
+msgid "Results Layout"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:311, classes/class-lsx-search-admin.php:498
-msgid "Disable Per Page"
+#: classes/class-admin.php:326
+msgid "Set a default layout for the search results."
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:316
-msgid "Collapse"
+#: classes/class-admin.php:328, classes/frontend/class-layout.php:149
+msgid "Grid"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:319
+#: classes/class-admin.php:329, classes/frontend/class-layout.php:148
+msgid "List"
+msgstr ""
+
+#: classes/class-admin.php:336
+msgid "Layout Switcher"
+msgstr ""
+
+#: classes/class-admin.php:339
+msgid "Display the layout switcher to allow the user to toggle between the list and grid layouts."
+msgstr ""
+
+#: classes/class-admin.php:346
+msgid "List layout images"
+msgstr ""
+
+#: classes/class-admin.php:350
+msgid "Full Height"
+msgstr ""
+
+#: classes/class-admin.php:351
+msgid "Max Height"
+msgstr ""
+
+#: classes/class-admin.php:360
+msgid "Display Excerpt"
+msgstr ""
+
+#: classes/class-admin.php:363
+msgid "Display the excerpt of a listing."
+msgstr ""
+
+#: classes/class-admin.php:368
+msgid "Enable Post Type Label"
+msgstr ""
+
+#: classes/class-admin.php:371
+msgid "This enables the post type label from entries on search results page."
+msgstr ""
+
+#: classes/class-admin.php:377
+msgid "Enable Continent Filter"
+msgstr ""
+
+#: classes/class-admin.php:380
+msgid "This enables the continent filter in FacetWP destinations filter."
+msgstr ""
+
+#: classes/class-admin.php:385
+msgid "Enable Continental Regions"
+msgstr ""
+
+#: classes/class-admin.php:388
+msgid "This disable continents and enabled the sub regions."
+msgstr ""
+
+#: classes/class-admin.php:397
+msgid "Results Layout - list vs map"
+msgstr ""
+
+#: classes/class-admin.php:401
+msgid "List and Map"
+msgstr ""
+
+#: classes/class-admin.php:402
+msgid "List only"
+msgstr ""
+
+#: classes/class-admin.php:411
+msgid "Enable Collapse"
+msgstr ""
+
+#: classes/class-admin.php:414
 msgid "Enable collapsible filters on search results"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:324, classes/class-lsx-search-admin.php:511
-msgid "Sorting"
-msgstr ""
-
-#: classes/class-lsx-search-admin.php:328, classes/class-lsx-search-admin.php:515
+#: classes/class-admin.php:420
 msgid "Disable Sorting"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:329, classes/class-lsx-search-admin.php:516
-msgid "Disable Title (A-Z)"
+#: classes/class-admin.php:428
+msgid "Disable the Date Option"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:330, classes/class-lsx-search-admin.php:517
-msgid "Disable Date"
-msgstr ""
-
-#: classes/class-lsx-search-admin.php:336, classes/class-lsx-search-admin.php:534
-msgid "Display Result Count"
-msgstr ""
-
-#: classes/class-lsx-search-admin.php:344, classes/class-lsx-search-admin.php:543, classes/class-lsx-search-admin.php:553
+#: classes/class-admin.php:436
 msgid "Display Clear Button"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:348, classes/class-lsx-search-admin.php:547, classes/class-lsx-search-admin.php:557
-msgid "This will display a clear button next to the \"result\" count"
+#: classes/class-admin.php:439
+msgid "Toggle the clear results button."
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:353, classes/class-lsx-search-admin.php:571
-msgid "Alphabetical Facet"
+#: classes/class-admin.php:445
+msgid "Display Result Count"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:361, classes/class-lsx-search-admin.php:579
-msgid "None"
+#: classes/class-admin.php:453
+msgid "Alphabet Facet"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:371, classes/class-lsx-search-admin.php:399, classes/class-lsx-search-admin.php:589, classes/class-lsx-search-admin.php:625
-msgid "You have no Facets setup."
+#: classes/class-admin.php:454
+msgid "Select the alphabetical sorter facet."
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:378, classes/class-lsx-search-admin.php:604
+#: classes/class-admin.php:463
 msgid "Facets"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:440
-msgid "WooCommerce Settings"
+#: classes/class-admin.php:464
+msgid "Choose the filters to display in the sidebar. Edit FacetWP filters to change individual filters."
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:442
-msgid "Search Settings"
+#: classes/class-frontend.php:290
+msgid "Search Form"
 msgstr ""
 
-#: classes/class-lsx-search-admin.php:457
-msgid "Enable Filtering"
-msgstr ""
-
-#: classes/class-lsx-search-admin.php:461
-msgid "This adds the facet shortcodes to the post type archive and taxonomy templates."
-msgstr ""
-
-#: classes/class-lsx-search-admin.php:519
-msgid "Disable Price"
-msgstr ""
-
-#: classes/class-lsx-search-admin.php:636
-msgid "Posts"
-msgstr ""
-
-#: classes/class-lsx-search-frontend.php:491
+#: classes/class-frontend.php:664
 msgid "Search..."
 msgstr ""
 
-#: classes/class-lsx-search-frontend.php:504, classes/class-lsx-search-frontend.php:752, classes/class-lsx-search-frontend.php:756, classes/class-lsx-search-shortcode.php:44, includes/settings/display.php:49, includes/settings/general.php:9
+#: classes/class-frontend.php:677, classes/class-frontend.php:970, classes/class-frontend.php:974, classes/class-lsx-search-shortcode.php:44
 msgid "Search"
 msgstr ""
 
-#: classes/class-lsx-search-frontend.php:574
-msgid "Results "
+#: classes/class-frontend.php:759
+msgid "Results"
 msgstr ""
 
-#: classes/class-lsx-search-frontend.php:576
+#: classes/class-frontend.php:761
 msgid "Clear the current search filters."
 msgstr ""
 
-#: classes/class-lsx-search-frontend.php:576
+#: classes/class-frontend.php:761
 msgid "Clear"
 msgstr ""
 
-#: classes/class-lsx-search-frontend.php:686
+#: classes/class-frontend.php:884
 msgid "Refine by"
 msgstr ""
 
-#: classes/class-lsx-search-frontend.php:688
+#: classes/class-frontend.php:886
 msgid "Filters"
 msgstr ""
 
-#: classes/class-lsx-search-frontend.php:696
+#: classes/class-frontend.php:894
 msgid "Close Filters"
 msgstr ""
 
-#: classes/class-lsx-search-frontend.php:713
+#: classes/class-frontend.php:911
 msgid "Apply Filters"
 msgstr ""
 
-#: classes/class-lsx-search-frontend.php:779
+#: classes/class-frontend.php:997
 msgid "Click to Expand"
 msgstr ""
 
@@ -217,60 +264,4 @@ msgstr ""
 
 #: classes/class-lsx-search-shortcode.php:285
 msgid "Please re-index your facets."
-msgstr ""
-
-#: includes/settings/api.php:3
-msgid "Settings"
-msgstr ""
-
-#: includes/settings/api.php:4
-msgid "License Keys"
-msgstr ""
-
-#: includes/settings/api.php:25
-msgid "Enter the license keys for your add-ons in the boxes below."
-msgstr ""
-
-#: includes/settings/api.php:30
-msgid "You have not installed any add-ons yet. View our list of add-ons"
-msgstr ""
-
-#: includes/settings/api.php:30
-msgid "here"
-msgstr ""
-
-#: includes/settings/display.php:4
-msgid "Placeholders"
-msgstr ""
-
-#: includes/settings/display.php:9, includes/settings/general.php:4
-msgid "Currencies"
-msgstr ""
-
-#: includes/settings/display.php:14
-msgid "Team"
-msgstr ""
-
-#: includes/settings/display.php:19
-msgid "Testimonials"
-msgstr ""
-
-#: includes/settings/display.php:24
-msgid "Projects"
-msgstr ""
-
-#: includes/settings/display.php:29
-msgid "Services"
-msgstr ""
-
-#: includes/settings/display.php:34
-msgid "Blog Customizer (posts widget)"
-msgstr ""
-
-#: includes/settings/display.php:39
-msgid "Sharing"
-msgstr ""
-
-#: includes/settings/display.php:44
-msgid "Videos"
 msgstr ""
