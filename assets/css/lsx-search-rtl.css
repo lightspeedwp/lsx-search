@@ -211,6 +211,8 @@ body.facetwp-loading-body .search-submit-facetwp { display: none; }
 
 .lsx-body-grid-layout.search .facetwp-template > .post-wrapper .lsx-slot .entry-title { text-align: center; }
 
+.facetwp-template .searchwp-revised-search-notice { display: block; width: 100%; padding: 0 15px; }
+
 .facetwp-template > .no-results { margin-top: 4rem; }
 
 .facetwp-template article.lsx-slot { position: relative; }

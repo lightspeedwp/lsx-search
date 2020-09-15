@@ -76,6 +76,8 @@ class Frontend {
 		add_action( 'wp', array( $this, 'core' ), 23 );
 		add_action( 'lsx_body_top', array( $this, 'check_for_results' ) );
 
+		add_filter( 'pre_get_posts', array( $this, 'ignore_sticky_search' ) );
+
 		add_action( 'pre_get_posts', array( $this, 'filter_post_types' ) );
 
 		add_filter( 'lsx_search_post_types', array( $this, 'register_post_types' ) );
@@ -513,6 +515,18 @@ class Frontend {
 		}
 
 		return $template;
+	}
+
+	/**
+	 * Ignore sticky posts on Blog search.
+	 *
+	 * @param [type] $query
+	 * @return void
+	 */
+	public function ignore_sticky_search( $query ) {
+		if ( $query->is_main_query() && is_home() ) {
+			$query->set( 'ignore_sticky_posts', true );
+		}
 	}
 
 	/**
