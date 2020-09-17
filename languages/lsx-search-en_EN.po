@@ -71,107 +71,107 @@ msgid "Follow the theme layout"
 msgstr ""
 
 #: classes/class-admin.php:311
-msgid "1 column"
+msgid "Sidebar on right"
 msgstr ""
 
 #: classes/class-admin.php:312
-msgid "2 columns / Content on right"
+msgid "Sidebar on left"
 msgstr ""
 
-#: classes/class-admin.php:313
-msgid "2 columns / Content on left"
-msgstr ""
-
-#: classes/class-admin.php:322
+#: classes/class-admin.php:321
 msgid "Results Layout"
 msgstr ""
 
-#: classes/class-admin.php:326
+#: classes/class-admin.php:325
 msgid "Set a default layout for the search results."
 msgstr ""
 
-#: classes/class-admin.php:328, classes/frontend/class-layout.php:149
+#: classes/class-admin.php:327, classes/frontend/class-layout.php:149
 msgid "Grid"
 msgstr ""
 
-#: classes/class-admin.php:329, classes/frontend/class-layout.php:148
+#: classes/class-admin.php:328, classes/frontend/class-layout.php:148
 msgid "List"
 msgstr ""
 
-#: classes/class-admin.php:336
+#: classes/class-admin.php:335
 msgid "Layout Switcher"
 msgstr ""
 
-#: classes/class-admin.php:339
+#: classes/class-admin.php:338
 msgid "Display the layout switcher to allow the user to toggle between the list and grid layouts."
 msgstr ""
 
-#: classes/class-admin.php:346
+#: classes/class-admin.php:345
 msgid "List layout images"
 msgstr ""
 
-#: classes/class-admin.php:350
+#: classes/class-admin.php:349
 msgid "Full Height"
 msgstr ""
 
-#: classes/class-admin.php:351
+#: classes/class-admin.php:350
 msgid "Max Height"
 msgstr ""
 
-#: classes/class-admin.php:360
+#: classes/class-admin.php:359
 msgid "Display Excerpt"
 msgstr ""
 
-#: classes/class-admin.php:363
+#: classes/class-admin.php:362
 msgid "Display the excerpt of a listing."
 msgstr ""
 
-#: classes/class-admin.php:368
+#: classes/class-admin.php:367
 msgid "Enable Post Type Label"
 msgstr ""
 
-#: classes/class-admin.php:371
+#: classes/class-admin.php:370
 msgid "This enables the post type label from entries on search results page."
 msgstr ""
 
-#: classes/class-admin.php:377
+#: classes/class-admin.php:376
 msgid "Enable Continent Filter"
 msgstr ""
 
-#: classes/class-admin.php:380
+#: classes/class-admin.php:379
 msgid "This enables the continent filter in FacetWP destinations filter."
 msgstr ""
 
-#: classes/class-admin.php:385
+#: classes/class-admin.php:384
 msgid "Enable Continental Regions"
 msgstr ""
 
-#: classes/class-admin.php:388
+#: classes/class-admin.php:387
 msgid "This disable continents and enabled the sub regions."
 msgstr ""
 
-#: classes/class-admin.php:397
+#: classes/class-admin.php:396
 msgid "Results Layout - list vs map"
 msgstr ""
 
-#: classes/class-admin.php:401
+#: classes/class-admin.php:400
 msgid "List and Map"
 msgstr ""
 
-#: classes/class-admin.php:402
+#: classes/class-admin.php:401
 msgid "List only"
 msgstr ""
 
-#: classes/class-admin.php:411
+#: classes/class-admin.php:410
 msgid "Enable Collapse"
 msgstr ""
 
-#: classes/class-admin.php:414
-msgid "Enable collapsible filters on search results"
+#: classes/class-admin.php:413
+msgid "Enable collapsible filters on search results."
 msgstr ""
 
-#: classes/class-admin.php:420
+#: classes/class-admin.php:419
 msgid "Disable Sorting"
+msgstr ""
+
+#: classes/class-admin.php:422
+msgid "Toggle the sorting drop down menu on your search results."
 msgstr ""
 
 #: classes/class-admin.php:428
@@ -183,7 +183,7 @@ msgid "Display Clear Button"
 msgstr ""
 
 #: classes/class-admin.php:439
-msgid "Toggle the clear results button."
+msgid "Check this to turn on a button that will clear your search results."
 msgstr ""
 
 #: classes/class-admin.php:445
@@ -206,47 +206,47 @@ msgstr ""
 msgid "Choose the filters to display in the sidebar. Edit FacetWP filters to change individual filters."
 msgstr ""
 
-#: classes/class-frontend.php:290
+#: classes/class-frontend.php:292
 msgid "Search Form"
 msgstr ""
 
-#: classes/class-frontend.php:664
+#: classes/class-frontend.php:678
 msgid "Search..."
 msgstr ""
 
-#: classes/class-frontend.php:677, classes/class-frontend.php:970, classes/class-frontend.php:974, classes/class-lsx-search-shortcode.php:44
+#: classes/class-frontend.php:691, classes/class-frontend.php:984, classes/class-frontend.php:988, classes/class-lsx-search-shortcode.php:44
 msgid "Search"
 msgstr ""
 
-#: classes/class-frontend.php:759
+#: classes/class-frontend.php:773
 msgid "Results"
 msgstr ""
 
-#: classes/class-frontend.php:761
+#: classes/class-frontend.php:775
 msgid "Clear the current search filters."
 msgstr ""
 
-#: classes/class-frontend.php:761
+#: classes/class-frontend.php:775
 msgid "Clear"
 msgstr ""
 
-#: classes/class-frontend.php:884
+#: classes/class-frontend.php:898
 msgid "Refine by"
 msgstr ""
 
-#: classes/class-frontend.php:886
+#: classes/class-frontend.php:900
 msgid "Filters"
 msgstr ""
 
-#: classes/class-frontend.php:894
+#: classes/class-frontend.php:908
 msgid "Close Filters"
 msgstr ""
 
-#: classes/class-frontend.php:911
+#: classes/class-frontend.php:925
 msgid "Apply Filters"
 msgstr ""
 
-#: classes/class-frontend.php:997
+#: classes/class-frontend.php:1011
 msgid "Click to Expand"
 msgstr ""
 

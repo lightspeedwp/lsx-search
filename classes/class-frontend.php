@@ -76,6 +76,8 @@ class Frontend {
 		add_action( 'wp', array( $this, 'core' ), 23 );
 		add_action( 'lsx_body_top', array( $this, 'check_for_results' ) );
 
+		add_filter( 'pre_get_posts', array( $this, 'ignore_sticky_search' ) );
+
 		add_action( 'pre_get_posts', array( $this, 'filter_post_types' ) );
 
 		add_filter( 'lsx_search_post_types', array( $this, 'register_post_types' ) );
@@ -516,6 +518,18 @@ class Frontend {
 	}
 
 	/**
+	 * Ignore sticky posts on Blog search.
+	 *
+	 * @param [type] $query
+	 * @return void
+	 */
+	public function ignore_sticky_search( $query ) {
+		if ( $query->is_main_query() && is_home() ) {
+			$query->set( 'ignore_sticky_posts', true );
+		}
+	}
+
+	/**
 	 * Rewrite the search URL
 	 */
 	public function pretty_search_redirect() {
@@ -756,7 +770,7 @@ class Frontend {
 						<?php if ( ! empty( $this->options['display'][ $this->search_prefix . '_display_result_count' ] ) && false === apply_filters( 'lsx_search_hide_result_count', false ) ) { ?>
 							<div class="row">
 								<div class="col-md-12 facetwp-item facetwp-results">
-									<h3 class="lsx-search-title lsx-search-title-results"><?php esc_html_e( 'Results', 'lsx-search' ); ?> <?php echo '(' . do_shortcode( '[facetwp counts="true"]' ) . ')'; ?>
+									<h3 class="lsx-search-title lsx-search-title-results"><?php esc_html_e( 'Results', 'lsx-search' ); ?> <?php echo '(' . do_shortcode( '[facetwp counts="true"]' ) . ')&nbsp;'; ?>
 									<?php if ( false !== $this->options && isset( $this->options['display'] ) && ( ! empty( $this->options['display'][ $this->search_prefix . '_display_clear_button' ] ) ) && 'on' === $this->options['display'][ $this->search_prefix . '_display_clear_button' ] ) { ?>
 										<span class="clear-facets hidden">- <a title="<?php esc_html_e( 'Clear the current search filters.', 'lsx-search' ); ?>" class="facetwp-results-clear" type="button" onclick="<?php echo esc_attr( apply_filters( 'lsx_search_clear_function', 'lsx_search.clearFacets(this);' ) ); ?>"><?php esc_html_e( 'Clear', 'lsx-search' ); ?></a></span>
 									<?php } ?>

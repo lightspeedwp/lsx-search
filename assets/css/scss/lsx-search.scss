@@ -602,6 +602,11 @@
 	}
 }
 .facetwp-template {
+	.searchwp-revised-search-notice {
+		display: block;
+		width: 100%;
+		padding: 0 15px;
+	}
 	> .no-results {
 		margin-top: 4rem;
 	}
@@ -803,17 +808,25 @@ body.tag {
 		margin-left: 50px;
 	}
 	&.country {
-		display:none;
+		display: none;
 
-		.continent-visible & { margin-left: 20px; }
-		&.continent-checked { display: block; }
+		.continent-visible & {
+			margin-left: 20px;
+		}
+		&.continent-checked {
+			display: block;
+		}
 	}
 	&.region {
 		margin-left: 20px;
-		display:none;
+		display: none;
 
-		.continent-visible & { margin-left: 40px; }
-		&.country-checked { display: block; }
+		.continent-visible & {
+			margin-left: 40px;
+		}
+		&.country-checked {
+			display: block;
+		}
 	}
 }
 

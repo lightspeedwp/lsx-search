@@ -308,9 +308,8 @@ class Admin {
 				'type'    => 'select',
 				'options' => array(
 					''    => esc_html__( 'Follow the theme layout', 'lsx-search' ),
-					'1c'  => esc_html__( '1 column', 'lsx-search' ),
-					'2cr' => esc_html__( '2 columns / Content on right', 'lsx-search' ),
-					'2cl' => esc_html__( '2 columns / Content on left', 'lsx-search' ),
+					'2cr' => esc_html__( 'Sidebar on right', 'lsx-search' ),
+					'2cl' => esc_html__( 'Sidebar on left', 'lsx-search' ),
 				),
 				'default' => '',
 			)
@@ -411,7 +410,7 @@ class Admin {
 				'name'        => esc_html__( 'Enable Collapse', 'lsx-search' ),
 				'id'          => $section . '_search_collapse',
 				'type'        => 'checkbox',
-				'description' => __( 'Enable collapsible filters on search results', 'lsx-search' ),
+				'description' => __( 'Enable collapsible filters on search results.', 'lsx-search' ),
 			)
 		);
 
@@ -420,6 +419,7 @@ class Admin {
 				'name' => esc_html__( 'Disable Sorting', 'lsx-search' ),
 				'id'   => $section . '_search_disable_sorting',
 				'type' => 'checkbox',
+				'description' => __( 'Toggle the sorting drop down menu on your search results.', 'lsx-search' ),
 			)
 		);
 
@@ -436,7 +436,7 @@ class Admin {
 				'name' => esc_html__( 'Display Clear Button', 'lsx-search' ),
 				'id'   => $section . '_search_display_clear_button',
 				'type' => 'checkbox',
-				'description' => __( 'Toggle the clear results button.', 'lsx-search' ),
+				'description' => __( 'Check this to turn on a button that will clear your search results.', 'lsx-search' ),
 			)
 		);
 
