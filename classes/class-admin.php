@@ -339,7 +339,7 @@ class Admin {
 				)
 			);
 		}
-		if ( 'engine' === $section && is_plugin_active( 'tour-operator/tour-operator.php' ) ) {
+		if ( 'engine' === $section && function_exists('is_plugin_active') && is_plugin_active( 'tour-operator/tour-operator.php' ) ) {
 			$cmb->add_field(
 				array(
 					'name'    => esc_html__( 'List layout images', 'lsx-search' ),
@@ -370,7 +370,7 @@ class Admin {
 					'description' => __( 'This enables the post type label from entries on search results page.', 'lsx-search' ),
 				)
 			);
-			if ( is_plugin_active( 'tour-operator/tour-operator.php' ) ) {
+			if ( function_exists('is_plugin_active') &&  is_plugin_active( 'tour-operator/tour-operator.php' ) ) {
 				$cmb->add_field(
 					array(
 						'name'        => esc_html__( 'Enable Continent Filter', 'lsx-search' ),
@@ -390,7 +390,7 @@ class Admin {
 			}
 		}
 
-		if ( is_plugin_active( 'tour-operator/tour-operator.php' ) && 'accommodation' === $section ) {
+		if ( function_exists('is_plugin_active') && is_plugin_active( 'tour-operator/tour-operator.php' ) && 'accommodation' === $section ) {
 			$cmb->add_field(
 				array(
 					'name'    => esc_html__( 'Results Layout - list vs map', 'lsx-search' ),
@@ -447,7 +447,7 @@ class Admin {
 				'type' => 'checkbox',
 			)
 		);
-		if ( is_plugin_active( 'facetwp-alpha/index.php' ) ) {
+		if ( function_exists('is_plugin_active') && is_plugin_active( 'facetwp-alpha/index.php' ) ) {
 			$cmb->add_field(
 				array(
 					'name'        => esc_html__( 'Alphabet Facet', 'lsx-search' ),
