@@ -10,6 +10,7 @@
 ## Fixed
 
 - Fixed spacing for the archive layouts.
+- Fixed the sorting option not working.
 
 ## Deprecated
 

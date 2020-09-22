@@ -175,7 +175,7 @@ msgid "Toggle the sorting drop down menu on your search results."
 msgstr ""
 
 #: classes/class-admin.php:428
-msgid "Disable the Date Option"
+msgid "Disable the Date Sorting Option"
 msgstr ""
 
 #: classes/class-admin.php:436
@@ -214,39 +214,39 @@ msgstr ""
 msgid "Search..."
 msgstr ""
 
-#: classes/class-frontend.php:691, classes/class-frontend.php:984, classes/class-frontend.php:988, classes/class-lsx-search-shortcode.php:44
+#: classes/class-frontend.php:691, classes/class-frontend.php:985, classes/class-frontend.php:989, classes/class-lsx-search-shortcode.php:44
 msgid "Search"
 msgstr ""
 
-#: classes/class-frontend.php:773
+#: classes/class-frontend.php:774
 msgid "Results"
 msgstr ""
 
-#: classes/class-frontend.php:775
+#: classes/class-frontend.php:776
 msgid "Clear the current search filters."
 msgstr ""
 
-#: classes/class-frontend.php:775
+#: classes/class-frontend.php:776
 msgid "Clear"
 msgstr ""
 
-#: classes/class-frontend.php:898
+#: classes/class-frontend.php:899
 msgid "Refine by"
 msgstr ""
 
-#: classes/class-frontend.php:900
+#: classes/class-frontend.php:901
 msgid "Filters"
 msgstr ""
 
-#: classes/class-frontend.php:908
+#: classes/class-frontend.php:909
 msgid "Close Filters"
 msgstr ""
 
-#: classes/class-frontend.php:925
+#: classes/class-frontend.php:926
 msgid "Apply Filters"
 msgstr ""
 
-#: classes/class-frontend.php:1011
+#: classes/class-frontend.php:1012
 msgid "Click to Expand"
 msgstr ""
 

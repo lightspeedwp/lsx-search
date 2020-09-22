@@ -751,10 +751,11 @@ class Frontend {
 		if ( true === apply_filters( 'lsx_search_hide_top_bar', false ) ) {
 			return;
 		}
+
 		$show_pagination     = true;
 		$pagination_visible  = false;
 		$show_per_page_combo = empty( $this->options['display'][ $this->search_prefix . '_disable_per_page' ] );
-		$show_sort_combo     = empty( $this->options['display'][ $this->search_prefix . '_disable_all_sorting' ] );
+		$show_sort_combo     = empty( $this->options['display'][ $this->search_prefix . '_disable_sorting' ] );
 
 		$show_pagination     = apply_filters( 'lsx_search_top_show_pagination', $show_pagination );
 		$pagination_visible  = apply_filters( 'lsx_search_top_pagination_visible', $pagination_visible );
@@ -810,7 +811,7 @@ class Frontend {
 		}
 
 		$show_per_page_combo = empty( $this->options['display'][ $this->search_prefix . '_disable_per_page' ] );
-		$show_sort_combo     = empty( $this->options['display'][ $this->search_prefix . '_disable_all_sorting' ] );
+		$show_sort_combo     = empty( $this->options['display'][ $this->search_prefix . '_search_disable_sorting' ] );
 
 		$show_pagination     = apply_filters( 'lsx_search_bottom_show_pagination', $show_pagination );
 		$pagination_visible  = apply_filters( 'lsx_search_bottom_pagination_visible', $pagination_visible );
@@ -998,7 +999,7 @@ class Frontend {
 	 */
 	public function display_facet_default( $facet ) {
 
-		$show_collapse = ! isset( $this->options['display']['enable_collapse'] ) || 'on' !== $this->options['display']['enable_collapse'];
+		$show_collapse = ! isset( $this->options['display'][$this->search_prefix . '_collapse'] ) || 'on' !== $this->options['display'][$this->search_prefix . '_collapse'];
 		$col_class = '';
 
 		if ( 'search' === $this->facet_data[ $facet ]['type'] ) : ?>
@@ -1061,7 +1062,7 @@ class Frontend {
 				return $options;
 			}
 
-			if ( ! empty( $this->options['display'][ $this->search_prefix . '_disable_date_sorting' ] ) ) {
+			if ( ! empty( $this->options['display'][ $this->search_prefix . '_disable_date' ] ) ) {
 				unset( $options['date_desc'] );
 				unset( $options['date_asc'] );
 			}

@@ -425,7 +425,7 @@ class Admin {
 
 		$cmb->add_field(
 			array(
-				'name' => esc_html__( 'Disable the Date Option', 'lsx-search' ),
+				'name' => esc_html__( 'Disable the Date Sorting Option', 'lsx-search' ),
 				'id'   => $section . '_search_disable_date',
 				'type' => 'checkbox',
 			)
