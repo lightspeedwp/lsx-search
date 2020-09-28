@@ -308,8 +308,8 @@ class Admin {
 				'type'    => 'select',
 				'options' => array(
 					''    => esc_html__( 'Follow the theme layout', 'lsx-search' ),
-					'2cr' => esc_html__( 'Sidebar on right', 'lsx-search' ),
-					'2cl' => esc_html__( 'Sidebar on left', 'lsx-search' ),
+					'2cr' => esc_html__( 'Sidebar on left', 'lsx-search' ),
+					'2cl' => esc_html__( 'Sidebar on right', 'lsx-search' ),
 				),
 				'default' => '',
 			)
