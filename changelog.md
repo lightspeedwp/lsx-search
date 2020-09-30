@@ -11,6 +11,7 @@
 
 - Fixed spacing for the archive layouts.
 - Fixed the sorting option not working.
+- Excluded the search filters from the Product Vendors taxonomy for WooCommerce.
 
 ## Deprecated
 

@@ -226,6 +226,11 @@ class Frontend {
 				$search_enabled = true;
 			}
 		}
+
+		// These are specific plugin exclusions.
+		if ( is_tax( array( 'wcpv_product_vendors' ) ) ) {
+			$search_enabled = false;
+		}
 		return $search_enabled;
 	}
 
