@@ -38,7 +38,7 @@ ul.products.list li.product hr { clear: both; }
 
 #primary.content-area #facetwp-top .facetwp-sort-select { position: relative; }
 
-#secondary.facetwp-sidebar { padding: 0px 15px 15px 15px; }
+#secondary.facetwp-sidebar { padding: 0px 10px 15px 15px; }
 
 @media (max-width: 767px) { #secondary.facetwp-sidebar { margin-top: 4.25rem; margin-bottom: 2.4rem; } }
 
