@@ -25,6 +25,7 @@ ul.products.list li.product hr { clear: both; }
 @media (min-width: 992px) { .search .content.role.row, .archive .content.role.row, .blog .content.role.row { margin-right: auto; margin-left: auto; }
   .search .facetwp-sidebar.widget-area, .archive .facetwp-sidebar.widget-area, .blog .facetwp-sidebar.widget-area { padding: 0px 20px 20px 20px; margin-top: 4.25rem; max-width: 271px; margin-left: 5px; margin-right: 5px; }
   .search .facetwp-sidebar.widget-area + .content-area, .archive .facetwp-sidebar.widget-area + .content-area, .blog .facetwp-sidebar.widget-area + .content-area { margin-top: 4.25rem; width: 100%; max-width: 695px; padding-left: 20px; padding-right: 0; }
+  .search .facetwp-sidebar.widget-area + .content-area.search-sidebar-left, .archive .facetwp-sidebar.widget-area + .content-area.search-sidebar-left, .blog .facetwp-sidebar.widget-area + .content-area.search-sidebar-left { padding-left: 0; padding-right: 20px; }
   .search .facetwp-sidebar.widget-area + .content-area .facetwp-template .lsx-to-archive-item, .archive .facetwp-sidebar.widget-area + .content-area .facetwp-template .lsx-to-archive-item, .blog .facetwp-sidebar.widget-area + .content-area .facetwp-template .lsx-to-archive-item { margin-top: 2.4rem; }
   .search .facetwp-sidebar.widget-area + .content-area .facetwp-bottom-row-1, .archive .facetwp-sidebar.widget-area + .content-area .facetwp-bottom-row-1, .blog .facetwp-sidebar.widget-area + .content-area .facetwp-bottom-row-1 { margin-top: 2.4rem; } }
 

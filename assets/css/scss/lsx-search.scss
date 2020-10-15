@@ -40,6 +40,10 @@
 				max-width: 695px;
 				padding-left: 20px;
 				padding-right: 0;
+				&.search-sidebar-left {
+					padding-left: 0;
+					padding-right: 20px;
+				}
 				.facetwp-template {
 					.lsx-to-archive-item {
 						margin-top: 2.4rem;
