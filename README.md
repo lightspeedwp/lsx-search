@@ -13,6 +13,14 @@
     <a href="https://scrutinizer-ci.com/g/lightspeeddevelopment/lsx-search/?branch=master"><img src="https://scrutinizer-ci.com/g/lightspeeddevelopment/lsx-search/badges/quality-score.png?b=master" alt="Scrutinizer"></a>
     <a href="https://travis-ci.org/lightspeeddevelopment/lsx-search/"><img src="https://travis-ci.org/lightspeeddevelopment/lsx-search.svg?branch=master" alt="Build Status"></a>
 </p>
+<p align="left">
+	<a href="https://wordpress.org/" target="_blank">
+		<img src="https://img.shields.io/static/v1?label=&message=5.0+-+5.5&color=blue&style=flat-square&logo=wordpress&logoColor=white" alt="WordPress Versions">
+	</a>
+	<a href="https://www.php.net/" target="_blank">
+		<img src="https://img.shields.io/static/v1?label=&message=5.6+-+7.3&color=777bb4&style=flat-square&logo=php&logoColor=white" alt="PHP Versions">
+	</a>
+</p>
 
 The [LSX Search Extension](https://www.lsdev.biz/lsx//extensions/lsx-search/) intergrates with the FacetWP plugin to allow for superbly filtered search results for your users. 
 
@@ -49,6 +57,9 @@ If you're a developer who's spotted a bug issue and have a fix, or simply have f
   <a href="https://www.lsdev.biz/contact/"><img src="https://www.lsdev.biz/wp-content/uploads/2020/02/work-with-lightspeed.png" width="850" alt="Work with us at LightSpeed"></a>
 </p>
 <p align="center">
+  Copyright © 2020 LightSpeed WordPress Development. All Rights Reserved.
+</p>
+<p align="center">
   <a href="https://www.lsdev.biz">LightSpeed's Company Website</a> &nbsp;&middot;&nbsp;
   <a href="https://www.lsdev.biz/lsx/">LSX Product Website</a>
 </p>
@@ -57,7 +68,5 @@ If you're a developer who's spotted a bug issue and have a fix, or simply have f
   <a href="https://facebook.com/lightspeedwordpressdevelopment">Facebook</a> &nbsp;&middot;&nbsp;
   <a href="https://twitter.com/lightspeedwp">Twitter</a>
 </p>
-<p align="center">
-  Copyright © 2020 LightSpeed WordPress Development. All Rights Reserved.
-</p>
+
 
