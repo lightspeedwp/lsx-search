@@ -1,17 +1,17 @@
-<p align="center"><a target="_blank" href="https://www.lsdev.biz/lsx/extensions/search/"><img width="100px;" src="https://www.lsdev.biz/lsx/wp-content/uploads/2020/08/Search-3.svg" alt="LSX Search Extension"></a>
+<p align="center"><a target="_blank" href="https://www.lsdev.biz/lsx/extensions/search/"><img src="https://www.lsdev.biz/lsx/wp-content/uploads/2020/09/lsx-search-banner-1544-500.jpg" alt="LSX Search Extension"></a>
 </p>
-<h1 align="center">LSX Search</h1>
+<h1 align="left">LSX Search</h1>
 
-<p align="center">
+<p align="left">
   <a href="https://lsx.lsdev.biz/"><img src="https://www.lsdev.biz/lsx/wp-content/uploads/2019/06/Designed-for-LSX-Theme-blue.png" alt="Made for LSX"></a>
 	<a href="https://lsdev.biz/lsx/extensions/tour-operator/"><img src="https://www.lsdev.biz/lsx/wp-content/uploads/2019/06/Designed-for-Tour-Operator-plugin-1098ad.png" alt="LSX Tour Operator"></a>
   <a href="https://www.gnu.org/licenses/gpl-3.0.en.html"><img src="https://poser.pugx.org/woocommerce/woocommerce/license" alt="license"></a>
   <a href="http://gulpjs.com/"><img src="https://img.shields.io/badge/built%20with-gulp.js-green.svg" alt="Built with gulp.js"></a> 
 </p>
-<p align="center">
-    <a href="https://codeclimate.com/github/lightspeeddevelopment/lsx-customizer/"><img src="https://codeclimate.com/github/lightspeeddevelopment/lsx-customizer/badges/gpa.svg" alt="Code Climate"></a>
-    <a href="https://scrutinizer-ci.com/g/lightspeeddevelopment/lsx-customizer/?branch=master"><img src="https://scrutinizer-ci.com/g/lightspeeddevelopment/lsx-customizer/badges/quality-score.png?b=master" alt="Scrutinizer"></a>
-    <a href="https://travis-ci.org/lightspeeddevelopment/lsx-customizer/"><img src="https://travis-ci.org/lightspeeddevelopment/lsx-customizer.svg?branch=master" alt="Build Status"></a>
+<p align="left">
+    <a href="https://codeclimate.com/github/lightspeeddevelopment/lsx-search/"><img src="https://codeclimate.com/github/lightspeeddevelopment/lsx-search/badges/gpa.svg" alt="Code Climate"></a>
+    <a href="https://scrutinizer-ci.com/g/lightspeeddevelopment/lsx-search/?branch=master"><img src="https://scrutinizer-ci.com/g/lightspeeddevelopment/lsx-search/badges/quality-score.png?b=master" alt="Scrutinizer"></a>
+    <a href="https://travis-ci.org/lightspeeddevelopment/lsx-search/"><img src="https://travis-ci.org/lightspeeddevelopment/lsx-search.svg?branch=master" alt="Build Status"></a>
 </p>
 
 The [LSX Search Extension](https://www.lsdev.biz/lsx//extensions/lsx-search/) intergrates with the FacetWP plugin to allow for superbly filtered search results for your users. 
@@ -26,22 +26,21 @@ Our  [theme](https://www.lsdev.biz/lsx/) works perfectly with the Team Extension
 ## Gutenberg Compatible Plugin
 Have you updated to the new WordPress Gutenberg editor? We've got you covered! The LSX Search Plugin has been optimised for the Gutenberg update. Check out our [release post](https://lsdev.biz/lsx-blocks-available-on-wordpress-org/) on the update for more information.
 
-## It's free, and always will be.
 We’re firm believers in open source - that’s why the [LSX Search Extension](https://www.lsdev.biz/lsx/extensions/lsx-search/) is free, and that won't change. We are constantly maintaining and updating our extension so you have the latest and greatest abilities on your LSX Theme powered site. 
 
-## LSX Search Documentation
+## Documentation
 
 We have created extensive documentation on all of the LSX Search Plugin functionality. This means a hassle free installation and setup with no code requirements. Go to the [LSX Search Documentation](https://www.lsdev.biz/lsx/documentation/lsx-extensions/lsx-search/).
 
-## LSX Search Help & Support
+## Support
 
-We offer premium support for this plugin. Premium support that can be purchased [via our website](https://www.lsdev.biz/services/support/).
+Contact the [LightSpeed](https://lsdev.biz/) for assistance via the [LSX support form](https://www.lsdev.biz/lsx/support/).
 
 If you are experiencing issues with the LSX Search Plugin & have experience with Github, please log any bug issues you are having on the [LSX Search Github Issues](https://github.com/lightspeeddevelopment/lsx-search/issues/) page.
 
 You can also send an email to our Support Team at [support@lsdev.biz](mailto:support@lsdev.biz) if you have a request for the LightSpeed Development team.
 
-## Contributing to the LSX Search Plugin
+## Contributing
 
 If you're a developer who's spotted a bug issue and have a fix, or simply have functionality you think would extend our core theme, we are always happy to accept your contribution! Visit the [LSX Search Plugin on Github](https://github.com/lightspeeddevelopment/lsx-search/) and submit a Pull Request with your updates.
 
