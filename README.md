@@ -1,12 +1,12 @@
-<p align="center"><a target="_blank" href="https://lsx.lsdev.biz/"><img width="100px;" src="https://lsx.lsdev.biz/wp-content/uploads/2019/03/Search.svg" alt="LSX Search Extension"></a>
+<p align="center"><a target="_blank" href="https://www.lsdev.biz/lsx/extensions/search/"><img width="100px;" src="https://lsx.lsdev.biz/wp-content/uploads/2019/03/Search.svg" alt="LSX Search Extension"></a>
 </p>
 <h1 align="center">LSX Search</h1>
 
 <p align="center">
+  <a href="https://lsx.lsdev.biz/"><img src="https://lsx.lsdev.biz/wp-content/uploads/2019/06/Designed-for-LSX-Theme-blue.png" alt="Made for LSX"></a>
   <a href="https://www.gnu.org/licenses/gpl-3.0.en.html"><img src="https://poser.pugx.org/woocommerce/woocommerce/license" alt="license"></a>
-    <a href="http://gulpjs.com/"><img src="https://img.shields.io/badge/built%20with-gulp.js-green.svg" alt="Built with gulp.js"></a> 
-    <a href="https://travis-ci.org/lightspeeddevelopment/lsx-search"><img src="https://travis-ci.org/lightspeeddevelopment/lsx-search.svg?branch=master" alt="Build Status"></a>
-    <a href="https://lsx.lsdev.biz/"><img src="https://lsx.lsdev.biz/wp-content/uploads/2019/06/Designed-for-LSX-Theme-blue.png" alt="Made for LSX"></a>
+  <a href="http://gulpjs.com/"><img src="https://img.shields.io/badge/built%20with-gulp.js-green.svg" alt="Built with gulp.js"></a> 
+  <a href="https://travis-ci.org/github/lightspeeddevelopment/lsx-search"><img src="https://travis-ci.org/lightspeeddevelopment/lsx-search.svg?branch=master" alt="Build Status"></a>
 </p>
 
 The [LSX Search Extension](https://lsx.lsdev.biz/extensions/lsx-search/) intergrates with the FacetWP plugin to allow for superbly filtered search results for your users. 
