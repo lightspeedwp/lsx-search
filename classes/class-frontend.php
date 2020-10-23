@@ -715,7 +715,7 @@ class Frontend {
 				$sidebar_class = 'col-sm-4 col-md-3';
 
 				if ( '2cl' === $layout ) {
-					$main_class    .= ' col-sm-pull-4 col-md-pull-3';
+					$main_class    .= ' col-sm-pull-4 col-md-pull-3 search-sidebar-left';
 					$sidebar_class .= ' col-sm-push-8 col-md-push-9';
 				}
 
