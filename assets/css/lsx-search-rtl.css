@@ -61,7 +61,7 @@ ul.products.list li.product hr { clear: both; }
 
 #secondary.facetwp-sidebar .facetwp-item.facetwp-form .search-form .btn.search-submit { -webkit-box-shadow: -1px 1px 0 0 #27639e; box-shadow: -1px 1px 0 0 #27639e; border-radius: 2px 0 0 2px; }
 
-.archive-tour-operator .facetwp-template .row.lsx-to-archive-items { margin-top: 0 !important; }
+.archive-tour-operator .facetwp-template .row.lsx-to-archive-items { margin-top: -2.5rem; }
 
 .facetwp-type-search .facetwp-search-wrap .facetwp-search { border-radius: 0 2px 2px 0; float: none; padding: 8px 14px 10px; width: 190px; }
 
