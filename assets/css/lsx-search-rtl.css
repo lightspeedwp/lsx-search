@@ -51,7 +51,7 @@ ul.products.list li.product hr { clear: both; }
 
 #secondary.facetwp-sidebar .facetwp-item, #secondary.facetwp-sidebar .facetwp-filter-title { background: #ffffff; border-radius: 0; padding: 15px 12px; margin-bottom: 3px; }
 
-#secondary.facetwp-sidebar .facetwp-type-search { background: transparent; padding: 0px; margin-top: 0; }
+#secondary.facetwp-sidebar .facetwp-type-search { background: transparent; padding: 0px; margin-top: 0 !important; }
 
 #secondary.facetwp-sidebar .facetwp-item.facetwp-form { background: transparent; padding: 0px; margin-bottom: 25px; }
 
