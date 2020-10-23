@@ -137,7 +137,7 @@
 		margin-bottom: 3px;
 	}
 
-	.facetwp-facet-search.facetwp-type-search {
+	.facetwp-type-search {
 		background: transparent;
 		padding: 0px;
 		margin-top: 0;
@@ -160,6 +160,14 @@
 				box-shadow: 1px 1px 0 0 #27639e;
 				border-radius: 0 2px 2px 0;
 			}
+		}
+	}
+}
+
+.archive-tour-operator {
+	.facetwp-template {
+		.row.lsx-to-archive-items {
+			margin-top: 0 !important;
 		}
 	}
 }
