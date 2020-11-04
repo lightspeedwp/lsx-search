@@ -1,4 +1,4 @@
-<p align="center"><a target="_blank" href="https://www.lsdev.biz/lsx/extensions/search/"><img src="https://www.lsdev.biz/lsx/wp-content/uploads/2020/09/lsx-search-banner-1544-500.jpg" alt="LSX Search Extension"></a>
+<p align="center"><a target="_blank" href="https://www.lsdev.biz/lsx/extensions/search/"><img src="https://www.lsdev.biz/wp-content/uploads/2020/11/banner_1544x500.jpg" alt="LSX Search Extension"></a>
 </p>
 <h1 align="center">LSX Search</h1>
 
