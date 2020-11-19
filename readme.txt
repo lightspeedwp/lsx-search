@@ -53,7 +53,7 @@ We have created extensive documentation on all of the LSX Search Plugin function
 
 = Support =
 
-Contact the [LightSpeed](https://lsdev.biz/) for assistance via the [LSX support form](https://www.lsdev.biz/lsx/support/).
+Contact the [LightSpeed](https://lsdev.biz/) for assistance via the [LSX support form](https://lsdev.biz/lsx/support/).
 
 If you are experiencing issues with the LSX Search Plugin & have experience with Github, please log any bug issues you are having on the [LSX Search Github Issues](https://github.com/lightspeeddevelopment/lsx-search/issues/) page.
 
@@ -77,12 +77,12 @@ Installation from WordPress admin dashboard:
 
 Download from WordPress.org:
 
-*Go to the [plugin page](https://wordpress.org/plugins/lsx-team/) or use this [direct download link](https://downloads.wordpress.org/plugin/lsx-team.zip).
-*Click the Download button to download the zip file.
-*Log into your WordPress admin dashboard and go to Plugins > Add new.
-*Then click Upload plugin.
-*Choose the zip file and click Install now.
-*After installation is successful click Activate plugin.
+* Go to the [plugin page](https://wordpress.org/plugins/lsx-team/) or use this [direct download link](https://downloads.wordpress.org/plugin/lsx-search.zip).
+* Click the Download button to download the zip file.
+* Log into your WordPress admin dashboard and go to Plugins > Add new.
+* Then click Upload plugin.
+* Choose the zip file and click Install now.
+* After installation is successful click Activate plugin.
 
 == Frequently Asked Questions ==
 
