@@ -77,7 +77,6 @@ class Frontend {
 		add_action( 'lsx_body_top', array( $this, 'check_for_results' ) );
 
 		add_filter( 'pre_get_posts', array( $this, 'ignore_sticky_search' ) );
-
 		add_action( 'pre_get_posts', array( $this, 'filter_post_types' ) );
 
 		add_filter( 'lsx_search_post_types', array( $this, 'register_post_types' ) );
@@ -85,6 +84,7 @@ class Frontend {
 		add_filter( 'lsx_search_post_types_plural', array( $this, 'register_post_type_tabs' ) );
 		add_filter( 'facetwp_sort_options', array( $this, 'facetwp_sort_options' ), 10, 2 );
 		add_filter( 'wp_kses_allowed_html', array( $this, 'kses_allowed_html' ), 20, 2 );
+		add_filter( 'get_search_query', array( $this, 'get_search_query' ) );
 
 		// Redirects.
 		add_action( 'template_redirect', array( $this, 'pretty_search_redirect' ) );
@@ -552,9 +552,12 @@ class Frontend {
 
 			// If the search was triggered by a supplemental engine.
 			if ( isset( $_GET['engine'] ) && 'default' !== $_GET['engine'] ) {
-				$engine = $_GET['engine'];
-				set_query_var( 'engine', $engine );
-				$engine = array_search( $engine, $this->post_type_slugs, true ) . '/';
+				$engine = sanitize_text_field( wp_unslash( $_GET['engine'] ) );
+				$index  = array_search( $engine, $this->post_type_slugs, true );
+				if ( false !== $index ) {
+					$engine = $index;
+				}
+				$engine = $engine . '/';
 			}
 
 			$get_array = $_GET;
@@ -574,7 +577,6 @@ class Frontend {
 			if ( ! empty( $vars_to_maintain ) ) {
 				$redirect_url .= '?' . implode( '&', $vars_to_maintain );
 			}
-
 			wp_redirect( $redirect_url );
 			exit();
 		}
@@ -616,7 +618,6 @@ class Frontend {
 				}
 			}
 		}
-
 		return $query;
 	}
 
@@ -1092,5 +1093,18 @@ class Frontend {
 		$allowedtags['a']['data-selection']  = true;
 		$allowedtags['button']['data-toggle'] = true;
 		return $allowedtags;
+	}
+
+	/**
+	 * Change FaceWP result count HTML
+	 */
+	public function get_search_query( $keyword ) {
+		$needle = trim( '/ ' );
+		$words = explode( $needle, $keyword );
+		if ( is_array( $words ) && ! empty( $words ) ) {
+			$keyword = $words[ count( $words ) - 1 ];
+		}
+		$keyword = str_replace( '+', ' ', $keyword );
+		return $keyword;
 	}
 }
