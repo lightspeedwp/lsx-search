@@ -39,6 +39,13 @@
 	<rule ref="WordPress">
 		<exclude name="WordPress.WP.GlobalVariablesOverride.Prohibited" />
 		<exclude name="Generic.ControlStructures.InlineControlStructure.NotAllowed" />
+
+		<!-- Fix on next LSX release (PHP Comments) -->
+		<exclude name="Generic.Commenting" />
+		<exclude name="Squiz.Commenting" />
+
+		<!-- Fix on next release -->
+		<exclude name="WordPress.Functions.DontExtract.extract_extract" />
 	</rule>
 		
 	<rule ref="WordPress-Extra" />
@@ -57,10 +64,12 @@
 		<exclude-pattern>*\.css</exclude-pattern>
 		<exclude-pattern>*\.js</exclude-pattern>
 	</rule>
+
+	<rule ref="PSR2">
+		<exclude name="PSR2.Classes.PropertyDeclaration"/>
+	</rule>
 	
     <rule ref="Generic.PHP.Syntax"/>
-	
     <rule ref="WordPress.WP.DeprecatedFunctions"/>
-	
 	<rule ref="PHPCompatibilityWP"/>
 </ruleset>
