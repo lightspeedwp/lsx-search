@@ -964,7 +964,7 @@ class Frontend {
 	public function display_facet_search() {
 		?>
 		<div class="col-xs-12 facetwp-item facetwp-form">
-			<form class="search-form lsx-search-form" action="/" method="get">
+			<form class="search-form lsx-search-form" action="<?php echo esc_attr( home_url() ); ?>" method="get">
 				<div class="input-group">
 					<div class="field">
 						<input class="facetwp-search search-field form-control" name="s" type="search" placeholder="<?php esc_html_e( 'Search', 'lsx-search' ); ?>..." autocomplete="off" value="<?php echo get_search_query() ?>">
