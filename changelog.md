@@ -1,5 +1,18 @@
 # Change log
 
+# [[1.5.1]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.5.0) - 2021-01-15 
+
+### Fixed
+- Fixing the search query using a supplemental engine.
+- Fixing the banner titles not using the correct values.
+- Fixing the url the form "action" attribute points to.
+
+### Updated
+- Documentation and support links.
+
+### Security
+- General testing to ensure compatibility with latest WordPress version (5.6).
+
 # [[1.5.0]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.5.0) - 2020-11-04 
 
 ## Added
