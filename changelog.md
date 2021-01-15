@@ -1,6 +1,6 @@
 # Change log
 
-## [[1.5.0]]
+# [[1.5.0]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.5.0) - 2020-11-04 
 
 ## Added
 
@@ -10,12 +10,21 @@
 ## Fixed
 
 - Fixed spacing for the archive layouts.
+- Fixed the sorting option not working.
+- Excluded the search filters from the Product Vendors taxonomy for WooCommerce.
 
 ## Deprecated
 
-- Removing the CMB and UIX library
+- Removing the CMB and UIX library.
 
-## [[1.4.1]] - 2020-05-21
+## Security
+
+- Updating dependencies to prevent vulnerabilities.
+- Updating PHPCS options for better code.
+- General testing to ensure compatibility with latest WordPress version (5.5).
+- General testing to ensure compatibility with latest LSX Theme version (2.9).
+
+## [[1.4.1]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.4.1) - 2020-05-21
 
 ### Added
 

@@ -308,9 +308,8 @@ class Admin {
 				'type'    => 'select',
 				'options' => array(
 					''    => esc_html__( 'Follow the theme layout', 'lsx-search' ),
-					'1c'  => esc_html__( '1 column', 'lsx-search' ),
-					'2cr' => esc_html__( '2 columns / Content on right', 'lsx-search' ),
-					'2cl' => esc_html__( '2 columns / Content on left', 'lsx-search' ),
+					'2cr' => esc_html__( 'Sidebar on left', 'lsx-search' ),
+					'2cl' => esc_html__( 'Sidebar on right', 'lsx-search' ),
 				),
 				'default' => '',
 			)
@@ -340,7 +339,7 @@ class Admin {
 				)
 			);
 		}
-		if ( 'engine' === $section && is_plugin_active( 'tour-operator/tour-operator.php' ) ) {
+		if ( 'engine' === $section && function_exists('is_plugin_active') && is_plugin_active( 'tour-operator/tour-operator.php' ) ) {
 			$cmb->add_field(
 				array(
 					'name'    => esc_html__( 'List layout images', 'lsx-search' ),
@@ -371,7 +370,7 @@ class Admin {
 					'description' => __( 'This enables the post type label from entries on search results page.', 'lsx-search' ),
 				)
 			);
-			if ( is_plugin_active( 'tour-operator/tour-operator.php' ) ) {
+			if ( function_exists('is_plugin_active') &&  is_plugin_active( 'tour-operator/tour-operator.php' ) ) {
 				$cmb->add_field(
 					array(
 						'name'        => esc_html__( 'Enable Continent Filter', 'lsx-search' ),
@@ -391,7 +390,7 @@ class Admin {
 			}
 		}
 
-		if ( is_plugin_active( 'tour-operator/tour-operator.php' ) && 'accommodation' === $section ) {
+		if ( function_exists('is_plugin_active') && is_plugin_active( 'tour-operator/tour-operator.php' ) && 'accommodation' === $section ) {
 			$cmb->add_field(
 				array(
 					'name'    => esc_html__( 'Results Layout - list vs map', 'lsx-search' ),
@@ -411,7 +410,7 @@ class Admin {
 				'name'        => esc_html__( 'Enable Collapse', 'lsx-search' ),
 				'id'          => $section . '_search_collapse',
 				'type'        => 'checkbox',
-				'description' => __( 'Enable collapsible filters on search results', 'lsx-search' ),
+				'description' => __( 'Enable collapsible filters on search results.', 'lsx-search' ),
 			)
 		);
 
@@ -420,12 +419,13 @@ class Admin {
 				'name' => esc_html__( 'Disable Sorting', 'lsx-search' ),
 				'id'   => $section . '_search_disable_sorting',
 				'type' => 'checkbox',
+				'description' => __( 'Toggle the sorting drop down menu on your search results.', 'lsx-search' ),
 			)
 		);
 
 		$cmb->add_field(
 			array(
-				'name' => esc_html__( 'Disable the Date Option', 'lsx-search' ),
+				'name' => esc_html__( 'Disable the Date Sorting Option', 'lsx-search' ),
 				'id'   => $section . '_search_disable_date',
 				'type' => 'checkbox',
 			)
@@ -436,6 +436,7 @@ class Admin {
 				'name' => esc_html__( 'Display Clear Button', 'lsx-search' ),
 				'id'   => $section . '_search_display_clear_button',
 				'type' => 'checkbox',
+				'description' => __( 'Check this to turn on a button that will clear your search results.', 'lsx-search' ),
 			)
 		);
 
@@ -446,7 +447,7 @@ class Admin {
 				'type' => 'checkbox',
 			)
 		);
-		if ( is_plugin_active( 'facetwp-alpha/index.php' ) ) {
+		if ( function_exists('is_plugin_active') && is_plugin_active( 'facetwp-alpha/index.php' ) ) {
 			$cmb->add_field(
 				array(
 					'name'        => esc_html__( 'Alphabet Facet', 'lsx-search' ),
@@ -460,7 +461,7 @@ class Admin {
 		$cmb->add_field(
 			array(
 				'name'        => esc_html__( 'Facets', 'lsx-search' ),
-				'description' => esc_html__( 'Choose your filters above, these will display on the page. Edit your FacetWP Facets to change the display of each of them.', 'lsx-search' ),
+				'description' => esc_html__( 'Choose the filters to display in the sidebar. Edit FacetWP filters to change individual filters.', 'lsx-search' ),
 				'id'          => $section . '_search_facets',
 				'type'        => 'multicheck',
 				'options'     => $this->facet_data,

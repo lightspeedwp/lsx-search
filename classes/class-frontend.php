@@ -76,6 +76,7 @@ class Frontend {
 		add_action( 'wp', array( $this, 'core' ), 23 );
 		add_action( 'lsx_body_top', array( $this, 'check_for_results' ) );
 
+		add_filter( 'pre_get_posts', array( $this, 'ignore_sticky_search' ) );
 		add_action( 'pre_get_posts', array( $this, 'filter_post_types' ) );
 
 		add_filter( 'lsx_search_post_types', array( $this, 'register_post_types' ) );
@@ -83,6 +84,7 @@ class Frontend {
 		add_filter( 'lsx_search_post_types_plural', array( $this, 'register_post_type_tabs' ) );
 		add_filter( 'facetwp_sort_options', array( $this, 'facetwp_sort_options' ), 10, 2 );
 		add_filter( 'wp_kses_allowed_html', array( $this, 'kses_allowed_html' ), 20, 2 );
+		add_filter( 'get_search_query', array( $this, 'get_search_query' ) );
 
 		// Redirects.
 		add_action( 'template_redirect', array( $this, 'pretty_search_redirect' ) );
@@ -223,6 +225,11 @@ class Frontend {
 			if ( ! empty( $this->options ) && isset( $this->options['display'] ) && isset( $this->options['display'][ $enable_prefix . '_enable' ] ) && 'on' === $this->options['display'][ $enable_prefix . '_enable' ] ) {
 				$search_enabled = true;
 			}
+		}
+
+		// These are specific plugin exclusions.
+		if ( is_tax( array( 'wcpv_product_vendors' ) ) ) {
+			$search_enabled = false;
 		}
 		return $search_enabled;
 	}
@@ -516,6 +523,18 @@ class Frontend {
 	}
 
 	/**
+	 * Ignore sticky posts on Blog search.
+	 *
+	 * @param [type] $query
+	 * @return void
+	 */
+	public function ignore_sticky_search( $query ) {
+		if ( $query->is_main_query() && is_home() ) {
+			$query->set( 'ignore_sticky_posts', true );
+		}
+	}
+
+	/**
 	 * Rewrite the search URL
 	 */
 	public function pretty_search_redirect() {
@@ -533,9 +552,12 @@ class Frontend {
 
 			// If the search was triggered by a supplemental engine.
 			if ( isset( $_GET['engine'] ) && 'default' !== $_GET['engine'] ) {
-				$engine = $_GET['engine'];
-				set_query_var( 'engine', $engine );
-				$engine = array_search( $engine, $this->post_type_slugs, true ) . '/';
+				$engine = sanitize_text_field( wp_unslash( $_GET['engine'] ) );
+				$index  = array_search( $engine, $this->post_type_slugs, true );
+				if ( false !== $index ) {
+					$engine = $index;
+				}
+				$engine = $engine . '/';
 			}
 
 			$get_array = $_GET;
@@ -555,7 +577,6 @@ class Frontend {
 			if ( ! empty( $vars_to_maintain ) ) {
 				$redirect_url .= '?' . implode( '&', $vars_to_maintain );
 			}
-
 			wp_redirect( $redirect_url );
 			exit();
 		}
@@ -597,7 +618,6 @@ class Frontend {
 				}
 			}
 		}
-
 		return $query;
 	}
 
@@ -696,7 +716,7 @@ class Frontend {
 				$sidebar_class = 'col-sm-4 col-md-3';
 
 				if ( '2cl' === $layout ) {
-					$main_class    .= ' col-sm-pull-4 col-md-pull-3';
+					$main_class    .= ' col-sm-pull-4 col-md-pull-3 search-sidebar-left';
 					$sidebar_class .= ' col-sm-push-8 col-md-push-9';
 				}
 
@@ -737,10 +757,11 @@ class Frontend {
 		if ( true === apply_filters( 'lsx_search_hide_top_bar', false ) ) {
 			return;
 		}
+
 		$show_pagination     = true;
 		$pagination_visible  = false;
 		$show_per_page_combo = empty( $this->options['display'][ $this->search_prefix . '_disable_per_page' ] );
-		$show_sort_combo     = empty( $this->options['display'][ $this->search_prefix . '_disable_all_sorting' ] );
+		$show_sort_combo     = empty( $this->options['display'][ $this->search_prefix . '_disable_sorting' ] );
 
 		$show_pagination     = apply_filters( 'lsx_search_top_show_pagination', $show_pagination );
 		$pagination_visible  = apply_filters( 'lsx_search_top_pagination_visible', $pagination_visible );
@@ -756,7 +777,7 @@ class Frontend {
 						<?php if ( ! empty( $this->options['display'][ $this->search_prefix . '_display_result_count' ] ) && false === apply_filters( 'lsx_search_hide_result_count', false ) ) { ?>
 							<div class="row">
 								<div class="col-md-12 facetwp-item facetwp-results">
-									<h3 class="lsx-search-title lsx-search-title-results"><?php esc_html_e( 'Results', 'lsx-search' ); ?> <?php echo '(' . do_shortcode( '[facetwp counts="true"]' ) . ')'; ?>
+									<h3 class="lsx-search-title lsx-search-title-results"><?php esc_html_e( 'Results', 'lsx-search' ); ?> <?php echo '(' . do_shortcode( '[facetwp counts="true"]' ) . ')&nbsp;'; ?>
 									<?php if ( false !== $this->options && isset( $this->options['display'] ) && ( ! empty( $this->options['display'][ $this->search_prefix . '_display_clear_button' ] ) ) && 'on' === $this->options['display'][ $this->search_prefix . '_display_clear_button' ] ) { ?>
 										<span class="clear-facets hidden">- <a title="<?php esc_html_e( 'Clear the current search filters.', 'lsx-search' ); ?>" class="facetwp-results-clear" type="button" onclick="<?php echo esc_attr( apply_filters( 'lsx_search_clear_function', 'lsx_search.clearFacets(this);' ) ); ?>"><?php esc_html_e( 'Clear', 'lsx-search' ); ?></a></span>
 									<?php } ?>
@@ -796,7 +817,7 @@ class Frontend {
 		}
 
 		$show_per_page_combo = empty( $this->options['display'][ $this->search_prefix . '_disable_per_page' ] );
-		$show_sort_combo     = empty( $this->options['display'][ $this->search_prefix . '_disable_all_sorting' ] );
+		$show_sort_combo     = empty( $this->options['display'][ $this->search_prefix . '_search_disable_sorting' ] );
 
 		$show_pagination     = apply_filters( 'lsx_search_bottom_show_pagination', $show_pagination );
 		$pagination_visible  = apply_filters( 'lsx_search_bottom_pagination_visible', $pagination_visible );
@@ -984,7 +1005,7 @@ class Frontend {
 	 */
 	public function display_facet_default( $facet ) {
 
-		$show_collapse = ! isset( $this->options['display']['enable_collapse'] ) || 'on' !== $this->options['display']['enable_collapse'];
+		$show_collapse = ! isset( $this->options['display'][$this->search_prefix . '_collapse'] ) || 'on' !== $this->options['display'][$this->search_prefix . '_collapse'];
 		$col_class = '';
 
 		if ( 'search' === $this->facet_data[ $facet ]['type'] ) : ?>
@@ -1047,7 +1068,7 @@ class Frontend {
 				return $options;
 			}
 
-			if ( ! empty( $this->options['display'][ $this->search_prefix . '_disable_date_sorting' ] ) ) {
+			if ( ! empty( $this->options['display'][ $this->search_prefix . '_disable_date' ] ) ) {
 				unset( $options['date_desc'] );
 				unset( $options['date_asc'] );
 			}
@@ -1072,5 +1093,18 @@ class Frontend {
 		$allowedtags['a']['data-selection']  = true;
 		$allowedtags['button']['data-toggle'] = true;
 		return $allowedtags;
+	}
+
+	/**
+	 * Change FaceWP result count HTML
+	 */
+	public function get_search_query( $keyword ) {
+		$needle = trim( '/ ' );
+		$words = explode( $needle, $keyword );
+		if ( is_array( $words ) && ! empty( $words ) ) {
+			$keyword = $words[ count( $words ) - 1 ];
+		}
+		$keyword = str_replace( '+', ' ', $keyword );
+		return $keyword;
 	}
 }
