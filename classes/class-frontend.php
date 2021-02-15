@@ -1102,6 +1102,22 @@ class Frontend {
 	 * Change FaceWP result count HTML
 	 */
 	public function get_search_query( $keyword ) {
+		global $wp_rewrite,$wp_query;
+
+		if ( empty( $keyword ) ) {
+			if ( ! isset( $wp_rewrite ) || ! is_object( $wp_rewrite ) || ! $wp_rewrite->using_permalinks() ) {
+				return;
+			}
+			$search_base = $wp_rewrite->search_base;
+			if ( strpos( $_SERVER['REQUEST_URI'], "/{$search_base}/" ) !== false ) {
+				$words = explode( "/{$search_base}/", $_SERVER['REQUEST_URI'] );
+				$limit = count( $words );
+				if ( isset( $words[ $limit - 1 ] ) ) {
+					$keyword = $words[ $limit - 1 ];
+				}
+			}
+		}
+
 		$needle = trim( '/ ' );
 		$words = explode( $needle, $keyword );
 		if ( is_array( $words ) && ! empty( $words ) ) {
