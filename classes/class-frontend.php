@@ -548,6 +548,9 @@ class Frontend {
 
 		if ( is_search() && ! is_admin() && strpos( $_SERVER['REQUEST_URI'], "/{$search_base}/" ) === false ) {
 			$search_query = get_query_var( 's' );
+			if ( empty( $search_query ) && isset( $_GET['s'] ) ) {
+				$search_query = $_GET['s'];
+			}
 			$engine = '';
 
 			// If the search was triggered by a supplemental engine.

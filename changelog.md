@@ -1,6 +1,12 @@
 # Change log
 
-# [[1.5.1]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.5.0) - 2021-01-15 
+# [[1.5.2]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.5.2) - ??
+
+### Added
+
+- Adding in backwards compatibility for the LSX search get_query_var
+
+# [[1.5.1]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.5.1) - 2021-01-15 
 
 ### Fixed
 - Fixing the search query using a supplemental engine.
