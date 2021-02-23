@@ -296,7 +296,7 @@ body.blog:not(.lsx-hide-post-date) .facetwp-template article.lsx-slot .entry-met
 
 .facetwp-radio + .facetwp-radio { margin-top: 5px; }
 
-.facetwp-radio:before { content: "\f10c"; color: inherit; display: inline-block; font-family: "FontAwesome"; font-size: 18px; line-height: 1; position: absolute; left: 0; text-rendering: auto; top: 4px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.facetwp-radio:before { content: "\f10c"; color: inherit; display: inline-block; font-family: "FontAwesome"; font-size: 15px; line-height: 1; position: absolute; left: 0; text-rendering: auto; top: 5px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 .facetwp-radio.checked:before { content: "\f111"; }
 
