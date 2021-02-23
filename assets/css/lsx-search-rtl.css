@@ -292,6 +292,18 @@ body.blog:not(.lsx-hide-post-date) .facetwp-template article.lsx-slot .entry-met
 
 .facetwp-checkbox.region.country-checked { display: block; }
 
+.facetwp-radio { cursor: pointer; padding-right: 25px; position: relative; }
+
+.facetwp-radio + .facetwp-radio { margin-top: 5px; }
+
+.facetwp-radio:before { content: "\f10c"; color: inherit; display: inline-block; font-family: "FontAwesome"; font-size: 18px; line-height: 1; position: absolute; right: 0; text-rendering: auto; top: 4px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+.facetwp-radio.checked:before { content: "\f111"; }
+
+.facetwp-radio.depth-1 { margin-right: 25px; }
+
+.facetwp-radio.depth-2 { margin-right: 50px; }
+
 .facetwp-overflow { margin-top: 5px; }
 
 .facetwp-loading { display: block; }

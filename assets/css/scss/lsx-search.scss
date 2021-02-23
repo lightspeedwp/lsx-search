@@ -842,6 +842,44 @@ body.tag {
 	}
 }
 
+.facetwp-radio {
+	cursor: pointer;
+	padding-left: 25px;
+	position: relative;
+
+	& + & {
+		margin-top: 5px;
+	}
+
+	&:before {
+		content: "\f10c";
+		color: inherit;
+		display: inline-block;
+		font-family: "FontAwesome";
+		font-size: 18px;
+		line-height: 1;
+		position: absolute;
+		left: 0;
+		text-rendering: auto;
+		top: 4px;
+
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	&.checked {
+		&:before {
+			content: "\f111";
+		}
+	}
+	&.depth-1 {
+		margin-left: 25px;
+	}
+	&.depth-2 {
+		margin-left: 50px;
+	}
+}
+
 .facetwp-overflow {
 	margin-top: 5px;
 }
