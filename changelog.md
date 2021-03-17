@@ -6,6 +6,10 @@
 
 - Adding in backwards compatibility for the LSX search get_query_var
 
+### Fixed
+
+- The loading overlay pushing the facets down.
+
 # [[1.5.1]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.5.1) - 2021-01-15 
 
 ### Fixed

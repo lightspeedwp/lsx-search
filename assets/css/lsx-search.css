@@ -107,6 +107,8 @@ body.facetwp-loading-body .search-submit-facetwp { display: none; }
 
 @media (max-width: 767px) { .lsx-search-form .field.submit-button:not(:nth-child(2)) .btn { min-width: 228px; } }
 
+.blog .is-loading .facetwp-overlay, .archive .is-loading .facetwp-overlay, .search-results .is-loading .facetwp-overlay, .search-no-results .is-loading .facetwp-overlay { position: absolute; }
+
 .blog .facetwp-sidebar.widget-area .facetwp-item:first-child, .archive .facetwp-sidebar.widget-area .facetwp-item:first-child, .search-results .facetwp-sidebar.widget-area .facetwp-item:first-child, .search-no-results .facetwp-sidebar.widget-area .facetwp-item:first-child { margin-top: 0; }
 
 .blog .facetwp-sidebar.widget-area .facetwp-item .facetwp-collapsed, .archive .facetwp-sidebar.widget-area .facetwp-item .facetwp-collapsed, .search-results .facetwp-sidebar.widget-area .facetwp-item .facetwp-collapsed, .search-no-results .facetwp-sidebar.widget-area .facetwp-item .facetwp-collapsed { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }

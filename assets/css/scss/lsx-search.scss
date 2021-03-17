@@ -300,6 +300,11 @@
 .archive,
 .search-results,
 .search-no-results {
+
+	.is-loading .facetwp-overlay {
+		position:absolute;
+	}
+
 	.facetwp-sidebar.widget-area {
 		.facetwp-item {
 			//margin-top: 4.25rem;
