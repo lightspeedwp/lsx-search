@@ -1,5 +1,11 @@
 # Change log
 
+# [[1.5.3]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.5.3) - 2021-04-09
+
+### Fixed
+
+- Restricted the layout switcher filter to work only on the search results pages.
+
 # [[1.5.2]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.5.2) - 2021-03-17
 
 ### Added

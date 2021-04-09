@@ -63,7 +63,12 @@ class Layout {
 	 * Display the woocommerce archive swticher.
 	 */
 	public function show_layout_switcher( $show = false ) {
-		$show = true;
+		if ( is_search() ) {
+			$archive_layout_switcher = get_theme_mod( 'lsx_blog_customizer_archive_layout_switcher', false );
+			if ( true === $archive_layout_switcher ) {
+				$show = true;
+			}
+		}
 		return $show;
 	}
 
