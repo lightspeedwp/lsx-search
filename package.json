@@ -28,7 +28,7 @@
     "gulp-uglify": "^3.0.2",
     "gulp-wp-pot": "^2.4.3",
     "gulp-sort": "^2.0.0",
-    "gulp-autoprefixer": "^7.0.1",
+    "gulp-autoprefixer": "^8.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^2.0.0",
     "gulp-rtlcss": "^1.4.1",
