@@ -24,7 +24,7 @@
     "jshint": "^2.12.0",
     "gulp-concat": "^2.6.1",
     "gulp-jshint": "^2.1.0",
-    "gulp-sass": "^4.1.0",
+    "gulp-sass": "^5.0.0",
     "gulp-uglify": "^3.0.2",
     "gulp-wp-pot": "^2.4.3",
     "gulp-sort": "^2.0.0",
