@@ -1,5 +1,9 @@
 # Change log
 
+# [[1.5.4]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.5.4) - ????
+
+### Removed the wc_header_banner function, move to the LSX theme.
+
 # [[1.5.3]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.5.3) - 2021-04-09
 
 ### Fixed

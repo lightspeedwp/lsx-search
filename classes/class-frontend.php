@@ -349,7 +349,6 @@ class Frontend {
 
 				// Actions added by LSX theme
 				remove_action( 'lsx_content_wrap_before', 'lsx_global_header' );
-				add_action( 'lsx_content_wrap_before', array( $this, 'wc_archive_header' ), 140 );
 
 				// Actions added be LSX theme / woocommerce.php file
 				remove_action( 'woocommerce_after_shop_loop', 'lsx_wc_sorting_wrapper', 9 );
@@ -964,22 +963,6 @@ class Frontend {
 		}
 
 		return $pager_facet_off;
-	}
-
-	/**
-	 * Display WooCommerce archive title.
-	 */
-	public function wc_archive_header() {
-		$default_size   = 'sm';
-		$size           = apply_filters( 'lsx_bootstrap_column_size', $default_size );
-		?>
-			<div class="archive-header-wrapper banner-woocommerce col-<?php echo esc_attr( $size ); ?>-12">
-				<?php lsx_global_header_inner_bottom(); ?>
-				<header class="archive-header">
-					<h1 class="archive-title"><?php woocommerce_page_title(); ?></h1>
-				</header>
-			</div>
-		<?php
 	}
 
 	/**
