@@ -56,11 +56,11 @@ var lsx_search = Object.create( null );
 				'pointer-events': ''
 			} );
 
-			if ( '' == FWP.build_query_string() ) {
+			/*if ( '' == FWP.build_query_string() ) {
 				$( '.lsx-search-title-results .clear-facets' ).addClass( 'hidden' );
 			} else {
 				$( '.lsx-search-title-results .clear-facets' ).removeClass( 'hidden' );
-			}
+			}*/
 
 			$.each( FWP.settings, function( key, val ) {
 				if ( 'product_price' === key ) {
