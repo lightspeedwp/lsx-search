@@ -792,15 +792,33 @@ class Frontend {
 
 						<?php $this->display_alphabet_facet(); ?>
 
-						<?php if ( $show_sort_combo ) { ?>
-							<?php echo do_shortcode( '[facetwp sort="true"]' ); ?>
-						<?php } ?>
-
+						<?php
+						if ( $show_sort_combo ) { 
+							$new_sorter = $this->has_facet( 'sort' );
+							if ( false !== $new_sorter ) {
+								echo do_shortcode( '[facetwp facet="' . $new_sorter . '"]' );
+							} else {
+								echo do_shortcode( '[facetwp sort="true"]' );
+							}	
+						}
+						?>
 					</div>
 				</div>
 			<?php } ?>
 		</div>
 		<?php
+	}
+
+	public function has_facet( $type ) {
+		$has_facet = false;
+		if ( ! empty( $this->options['display'][ $this->search_prefix . '_facets' ] ) && is_array( $this->options['display'][ $this->search_prefix . '_facets' ] ) ) {
+			foreach ( $this->options['display'][ $this->search_prefix . '_facets' ] as $facet => $facet_useless ) {
+				if ( isset( $this->facet_data[ $facet ] ) &&  $this->facet_data[ $facet ]['type'] === $type ) {
+					$has_facet = $facet;
+				}
+			}
+		}
+		return $has_facet;
 	}
 
 	/**

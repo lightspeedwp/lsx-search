@@ -4,6 +4,7 @@
 
 ### Added
 - Added the 'sort' and 'autocomplete' to the list of excluded facets from the sidebar.
+- Allowing the new sorter to be used in the Search Top bar if created and selected in the settings.
 
 ### Fixed
 - Updating the FacetWP search functions to 3.9.3 causing JS errors.
