@@ -56,7 +56,7 @@ var lsx_search = Object.create( null );
 				'pointer-events': ''
 			} );
 
-			if ( '' == FWP.build_query_string() ) {
+			if ( '' == FWP.buildQueryString() ) {
 				$( '.lsx-search-title-results .clear-facets' ).addClass( 'hidden' );
 			} else {
 				$( '.lsx-search-title-results .clear-facets' ).removeClass( 'hidden' );
@@ -129,7 +129,7 @@ var lsx_search = Object.create( null );
 			$( '.ssm-close-btn' ).on( 'click', function() {
 				FWP.is_refresh = true;
 				lsx_search.document.trigger( 'facetwp-refresh' );
-				FWP.fetch_data();
+				FWP.fetchData();
 				FWP.is_refresh = false;
 			} );
 

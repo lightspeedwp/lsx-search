@@ -2,7 +2,13 @@
 
 # [[1.5.4]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.5.4) - ????
 
-### Removed the wc_header_banner function, move to the LSX theme.
+### Fixed
+
+- Updating the FacetWP search functions to 3.9.3 causing JS errors.
+
+### Updated
+
+- Removed the wc_header_banner function, move to the LSX theme.
 
 # [[1.5.3]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.5.3) - 2021-04-09
 
