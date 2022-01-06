@@ -60,7 +60,7 @@ var lsx_search = Object.create( null );
 				$( '.lsx-search-title-results .clear-facets' ).addClass( 'hidden' );
 			} else {
 				$( '.lsx-search-title-results .clear-facets' ).removeClass( 'hidden' );
-			}
+			}*/
 
 			$.each( FWP.settings, function( key, val ) {
 				if ( 'product_price' === key ) {
