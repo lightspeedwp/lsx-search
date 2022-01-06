@@ -106,7 +106,8 @@
 		margin-top: 4.25rem;
 	}
 	#facetwp-top {
-		.facetwp-sort-select {
+		.facetwp-sort-select,
+		.facetwp-type-sort select {
 			//left: 10px;
 			position: relative;
 		}
@@ -470,7 +471,9 @@
 }
 
 .facetwp-sort,
-.facetwp-per-page {
+.facetwp-per-page,
+#facetwp-top .facetwp-type-sort
+ {
 	@include media(">=phone") {
 		float: left;
 	}
@@ -531,7 +534,8 @@
 }
 
 .facetwp-sort,
-.facetwp-per-page {
+.facetwp-per-page,
+#facetwp-top .facetwp-type-sort {
 	background-color: white;
 	border: 1px solid #dadddf;
 	&:hover {
@@ -542,7 +546,8 @@
 }
 .facetwp-sort-select,
 .facetwp-per-page-select,
-.woocommerce select.facetwp-sort-select {
+.woocommerce select.facetwp-sort-select,
+#facetwp-top .facetwp-type-sort select {
 	cursor: pointer;
 	appearance: none;
 	background: transparent;
@@ -567,7 +572,8 @@
 }
 
 .facetwp-per-page:after,
-.facetwp-sort:after {
+.facetwp-sort:after,
+#facetwp-top .facetwp-type-sort:after {
 	content: "\f078";
 	color: #999999;
 	position: relative;
@@ -1020,7 +1026,8 @@ body:not(.search-no-results) {
 		}
 	}
 	.facetwp-sort-select,
-	.facetwp-per-page-select {
+	.facetwp-per-page-select,
+	#facetwp-top .facetwp-type-sort select {
 		width: 100%;
 		margin-bottom: 0;
 	}
