@@ -922,7 +922,7 @@ class Frontend {
 								<?php
 								// Slider.
 								foreach ( $this->options['display'][ $this->search_prefix . '_facets' ] as $facet => $facet_useless ) {
-									if ( isset( $this->facet_data[ $facet ] ) && ! in_array( $this->facet_data[ $facet ]['type'], array( 'alpha', 'search', 'pager' ) ) ) {
+									if ( isset( $this->facet_data[ $facet ] ) && ! in_array( $this->facet_data[ $facet ]['type'], array( 'alpha', 'search', 'pager', 'sort', 'autocomplete' ) ) ) {
 										$this->display_facet_default( $facet );
 									}
 								}
