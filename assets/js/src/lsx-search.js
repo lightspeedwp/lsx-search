@@ -152,7 +152,7 @@ var lsx_search = Object.create( null );
 	 * @subpackage scripts
 	 */
 	lsx_search.input_search = function() {
-		lsx_search.document.on( 'click', '.search-submit-facetwp', function() {
+		lsx_search.document.on( 'click', '.search-submit.facetwp-btn', function() {
 			FWP.refresh();
 		} );
 	};
