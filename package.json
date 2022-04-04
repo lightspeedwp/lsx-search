@@ -31,7 +31,7 @@
     "gulp-autoprefixer": "^8.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^2.0.0",
-    "gulp-rtlcss": "^1.4.1",
+    "gulp-rtlcss": "^2.0.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-gettext": "^0.3.0"
   }
