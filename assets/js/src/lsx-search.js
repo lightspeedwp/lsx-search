@@ -56,9 +56,8 @@ var lsx_search = Object.create( null );
 				'pointer-events': ''
 			} );
 
-			if ( '' == FWP.buildQueryString() ) {
-				$( '.lsx-search-title-results .clear-facets' ).addClass( 'hidden' );
-			} else {
+			$( '.lsx-search-title-results .clear-facets' ).addClass( 'hidden' );
+			if ( $.isFunction( FWP.buildQueryString() ) && '' !== FWP.buildQueryString() ) {
 				$( '.lsx-search-title-results .clear-facets' ).removeClass( 'hidden' );
 			}
 
