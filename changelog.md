@@ -1,6 +1,9 @@
 # Change log
 
-# [[1.5.4]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.5.4) - ????
+# [[1.5.4]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.5.4) - 2022-05-26
+
+### Security
+- General testing to ensure compatibility with latest WordPress version (6.0)
 
 ### Added
 - Added the 'sort' and 'autocomplete' to the list of excluded facets from the sidebar.
@@ -28,7 +31,7 @@
 
 - The loading overlay pushing the facets down.
 
-# [[1.5.1]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.5.1) - 2021-01-15 
+# [[1.5.1]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.5.1) - 2021-01-15
 
 ### Fixed
 - Fixing the search query using a supplemental engine.
@@ -41,7 +44,7 @@
 ### Security
 - General testing to ensure compatibility with latest WordPress version (5.6).
 
-# [[1.5.0]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.5.0) - 2020-11-04 
+# [[1.5.0]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.5.0) - 2020-11-04
 
 ## Added
 

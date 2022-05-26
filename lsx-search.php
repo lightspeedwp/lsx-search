@@ -4,7 +4,7 @@
  * Plugin URI:	https://github.com/lightspeeddevelopment/lsx-search
  * Description:	The LSX Search extension improves the search result pages for LSX Theme.
  * Author:		LightSpeed
- * Version: 	1.5.2
+ * Version: 	1.5.4
  * Author URI: 	https://www.lsdev.biz/
  * License: 	GPL3
  * Text Domain: lsx-search
