@@ -1125,6 +1125,7 @@ class Frontend {
 			$keyword = $words[ count( $words ) - 1 ];
 		}
 		$keyword = str_replace( '+', ' ', $keyword );
+		$keyword = str_replace( '%20', ' ', $keyword );
 		return $keyword;
 	}
 }
