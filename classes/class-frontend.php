@@ -596,6 +596,9 @@ class Frontend {
 			'testimonial' => 'testimonials',
 			'video' => 'videos',
 			'product' => 'products', // WooCommerce
+			'tour' => 'tours',
+			'accommodation' => 'accommodation',
+			'destination' => 'destinations',
 		);
 		if ( $query->is_search() && ! is_admin() && $query->is_main_query() ) {
 			$search_query = $query->get( 's' );

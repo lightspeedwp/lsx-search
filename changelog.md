@@ -1,5 +1,10 @@
 # Change log
 
+# [[1.5.5]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.5.5) - In Development
+
+### Fixed
+- Fixing the integration with TO and the searchWP engines.
+
 # [[1.5.4]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.5.4) - 2022-05-26
 
 ### Security
