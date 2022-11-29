@@ -254,6 +254,17 @@ class Frontend {
 				$this->search_core_suffix = 'enable';
 				$this->search_prefix      = 'engine_search';
 			}
+
+			$engine = get_query_var( 'engine' );
+			if ( '' !== $engine && false !== $engine && 'default' !== $engine ) {
+				$post_type = get_query_var( 'post_type' );
+				if ( is_array( $post_type ) ) {
+					$post_type = $post_type[0];
+				}
+
+				$this->search_prefix = $post_type . '_search';
+			}
+
 		} elseif ( is_post_type_archive( $this->post_types ) || is_tax() || is_page( $page_for_posts ) || is_home() || is_category() || is_tag() ) {
 			if ( false === $new_prefixes ) {
 				$this->search_core_suffix = 'search';
@@ -605,17 +616,20 @@ class Frontend {
 			$keyword_test = explode( '/', $search_query );
 
 			$index = array_search( $keyword_test[0], $this->post_type_slugs, true );
+			
 			if ( false !== $index ) {
 				$engine = $this->post_type_slugs[ $index ];
 
-				$query->set( 'post_type', $engine );
+				$query->set( 'post_type', $index );
 				$query->set( 'engine', $engine );
+				$query->set( 'searchwp', $engine );
 
 				if ( count( $keyword_test ) > 1 ) {
 					$query->set( 's', $keyword_test[1] );
-				} elseif ( post_type_exists( $engine ) ) {
+				} elseif ( post_type_exists( $index ) ) {
 					$query->set( 's', '' );
 				}
+
 			} else {
 				if ( isset( $this->options['general']['search_post_types'] ) && is_array( $this->options['general']['search_post_types'] ) ) {
 					$post_types = array_keys( $this->options['general']['search_post_types'] );
