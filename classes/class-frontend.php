@@ -123,7 +123,7 @@ class Frontend {
 	public function set_vars() {
 		$post_type = '';
 
-		$this->post_types      = apply_filters( 'lsx_search_post_types', array() );
+		$this->post_types      = apply_filters( 'lsx_search_post_types', array( 'tour', 'accommodation' ) );
 		$this->taxonomies      = apply_filters( 'lsx_search_taxonomies', array() );
 		$this->tabs            = apply_filters( 'lsx_search_post_types_plural', array() );
 		$this->options         = apply_filters( 'lsx_search_options', $this->options );
@@ -1105,6 +1105,13 @@ class Frontend {
 				$search_slug = $engine;
 			} else {
 				$search_slug = 'display';
+			}
+
+			if ( is_post_type_archive( array_keys( $this->post_types ) ) || is_tax( array_keys( $this->taxonomies ) ) ) {
+				$obj = get_queried_object();
+				if ( isset( $obj->name ) && in_array( $obj->name, array_keys( $this->post_types ) ) ) {
+					$search_slug = $obj->name;
+				}
 			}
 
 			if ( 'tours' === $search_slug || 'tour' === $search_slug || 'accommodation' === $search_slug || 'display' === $search_slug ) {
