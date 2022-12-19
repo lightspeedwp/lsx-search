@@ -2,6 +2,9 @@
 
 # [[1.5.5]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.5.5) - In Development
 
+### Added
+- Added in the Price sorting for accommodation and tour post types.
+
 ### Fixed
 - Fixing the integration with TO and the searchWP engines.
 

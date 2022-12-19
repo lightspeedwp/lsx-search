@@ -1098,6 +1098,35 @@ class Frontend {
 				unset( $options['title_desc'] );
 				unset( $options['title_asc'] );
 			}
+
+
+			$engine = get_query_var( 'engine' );
+			if ( false !== $engine && 'default' !== $engine && '' !== $engine ) {
+				$search_slug = $engine;
+			} else {
+				$search_slug = 'display';
+			}
+
+			if ( 'tours' === $search_slug || 'tour' === $search_slug || 'accommodation' === $search_slug || 'display' === $search_slug ) {
+				$options['price_asc'] = array(
+					'label' => __( 'Price (Highest)', 'lsx' ),
+					'query_args' => array(
+						'orderby' => 'meta_value_num',
+						'meta_key' => 'price',
+						'order' => 'DESC',
+					),
+				);
+	
+				$options['price_desc'] = array(
+					'label' => __( 'Price (Lowest)', 'lsx' ),
+					'query_args' => array(
+						'orderby' => 'meta_value_num',
+						'meta_key' => 'price',
+						'order' => 'ASC',
+					),
+				);
+			}
+
 		}
 
 		return $options;
