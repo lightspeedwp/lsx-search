@@ -1114,7 +1114,7 @@ class Frontend {
 				}
 			}
 
-			if ( 'tours' === $search_slug || 'tour' === $search_slug || 'accommodation' === $search_slug || 'display' === $search_slug ) {
+			if ( 'tours' === $search_slug || 'tour' === $search_slug || 'accommodation' === $search_slug ) {
 				$options['price_asc'] = array(
 					'label' => __( 'Price (Highest)', 'lsx' ),
 					'query_args' => array(
