@@ -6,10 +6,16 @@
 - Added in the Price sorting for accommodation and tour post types.
 
 ### Fixed
-- Fixing the integration with TO and the searchWP engines.
+
+- Fixing the integration issues with TO and SearchWP 
 
 ### Updated
 - Updating the pretty search URL for use with searchWP
+
+### Security
+- General testing to ensure compatibility with latest WordPress version (6.1.1).
+- General testing to ensure compatibility with latest FacetWP version (4.1.3).
+- General testing to ensure compatibility with latest SearchWP version (4.2.8).
 
 # [[1.5.4]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.5.4) - 2022-05-26
 
