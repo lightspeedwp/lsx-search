@@ -1107,9 +1107,9 @@ class Frontend {
 				$search_slug = 'display';
 			}
 
-			if ( is_post_type_archive( array_keys( $this->post_types ) ) || is_tax( array_keys( $this->taxonomies ) ) ) {
+			if ( is_post_type_archive( array( 'tour', 'accommodation' ) ) || is_tax( array_keys( $this->taxonomies ) ) ) {
 				$obj = get_queried_object();
-				if ( isset( $obj->name ) && in_array( $obj->name, array_keys( $this->post_types ) ) ) {
+				if ( isset( $obj->name ) && in_array( $obj->name, array( 'tour', 'accommodation' ) ) ) {
 					$search_slug = $obj->name;
 				}
 			}
