@@ -275,7 +275,11 @@ class Frontend {
 			if ( is_tax() ) {
 				$tax = get_query_var( 'taxonomy' );
 				$tax = get_taxonomy( $tax );
-				$post_type = $tax->object_type[0];
+				if ( isset( $tax->object_type[1] ) ) {
+					$post_type = $tax->object_type[1];
+				} else {
+					$post_type = $tax->object_type[0];
+				}
 			} else if ( is_page( $page_for_posts ) || is_category() || is_tag() || is_home() ) {
 				$post_type = 'post';
 			} else {
