@@ -1,6 +1,11 @@
 # Change log
 
-# [[1.5.5]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.5.5) - In Development
+# [[1.5.6]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.5.6) - 2023-04-20
+
+### Security
+- General testing to ensure compatibility with latest WordPress version (6.2).
+
+# [[1.5.5]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.5.5) - 2022-12-22
 
 ### Added
 - Added in the Price sorting for accommodation and tour post types.

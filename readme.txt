@@ -3,9 +3,9 @@ Contributors: feedmymedia, lightspeedwp, eleshar, krugazul, jacquesvdh, ignusver
 Donate link: https://lsdev.biz/lsx/donate/
 Tags: lsx, search, facetwp, Gutenberg, category
 Requires at least: 5.0
-Tested up to: 6.1.1
+Tested up to: 6.2
 Requires PHP: 7.0
-Stable tag: 1.5.5
+Stable tag: 1.5.6
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
