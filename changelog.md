@@ -1,5 +1,10 @@
 # Change log
 
+# [[1.5.7]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.5.7) - 2023-08-09
+
+### Security
+- General testing to ensure compatibility with latest WordPress version (6.3).
+
 # [[1.5.6]](https://github.com/lightspeeddevelopment/lsx-search/releases/tag/1.5.6) - 2023-04-20
 
 ### Security
